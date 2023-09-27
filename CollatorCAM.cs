@@ -107,7 +107,7 @@ namespace CollatorCAM
         bool show_angle;
         bool show_contours;
         int min_contour_length;
-        int max_contour_area;
+        int mіт_contour_area;
         int noize_int;
         bool noize_filt;
         int max_acf;
@@ -2015,6 +2015,15 @@ namespace CollatorCAM
             //cbCaptureFromCam.Checked;
             cbAutoContrast.Checked = Properties.Settings.Default.JanuaryAutoContrast;
             cbBlur.Checked = Properties.Settings.Default.JanuaryBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.JanuaryNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.JanuaryShowAngle;
+            cbCamResolution.TabIndex = Properties.Settings.Default.JanuaryCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.JanuaryNoizeFilt;
+            //cbShowAngle;
+            //cbShowBinarized.Checked = Properties.Settings.Default.Ja ;
+            cbShowContours.Checked = Properties.Settings.Default.JanuaryShowContours;
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
