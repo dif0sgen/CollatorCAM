@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TCP_LISTENER_Delta.Properties {
+namespace CollatorCAM.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -283,6 +283,54 @@ namespace TCP_LISTENER_Delta.Properties {
             }
             set {
                 this["Height"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JanuaryAutoContrast {
+            get {
+                return ((bool)(this["JanuaryAutoContrast"]));
+            }
+            set {
+                this["JanuaryAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JanuaryBlur {
+            get {
+                return ((bool)(this["JanuaryBlur"]));
+            }
+            set {
+                this["JanuaryBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FebruaryAutoContrast {
+            get {
+                return ((bool)(this["FebruaryAutoContrast"]));
+            }
+            set {
+                this["FebruaryAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FebruaryBlur {
+            get {
+                return ((bool)(this["FebruaryBlur"]));
+            }
+            set {
+                this["FebruaryBlur"] = value;
             }
         }
     }

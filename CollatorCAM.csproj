@@ -6,14 +6,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{D65FA97B-C790-4C9C-9481-F38966D29575}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>TCP_LISTENER_Delta</RootNamespace>
-    <AssemblyName>TCP_LISTENER_Delta</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>CollatorCAM</RootNamespace>
+    <AssemblyName>CollatorCAM</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +28,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -41,6 +42,7 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>preview</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,6 +54,7 @@
     <WarningLevel>4</WarningLevel>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>preview</LangVersion>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DebugSymbols>true</DebugSymbols>
@@ -78,25 +81,39 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
     <OutputPath>bin\x86\Debug\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
     <OutputPath>bin\x86\Release\</OutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ContourAnalysis, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ContourAnalysis.dll</HintPath>
+    </Reference>
+    <Reference Include="ContourAnalysisProcessing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ContourAnalysisProcessing.dll</HintPath>
+    </Reference>
     <Reference Include="EasyModbus, Version=5.6.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\EasyModbusTCP.5.6.0\lib\net40\EasyModbus.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.UI, Version=4.1.1.3497, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <HintPath>packages\EMGU.CV.4.1.1.3497\lib\net35\Emgu.CV.UI.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Emgu.CV, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.dll</HintPath>
     </Reference>
-    <Reference Include="Emgu.CV.World, Version=4.1.1.3497, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
-      <HintPath>packages\EMGU.CV.4.1.1.3497\lib\net35\Emgu.CV.World.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Emgu.CV.UI, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.Util.dll</HintPath>
     </Reference>
     <Reference Include="System">
-      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+      <HintPath>..\..\..\..\Windows\Microsoft.NET\Framework64\v2.0.50727\System.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
@@ -130,20 +147,22 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoGenerateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutoGenerateForm.Designer.cs">
+      <DependentUpon>AutoGenerateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database1DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Database1DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form_Listener - Copy.cs" />
-    <Compile Include="Form_Listener - Copy.Designer.cs">
-      <DependentUpon>Form_Listener - Copy.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Picker_TCP.cs">
+    <Compile Include="CollatorCAM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Picker_TCP.Designer.cs">
-      <DependentUpon>Picker_TCP.cs</DependentUpon>
+    <Compile Include="CollatorCAM.Designer.cs">
+      <DependentUpon>CollatorCAM.cs</DependentUpon>
     </Compile>
     <Compile Include="PictureWindow.cs">
       <SubType>UserControl</SubType>
@@ -165,15 +184,27 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="ShowContoursForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowContoursForm.designer.cs">
+      <DependentUpon>ShowContoursForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateEditor.Designer.cs">
+      <DependentUpon>TemplateEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="WriteMDBS.cs" />
-    <EmbeddedResource Include="Form_Listener - Copy.resx">
-      <DependentUpon>Form_Listener - Copy.cs</DependentUpon>
+    <EmbeddedResource Include="AutoGenerateForm.resx">
+      <DependentUpon>AutoGenerateForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Picker_TCP.aa.resx">
-      <DependentUpon>Picker_TCP.cs</DependentUpon>
+    <EmbeddedResource Include="CollatorCAM.aa.resx">
+      <DependentUpon>CollatorCAM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Picker_TCP.resx">
-      <DependentUpon>Picker_TCP.cs</DependentUpon>
+    <EmbeddedResource Include="CollatorCAM.resx">
+      <DependentUpon>CollatorCAM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PictureWindow.resx">
       <DependentUpon>PictureWindow.cs</DependentUpon>
@@ -182,6 +213,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowContoursForm.resx">
+      <DependentUpon>ShowContoursForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateEditor.resx">
+      <DependentUpon>TemplateEditor.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Database1DataSet.xsc">
       <DependentUpon>Database1DataSet.xsd</DependentUpon>

@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace TCP_LISTENER_Delta {
+namespace CollatorCAM {
     
     
     /// <summary>
