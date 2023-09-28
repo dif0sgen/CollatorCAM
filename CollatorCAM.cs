@@ -87,6 +87,7 @@ namespace CollatorCAM
         int Release_TMR;
         int i;
         int milliseconds = 300;
+        int month;
         //alarms
         bool Rilecart_emergency_stop;
         bool Rilecart_missing_fin;
@@ -685,6 +686,7 @@ namespace CollatorCAM
                     {
                         Invoke(new Action(() =>
                     {
+                        label2.Text = "Current template file: " + templateFile;
                         pictureBox2.Refresh();
                         if (modbus.Connected == true)
                         {
@@ -917,6 +919,7 @@ namespace CollatorCAM
                     }
                     else
                     {
+                        label2.Text = "Current template file: " + templateFile;
                         pictureBox2.Refresh();
                         if (modbus.Connected == true)
                         {
@@ -2007,19 +2010,47 @@ namespace CollatorCAM
 
         private void button6_Click(object sender, EventArgs e)
         {
-            ProcessFrame();
+            if (month == 2)
+            {
+                Properties.Settings.Default.JanuaryAutoContrast = cbAutoContrast.Checked;
+                Properties.Settings.Default.JanuaryBlur = cbBlur.Checked;
+                Properties.Settings.Default.JanuaryNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                Properties.Settings.Default.JanuaryShowAngle = cbAllowAngleMore45.Checked;
+                Properties.Settings.Default.JanuaryCameraResolution = cbCamResolution.SelectedIndex;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryNoizeFilt = cbNoiseFilter.Checked;
+                Properties.Settings.Default.JanuaryShowContours = cbShowContours.Checked;
+                Properties.Settings.Default.JanuaryTemplateFile = templateFile;
+            }
+            if (month == 3)
+            {
+                Properties.Settings.Default.FebruaryAutoContrast = cbAutoContrast.Checked;
+                Properties.Settings.Default.FebruaryBlur = cbBlur.Checked;
+                Properties.Settings.Default.FebruaryNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                Properties.Settings.Default.FebruaryShowAngle = cbAllowAngleMore45.Checked;
+                Properties.Settings.Default.FebruaryCameraResolution = cbCamResolution.SelectedIndex;
+                Properties.Settings.Default.FebruaryCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.FebruaryNoizeFilt = cbNoiseFilter.Checked;
+                Properties.Settings.Default.FebruaryShowContours = cbShowContours.Checked;
+                Properties.Settings.Default.FebruaryTemplateFile = templateFile;
+            }
+            Properties.Settings.Default.Save();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            month = 2;
+            button1.BackColor = System.Drawing.Color.DarkGray;
+            button2.BackColor = System.Drawing.Color.Transparent;
             //cbCaptureFromCam.Checked;
             cbAutoContrast.Checked = Properties.Settings.Default.JanuaryAutoContrast;
             cbBlur.Checked = Properties.Settings.Default.JanuaryBlur;
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.JanuaryNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.JanuaryShowAngle;
-            cbCamResolution.TabIndex = Properties.Settings.Default.JanuaryCameraResolution;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.JanuaryCameraResolution;
             cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.JanuaryNoizeFilt;
+            templateFile = Properties.Settings.Default.JanuaryTemplateFile;
             //cbShowAngle;
             //cbShowBinarized.Checked = Properties.Settings.Default.Ja ;
             cbShowContours.Checked = Properties.Settings.Default.JanuaryShowContours;
@@ -2028,9 +2059,19 @@ namespace CollatorCAM
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            month = 3;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button2.BackColor = System.Drawing.Color.DarkGray;
             //cbCaptureFromCam.Checked;
             cbAutoContrast.Checked = Properties.Settings.Default.FebruaryAutoContrast;
             cbBlur.Checked = Properties.Settings.Default.FebruaryBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.FebruaryNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.FebruaryShowAngle;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.FebruaryCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.FebruaryCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.FebruaryNoizeFilt;
+            templateFile = Properties.Settings.Default.FebruaryTemplateFile;
+            cbShowContours.Checked = Properties.Settings.Default.FebruaryShowContours;
         }
     }
 }

@@ -489,5 +489,185 @@ namespace CollatorCAM.Properties {
                 this["JanuaryAllowAngles"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string JanuaryTemplateFile {
+            get {
+                return ((string)(this["JanuaryTemplateFile"]));
+            }
+            set {
+                this["JanuaryTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FebruaryTemplateFile {
+            get {
+                return ((string)(this["FebruaryTemplateFile"]));
+            }
+            set {
+                this["FebruaryTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FebruaryAdaptiveThreshold {
+            get {
+                return ((int)(this["FebruaryAdaptiveThreshold"]));
+            }
+            set {
+                this["FebruaryAdaptiveThreshold"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FebruaryAllowAngles {
+            get {
+                return ((bool)(this["FebruaryAllowAngles"]));
+            }
+            set {
+                this["FebruaryAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FebruaryCameraResolution {
+            get {
+                return ((int)(this["FebruaryCameraResolution"]));
+            }
+            set {
+                this["FebruaryCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FebruaryCaptureFromCamera {
+            get {
+                return ((bool)(this["FebruaryCaptureFromCamera"]));
+            }
+            set {
+                this["FebruaryCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FebruaryMaxACF {
+            get {
+                return ((int)(this["FebruaryMaxACF"]));
+            }
+            set {
+                this["FebruaryMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FebruaryMinACF {
+            get {
+                return ((int)(this["FebruaryMinACF"]));
+            }
+            set {
+                this["FebruaryMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FebruaryMinContourArea {
+            get {
+                return ((int)(this["FebruaryMinContourArea"]));
+            }
+            set {
+                this["FebruaryMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FebruaryMinContourLength {
+            get {
+                return ((int)(this["FebruaryMinContourLength"]));
+            }
+            set {
+                this["FebruaryMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FebruaryNoizeFilt {
+            get {
+                return ((bool)(this["FebruaryNoizeFilt"]));
+            }
+            set {
+                this["FebruaryNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FebruaryNoizeFilter {
+            get {
+                return ((bool)(this["FebruaryNoizeFilter"]));
+            }
+            set {
+                this["FebruaryNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FebruaryNoizeInt {
+            get {
+                return ((int)(this["FebruaryNoizeInt"]));
+            }
+            set {
+                this["FebruaryNoizeInt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FebruaryShowAngle {
+            get {
+                return ((bool)(this["FebruaryShowAngle"]));
+            }
+            set {
+                this["FebruaryShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FebruaryShowContours {
+            get {
+                return ((bool)(this["FebruaryShowContours"]));
+            }
+            set {
+                this["FebruaryShowContours"] = value;
+            }
+        }
     }
 }

@@ -180,6 +180,9 @@ namespace CollatorCAM
             this.nudMinContourArea = new System.Windows.Forms.NumericUpDown();
             this.label46 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cbAdaptiveNoiseFilter = new System.Windows.Forms.CheckBox();
             this.nudAdaptiveThBlockSize = new System.Windows.Forms.NumericUpDown();
             this.label26 = new System.Windows.Forms.Label();
@@ -232,6 +235,7 @@ namespace CollatorCAM
             this.textBox82 = new System.Windows.Forms.TextBox();
             this.textBox83 = new System.Windows.Forms.TextBox();
             this.tmUpdateState = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             Speed = new System.Windows.Forms.Label();
             label27 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -1240,11 +1244,12 @@ namespace CollatorCAM
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.label2);
             this.tabPage5.Controls.Add(this.ibMain);
-            this.tabPage5.Controls.Add(this.pnSettings);
             this.tabPage5.Controls.Add(this.ssMain);
             this.tabPage5.Controls.Add(this.toolStrip1);
             this.tabPage5.Controls.Add(this.flowLayoutPanel2);
+            this.tabPage5.Controls.Add(this.pnSettings);
             resources.ApplyResources(this.tabPage5, "tabPage5");
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1457,6 +1462,9 @@ namespace CollatorCAM
             // groupBox6
             // 
             resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Controls.Add(this.checkBox4);
+            this.groupBox6.Controls.Add(this.comboBox1);
             this.groupBox6.Controls.Add(this.cbAdaptiveNoiseFilter);
             this.groupBox6.Controls.Add(this.nudAdaptiveThBlockSize);
             this.groupBox6.Controls.Add(this.label26);
@@ -1468,6 +1476,26 @@ namespace CollatorCAM
             this.groupBox6.Controls.Add(this.cbAutoContrast);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
+            // 
+            // button3
+            // 
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox4
+            // 
+            resources.ApplyResources(this.checkBox4, "checkBox4");
+            this.checkBox4.Checked = true;
+            this.checkBox4.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
             // 
             // cbAdaptiveNoiseFilter
             // 
@@ -1937,6 +1965,12 @@ namespace CollatorCAM
             this.tmUpdateState.Interval = 1000;
             this.tmUpdateState.Tick += new System.EventHandler(this.tmUpdateState_Tick);
             // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Name = "label2";
+            // 
             // Form_Listener
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2131,7 +2165,6 @@ namespace CollatorCAM
         private TextBox textBox81;
         private TextBox textBox82;
         private TextBox textBox83;
-        private Button button6;
         private TabPage tabPage1;
         private Label label47;
         private CheckBox checkBox3;
@@ -2200,6 +2233,11 @@ namespace CollatorCAM
         private TextBox textBox1;
         private Button button1;
         private Button button2;
+        private Button button6;
+        private Button button3;
+        private CheckBox checkBox4;
+        private ComboBox comboBox1;
+        private Label label2;
     }
 }
 
