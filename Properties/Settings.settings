@@ -91,7 +91,7 @@
     <Setting Name="JanuaryCameraResolution" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="JanuaryAdaptiveThreshold" Type="System.Int32" Scope="User">
+    <Setting Name="JanuaryAdaptiveThreshold" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="JanuaryNoizeFilter" Type="System.Boolean" Scope="User">
@@ -103,22 +103,22 @@
     <Setting Name="JanuaryShowContours" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="JanuaryMinContourLength" Type="System.Int32" Scope="User">
+    <Setting Name="JanuaryMinContourLength" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="JanuaryMinContourArea" Type="System.Int32" Scope="User">
+    <Setting Name="JanuaryMinContourArea" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="JanuaryNoizeInt" Type="System.Int32" Scope="User">
+    <Setting Name="JanuaryNoizeInt" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="JanuaryNoizeFilt" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="JanuaryMaxACF" Type="System.Int32" Scope="User">
+    <Setting Name="JanuaryMaxACF" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="JanuaryMinACF" Type="System.Int32" Scope="User">
+    <Setting Name="JanuaryMinACF" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="JanuaryAllowAngles" Type="System.Boolean" Scope="User">
@@ -130,7 +130,7 @@
     <Setting Name="FebruaryTemplateFile" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="FebruaryAdaptiveThreshold" Type="System.Int32" Scope="User">
+    <Setting Name="FebruaryAdaptiveThreshold" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="FebruaryAllowAngles" Type="System.Boolean" Scope="User">
@@ -142,16 +142,16 @@
     <Setting Name="FebruaryCaptureFromCamera" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="FebruaryMaxACF" Type="System.Int32" Scope="User">
+    <Setting Name="FebruaryMaxACF" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="FebruaryMinACF" Type="System.Int32" Scope="User">
+    <Setting Name="FebruaryMinACF" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="FebruaryMinContourArea" Type="System.Int32" Scope="User">
+    <Setting Name="FebruaryMinContourArea" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="FebruaryMinContourLength" Type="System.Int32" Scope="User">
+    <Setting Name="FebruaryMinContourLength" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="FebruaryNoizeFilt" Type="System.Boolean" Scope="User">
@@ -160,7 +160,7 @@
     <Setting Name="FebruaryNoizeFilter" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="FebruaryNoizeInt" Type="System.Int32" Scope="User">
+    <Setting Name="FebruaryNoizeInt" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="FebruaryShowAngle" Type="System.Boolean" Scope="User">
@@ -168,6 +168,36 @@
     </Setting>
     <Setting Name="FebruaryShowContours" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="JanuaryShowBinarized" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FebruaryShowBinarized" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="JanuaryCycleCapture" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="FebruaryCycleCapture" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="JanuaryAdaptiveThBlockSize" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="JanuaryMinDefinition" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="JanuaryMinICF" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="FebruaryAdaptiveThBlockSize" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="FebruaryMinDefinition" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="FebruaryMinICF" Type="System.Decimal" Scope="User">
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>

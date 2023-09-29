@@ -361,9 +361,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int JanuaryAdaptiveThreshold {
+        public decimal JanuaryAdaptiveThreshold {
             get {
-                return ((int)(this["JanuaryAdaptiveThreshold"]));
+                return ((decimal)(this["JanuaryAdaptiveThreshold"]));
             }
             set {
                 this["JanuaryAdaptiveThreshold"] = value;
@@ -409,9 +409,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int JanuaryMinContourLength {
+        public decimal JanuaryMinContourLength {
             get {
-                return ((int)(this["JanuaryMinContourLength"]));
+                return ((decimal)(this["JanuaryMinContourLength"]));
             }
             set {
                 this["JanuaryMinContourLength"] = value;
@@ -421,9 +421,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int JanuaryMinContourArea {
+        public decimal JanuaryMinContourArea {
             get {
-                return ((int)(this["JanuaryMinContourArea"]));
+                return ((decimal)(this["JanuaryMinContourArea"]));
             }
             set {
                 this["JanuaryMinContourArea"] = value;
@@ -433,9 +433,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int JanuaryNoizeInt {
+        public decimal JanuaryNoizeInt {
             get {
-                return ((int)(this["JanuaryNoizeInt"]));
+                return ((decimal)(this["JanuaryNoizeInt"]));
             }
             set {
                 this["JanuaryNoizeInt"] = value;
@@ -457,9 +457,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int JanuaryMaxACF {
+        public decimal JanuaryMaxACF {
             get {
-                return ((int)(this["JanuaryMaxACF"]));
+                return ((decimal)(this["JanuaryMaxACF"]));
             }
             set {
                 this["JanuaryMaxACF"] = value;
@@ -469,9 +469,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int JanuaryMinACF {
+        public decimal JanuaryMinACF {
             get {
-                return ((int)(this["JanuaryMinACF"]));
+                return ((decimal)(this["JanuaryMinACF"]));
             }
             set {
                 this["JanuaryMinACF"] = value;
@@ -517,9 +517,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int FebruaryAdaptiveThreshold {
+        public decimal FebruaryAdaptiveThreshold {
             get {
-                return ((int)(this["FebruaryAdaptiveThreshold"]));
+                return ((decimal)(this["FebruaryAdaptiveThreshold"]));
             }
             set {
                 this["FebruaryAdaptiveThreshold"] = value;
@@ -565,9 +565,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int FebruaryMaxACF {
+        public decimal FebruaryMaxACF {
             get {
-                return ((int)(this["FebruaryMaxACF"]));
+                return ((decimal)(this["FebruaryMaxACF"]));
             }
             set {
                 this["FebruaryMaxACF"] = value;
@@ -577,9 +577,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int FebruaryMinACF {
+        public decimal FebruaryMinACF {
             get {
-                return ((int)(this["FebruaryMinACF"]));
+                return ((decimal)(this["FebruaryMinACF"]));
             }
             set {
                 this["FebruaryMinACF"] = value;
@@ -589,9 +589,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int FebruaryMinContourArea {
+        public decimal FebruaryMinContourArea {
             get {
-                return ((int)(this["FebruaryMinContourArea"]));
+                return ((decimal)(this["FebruaryMinContourArea"]));
             }
             set {
                 this["FebruaryMinContourArea"] = value;
@@ -601,9 +601,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int FebruaryMinContourLength {
+        public decimal FebruaryMinContourLength {
             get {
-                return ((int)(this["FebruaryMinContourLength"]));
+                return ((decimal)(this["FebruaryMinContourLength"]));
             }
             set {
                 this["FebruaryMinContourLength"] = value;
@@ -637,9 +637,9 @@ namespace CollatorCAM.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int FebruaryNoizeInt {
+        public decimal FebruaryNoizeInt {
             get {
-                return ((int)(this["FebruaryNoizeInt"]));
+                return ((decimal)(this["FebruaryNoizeInt"]));
             }
             set {
                 this["FebruaryNoizeInt"] = value;
@@ -667,6 +667,126 @@ namespace CollatorCAM.Properties {
             }
             set {
                 this["FebruaryShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JanuaryShowBinarized {
+            get {
+                return ((bool)(this["JanuaryShowBinarized"]));
+            }
+            set {
+                this["JanuaryShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FebruaryShowBinarized {
+            get {
+                return ((bool)(this["FebruaryShowBinarized"]));
+            }
+            set {
+                this["FebruaryShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JanuaryCycleCapture {
+            get {
+                return ((bool)(this["JanuaryCycleCapture"]));
+            }
+            set {
+                this["JanuaryCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FebruaryCycleCapture {
+            get {
+                return ((bool)(this["FebruaryCycleCapture"]));
+            }
+            set {
+                this["FebruaryCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JanuaryAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["JanuaryAdaptiveThBlockSize"]));
+            }
+            set {
+                this["JanuaryAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JanuaryMinDefinition {
+            get {
+                return ((decimal)(this["JanuaryMinDefinition"]));
+            }
+            set {
+                this["JanuaryMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JanuaryMinICF {
+            get {
+                return ((decimal)(this["JanuaryMinICF"]));
+            }
+            set {
+                this["JanuaryMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal FebruaryAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["FebruaryAdaptiveThBlockSize"]));
+            }
+            set {
+                this["FebruaryAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal FebruaryMinDefinition {
+            get {
+                return ((decimal)(this["FebruaryMinDefinition"]));
+            }
+            set {
+                this["FebruaryMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal FebruaryMinICF {
+            get {
+                return ((decimal)(this["FebruaryMinICF"]));
+            }
+            set {
+                this["FebruaryMinICF"] = value;
             }
         }
     }

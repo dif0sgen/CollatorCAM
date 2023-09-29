@@ -2017,7 +2017,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;ibMain.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="textBox1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
@@ -5470,6 +5470,39 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Bahnschrift Condensed, 12pt</value>
+  </data>
+  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>820, 111</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>514, 25</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>231</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>tabPage5</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Bahnschrift Condensed, 12pt</value>
   </data>
@@ -5501,7 +5534,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="ssMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>497, 17</value>
@@ -5561,7 +5594,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;ssMain.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>392, 17</value>
@@ -5734,42 +5767,36 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="flowLayoutPanel2.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="textBox15.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox15.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox15.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button7.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
   </data>
-  <data name="textBox15.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox15.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button7.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox15.TabIndex" type="System.Int32, mscorlib">
-    <value>170</value>
+  <data name="button7.TabIndex" type="System.Int32, mscorlib">
+    <value>207</value>
   </data>
-  <data name="textBox15.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button7.Text" xml:space="preserve">
+    <value>button7</value>
   </data>
-  <data name="&gt;&gt;textBox15.Name" xml:space="preserve">
-    <value>textBox15</value>
+  <data name="&gt;&gt;button7.Name" xml:space="preserve">
+    <value>button7</value>
   </data>
-  <data name="&gt;&gt;textBox15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox15.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button7.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox15.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button7.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
@@ -5823,367 +5850,301 @@
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="textBox25.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox25.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox25.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button8.Location" type="System.Drawing.Point, System.Drawing">
     <value>333, 3</value>
   </data>
-  <data name="textBox25.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox25.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button8.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox25.TabIndex" type="System.Int32, mscorlib">
-    <value>173</value>
+  <data name="button8.TabIndex" type="System.Int32, mscorlib">
+    <value>208</value>
   </data>
-  <data name="textBox25.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button8.Text" xml:space="preserve">
+    <value>button8</value>
   </data>
-  <data name="&gt;&gt;textBox25.Name" xml:space="preserve">
-    <value>textBox25</value>
+  <data name="&gt;&gt;button8.Name" xml:space="preserve">
+    <value>button8</value>
   </data>
-  <data name="&gt;&gt;textBox25.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox25.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button8.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox25.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button8.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="textBox29.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox29.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox29.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button9.Location" type="System.Drawing.Point, System.Drawing">
     <value>443, 3</value>
   </data>
-  <data name="textBox29.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox29.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button9.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox29.TabIndex" type="System.Int32, mscorlib">
-    <value>190</value>
+  <data name="button9.TabIndex" type="System.Int32, mscorlib">
+    <value>209</value>
   </data>
-  <data name="textBox29.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button9.Text" xml:space="preserve">
+    <value>button9</value>
   </data>
-  <data name="&gt;&gt;textBox29.Name" xml:space="preserve">
-    <value>textBox29</value>
+  <data name="&gt;&gt;button9.Name" xml:space="preserve">
+    <value>button9</value>
   </data>
-  <data name="&gt;&gt;textBox29.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox29.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button9.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox29.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button9.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="textBox30.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox30.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox30.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button10.Location" type="System.Drawing.Point, System.Drawing">
     <value>553, 3</value>
   </data>
-  <data name="textBox30.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox30.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button10.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox30.TabIndex" type="System.Int32, mscorlib">
-    <value>188</value>
+  <data name="button10.TabIndex" type="System.Int32, mscorlib">
+    <value>210</value>
   </data>
-  <data name="textBox30.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button10.Text" xml:space="preserve">
+    <value>button10</value>
   </data>
-  <data name="&gt;&gt;textBox30.Name" xml:space="preserve">
-    <value>textBox30</value>
+  <data name="&gt;&gt;button10.Name" xml:space="preserve">
+    <value>button10</value>
   </data>
-  <data name="&gt;&gt;textBox30.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button10.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox30.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button10.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox30.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button10.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="textBox31.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button11.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox31.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox31.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button11.Location" type="System.Drawing.Point, System.Drawing">
     <value>663, 3</value>
   </data>
-  <data name="textBox31.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox31.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button11.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox31.TabIndex" type="System.Int32, mscorlib">
-    <value>189</value>
+  <data name="button11.TabIndex" type="System.Int32, mscorlib">
+    <value>211</value>
   </data>
-  <data name="textBox31.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button11.Text" xml:space="preserve">
+    <value>button11</value>
   </data>
-  <data name="&gt;&gt;textBox31.Name" xml:space="preserve">
-    <value>textBox31</value>
+  <data name="&gt;&gt;button11.Name" xml:space="preserve">
+    <value>button11</value>
   </data>
-  <data name="&gt;&gt;textBox31.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button11.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox31.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button11.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox31.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button11.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="textBox32.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button12.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox32.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox32.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button12.Location" type="System.Drawing.Point, System.Drawing">
     <value>773, 3</value>
   </data>
-  <data name="textBox32.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox32.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button12.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox32.TabIndex" type="System.Int32, mscorlib">
-    <value>174</value>
+  <data name="button12.TabIndex" type="System.Int32, mscorlib">
+    <value>212</value>
   </data>
-  <data name="textBox32.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button12.Text" xml:space="preserve">
+    <value>button12</value>
   </data>
-  <data name="&gt;&gt;textBox32.Name" xml:space="preserve">
-    <value>textBox32</value>
+  <data name="&gt;&gt;button12.Name" xml:space="preserve">
+    <value>button12</value>
   </data>
-  <data name="&gt;&gt;textBox32.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox32.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button12.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox32.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button12.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="textBox33.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button13.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox33.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox33.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button13.Location" type="System.Drawing.Point, System.Drawing">
     <value>883, 3</value>
   </data>
-  <data name="textBox33.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox33.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button13.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox33.TabIndex" type="System.Int32, mscorlib">
-    <value>175</value>
+  <data name="button13.TabIndex" type="System.Int32, mscorlib">
+    <value>213</value>
   </data>
-  <data name="textBox33.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button13.Text" xml:space="preserve">
+    <value>button13</value>
   </data>
-  <data name="&gt;&gt;textBox33.Name" xml:space="preserve">
-    <value>textBox33</value>
+  <data name="&gt;&gt;button13.Name" xml:space="preserve">
+    <value>button13</value>
   </data>
-  <data name="&gt;&gt;textBox33.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button13.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox33.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button13.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox33.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button13.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="textBox34.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox34.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox34.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button14.Location" type="System.Drawing.Point, System.Drawing">
     <value>993, 3</value>
   </data>
-  <data name="textBox34.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox34.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button14.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox34.TabIndex" type="System.Int32, mscorlib">
-    <value>176</value>
+  <data name="button14.TabIndex" type="System.Int32, mscorlib">
+    <value>214</value>
   </data>
-  <data name="textBox34.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button14.Text" xml:space="preserve">
+    <value>button14</value>
   </data>
-  <data name="&gt;&gt;textBox34.Name" xml:space="preserve">
-    <value>textBox34</value>
+  <data name="&gt;&gt;button14.Name" xml:space="preserve">
+    <value>button14</value>
   </data>
-  <data name="&gt;&gt;textBox34.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox34.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button14.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox34.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button14.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="textBox35.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox35.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox35.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button15.Location" type="System.Drawing.Point, System.Drawing">
     <value>1103, 3</value>
   </data>
-  <data name="textBox35.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox35.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button15.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox35.TabIndex" type="System.Int32, mscorlib">
-    <value>184</value>
+  <data name="button15.TabIndex" type="System.Int32, mscorlib">
+    <value>215</value>
   </data>
-  <data name="textBox35.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button15.Text" xml:space="preserve">
+    <value>button15</value>
   </data>
-  <data name="&gt;&gt;textBox35.Name" xml:space="preserve">
-    <value>textBox35</value>
+  <data name="&gt;&gt;button15.Name" xml:space="preserve">
+    <value>button15</value>
   </data>
-  <data name="&gt;&gt;textBox35.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox35.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button15.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox35.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button15.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="textBox36.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox36.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox36.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button16.Location" type="System.Drawing.Point, System.Drawing">
     <value>1213, 3</value>
   </data>
-  <data name="textBox36.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox36.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button16.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox36.TabIndex" type="System.Int32, mscorlib">
-    <value>185</value>
+  <data name="button16.TabIndex" type="System.Int32, mscorlib">
+    <value>216</value>
   </data>
-  <data name="textBox36.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button16.Text" xml:space="preserve">
+    <value>button16</value>
   </data>
-  <data name="&gt;&gt;textBox36.Name" xml:space="preserve">
-    <value>textBox36</value>
+  <data name="&gt;&gt;button16.Name" xml:space="preserve">
+    <value>button16</value>
   </data>
-  <data name="&gt;&gt;textBox36.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox36.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button16.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox36.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button16.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="textBox37.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox37.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox37.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button17.Location" type="System.Drawing.Point, System.Drawing">
     <value>1323, 3</value>
   </data>
-  <data name="textBox37.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox37.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button17.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox37.TabIndex" type="System.Int32, mscorlib">
-    <value>186</value>
+  <data name="button17.TabIndex" type="System.Int32, mscorlib">
+    <value>217</value>
   </data>
-  <data name="textBox37.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button17.Text" xml:space="preserve">
+    <value>button17</value>
   </data>
-  <data name="&gt;&gt;textBox37.Name" xml:space="preserve">
-    <value>textBox37</value>
+  <data name="&gt;&gt;button17.Name" xml:space="preserve">
+    <value>button17</value>
   </data>
-  <data name="&gt;&gt;textBox37.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox37.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button17.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox37.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button17.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="textBox38.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="button18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="textBox38.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
-  </data>
-  <data name="textBox38.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="button18.Location" type="System.Drawing.Point, System.Drawing">
     <value>1433, 3</value>
   </data>
-  <data name="textBox38.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox38.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="button18.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 65</value>
   </data>
-  <data name="textBox38.TabIndex" type="System.Int32, mscorlib">
-    <value>187</value>
+  <data name="button18.TabIndex" type="System.Int32, mscorlib">
+    <value>218</value>
   </data>
-  <data name="textBox38.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
+  <data name="button18.Text" xml:space="preserve">
+    <value>button18</value>
   </data>
-  <data name="&gt;&gt;textBox38.Name" xml:space="preserve">
-    <value>textBox38</value>
+  <data name="&gt;&gt;button18.Name" xml:space="preserve">
+    <value>button18</value>
   </data>
-  <data name="&gt;&gt;textBox38.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button18.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox38.Parent" xml:space="preserve">
+  <data name="&gt;&gt;button18.Parent" xml:space="preserve">
     <value>flowLayoutPanel2</value>
   </data>
-  <data name="&gt;&gt;textBox38.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;button18.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
   <data name="textBox41.Enabled" type="System.Boolean, mscorlib">
@@ -6709,7 +6670,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="pnSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -6717,31 +6678,31 @@
   <data name="pnSettings.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="button6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 554</value>
   </data>
-  <data name="button6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 33</value>
   </data>
-  <data name="button6.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
   </data>
-  <data name="button6.Text" xml:space="preserve">
+  <data name="btnSave.Text" xml:space="preserve">
     <value>SAVE</value>
   </data>
-  <data name="&gt;&gt;button6.Name" xml:space="preserve">
-    <value>button6</value>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
   </data>
-  <data name="&gt;&gt;button6.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button6.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
     <value>pnSettings</value>
   </data>
-  <data name="&gt;&gt;button6.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="cbShowBinarized.AutoSize" type="System.Boolean, mscorlib">
@@ -7169,6 +7130,36 @@ area</value>
   <data name="groupBox6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
+  <data name="btLoadFolder.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btLoadFolder.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btLoadFolder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 91</value>
+  </data>
+  <data name="btLoadFolder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 33</value>
+  </data>
+  <data name="btLoadFolder.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="btLoadFolder.Text" xml:space="preserve">
+    <value>Select Folder</value>
+  </data>
+  <data name="&gt;&gt;btLoadFolder.Name" xml:space="preserve">
+    <value>btLoadFolder</value>
+  </data>
+  <data name="&gt;&gt;btLoadFolder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btLoadFolder.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;btLoadFolder.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -7176,7 +7167,7 @@ area</value>
     <value>11, 91</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 33</value>
+    <value>103, 33</value>
   </data>
   <data name="button3.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -7194,37 +7185,37 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
-  <data name="checkBox4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="cbCycleCapture.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="checkBox4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="cbCycleCapture.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="checkBox4.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="cbCycleCapture.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 70</value>
   </data>
-  <data name="checkBox4.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="cbCycleCapture.Size" type="System.Drawing.Size, System.Drawing">
     <value>115, 21</value>
   </data>
-  <data name="checkBox4.TabIndex" type="System.Int32, mscorlib">
+  <data name="cbCycleCapture.TabIndex" type="System.Int32, mscorlib">
     <value>15</value>
   </data>
-  <data name="checkBox4.Text" xml:space="preserve">
+  <data name="cbCycleCapture.Text" xml:space="preserve">
     <value>Cycle capture</value>
   </data>
-  <data name="&gt;&gt;checkBox4.Name" xml:space="preserve">
-    <value>checkBox4</value>
+  <data name="&gt;&gt;cbCycleCapture.Name" xml:space="preserve">
+    <value>cbCycleCapture</value>
   </data>
-  <data name="&gt;&gt;checkBox4.Type" xml:space="preserve">
+  <data name="&gt;&gt;cbCycleCapture.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;checkBox4.Parent" xml:space="preserve">
+  <data name="&gt;&gt;cbCycleCapture.Parent" xml:space="preserve">
     <value>groupBox6</value>
   </data>
-  <data name="&gt;&gt;checkBox4.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;cbCycleCapture.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="comboBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 39</value>
@@ -7245,7 +7236,7 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;comboBox1.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cbAdaptiveNoiseFilter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7272,7 +7263,7 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;cbAdaptiveNoiseFilter.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="nudAdaptiveThBlockSize.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 218</value>
@@ -7293,7 +7284,7 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;nudAdaptiveThBlockSize.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="label26.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7320,7 +7311,7 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;label26.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="cbBlur.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7347,7 +7338,7 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;cbBlur.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label30.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7374,7 +7365,7 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;label30.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="cbCaptureFromCam.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7401,7 +7392,7 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;cbCaptureFromCam.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="cbCamResolution.Items" xml:space="preserve">
     <value>800x600</value>
@@ -7431,22 +7422,22 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;cbCamResolution.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="btLoadImage.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="btLoadImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 130</value>
+    <value>120, 140</value>
   </data>
   <data name="btLoadImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 42</value>
+    <value>103, 33</value>
   </data>
   <data name="btLoadImage.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="btLoadImage.Text" xml:space="preserve">
-    <value>Recognize image ...</value>
+    <value>Select Image</value>
   </data>
   <data name="&gt;&gt;btLoadImage.Name" xml:space="preserve">
     <value>btLoadImage</value>
@@ -7458,7 +7449,7 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;btLoadImage.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="cbAutoContrast.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -7485,7 +7476,7 @@ area</value>
     <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;cbAutoContrast.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
     <value>5, -4</value>
@@ -7557,7 +7548,7 @@ area</value>
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;pnSettings.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 34</value>
