@@ -2017,7 +2017,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;ibMain.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="textBox1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
@@ -5470,6 +5470,30 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="tbResult.ItemHeight" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="tbResult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1321, 108</value>
+  </data>
+  <data name="tbResult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>257, 633</value>
+  </data>
+  <data name="tbResult.TabIndex" type="System.Int32, mscorlib">
+    <value>233</value>
+  </data>
+  <data name="&gt;&gt;tbResult.Name" xml:space="preserve">
+    <value>tbResult</value>
+  </data>
+  <data name="&gt;&gt;tbResult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbResult.Parent" xml:space="preserve">
+    <value>tabPage5</value>
+  </data>
+  <data name="&gt;&gt;tbResult.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Bahnschrift Condensed, 12pt</value>
   </data>
@@ -5480,7 +5504,7 @@
     <value>820, 111</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>514, 25</value>
+    <value>495, 25</value>
   </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>231</value>
@@ -5501,7 +5525,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Bahnschrift Condensed, 12pt</value>
@@ -5534,7 +5558,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="ssMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>497, 17</value>
@@ -5594,7 +5618,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;ssMain.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>392, 17</value>
@@ -5767,7 +5791,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="flowLayoutPanel2.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6670,7 +6694,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="pnSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -7160,31 +7184,31 @@ area</value>
   <data name="&gt;&gt;btLoadFolder.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnPhoto.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnPhoto.Location" type="System.Drawing.Point, System.Drawing">
     <value>11, 91</value>
   </data>
-  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnPhoto.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 33</value>
   </data>
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnPhoto.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="button3.Text" xml:space="preserve">
+  <data name="btnPhoto.Text" xml:space="preserve">
     <value>PHOTO</value>
   </data>
-  <data name="&gt;&gt;button3.Name" xml:space="preserve">
-    <value>button3</value>
+  <data name="&gt;&gt;btnPhoto.Name" xml:space="preserve">
+    <value>btnPhoto</value>
   </data>
-  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnPhoto.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnPhoto.Parent" xml:space="preserve">
     <value>groupBox6</value>
   </data>
-  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;btnPhoto.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="cbCycleCapture.AutoSize" type="System.Boolean, mscorlib">
@@ -7548,7 +7572,7 @@ area</value>
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;pnSettings.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 34</value>

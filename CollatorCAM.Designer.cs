@@ -160,6 +160,7 @@ namespace CollatorCAM
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tbResult = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ssMain = new System.Windows.Forms.StatusStrip();
@@ -223,7 +224,8 @@ namespace CollatorCAM
             this.nudMinContourArea = new System.Windows.Forms.NumericUpDown();
             this.label46 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btLoadFolder = new System.Windows.Forms.Button();
+            this.btnPhoto = new System.Windows.Forms.Button();
             this.cbCycleCapture = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cbAdaptiveNoiseFilter = new System.Windows.Forms.CheckBox();
@@ -237,7 +239,6 @@ namespace CollatorCAM
             this.cbAutoContrast = new System.Windows.Forms.CheckBox();
             this.cbShowAngle = new System.Windows.Forms.CheckBox();
             this.tmUpdateState = new System.Windows.Forms.Timer(this.components);
-            this.btLoadFolder = new System.Windows.Forms.Button();
             Speed = new System.Windows.Forms.Label();
             label27 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -1246,6 +1247,7 @@ namespace CollatorCAM
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.tbResult);
             this.tabPage5.Controls.Add(this.label3);
             this.tabPage5.Controls.Add(this.label2);
             this.tabPage5.Controls.Add(this.ibMain);
@@ -1256,6 +1258,12 @@ namespace CollatorCAM
             resources.ApplyResources(this.tabPage5, "tabPage5");
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tbResult
+            // 
+            this.tbResult.FormattingEnabled = true;
+            resources.ApplyResources(this.tbResult, "tbResult");
+            this.tbResult.Name = "tbResult";
             // 
             // label3
             // 
@@ -1820,7 +1828,7 @@ namespace CollatorCAM
             // 
             resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Controls.Add(this.btLoadFolder);
-            this.groupBox6.Controls.Add(this.button3);
+            this.groupBox6.Controls.Add(this.btnPhoto);
             this.groupBox6.Controls.Add(this.cbCycleCapture);
             this.groupBox6.Controls.Add(this.comboBox1);
             this.groupBox6.Controls.Add(this.cbAdaptiveNoiseFilter);
@@ -1835,11 +1843,19 @@ namespace CollatorCAM
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
             // 
-            // button3
+            // btLoadFolder
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.btLoadFolder, "btLoadFolder");
+            this.btLoadFolder.Name = "btLoadFolder";
+            this.btLoadFolder.UseVisualStyleBackColor = true;
+            this.btLoadFolder.Click += new System.EventHandler(this.btLoadFolder_Click);
+            // 
+            // btnPhoto
+            // 
+            resources.ApplyResources(this.btnPhoto, "btnPhoto");
+            this.btnPhoto.Name = "btnPhoto";
+            this.btnPhoto.UseVisualStyleBackColor = true;
+            this.btnPhoto.Click += new System.EventHandler(this.btnPhoto_Click);
             // 
             // cbCycleCapture
             // 
@@ -1944,13 +1960,6 @@ namespace CollatorCAM
             this.tmUpdateState.Enabled = true;
             this.tmUpdateState.Interval = 1000;
             this.tmUpdateState.Tick += new System.EventHandler(this.tmUpdateState_Tick);
-            // 
-            // btLoadFolder
-            // 
-            resources.ApplyResources(this.btLoadFolder, "btLoadFolder");
-            this.btLoadFolder.Name = "btLoadFolder";
-            this.btLoadFolder.UseVisualStyleBackColor = true;
-            this.btLoadFolder.Click += new System.EventHandler(this.btLoadFolder_Click);
             // 
             // Form_Listener
             // 
@@ -2203,7 +2212,7 @@ namespace CollatorCAM
         private Button button1;
         private Button button2;
         private Button btnSave;
-        private Button button3;
+        private Button btnPhoto;
         private CheckBox cbCycleCapture;
         private ComboBox comboBox1;
         private Label label2;
@@ -2221,6 +2230,7 @@ namespace CollatorCAM
         private Button button18;
         private Label label3;
         private Button btLoadFolder;
+        private ListBox tbResult;
     }
 }
 

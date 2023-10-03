@@ -789,5 +789,29 @@ namespace CollatorCAM.Properties {
                 this["FebruaryMinICF"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string JanuaryGetImagePath {
+            get {
+                return ((string)(this["JanuaryGetImagePath"]));
+            }
+            set {
+                this["JanuaryGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FebruaryGetImagePath {
+            get {
+                return ((string)(this["FebruaryGetImagePath"]));
+            }
+            set {
+                this["FebruaryGetImagePath"] = value;
+            }
+        }
     }
 }
