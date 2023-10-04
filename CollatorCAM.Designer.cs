@@ -239,6 +239,7 @@ namespace CollatorCAM
             this.cbAutoContrast = new System.Windows.Forms.CheckBox();
             this.cbShowAngle = new System.Windows.Forms.CheckBox();
             this.tmUpdateState = new System.Windows.Forms.Timer(this.components);
+            this.button3 = new System.Windows.Forms.Button();
             Speed = new System.Windows.Forms.Label();
             label27 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
@@ -1247,6 +1248,7 @@ namespace CollatorCAM
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.button3);
             this.tabPage5.Controls.Add(this.tbResult);
             this.tabPage5.Controls.Add(this.label3);
             this.tabPage5.Controls.Add(this.label2);
@@ -1961,6 +1963,13 @@ namespace CollatorCAM
             this.tmUpdateState.Interval = 1000;
             this.tmUpdateState.Tick += new System.EventHandler(this.tmUpdateState_Tick);
             // 
+            // button3
+            // 
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form_Listener
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -2231,6 +2240,7 @@ namespace CollatorCAM
         private Label label3;
         private Button btLoadFolder;
         private ListBox tbResult;
+        private Button button3;
     }
 }
 

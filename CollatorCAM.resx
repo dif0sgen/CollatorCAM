@@ -2017,7 +2017,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;ibMain.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="textBox1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Bahnschrift SemiCondensed, 27.75pt, style=Bold</value>
@@ -5470,14 +5470,41 @@
   <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="button3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1404, 108</value>
+  </data>
+  <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 33</value>
+  </data>
+  <data name="button3.TabIndex" type="System.Int32, mscorlib">
+    <value>234</value>
+  </data>
+  <data name="button3.Text" xml:space="preserve">
+    <value>CLR</value>
+  </data>
+  <data name="&gt;&gt;button3.Name" xml:space="preserve">
+    <value>button3</value>
+  </data>
+  <data name="&gt;&gt;button3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button3.Parent" xml:space="preserve">
+    <value>tabPage5</value>
+  </data>
+  <data name="&gt;&gt;button3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="tbResult.ItemHeight" type="System.Int32, mscorlib">
     <value>17</value>
   </data>
   <data name="tbResult.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1321, 108</value>
+    <value>1321, 142</value>
   </data>
   <data name="tbResult.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 633</value>
+    <value>257, 599</value>
   </data>
   <data name="tbResult.TabIndex" type="System.Int32, mscorlib">
     <value>233</value>
@@ -5492,7 +5519,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;tbResult.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Bahnschrift Condensed, 12pt</value>
@@ -5525,7 +5552,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Bahnschrift Condensed, 12pt</value>
@@ -5558,7 +5585,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="ssMain.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>497, 17</value>
@@ -5618,7 +5645,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;ssMain.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>392, 17</value>
@@ -5791,7 +5818,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;toolStrip1.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="flowLayoutPanel2.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -6694,7 +6721,7 @@
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel2.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="pnSettings.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -7572,7 +7599,7 @@ area</value>
     <value>tabPage5</value>
   </data>
   <data name="&gt;&gt;pnSettings.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="tabPage5.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 34</value>

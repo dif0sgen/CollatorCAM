@@ -92,6 +92,7 @@ namespace CollatorCAM
         int i;
         int milliseconds = 300;
         int month;
+        int monthph;
         bool PhotoMonth;
         //alarms
         bool Rilecart_emergency_stop;
@@ -1828,10 +1829,10 @@ namespace CollatorCAM
         {
             if (cbCycleCapture.Checked || PhotoMonth == true)
             {
-                string TBtime = null;
-                string TBmonth = null;
-                string TByear = null;
-                string TBmaori = null;
+                string TBtime = "";
+                string TBmonth = "NG Month";
+                string TByear = "NG Year";
+                string TBmaori = "NG Maori";
                 DateTime thisDay = DateTime.Now;
                 TBtime = thisDay.ToString("d") + " " + thisDay.ToString("T");
 
@@ -1867,10 +1868,10 @@ namespace CollatorCAM
                         if (found.template.name != "2024")
                             text = found.template.name;
                         if (found.template.name == "January" || found.template.name == "February")
-                            TBmonth = found.template.name;
+                            TBmonth = "OK " + found.template.name;
                         if (found.template.name == "2024")
                         {
-                            TByear = found.template.name;
+                            TByear ="OK " + found.template.name;
                             text = found.template.name;
                             Point point = new Point(foundRect.Right - 150, foundRect.Top + 100);
 
@@ -1889,7 +1890,7 @@ namespace CollatorCAM
                             {
                                 e.Graphics.DrawString("Maori", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
                                 e.Graphics.DrawString("Maori", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
-                                TBmaori = "Maori";
+                                TBmaori = "OK Maori";
                             }
                             if (sourceContours == null)
                             {
@@ -1903,17 +1904,16 @@ namespace CollatorCAM
                         e.Graphics.DrawString(text, font, bgBrush, new PointF(p1.X + 1 - font.Height / 3, p1.Y + 1 - font.Height));
                         e.Graphics.DrawString(text, font, foreBrush, new PointF(p1.X - font.Height / 3, p1.Y - font.Height));
                     }
-                if (TBmonth == null)
-                    TBmonth = "Month NG";
-                if (TByear == null)
-                    TBmonth = "Year NG";
-                if (TBmaori == null)
-                    TBmonth = "Maori NG";
-                tbResult.Items.Add(TBtime + @"
-" + TBmonth + @"
-" + TByear + @"
-" + TBmaori);
-                PhotoMonth = false;
+                if (PhotoMonth == true)
+                {
+                    tbResult.Items.Add(TBtime);
+                    tbResult.Items.Add(TBmonth);
+                    tbResult.Items.Add(TByear);
+                    tbResult.Items.Add(TBmaori);
+                    PhotoMonth = false;
+                    monthph++;
+                    ScanCycle();
+                }
             }
         }
 
@@ -2023,23 +2023,99 @@ namespace CollatorCAM
         }
         private void btnPhoto_Click(object sender, EventArgs e)
         {
-            PhotoMonth = true;
-            //btnPhoto.Click += new System.EventHandler(this.button1_Click_1);
-            //if (FoundTemplateName == "January")
-            //    textBox42.BackColor = Color.Green;
-            ////GetImagePath = Properties.Settings.Default.JanuaryGetImagePath;
-            ////GetImage();
-
-            //btnPhoto.Click += new System.EventHandler(this.button2_Click_1);
-            //if (FoundTemplateName == "February")
-            //    textBox46.BackColor = Color.Green;
-            ////GetImagePath = Properties.Settings.Default.FebruaryGetImagePath;
-            ////GetImage();
-
+            ScanCycle();
         }
         private void ScanCycle()
-        {             
+        {
+                if (monthph == 0)
+                    ScanCycle2();
+                if (monthph == 1)
+                    ScanCycle3();
+                if (monthph == 2)
+                    monthph = 0;
+        }
+        private void ScanCycle2()
+        {
+            if (Properties.Settings.Default.JanuaryAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.JanuaryAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.JanuaryMaxACF == 0)
+                Properties.Settings.Default.JanuaryMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JanuaryMinContourArea == 0)
+                Properties.Settings.Default.JanuaryMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JanuaryMinContourLength == 0)
+                Properties.Settings.Default.JanuaryMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JanuaryMinDefinition == 0)
+                Properties.Settings.Default.JanuaryMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JanuaryMinACF == 0)
+                Properties.Settings.Default.JanuaryMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.JanuaryMinICF == 0)
+                Properties.Settings.Default.JanuaryMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
 
+            cbAutoContrast.Checked = Properties.Settings.Default.JanuaryAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.JanuaryBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.JanuaryNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.JanuaryAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.JanuaryCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.JanuaryNoizeFilt;
+            templateFile = Properties.Settings.Default.JanuaryTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.JanuaryShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.JanuaryShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.JanuaryShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.JanuaryCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.JanuaryAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.JanuaryMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.JanuaryMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.JanuaryMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.JanuaryMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.JanuaryMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.JanuaryMinICF;
+            LoadTemplates(templateFile);
+            GetImagePath = Properties.Settings.Default.JanuaryGetImagePath;
+            GetImage();
+            if (frame == null) return;
+            PhotoMonth = true;
+        }
+        private void ScanCycle3()
+        {
+            if (Properties.Settings.Default.FebruaryAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.FebruaryAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.FebruaryMaxACF == 0)
+                Properties.Settings.Default.FebruaryMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.FebruaryMinContourArea == 0)
+                Properties.Settings.Default.FebruaryMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.FebruaryMinContourLength == 0)
+                Properties.Settings.Default.FebruaryMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.FebruaryMinDefinition == 0)
+                Properties.Settings.Default.FebruaryMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.FebruaryMinACF == 0)
+                Properties.Settings.Default.FebruaryMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.FebruaryMinICF == 0)
+                Properties.Settings.Default.FebruaryMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
+
+            cbAutoContrast.Checked = Properties.Settings.Default.FebruaryAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.FebruaryBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.FebruaryNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.FebruaryAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.FebruaryCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.FebruaryCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.FebruaryNoizeFilt;
+            templateFile = Properties.Settings.Default.FebruaryTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.FebruaryShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.FebruaryShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.FebruaryShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.FebruaryCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.FebruaryAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.FebruaryMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.FebruaryMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.FebruaryMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.FebruaryMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.FebruaryMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.FebruaryMinICF;
+            LoadTemplates(templateFile);
+            GetImagePath = Properties.Settings.Default.FebruaryGetImagePath;
+            GetImage();
+            PhotoMonth = true;
         }
         private void GetImage()
         {
@@ -2049,6 +2125,7 @@ namespace CollatorCAM
                 i = files.Length;
                 frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
                 ImagePath = "Current image file: " + GetImagePath;
+                ApplySettings();
             }
         }
         private void btCreateTemplate_Click(object sender, EventArgs e)
@@ -2238,7 +2315,10 @@ namespace CollatorCAM
             GetImage();
         }
 
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            tbResult.Items.Clear();
+        }
     }
 }
      
