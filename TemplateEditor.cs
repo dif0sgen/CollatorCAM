@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using ContourAnalysisNS;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using ContourAnalysisNS;
 
 namespace TCP_LISTENER_Delta
 {
@@ -19,7 +14,7 @@ namespace TCP_LISTENER_Delta
             InitializeComponent();
 
             this.templates = templates;
-            templates.Sort((t1, t2)=>t1.name.CompareTo(t2.name));
+            templates.Sort((t1, t2) => t1.name.CompareTo(t2.name));
             UpdateInterface();
         }
 
@@ -31,8 +26,8 @@ namespace TCP_LISTENER_Delta
         private void dgvTemplates_CellValueNeeded(object sender, DataGridViewCellValueEventArgs e)
         {
             if (e.RowIndex >= 0 && e.RowIndex < templates.Count)
-            {   
-                switch(e.ColumnIndex)
+            {
+                switch (e.ColumnIndex)
                 {
                     case 0:
                         e.Value = e.RowIndex;
@@ -44,7 +39,7 @@ namespace TCP_LISTENER_Delta
                         e.Value = templates[e.RowIndex].preferredAngleNoMore90;
                         break;
                 }
-            }   
+            }
         }
 
         private void dgvTemplates_CellValuePushed(object sender, DataGridViewCellValueEventArgs e)

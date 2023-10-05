@@ -1,13 +1,10 @@
 ﻿
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Emgu.CV;
 using Emgu.CV.Structure;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace ContourAnalysisNS
 {
@@ -33,7 +30,7 @@ namespace ContourAnalysisNS
         public List<FoundTemplateDesc> foundTemplates = new List<FoundTemplateDesc>();
         public TemplateFinder finder = new TemplateFinder();
         public Image<Gray, byte> binarizedFrame;
-        
+
 
         public void ProcessImage(Image<Bgr, byte> frame)
         {
@@ -60,8 +57,8 @@ namespace ContourAnalysisNS
             grayFrame._Not();
             //
             if (addCanny)
-            if (cannyFrame != null)
-                grayFrame._Or(cannyFrame);
+                if (cannyFrame != null)
+                    grayFrame._Or(cannyFrame);
             //
             this.binarizedFrame = grayFrame;
 
@@ -79,23 +76,23 @@ namespace ContourAnalysisNS
             samples.Clear();
 
             lock (templates)
-            Parallel.ForEach<Contour<Point>>(contours, (contour) =>
-            {
-                var arr = contour.ToArray();
-                Template sample = new Template(arr, contour.Area, samples.templateSize);
-                lock (samples)
-                    samples.Add(sample);
-
-                if (!onlyFindContours)
+                Parallel.ForEach<Contour<Point>>(contours, (contour) =>
                 {
-                    FoundTemplateDesc desc = finder.FindTemplate(templates, sample);
+                    var arr = contour.ToArray();
+                    Template sample = new Template(arr, contour.Area, samples.templateSize);
+                    lock (samples)
+                        samples.Add(sample);
 
-                    if (desc != null)
-                        lock (foundTemplates)
-                            foundTemplates.Add(desc);
+                    if (!onlyFindContours)
+                    {
+                        FoundTemplateDesc desc = finder.FindTemplate(templates, sample);
+
+                        if (desc != null)
+                            lock (foundTemplates)
+                                foundTemplates.Add(desc);
+                    }
                 }
-            }
-            );
+                );
             //
             FilterByIntersection(ref foundTemplates);
         }

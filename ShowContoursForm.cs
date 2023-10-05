@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using ContourAnalysisNS;
 using Emgu.CV;
-using ContourAnalysisNS;
-using System.IO;
 using Emgu.CV.Structure;
+using System;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
 namespace TCP_LISTENER_Delta
 {
@@ -27,7 +22,7 @@ namespace TCP_LISTENER_Delta
             InitializeComponent();
             this.templates = templates;
             this.samples = samples;
-            
+
             this.samples = new Templates();
             foreach (var sample in samples)
                 this.samples.Add(sample);
@@ -58,10 +53,10 @@ namespace TCP_LISTENER_Delta
 
             if (e.ColumnIndex == 0)
             {
-                var rect = new Rectangle(e.CellBounds.X, e.CellBounds.Y, (e.CellBounds.Width - 24)/2, e.CellBounds.Height);
+                var rect = new Rectangle(e.CellBounds.X, e.CellBounds.Y, (e.CellBounds.Width - 24) / 2, e.CellBounds.Height);
                 rect.Inflate(-20, -20);
                 Rectangle boundRect = template.contour.SourceBoundingRect;
-                float k1 = 1f *  rect.Width / boundRect.Width;
+                float k1 = 1f * rect.Width / boundRect.Width;
                 float k2 = 1f * rect.Height / boundRect.Height;
                 float k = Math.Min(k1, k2);
 
@@ -81,16 +76,16 @@ namespace TCP_LISTENER_Delta
             if (tbTemplateName.Text == "<template name>")
                 MessageBox.Show("Enter template name");
             else
-            try
-            {
-                int i = dgvContours.SelectedCells[0].RowIndex;
-                samples[i].name = tbTemplateName.Text;
-                templates.Add(samples[i]);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+                try
+                {
+                    int i = dgvContours.SelectedCells[0].RowIndex;
+                    samples[i].name = tbTemplateName.Text;
+                    templates.Add(samples[i]);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
         }
 
         private void tbTemplateName_Enter(object sender, EventArgs e)

@@ -336,7 +336,7 @@ namespace CollatorCAM.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool JanuaryCaptureFromCamera {
             get {
                 return ((bool)(this["JanuaryCaptureFromCamera"]));
@@ -552,7 +552,7 @@ namespace CollatorCAM.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool FebruaryCaptureFromCamera {
             get {
                 return ((bool)(this["FebruaryCaptureFromCamera"]));
@@ -696,7 +696,7 @@ namespace CollatorCAM.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool JanuaryCycleCapture {
             get {
                 return ((bool)(this["JanuaryCycleCapture"]));
@@ -708,7 +708,7 @@ namespace CollatorCAM.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool FebruaryCycleCapture {
             get {
                 return ((bool)(this["FebruaryCycleCapture"]));
@@ -811,6 +811,726 @@ namespace CollatorCAM.Properties {
             }
             set {
                 this["FebruaryGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MarchAutoContrast {
+            get {
+                return ((bool)(this["MarchAutoContrast"]));
+            }
+            set {
+                this["MarchAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MarchBlur {
+            get {
+                return ((bool)(this["MarchBlur"]));
+            }
+            set {
+                this["MarchBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MarchNoizeFilter {
+            get {
+                return ((bool)(this["MarchNoizeFilter"]));
+            }
+            set {
+                this["MarchNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MarchAllowAngles {
+            get {
+                return ((bool)(this["MarchAllowAngles"]));
+            }
+            set {
+                this["MarchAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MarchCameraResolution {
+            get {
+                return ((int)(this["MarchCameraResolution"]));
+            }
+            set {
+                this["MarchCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MarchCaptureFromCamera {
+            get {
+                return ((bool)(this["MarchCaptureFromCamera"]));
+            }
+            set {
+                this["MarchCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MarchNoizeFilt {
+            get {
+                return ((bool)(this["MarchNoizeFilt"]));
+            }
+            set {
+                this["MarchNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MarchShowContours {
+            get {
+                return ((bool)(this["MarchShowContours"]));
+            }
+            set {
+                this["MarchShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MarchTemplateFile {
+            get {
+                return ((string)(this["MarchTemplateFile"]));
+            }
+            set {
+                this["MarchTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MarchShowAngle {
+            get {
+                return ((bool)(this["MarchShowAngle"]));
+            }
+            set {
+                this["MarchShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MarchShowBinarized {
+            get {
+                return ((bool)(this["MarchShowBinarized"]));
+            }
+            set {
+                this["MarchShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool MarchCycleCapture {
+            get {
+                return ((bool)(this["MarchCycleCapture"]));
+            }
+            set {
+                this["MarchCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarchAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["MarchAdaptiveThBlockSize"]));
+            }
+            set {
+                this["MarchAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarchMaxACF {
+            get {
+                return ((decimal)(this["MarchMaxACF"]));
+            }
+            set {
+                this["MarchMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarchMinACF {
+            get {
+                return ((decimal)(this["MarchMinACF"]));
+            }
+            set {
+                this["MarchMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarchMinContourArea {
+            get {
+                return ((decimal)(this["MarchMinContourArea"]));
+            }
+            set {
+                this["MarchMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarchMinContourLength {
+            get {
+                return ((decimal)(this["MarchMinContourLength"]));
+            }
+            set {
+                this["MarchMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarchMinDefinition {
+            get {
+                return ((decimal)(this["MarchMinDefinition"]));
+            }
+            set {
+                this["MarchMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MarchMinICF {
+            get {
+                return ((decimal)(this["MarchMinICF"]));
+            }
+            set {
+                this["MarchMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MarchGetImagePath {
+            get {
+                return ((string)(this["MarchGetImagePath"]));
+            }
+            set {
+                this["MarchGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AprilAutoContrast {
+            get {
+                return ((bool)(this["AprilAutoContrast"]));
+            }
+            set {
+                this["AprilAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AprilBlur {
+            get {
+                return ((bool)(this["AprilBlur"]));
+            }
+            set {
+                this["AprilBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AprilNoizeFilter {
+            get {
+                return ((bool)(this["AprilNoizeFilter"]));
+            }
+            set {
+                this["AprilNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AprilAllowAngles {
+            get {
+                return ((bool)(this["AprilAllowAngles"]));
+            }
+            set {
+                this["AprilAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AprilCameraResolution {
+            get {
+                return ((int)(this["AprilCameraResolution"]));
+            }
+            set {
+                this["AprilCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AprilCaptureFromCamera {
+            get {
+                return ((bool)(this["AprilCaptureFromCamera"]));
+            }
+            set {
+                this["AprilCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AprilNoizeFilt {
+            get {
+                return ((bool)(this["AprilNoizeFilt"]));
+            }
+            set {
+                this["AprilNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AprilShowContours {
+            get {
+                return ((bool)(this["AprilShowContours"]));
+            }
+            set {
+                this["AprilShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AprilTemplateFile {
+            get {
+                return ((string)(this["AprilTemplateFile"]));
+            }
+            set {
+                this["AprilTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AprilShowAngle {
+            get {
+                return ((bool)(this["AprilShowAngle"]));
+            }
+            set {
+                this["AprilShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AprilShowBinarized {
+            get {
+                return ((bool)(this["AprilShowBinarized"]));
+            }
+            set {
+                this["AprilShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AprilCycleCapture {
+            get {
+                return ((bool)(this["AprilCycleCapture"]));
+            }
+            set {
+                this["AprilCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AprilAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["AprilAdaptiveThBlockSize"]));
+            }
+            set {
+                this["AprilAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AprilMaxACF {
+            get {
+                return ((decimal)(this["AprilMaxACF"]));
+            }
+            set {
+                this["AprilMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AprilMinACF {
+            get {
+                return ((decimal)(this["AprilMinACF"]));
+            }
+            set {
+                this["AprilMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AprilMinContourArea {
+            get {
+                return ((decimal)(this["AprilMinContourArea"]));
+            }
+            set {
+                this["AprilMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AprilMinContourLength {
+            get {
+                return ((decimal)(this["AprilMinContourLength"]));
+            }
+            set {
+                this["AprilMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AprilMinDefinition {
+            get {
+                return ((decimal)(this["AprilMinDefinition"]));
+            }
+            set {
+                this["AprilMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AprilMinICF {
+            get {
+                return ((decimal)(this["AprilMinICF"]));
+            }
+            set {
+                this["AprilMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AprilGetImagePath {
+            get {
+                return ((string)(this["AprilGetImagePath"]));
+            }
+            set {
+                this["AprilGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MayAutoContrast {
+            get {
+                return ((bool)(this["MayAutoContrast"]));
+            }
+            set {
+                this["MayAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MayBlur {
+            get {
+                return ((bool)(this["MayBlur"]));
+            }
+            set {
+                this["MayBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MayNoizeFilter {
+            get {
+                return ((bool)(this["MayNoizeFilter"]));
+            }
+            set {
+                this["MayNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MayAllowAngles {
+            get {
+                return ((bool)(this["MayAllowAngles"]));
+            }
+            set {
+                this["MayAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MayCameraResolution {
+            get {
+                return ((int)(this["MayCameraResolution"]));
+            }
+            set {
+                this["MayCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MayCaptureFromCamera {
+            get {
+                return ((bool)(this["MayCaptureFromCamera"]));
+            }
+            set {
+                this["MayCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MayNoizeFilt {
+            get {
+                return ((bool)(this["MayNoizeFilt"]));
+            }
+            set {
+                this["MayNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MayShowContours {
+            get {
+                return ((bool)(this["MayShowContours"]));
+            }
+            set {
+                this["MayShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MayTemplateFile {
+            get {
+                return ((string)(this["MayTemplateFile"]));
+            }
+            set {
+                this["MayTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MayShowAngle {
+            get {
+                return ((bool)(this["MayShowAngle"]));
+            }
+            set {
+                this["MayShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MayShowBinarized {
+            get {
+                return ((bool)(this["MayShowBinarized"]));
+            }
+            set {
+                this["MayShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool MayCycleCapture {
+            get {
+                return ((bool)(this["MayCycleCapture"]));
+            }
+            set {
+                this["MayCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MayAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["MayAdaptiveThBlockSize"]));
+            }
+            set {
+                this["MayAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MayMaxACF {
+            get {
+                return ((decimal)(this["MayMaxACF"]));
+            }
+            set {
+                this["MayMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MayMinACF {
+            get {
+                return ((decimal)(this["MayMinACF"]));
+            }
+            set {
+                this["MayMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MayMinContourArea {
+            get {
+                return ((decimal)(this["MayMinContourArea"]));
+            }
+            set {
+                this["MayMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MayMinContourLength {
+            get {
+                return ((decimal)(this["MayMinContourLength"]));
+            }
+            set {
+                this["MayMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MayMinDefinition {
+            get {
+                return ((decimal)(this["MayMinDefinition"]));
+            }
+            set {
+                this["MayMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal MayMinICF {
+            get {
+                return ((decimal)(this["MayMinICF"]));
+            }
+            set {
+                this["MayMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string MayGetImagePath {
+            get {
+                return ((string)(this["MayGetImagePath"]));
+            }
+            set {
+                this["MayGetImagePath"] = value;
             }
         }
     }

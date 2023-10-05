@@ -1,6 +1,6 @@
-﻿using System.Drawing;
+﻿using Emgu.CV;
 using Emgu.CV.Structure;
-using Emgu.CV;
+using System.Drawing;
 
 namespace ContourAnalysisNS
 {

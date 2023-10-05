@@ -1,8 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace TCP_LISTENER_Delta
 {
@@ -64,7 +63,7 @@ namespace TCP_LISTENER_Delta
         }
 
         // Calculates the frame rate every second.
-       
+
         // Renders the image every time the image window is invalidated.
         protected override void OnPaint(PaintEventArgs e)
         {
@@ -72,7 +71,7 @@ namespace TCP_LISTENER_Delta
             {
                 double aspectRatioImage = (double)(image.Width) / (double)(image.Height);
                 int availableDisplayWidth = this.Width;
-                int availableDisplayHeight = this.Height - streamDataBox.Height - streamDataBox.Margin.Top -streamDataBox.Margin.Bottom;
+                int availableDisplayHeight = this.Height - streamDataBox.Height - streamDataBox.Margin.Top - streamDataBox.Margin.Bottom;
                 int requiredDisplayHeight = (int)((double)(this.Width) / aspectRatioImage);
                 int drawingAreaWidth = availableDisplayWidth;
                 int drawingAreaHeight = requiredDisplayHeight;

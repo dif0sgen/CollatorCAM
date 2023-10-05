@@ -13,7 +13,7 @@ namespace ContourAnalysisNS
         public Contour autoCorr;
         public Point startPoint;
         public bool preferredAngleNoMore90 = false;
-        
+
         public int autoCorrDescriptor1;
         public int autoCorrDescriptor2;
         public int autoCorrDescriptor3;
@@ -54,7 +54,7 @@ namespace ContourAnalysisNS
             for (int i = 0; i < count; i++)
             {
                 double v = autoCorr[i].Norma;
-                int j = 4*i/count;
+                int j = 4 * i / count;
 
                 sum1 += filter1[j] * v;
                 sum2 += filter2[j] * v;
@@ -86,7 +86,7 @@ namespace ContourAnalysisNS
 
             double w = boundRect.Width;
             double h = boundRect.Height;
-            float k = (float)Math.Min(r.Width/w, r.Height/h);
+            float k = (float)Math.Min(r.Width / w, r.Height / h);
             int dx = startPoint.X - contour.SourceBoundingRect.Left;
             int dy = startPoint.Y - contour.SourceBoundingRect.Top;
             int ddx = -(int)(boundRect.Left * k);
@@ -105,15 +105,15 @@ namespace ContourAnalysisNS
                 int x = r.X + 5 + i * 3;
                 int v = (int)(autoCorr[i % autoCorr.Count].Norma * r.Height);
                 gr.FillRectangle(Brushes.Blue, x, r.Bottom - v, 3, v);
-                angles.Add(new Point(x, r.Bottom - (int)(r.Height * (0.5d + autoCorr[i%autoCorr.Count].Angle / 2 / Math.PI))));
+                angles.Add(new Point(x, r.Bottom - (int)(r.Height * (0.5d + autoCorr[i % autoCorr.Count].Angle / 2 / Math.PI))));
             }
 
             try
             {
                 gr.DrawLines(Pens.Red, angles.ToArray());
             }
-            catch(OverflowException)
-            { ;}
+            catch (OverflowException)
+            {; }
 
             Pen redPen = new Pen(Color.FromArgb(100, Color.Black));
             for (int i = 0; i <= 10; i++)
@@ -124,8 +124,8 @@ namespace ContourAnalysisNS
             //descriptors
             {
                 int x = rect.Right;
-                int y = r.Bottom - r.Height/2;
-                gr.DrawLine(Pens.Gray, x, y, x+23, y);
+                int y = r.Bottom - r.Height / 2;
+                gr.DrawLine(Pens.Gray, x, y, x + 23, y);
                 if (autoCorrDescriptor1 < int.MaxValue && autoCorrDescriptor1 > int.MinValue)
                 {
                     gr.FillRectangle(Brushes.Red, x, y - (autoCorrDescriptor1 < 0 ? 0 : autoCorrDescriptor1 * r.Height / 100), 5, Math.Abs(autoCorrDescriptor1) * r.Height / 100);

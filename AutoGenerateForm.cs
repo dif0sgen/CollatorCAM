@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using ContourAnalysisNS;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using ContourAnalysisNS;
 
 namespace ContourAnalysisDemo
 {
@@ -36,9 +31,9 @@ namespace ContourAnalysisDemo
             {
                 int oldCount = processor.templates.Count;
                 TemplateGenerator.GenerateChars(processor, tbChars.Text.ToCharArray(), tbChars.Font);
-                if(cbAntipattern.Checked)
+                if (cbAntipattern.Checked)
                     TemplateGenerator.GenerateAntipatterns(processor);
-                MessageBox.Show("Added "+(processor.templates.Count - oldCount)+" templates");
+                MessageBox.Show("Added " + (processor.templates.Count - oldCount) + " templates");
             }
             catch (Exception ex)
             {
