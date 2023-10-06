@@ -709,6 +709,29 @@ namespace CollatorCAM
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (month == 1)
+            {
+                    Properties.Settings.Default.FrontAutoContrast = cbAutoContrast.Checked;
+                    Properties.Settings.Default.FrontBlur = cbBlur.Checked;
+                    Properties.Settings.Default.FrontNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                    Properties.Settings.Default.FrontAllowAngles = cbAllowAngleMore45.Checked;
+                    Properties.Settings.Default.FrontCameraResolution = cbCamResolution.SelectedIndex;
+                    Properties.Settings.Default.FrontCaptureFromCamera = cbCaptureFromCam.Checked;
+                    Properties.Settings.Default.FrontNoizeFilt = cbNoiseFilter.Checked;
+                    Properties.Settings.Default.FrontShowContours = cbShowContours.Checked;
+                    Properties.Settings.Default.FrontTemplateFile = templateFile;
+                    Properties.Settings.Default.FrontShowAngle = cbShowAngle.Checked;
+                    Properties.Settings.Default.FrontShowBinarized = cbShowBinarized.Checked;
+                    Properties.Settings.Default.FrontCycleCapture = cbCycleCapture.Checked;
+                    Properties.Settings.Default.FrontAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
+                    Properties.Settings.Default.FrontMaxACF = nudMaxACFdesc.Value;
+                    Properties.Settings.Default.FrontMinACF = nudMinACF.Value;
+                    Properties.Settings.Default.FrontMinContourArea = nudMinContourArea.Value;
+                    Properties.Settings.Default.FrontMinContourLength = nudMinContourLength.Value;
+                    Properties.Settings.Default.FrontMinDefinition = nudMinDefinition.Value;
+                    Properties.Settings.Default.FrontMinICF = nudMinICF.Value;
+                    Properties.Settings.Default.FrontGetImagePath = GetImagePath;
+            }
             if (month == 2)
             {
                 Properties.Settings.Default.JanuaryAutoContrast = cbAutoContrast.Checked;
@@ -731,8 +754,6 @@ namespace CollatorCAM
                 Properties.Settings.Default.JanuaryMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.JanuaryMinICF = nudMinICF.Value;
                 Properties.Settings.Default.JanuaryGetImagePath = GetImagePath;
-
-
             }
             if (month == 3)
             {
@@ -826,9 +847,267 @@ namespace CollatorCAM
                 Properties.Settings.Default.MayMinICF = nudMinICF.Value;
                 Properties.Settings.Default.MayGetImagePath = GetImagePath;
             }
+            if (month == 7)
+            {
+                Properties.Settings.Default.JuneAutoContrast = cbAutoContrast.Checked;
+                Properties.Settings.Default.JuneBlur = cbBlur.Checked;
+                Properties.Settings.Default.JuneNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                Properties.Settings.Default.JuneAllowAngles = cbAllowAngleMore45.Checked;
+                Properties.Settings.Default.JuneCameraResolution = cbCamResolution.SelectedIndex;
+                Properties.Settings.Default.JuneCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JuneNoizeFilt = cbNoiseFilter.Checked;
+                Properties.Settings.Default.JuneShowContours = cbShowContours.Checked;
+                Properties.Settings.Default.JuneTemplateFile = templateFile;
+                Properties.Settings.Default.JuneShowAngle = cbShowAngle.Checked;
+                Properties.Settings.Default.JuneShowBinarized = cbShowBinarized.Checked;
+                Properties.Settings.Default.JuneCycleCapture = cbCycleCapture.Checked;
+                Properties.Settings.Default.JuneAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
+                Properties.Settings.Default.JuneMaxACF = nudMaxACFdesc.Value;
+                Properties.Settings.Default.JuneMinACF = nudMinACF.Value;
+                Properties.Settings.Default.JuneMinContourArea = nudMinContourArea.Value;
+                Properties.Settings.Default.JuneMinContourLength = nudMinContourLength.Value;
+                Properties.Settings.Default.JuneMinDefinition = nudMinDefinition.Value;
+                Properties.Settings.Default.JuneMinICF = nudMinICF.Value;
+                Properties.Settings.Default.JuneGetImagePath = GetImagePath;
+            }
+            if (month == 8)
+            {
+                Properties.Settings.Default.JulyAutoContrast = cbAutoContrast.Checked;
+                Properties.Settings.Default.JulyBlur = cbBlur.Checked;
+                Properties.Settings.Default.JulyNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                Properties.Settings.Default.JulyAllowAngles = cbAllowAngleMore45.Checked;
+                Properties.Settings.Default.JulyCameraResolution = cbCamResolution.SelectedIndex;
+                Properties.Settings.Default.JulyCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JulyNoizeFilt = cbNoiseFilter.Checked;
+                Properties.Settings.Default.JulyShowContours = cbShowContours.Checked;
+                Properties.Settings.Default.JulyTemplateFile = templateFile;
+                Properties.Settings.Default.JulyShowAngle = cbShowAngle.Checked;
+                Properties.Settings.Default.JulyShowBinarized = cbShowBinarized.Checked;
+                Properties.Settings.Default.JulyCycleCapture = cbCycleCapture.Checked;
+                Properties.Settings.Default.JulyAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
+                Properties.Settings.Default.JulyMaxACF = nudMaxACFdesc.Value;
+                Properties.Settings.Default.JulyMinACF = nudMinACF.Value;
+                Properties.Settings.Default.JulyMinContourArea = nudMinContourArea.Value;
+                Properties.Settings.Default.JulyMinContourLength = nudMinContourLength.Value;
+                Properties.Settings.Default.JulyMinDefinition = nudMinDefinition.Value;
+                Properties.Settings.Default.JulyMinICF = nudMinICF.Value;
+                Properties.Settings.Default.JulyGetImagePath = GetImagePath;
+            }
+            if (month == 9)
+            {
+                Properties.Settings.Default.AugustAutoContrast = cbAutoContrast.Checked;
+                Properties.Settings.Default.AugustBlur = cbBlur.Checked;
+                Properties.Settings.Default.AugustNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                Properties.Settings.Default.AugustAllowAngles = cbAllowAngleMore45.Checked;
+                Properties.Settings.Default.AugustCameraResolution = cbCamResolution.SelectedIndex;
+                Properties.Settings.Default.AugustCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.AugustNoizeFilt = cbNoiseFilter.Checked;
+                Properties.Settings.Default.AugustShowContours = cbShowContours.Checked;
+                Properties.Settings.Default.AugustTemplateFile = templateFile;
+                Properties.Settings.Default.AugustShowAngle = cbShowAngle.Checked;
+                Properties.Settings.Default.AugustShowBinarized = cbShowBinarized.Checked;
+                Properties.Settings.Default.AugustCycleCapture = cbCycleCapture.Checked;
+                Properties.Settings.Default.AugustAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
+                Properties.Settings.Default.AugustMaxACF = nudMaxACFdesc.Value;
+                Properties.Settings.Default.AugustMinACF = nudMinACF.Value;
+                Properties.Settings.Default.AugustMinContourArea = nudMinContourArea.Value;
+                Properties.Settings.Default.AugustMinContourLength = nudMinContourLength.Value;
+                Properties.Settings.Default.AugustMinDefinition = nudMinDefinition.Value;
+                Properties.Settings.Default.AugustMinICF = nudMinICF.Value;
+                Properties.Settings.Default.AugustGetImagePath = GetImagePath;
+            }
+            if (month == 10)
+            {
+                Properties.Settings.Default.SeptemberAutoContrast = cbAutoContrast.Checked;
+                Properties.Settings.Default.SeptemberBlur = cbBlur.Checked;
+                Properties.Settings.Default.SeptemberNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                Properties.Settings.Default.SeptemberAllowAngles = cbAllowAngleMore45.Checked;
+                Properties.Settings.Default.SeptemberCameraResolution = cbCamResolution.SelectedIndex;
+                Properties.Settings.Default.SeptemberCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.SeptemberNoizeFilt = cbNoiseFilter.Checked;
+                Properties.Settings.Default.SeptemberShowContours = cbShowContours.Checked;
+                Properties.Settings.Default.SeptemberTemplateFile = templateFile;
+                Properties.Settings.Default.SeptemberShowAngle = cbShowAngle.Checked;
+                Properties.Settings.Default.SeptemberShowBinarized = cbShowBinarized.Checked;
+                Properties.Settings.Default.SeptemberCycleCapture = cbCycleCapture.Checked;
+                Properties.Settings.Default.SeptemberAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
+                Properties.Settings.Default.SeptemberMaxACF = nudMaxACFdesc.Value;
+                Properties.Settings.Default.SeptemberMinACF = nudMinACF.Value;
+                Properties.Settings.Default.SeptemberMinContourArea = nudMinContourArea.Value;
+                Properties.Settings.Default.SeptemberMinContourLength = nudMinContourLength.Value;
+                Properties.Settings.Default.SeptemberMinDefinition = nudMinDefinition.Value;
+                Properties.Settings.Default.SeptemberMinICF = nudMinICF.Value;
+                Properties.Settings.Default.SeptemberGetImagePath = GetImagePath;
+            }
+            if (month == 11)
+            {
+                Properties.Settings.Default.OctoberAutoContrast = cbAutoContrast.Checked;
+                Properties.Settings.Default.OctoberBlur = cbBlur.Checked;
+                Properties.Settings.Default.OctoberNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                Properties.Settings.Default.OctoberAllowAngles = cbAllowAngleMore45.Checked;
+                Properties.Settings.Default.OctoberCameraResolution = cbCamResolution.SelectedIndex;
+                Properties.Settings.Default.OctoberCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.OctoberNoizeFilt = cbNoiseFilter.Checked;
+                Properties.Settings.Default.OctoberShowContours = cbShowContours.Checked;
+                Properties.Settings.Default.OctoberTemplateFile = templateFile;
+                Properties.Settings.Default.OctoberShowAngle = cbShowAngle.Checked;
+                Properties.Settings.Default.OctoberShowBinarized = cbShowBinarized.Checked;
+                Properties.Settings.Default.OctoberCycleCapture = cbCycleCapture.Checked;
+                Properties.Settings.Default.OctoberAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
+                Properties.Settings.Default.OctoberMaxACF = nudMaxACFdesc.Value;
+                Properties.Settings.Default.OctoberMinACF = nudMinACF.Value;
+                Properties.Settings.Default.OctoberMinContourArea = nudMinContourArea.Value;
+                Properties.Settings.Default.OctoberMinContourLength = nudMinContourLength.Value;
+                Properties.Settings.Default.OctoberMinDefinition = nudMinDefinition.Value;
+                Properties.Settings.Default.OctoberMinICF = nudMinICF.Value;
+                Properties.Settings.Default.OctoberGetImagePath = GetImagePath;
+            }
+            if (month == 12)
+            {
+                Properties.Settings.Default.NovemberAutoContrast = cbAutoContrast.Checked;
+                Properties.Settings.Default.NovemberBlur = cbBlur.Checked;
+                Properties.Settings.Default.NovemberNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                Properties.Settings.Default.NovemberAllowAngles = cbAllowAngleMore45.Checked;
+                Properties.Settings.Default.NovemberCameraResolution = cbCamResolution.SelectedIndex;
+                Properties.Settings.Default.NovemberCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.NovemberNoizeFilt = cbNoiseFilter.Checked;
+                Properties.Settings.Default.NovemberShowContours = cbShowContours.Checked;
+                Properties.Settings.Default.NovemberTemplateFile = templateFile;
+                Properties.Settings.Default.NovemberShowAngle = cbShowAngle.Checked;
+                Properties.Settings.Default.NovemberShowBinarized = cbShowBinarized.Checked;
+                Properties.Settings.Default.NovemberCycleCapture = cbCycleCapture.Checked;
+                Properties.Settings.Default.NovemberAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
+                Properties.Settings.Default.NovemberMaxACF = nudMaxACFdesc.Value;
+                Properties.Settings.Default.NovemberMinACF = nudMinACF.Value;
+                Properties.Settings.Default.NovemberMinContourArea = nudMinContourArea.Value;
+                Properties.Settings.Default.NovemberMinContourLength = nudMinContourLength.Value;
+                Properties.Settings.Default.NovemberMinDefinition = nudMinDefinition.Value;
+                Properties.Settings.Default.NovemberMinICF = nudMinICF.Value;
+                Properties.Settings.Default.NovemberGetImagePath = GetImagePath;
+            }
+            if (month == 13)
+            {
+                Properties.Settings.Default.DecemberAutoContrast = cbAutoContrast.Checked;
+                Properties.Settings.Default.DecemberBlur = cbBlur.Checked;
+                Properties.Settings.Default.DecemberNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                Properties.Settings.Default.DecemberAllowAngles = cbAllowAngleMore45.Checked;
+                Properties.Settings.Default.DecemberCameraResolution = cbCamResolution.SelectedIndex;
+                Properties.Settings.Default.DecemberCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.DecemberNoizeFilt = cbNoiseFilter.Checked;
+                Properties.Settings.Default.DecemberShowContours = cbShowContours.Checked;
+                Properties.Settings.Default.DecemberTemplateFile = templateFile;
+                Properties.Settings.Default.DecemberShowAngle = cbShowAngle.Checked;
+                Properties.Settings.Default.DecemberShowBinarized = cbShowBinarized.Checked;
+                Properties.Settings.Default.DecemberCycleCapture = cbCycleCapture.Checked;
+                Properties.Settings.Default.DecemberAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
+                Properties.Settings.Default.DecemberMaxACF = nudMaxACFdesc.Value;
+                Properties.Settings.Default.DecemberMinACF = nudMinACF.Value;
+                Properties.Settings.Default.DecemberMinContourArea = nudMinContourArea.Value;
+                Properties.Settings.Default.DecemberMinContourLength = nudMinContourLength.Value;
+                Properties.Settings.Default.DecemberMinDefinition = nudMinDefinition.Value;
+                Properties.Settings.Default.DecemberMinICF = nudMinICF.Value;
+                Properties.Settings.Default.DecemberGetImagePath = GetImagePath;
+            }
+            if (month == 14)
+            {
+                Properties.Settings.Default.RearAutoContrast = cbAutoContrast.Checked;
+                Properties.Settings.Default.RearBlur = cbBlur.Checked;
+                Properties.Settings.Default.RearNoizeFilter = cbAdaptiveNoiseFilter.Checked;
+                Properties.Settings.Default.RearAllowAngles = cbAllowAngleMore45.Checked;
+                Properties.Settings.Default.RearCameraResolution = cbCamResolution.SelectedIndex;
+                Properties.Settings.Default.RearCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.RearNoizeFilt = cbNoiseFilter.Checked;
+                Properties.Settings.Default.RearShowContours = cbShowContours.Checked;
+                Properties.Settings.Default.RearTemplateFile = templateFile;
+                Properties.Settings.Default.RearShowAngle = cbShowAngle.Checked;
+                Properties.Settings.Default.RearShowBinarized = cbShowBinarized.Checked;
+                Properties.Settings.Default.RearCycleCapture = cbCycleCapture.Checked;
+                Properties.Settings.Default.RearAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
+                Properties.Settings.Default.RearMaxACF = nudMaxACFdesc.Value;
+                Properties.Settings.Default.RearMinACF = nudMinACF.Value;
+                Properties.Settings.Default.RearMinContourArea = nudMinContourArea.Value;
+                Properties.Settings.Default.RearMinContourLength = nudMinContourLength.Value;
+                Properties.Settings.Default.RearMinDefinition = nudMinDefinition.Value;
+                Properties.Settings.Default.RearMinICF = nudMinICF.Value;
+                Properties.Settings.Default.RearGetImagePath = GetImagePath;
+            }
             Properties.Settings.Default.Save();
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            month = 1;
+            button7.BackColor = System.Drawing.Color.DarkGray;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button8.BackColor = System.Drawing.Color.Transparent;
+            button2.BackColor = System.Drawing.Color.Transparent;
+            button9.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button10.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+
+            if (Properties.Settings.Default.FrontAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.FrontAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.FrontMaxACF == 0)
+                Properties.Settings.Default.FrontMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.FrontMinContourArea == 0)
+                Properties.Settings.Default.FrontMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.FrontMinContourLength == 0)
+                Properties.Settings.Default.FrontMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.FrontMinDefinition == 0)
+                Properties.Settings.Default.FrontMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.FrontMinACF == 0)
+                Properties.Settings.Default.FrontMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.FrontMinICF == 0)
+                Properties.Settings.Default.FrontMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.FrontGetImagePath == "")
+            {
+                FolderBrowserDialog ofd = new FolderBrowserDialog();
+                if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    GetImagePath = ofd.SelectedPath;
+                    files = Directory.GetFiles(GetImagePath);
+                    i = files.Length;
+                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    ImagePath = "Current image file: " + GetImagePath;
+                }
+                Properties.Settings.Default.FrontGetImagePath = GetImagePath;
+            }
+            if (Properties.Settings.Default.FrontTemplateFile == "")
+                Properties.Settings.Default.FrontTemplateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+
+            cbAutoContrast.Checked = Properties.Settings.Default.FrontAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.FrontBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.FrontNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.FrontAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.FrontCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.FrontCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.FrontNoizeFilt;
+            templateFile = Properties.Settings.Default.FrontTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.FrontShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.FrontShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.FrontShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.FrontCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.FrontAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.FrontMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.FrontMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.FrontMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.FrontMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.FrontMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.FrontMinICF;
+            LoadTemplates(templateFile);
+            if (cbCaptureFromCam.Checked == false)
+            {
+                GetImagePath = Properties.Settings.Default.FrontGetImagePath;
+                GetImage();
+            }
+        }
         private void button1_Click_1(object sender, EventArgs e)
         {
             month = 2;
@@ -836,7 +1115,16 @@ namespace CollatorCAM
             button8.BackColor = System.Drawing.Color.Transparent;
             button2.BackColor = System.Drawing.Color.Transparent;
             button9.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
             button10.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
 
             if (Properties.Settings.Default.JanuaryAdaptiveThBlockSize == 0)
                 Properties.Settings.Default.JanuaryAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
@@ -903,6 +1191,15 @@ namespace CollatorCAM
             button8.BackColor = System.Drawing.Color.Transparent;
             button9.BackColor = System.Drawing.Color.Transparent;
             button10.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
             button2.BackColor = System.Drawing.Color.DarkGray;
 
             if (Properties.Settings.Default.FebruaryAdaptiveThBlockSize == 0)
@@ -972,6 +1269,15 @@ namespace CollatorCAM
             button2.BackColor = System.Drawing.Color.Transparent;
             button9.BackColor = System.Drawing.Color.Transparent;
             button10.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
             button8.BackColor = System.Drawing.Color.DarkGray;
 
             if (Properties.Settings.Default.MarchAdaptiveThBlockSize == 0)
@@ -1038,6 +1344,15 @@ namespace CollatorCAM
             button2.BackColor = System.Drawing.Color.Transparent;
             button8.BackColor = System.Drawing.Color.Transparent;
             button10.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
             button9.BackColor = System.Drawing.Color.DarkGray;
 
             if (Properties.Settings.Default.AprilAdaptiveThBlockSize == 0)
@@ -1103,6 +1418,15 @@ namespace CollatorCAM
             button2.BackColor = System.Drawing.Color.Transparent;
             button8.BackColor = System.Drawing.Color.Transparent;
             button9.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
             button10.BackColor = System.Drawing.Color.DarkGray;
 
             if (Properties.Settings.Default.MayAdaptiveThBlockSize == 0)
@@ -1161,6 +1485,606 @@ namespace CollatorCAM
                 GetImage();
             }
         }
+        private void button11_Click(object sender, EventArgs e)
+        {
+            month = 6;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button2.BackColor = System.Drawing.Color.Transparent;
+            button8.BackColor = System.Drawing.Color.Transparent;
+            button9.BackColor = System.Drawing.Color.Transparent;
+            button10.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.DarkGray;
+
+            if (Properties.Settings.Default.JuneAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.JuneAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.JuneMaxACF == 0)
+                Properties.Settings.Default.JuneMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JuneMinContourArea == 0)
+                Properties.Settings.Default.JuneMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JuneMinContourLength == 0)
+                Properties.Settings.Default.JuneMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JuneMinDefinition == 0)
+                Properties.Settings.Default.JuneMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JuneMinACF == 0)
+                Properties.Settings.Default.JuneMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.JuneMinICF == 0)
+                Properties.Settings.Default.JuneMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.JuneGetImagePath == "")
+            {
+                FolderBrowserDialog ofd = new FolderBrowserDialog();
+                if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    GetImagePath = ofd.SelectedPath;
+                    files = Directory.GetFiles(GetImagePath);
+                    i = files.Length;
+                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    ImagePath = "Current image file: " + GetImagePath;
+                }
+                Properties.Settings.Default.JuneGetImagePath = GetImagePath;
+            }
+            if (Properties.Settings.Default.JuneTemplateFile == "")
+                Properties.Settings.Default.JuneTemplateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+
+            cbAutoContrast.Checked = Properties.Settings.Default.JuneAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.JuneBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.JuneNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.JuneAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.JuneCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JuneCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.JuneNoizeFilt;
+            templateFile = Properties.Settings.Default.JuneTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.JuneShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.JuneShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.JuneShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.JuneCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.JuneAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.JuneMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.JuneMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.JuneMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.JuneMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.JuneMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.JuneMinICF;
+            LoadTemplates(templateFile);
+            if (cbCaptureFromCam.Checked == false)
+            {
+                GetImagePath = Properties.Settings.Default.JuneGetImagePath;
+                GetImage();
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            month = 7;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button2.BackColor = System.Drawing.Color.Transparent;
+            button8.BackColor = System.Drawing.Color.Transparent;
+            button9.BackColor = System.Drawing.Color.Transparent;
+            button10.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.DarkGray;
+
+            if (Properties.Settings.Default.JulyAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.JulyAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.JulyMaxACF == 0)
+                Properties.Settings.Default.JulyMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JulyMinContourArea == 0)
+                Properties.Settings.Default.JulyMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JulyMinContourLength == 0)
+                Properties.Settings.Default.JulyMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JulyMinDefinition == 0)
+                Properties.Settings.Default.JulyMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.JulyMinACF == 0)
+                Properties.Settings.Default.JulyMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.JulyMinICF == 0)
+                Properties.Settings.Default.JulyMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.JulyGetImagePath == "")
+            {
+                FolderBrowserDialog ofd = new FolderBrowserDialog();
+                if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    GetImagePath = ofd.SelectedPath;
+                    files = Directory.GetFiles(GetImagePath);
+                    i = files.Length;
+                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    ImagePath = "Current image file: " + GetImagePath;
+                }
+                Properties.Settings.Default.JulyGetImagePath = GetImagePath;
+            }
+            if (Properties.Settings.Default.JulyTemplateFile == "")
+                Properties.Settings.Default.JulyTemplateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+
+            cbAutoContrast.Checked = Properties.Settings.Default.JulyAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.JulyBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.JulyNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.JulyAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.JulyCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JulyCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.JulyNoizeFilt;
+            templateFile = Properties.Settings.Default.JulyTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.JulyShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.JulyShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.JulyShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.JulyCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.JulyAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.JulyMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.JulyMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.JulyMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.JulyMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.JulyMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.JulyMinICF;
+            LoadTemplates(templateFile);
+            if (cbCaptureFromCam.Checked == false)
+            {
+                GetImagePath = Properties.Settings.Default.JulyGetImagePath;
+                GetImage();
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            month = 8;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button2.BackColor = System.Drawing.Color.Transparent;
+            button8.BackColor = System.Drawing.Color.Transparent;
+            button9.BackColor = System.Drawing.Color.Transparent;
+            button10.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.DarkGray;
+
+            if (Properties.Settings.Default.AugustAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.AugustAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.AugustMaxACF == 0)
+                Properties.Settings.Default.AugustMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.AugustMinContourArea == 0)
+                Properties.Settings.Default.AugustMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.AugustMinContourLength == 0)
+                Properties.Settings.Default.AugustMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.AugustMinDefinition == 0)
+                Properties.Settings.Default.AugustMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.AugustMinACF == 0)
+                Properties.Settings.Default.AugustMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.AugustMinICF == 0)
+                Properties.Settings.Default.AugustMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.AugustGetImagePath == "")
+            {
+                FolderBrowserDialog ofd = new FolderBrowserDialog();
+                if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    GetImagePath = ofd.SelectedPath;
+                    files = Directory.GetFiles(GetImagePath);
+                    i = files.Length;
+                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    ImagePath = "Current image file: " + GetImagePath;
+                }
+                Properties.Settings.Default.AugustGetImagePath = GetImagePath;
+            }
+            if (Properties.Settings.Default.AugustTemplateFile == "")
+                Properties.Settings.Default.AugustTemplateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+
+            cbAutoContrast.Checked = Properties.Settings.Default.AugustAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.AugustBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.AugustNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.AugustAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.AugustCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.AugustCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.AugustNoizeFilt;
+            templateFile = Properties.Settings.Default.AugustTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.AugustShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.AugustShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.AugustShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.AugustCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.AugustAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.AugustMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.AugustMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.AugustMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.AugustMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.AugustMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.AugustMinICF;
+            LoadTemplates(templateFile);
+            if (cbCaptureFromCam.Checked == false)
+            {
+                GetImagePath = Properties.Settings.Default.AugustGetImagePath;
+                GetImage();
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            month = 9;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button2.BackColor = System.Drawing.Color.Transparent;
+            button8.BackColor = System.Drawing.Color.Transparent;
+            button9.BackColor = System.Drawing.Color.Transparent;
+            button10.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.DarkGray;
+
+            if (Properties.Settings.Default.SeptemberAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.SeptemberAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.SeptemberMaxACF == 0)
+                Properties.Settings.Default.SeptemberMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.SeptemberMinContourArea == 0)
+                Properties.Settings.Default.SeptemberMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.SeptemberMinContourLength == 0)
+                Properties.Settings.Default.SeptemberMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.SeptemberMinDefinition == 0)
+                Properties.Settings.Default.SeptemberMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.SeptemberMinACF == 0)
+                Properties.Settings.Default.SeptemberMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.SeptemberMinICF == 0)
+                Properties.Settings.Default.SeptemberMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.SeptemberGetImagePath == "")
+            {
+                FolderBrowserDialog ofd = new FolderBrowserDialog();
+                if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    GetImagePath = ofd.SelectedPath;
+                    files = Directory.GetFiles(GetImagePath);
+                    i = files.Length;
+                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    ImagePath = "Current image file: " + GetImagePath;
+                }
+                Properties.Settings.Default.SeptemberGetImagePath = GetImagePath;
+            }
+            if (Properties.Settings.Default.SeptemberTemplateFile == "")
+                Properties.Settings.Default.SeptemberTemplateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+
+            cbAutoContrast.Checked = Properties.Settings.Default.SeptemberAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.SeptemberBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.SeptemberNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.SeptemberAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.SeptemberCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.SeptemberCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.SeptemberNoizeFilt;
+            templateFile = Properties.Settings.Default.SeptemberTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.SeptemberShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.SeptemberShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.SeptemberShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.SeptemberCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.SeptemberAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.SeptemberMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.SeptemberMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.SeptemberMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.SeptemberMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.SeptemberMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.SeptemberMinICF;
+            LoadTemplates(templateFile);
+            if (cbCaptureFromCam.Checked == false)
+            {
+                GetImagePath = Properties.Settings.Default.SeptemberGetImagePath;
+                GetImage();
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            month = 10;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button2.BackColor = System.Drawing.Color.Transparent;
+            button8.BackColor = System.Drawing.Color.Transparent;
+            button9.BackColor = System.Drawing.Color.Transparent;
+            button10.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.DarkGray;
+
+            if (Properties.Settings.Default.OctoberAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.OctoberAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.OctoberMaxACF == 0)
+                Properties.Settings.Default.OctoberMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.OctoberMinContourArea == 0)
+                Properties.Settings.Default.OctoberMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.OctoberMinContourLength == 0)
+                Properties.Settings.Default.OctoberMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.OctoberMinDefinition == 0)
+                Properties.Settings.Default.OctoberMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.OctoberMinACF == 0)
+                Properties.Settings.Default.OctoberMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.OctoberMinICF == 0)
+                Properties.Settings.Default.OctoberMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.OctoberGetImagePath == "")
+            {
+                FolderBrowserDialog ofd = new FolderBrowserDialog();
+                if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    GetImagePath = ofd.SelectedPath;
+                    files = Directory.GetFiles(GetImagePath);
+                    i = files.Length;
+                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    ImagePath = "Current image file: " + GetImagePath;
+                }
+                Properties.Settings.Default.OctoberGetImagePath = GetImagePath;
+            }
+            if (Properties.Settings.Default.OctoberTemplateFile == "")
+                Properties.Settings.Default.OctoberTemplateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+
+            cbAutoContrast.Checked = Properties.Settings.Default.OctoberAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.OctoberBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.OctoberNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.OctoberAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.OctoberCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.OctoberCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.OctoberNoizeFilt;
+            templateFile = Properties.Settings.Default.OctoberTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.OctoberShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.OctoberShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.OctoberShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.OctoberCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.OctoberAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.OctoberMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.OctoberMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.OctoberMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.OctoberMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.OctoberMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.OctoberMinICF;
+            LoadTemplates(templateFile);
+            if (cbCaptureFromCam.Checked == false)
+            {
+                GetImagePath = Properties.Settings.Default.OctoberGetImagePath;
+                GetImage();
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            month = 11;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button2.BackColor = System.Drawing.Color.Transparent;
+            button8.BackColor = System.Drawing.Color.Transparent;
+            button9.BackColor = System.Drawing.Color.Transparent;
+            button10.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.DarkGray;
+
+            if (Properties.Settings.Default.NovemberAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.NovemberAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.NovemberMaxACF == 0)
+                Properties.Settings.Default.NovemberMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.NovemberMinContourArea == 0)
+                Properties.Settings.Default.NovemberMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.NovemberMinContourLength == 0)
+                Properties.Settings.Default.NovemberMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.NovemberMinDefinition == 0)
+                Properties.Settings.Default.NovemberMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.NovemberMinACF == 0)
+                Properties.Settings.Default.NovemberMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.NovemberMinICF == 0)
+                Properties.Settings.Default.NovemberMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.NovemberGetImagePath == "")
+            {
+                FolderBrowserDialog ofd = new FolderBrowserDialog();
+                if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    GetImagePath = ofd.SelectedPath;
+                    files = Directory.GetFiles(GetImagePath);
+                    i = files.Length;
+                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    ImagePath = "Current image file: " + GetImagePath;
+                }
+                Properties.Settings.Default.NovemberGetImagePath = GetImagePath;
+            }
+            if (Properties.Settings.Default.NovemberTemplateFile == "")
+                Properties.Settings.Default.NovemberTemplateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+
+            cbAutoContrast.Checked = Properties.Settings.Default.NovemberAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.NovemberBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.NovemberNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.NovemberAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.NovemberCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.NovemberCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.NovemberNoizeFilt;
+            templateFile = Properties.Settings.Default.NovemberTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.NovemberShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.NovemberShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.NovemberShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.NovemberCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.NovemberAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.NovemberMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.NovemberMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.NovemberMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.NovemberMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.NovemberMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.NovemberMinICF;
+            LoadTemplates(templateFile);
+            if (cbCaptureFromCam.Checked == false)
+            {
+                GetImagePath = Properties.Settings.Default.NovemberGetImagePath;
+                GetImage();
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            month = 12;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button2.BackColor = System.Drawing.Color.Transparent;
+            button8.BackColor = System.Drawing.Color.Transparent;
+            button9.BackColor = System.Drawing.Color.Transparent;
+            button10.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.DarkGray;
+
+            if (Properties.Settings.Default.DecemberAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.DecemberAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.DecemberMaxACF == 0)
+                Properties.Settings.Default.DecemberMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.DecemberMinContourArea == 0)
+                Properties.Settings.Default.DecemberMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.DecemberMinContourLength == 0)
+                Properties.Settings.Default.DecemberMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.DecemberMinDefinition == 0)
+                Properties.Settings.Default.DecemberMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.DecemberMinACF == 0)
+                Properties.Settings.Default.DecemberMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.DecemberMinICF == 0)
+                Properties.Settings.Default.DecemberMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.DecemberGetImagePath == "")
+            {
+                FolderBrowserDialog ofd = new FolderBrowserDialog();
+                if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    GetImagePath = ofd.SelectedPath;
+                    files = Directory.GetFiles(GetImagePath);
+                    i = files.Length;
+                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    ImagePath = "Current image file: " + GetImagePath;
+                }
+                Properties.Settings.Default.DecemberGetImagePath = GetImagePath;
+            }
+            if (Properties.Settings.Default.DecemberTemplateFile == "")
+                Properties.Settings.Default.DecemberTemplateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+
+            cbAutoContrast.Checked = Properties.Settings.Default.DecemberAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.DecemberBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.DecemberNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.DecemberAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.DecemberCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.DecemberCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.DecemberNoizeFilt;
+            templateFile = Properties.Settings.Default.DecemberTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.DecemberShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.DecemberShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.DecemberShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.DecemberCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.DecemberAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.DecemberMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.DecemberMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.DecemberMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.DecemberMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.DecemberMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.DecemberMinICF;
+            LoadTemplates(templateFile);
+            if (cbCaptureFromCam.Checked == false)
+            {
+                GetImagePath = Properties.Settings.Default.DecemberGetImagePath;
+                GetImage();
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            month = 13;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button2.BackColor = System.Drawing.Color.Transparent;
+            button8.BackColor = System.Drawing.Color.Transparent;
+            button9.BackColor = System.Drawing.Color.Transparent;
+            button10.BackColor = System.Drawing.Color.Transparent;
+            button11.BackColor = System.Drawing.Color.Transparent;
+            button12.BackColor = System.Drawing.Color.Transparent;
+            button13.BackColor = System.Drawing.Color.Transparent;
+            button14.BackColor = System.Drawing.Color.Transparent;
+            button15.BackColor = System.Drawing.Color.Transparent;
+            button16.BackColor = System.Drawing.Color.Transparent;
+            button17.BackColor = System.Drawing.Color.Transparent;
+            button7.BackColor = System.Drawing.Color.Transparent;
+            button18.BackColor = System.Drawing.Color.DarkGray;
+
+            if (Properties.Settings.Default.RearAdaptiveThBlockSize == 0)
+                Properties.Settings.Default.RearAdaptiveThBlockSize = new decimal(new int[] { 1, 0, 0, 0 }); ;
+            if (Properties.Settings.Default.RearMaxACF == 0)
+                Properties.Settings.Default.RearMaxACF = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.RearMinContourArea == 0)
+                Properties.Settings.Default.RearMinContourArea = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.RearMinContourLength == 0)
+                Properties.Settings.Default.RearMinContourLength = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.RearMinDefinition == 0)
+                Properties.Settings.Default.RearMinDefinition = new decimal(new int[] { 0, 0, 0, 65536 });
+            if (Properties.Settings.Default.RearMinACF == 0)
+                Properties.Settings.Default.RearMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.RearMinICF == 0)
+                Properties.Settings.Default.RearMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
+            if (Properties.Settings.Default.RearGetImagePath == "")
+            {
+                FolderBrowserDialog ofd = new FolderBrowserDialog();
+                if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
+                {
+                    GetImagePath = ofd.SelectedPath;
+                    files = Directory.GetFiles(GetImagePath);
+                    i = files.Length;
+                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    ImagePath = "Current image file: " + GetImagePath;
+                }
+                Properties.Settings.Default.RearGetImagePath = GetImagePath;
+            }
+            if (Properties.Settings.Default.RearTemplateFile == "")
+                Properties.Settings.Default.RearTemplateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+
+            cbAutoContrast.Checked = Properties.Settings.Default.RearAutoContrast;
+            cbBlur.Checked = Properties.Settings.Default.RearBlur;
+            cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.RearNoizeFilter;
+            cbAllowAngleMore45.Checked = Properties.Settings.Default.RearAllowAngles;
+            cbCamResolution.SelectedIndex = Properties.Settings.Default.RearCameraResolution;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.RearCaptureFromCamera;
+            cbNoiseFilter.Checked = Properties.Settings.Default.RearNoizeFilt;
+            templateFile = Properties.Settings.Default.RearTemplateFile;
+            cbShowAngle.Checked = Properties.Settings.Default.RearShowAngle;
+            cbShowBinarized.Checked = Properties.Settings.Default.RearShowBinarized;
+            cbShowContours.Checked = Properties.Settings.Default.RearShowContours;
+            cbCycleCapture.Checked = Properties.Settings.Default.RearCycleCapture;
+            nudAdaptiveThBlockSize.Value = Properties.Settings.Default.RearAdaptiveThBlockSize;
+            nudMaxACFdesc.Value = Properties.Settings.Default.RearMaxACF;
+            nudMinACF.Value = Properties.Settings.Default.RearMinACF;
+            nudMinContourArea.Value = Properties.Settings.Default.RearMinContourArea;
+            nudMinContourLength.Value = Properties.Settings.Default.RearMinContourLength;
+            nudMinDefinition.Value = Properties.Settings.Default.RearMinDefinition;
+            nudMinICF.Value = Properties.Settings.Default.RearMinICF;
+            LoadTemplates(templateFile);
+            if (cbCaptureFromCam.Checked == false)
+            {
+                GetImagePath = Properties.Settings.Default.RearGetImagePath;
+                GetImage();
+            }
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             tbResult.Items.Clear();

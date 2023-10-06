@@ -1533,5 +1533,2165 @@ namespace CollatorCAM.Properties {
                 this["MayGetImagePath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuneAutoContrast {
+            get {
+                return ((bool)(this["JuneAutoContrast"]));
+            }
+            set {
+                this["JuneAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuneBlur {
+            get {
+                return ((bool)(this["JuneBlur"]));
+            }
+            set {
+                this["JuneBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuneNoizeFilter {
+            get {
+                return ((bool)(this["JuneNoizeFilter"]));
+            }
+            set {
+                this["JuneNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuneAllowAngles {
+            get {
+                return ((bool)(this["JuneAllowAngles"]));
+            }
+            set {
+                this["JuneAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int JuneCameraResolution {
+            get {
+                return ((int)(this["JuneCameraResolution"]));
+            }
+            set {
+                this["JuneCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuneCaptureFromCamera {
+            get {
+                return ((bool)(this["JuneCaptureFromCamera"]));
+            }
+            set {
+                this["JuneCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuneNoizeFilt {
+            get {
+                return ((bool)(this["JuneNoizeFilt"]));
+            }
+            set {
+                this["JuneNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuneShowContours {
+            get {
+                return ((bool)(this["JuneShowContours"]));
+            }
+            set {
+                this["JuneShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string JuneTemplateFile {
+            get {
+                return ((string)(this["JuneTemplateFile"]));
+            }
+            set {
+                this["JuneTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuneShowAngle {
+            get {
+                return ((bool)(this["JuneShowAngle"]));
+            }
+            set {
+                this["JuneShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuneShowBinarized {
+            get {
+                return ((bool)(this["JuneShowBinarized"]));
+            }
+            set {
+                this["JuneShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JuneCycleCapture {
+            get {
+                return ((bool)(this["JuneCycleCapture"]));
+            }
+            set {
+                this["JuneCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JuneAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["JuneAdaptiveThBlockSize"]));
+            }
+            set {
+                this["JuneAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JuneMaxACF {
+            get {
+                return ((decimal)(this["JuneMaxACF"]));
+            }
+            set {
+                this["JuneMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JuneMinACF {
+            get {
+                return ((decimal)(this["JuneMinACF"]));
+            }
+            set {
+                this["JuneMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JuneMinContourArea {
+            get {
+                return ((decimal)(this["JuneMinContourArea"]));
+            }
+            set {
+                this["JuneMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JuneMinContourLength {
+            get {
+                return ((decimal)(this["JuneMinContourLength"]));
+            }
+            set {
+                this["JuneMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JuneMinDefinition {
+            get {
+                return ((decimal)(this["JuneMinDefinition"]));
+            }
+            set {
+                this["JuneMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JuneMinICF {
+            get {
+                return ((decimal)(this["JuneMinICF"]));
+            }
+            set {
+                this["JuneMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string JuneGetImagePath {
+            get {
+                return ((string)(this["JuneGetImagePath"]));
+            }
+            set {
+                this["JuneGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JulyAutoContrast {
+            get {
+                return ((bool)(this["JulyAutoContrast"]));
+            }
+            set {
+                this["JulyAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JulyBlur {
+            get {
+                return ((bool)(this["JulyBlur"]));
+            }
+            set {
+                this["JulyBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JulyNoizeFilter {
+            get {
+                return ((bool)(this["JulyNoizeFilter"]));
+            }
+            set {
+                this["JulyNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JulyAllowAngles {
+            get {
+                return ((bool)(this["JulyAllowAngles"]));
+            }
+            set {
+                this["JulyAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int JulyCameraResolution {
+            get {
+                return ((int)(this["JulyCameraResolution"]));
+            }
+            set {
+                this["JulyCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JulyCaptureFromCamera {
+            get {
+                return ((bool)(this["JulyCaptureFromCamera"]));
+            }
+            set {
+                this["JulyCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JulyNoizeFilt {
+            get {
+                return ((bool)(this["JulyNoizeFilt"]));
+            }
+            set {
+                this["JulyNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JulyShowContours {
+            get {
+                return ((bool)(this["JulyShowContours"]));
+            }
+            set {
+                this["JulyShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string JulyTemplateFile {
+            get {
+                return ((string)(this["JulyTemplateFile"]));
+            }
+            set {
+                this["JulyTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JulyShowAngle {
+            get {
+                return ((bool)(this["JulyShowAngle"]));
+            }
+            set {
+                this["JulyShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JulyShowBinarized {
+            get {
+                return ((bool)(this["JulyShowBinarized"]));
+            }
+            set {
+                this["JulyShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool JulyCycleCapture {
+            get {
+                return ((bool)(this["JulyCycleCapture"]));
+            }
+            set {
+                this["JulyCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JulyAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["JulyAdaptiveThBlockSize"]));
+            }
+            set {
+                this["JulyAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JulyMaxACF {
+            get {
+                return ((decimal)(this["JulyMaxACF"]));
+            }
+            set {
+                this["JulyMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JulyMinACF {
+            get {
+                return ((decimal)(this["JulyMinACF"]));
+            }
+            set {
+                this["JulyMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JulyMinContourArea {
+            get {
+                return ((decimal)(this["JulyMinContourArea"]));
+            }
+            set {
+                this["JulyMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JulyMinContourLength {
+            get {
+                return ((decimal)(this["JulyMinContourLength"]));
+            }
+            set {
+                this["JulyMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JulyMinDefinition {
+            get {
+                return ((decimal)(this["JulyMinDefinition"]));
+            }
+            set {
+                this["JulyMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal JulyMinICF {
+            get {
+                return ((decimal)(this["JulyMinICF"]));
+            }
+            set {
+                this["JulyMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string JulyGetImagePath {
+            get {
+                return ((string)(this["JulyGetImagePath"]));
+            }
+            set {
+                this["JulyGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AugustAutoContrast {
+            get {
+                return ((bool)(this["AugustAutoContrast"]));
+            }
+            set {
+                this["AugustAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AugustBlur {
+            get {
+                return ((bool)(this["AugustBlur"]));
+            }
+            set {
+                this["AugustBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AugustNoizeFilter {
+            get {
+                return ((bool)(this["AugustNoizeFilter"]));
+            }
+            set {
+                this["AugustNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AugustAllowAngles {
+            get {
+                return ((bool)(this["AugustAllowAngles"]));
+            }
+            set {
+                this["AugustAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AugustCameraResolution {
+            get {
+                return ((int)(this["AugustCameraResolution"]));
+            }
+            set {
+                this["AugustCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AugustCaptureFromCamera {
+            get {
+                return ((bool)(this["AugustCaptureFromCamera"]));
+            }
+            set {
+                this["AugustCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AugustNoizeFilt {
+            get {
+                return ((bool)(this["AugustNoizeFilt"]));
+            }
+            set {
+                this["AugustNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AugustShowContours {
+            get {
+                return ((bool)(this["AugustShowContours"]));
+            }
+            set {
+                this["AugustShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AugustTemplateFile {
+            get {
+                return ((string)(this["AugustTemplateFile"]));
+            }
+            set {
+                this["AugustTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AugustShowAngle {
+            get {
+                return ((bool)(this["AugustShowAngle"]));
+            }
+            set {
+                this["AugustShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AugustShowBinarized {
+            get {
+                return ((bool)(this["AugustShowBinarized"]));
+            }
+            set {
+                this["AugustShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AugustCycleCapture {
+            get {
+                return ((bool)(this["AugustCycleCapture"]));
+            }
+            set {
+                this["AugustCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AugustAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["AugustAdaptiveThBlockSize"]));
+            }
+            set {
+                this["AugustAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AugustMaxACF {
+            get {
+                return ((decimal)(this["AugustMaxACF"]));
+            }
+            set {
+                this["AugustMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AugustMinACF {
+            get {
+                return ((decimal)(this["AugustMinACF"]));
+            }
+            set {
+                this["AugustMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AugustMinContourArea {
+            get {
+                return ((decimal)(this["AugustMinContourArea"]));
+            }
+            set {
+                this["AugustMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AugustMinContourLength {
+            get {
+                return ((decimal)(this["AugustMinContourLength"]));
+            }
+            set {
+                this["AugustMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AugustMinDefinition {
+            get {
+                return ((decimal)(this["AugustMinDefinition"]));
+            }
+            set {
+                this["AugustMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal AugustMinICF {
+            get {
+                return ((decimal)(this["AugustMinICF"]));
+            }
+            set {
+                this["AugustMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string AugustGetImagePath {
+            get {
+                return ((string)(this["AugustGetImagePath"]));
+            }
+            set {
+                this["AugustGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeptemberAutoContrast {
+            get {
+                return ((bool)(this["SeptemberAutoContrast"]));
+            }
+            set {
+                this["SeptemberAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeptemberBlur {
+            get {
+                return ((bool)(this["SeptemberBlur"]));
+            }
+            set {
+                this["SeptemberBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeptemberNoizeFilter {
+            get {
+                return ((bool)(this["SeptemberNoizeFilter"]));
+            }
+            set {
+                this["SeptemberNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeptemberAllowAngles {
+            get {
+                return ((bool)(this["SeptemberAllowAngles"]));
+            }
+            set {
+                this["SeptemberAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SeptemberCameraResolution {
+            get {
+                return ((int)(this["SeptemberCameraResolution"]));
+            }
+            set {
+                this["SeptemberCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeptemberCaptureFromCamera {
+            get {
+                return ((bool)(this["SeptemberCaptureFromCamera"]));
+            }
+            set {
+                this["SeptemberCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeptemberNoizeFilt {
+            get {
+                return ((bool)(this["SeptemberNoizeFilt"]));
+            }
+            set {
+                this["SeptemberNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeptemberShowContours {
+            get {
+                return ((bool)(this["SeptemberShowContours"]));
+            }
+            set {
+                this["SeptemberShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SeptemberTemplateFile {
+            get {
+                return ((string)(this["SeptemberTemplateFile"]));
+            }
+            set {
+                this["SeptemberTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeptemberShowAngle {
+            get {
+                return ((bool)(this["SeptemberShowAngle"]));
+            }
+            set {
+                this["SeptemberShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeptemberShowBinarized {
+            get {
+                return ((bool)(this["SeptemberShowBinarized"]));
+            }
+            set {
+                this["SeptemberShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SeptemberCycleCapture {
+            get {
+                return ((bool)(this["SeptemberCycleCapture"]));
+            }
+            set {
+                this["SeptemberCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal SeptemberAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["SeptemberAdaptiveThBlockSize"]));
+            }
+            set {
+                this["SeptemberAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal SeptemberMaxACF {
+            get {
+                return ((decimal)(this["SeptemberMaxACF"]));
+            }
+            set {
+                this["SeptemberMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal SeptemberMinACF {
+            get {
+                return ((decimal)(this["SeptemberMinACF"]));
+            }
+            set {
+                this["SeptemberMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal SeptemberMinContourArea {
+            get {
+                return ((decimal)(this["SeptemberMinContourArea"]));
+            }
+            set {
+                this["SeptemberMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal SeptemberMinContourLength {
+            get {
+                return ((decimal)(this["SeptemberMinContourLength"]));
+            }
+            set {
+                this["SeptemberMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal SeptemberMinDefinition {
+            get {
+                return ((decimal)(this["SeptemberMinDefinition"]));
+            }
+            set {
+                this["SeptemberMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal SeptemberMinICF {
+            get {
+                return ((decimal)(this["SeptemberMinICF"]));
+            }
+            set {
+                this["SeptemberMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SeptemberGetImagePath {
+            get {
+                return ((string)(this["SeptemberGetImagePath"]));
+            }
+            set {
+                this["SeptemberGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OctoberAutoContrast {
+            get {
+                return ((bool)(this["OctoberAutoContrast"]));
+            }
+            set {
+                this["OctoberAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OctoberBlur {
+            get {
+                return ((bool)(this["OctoberBlur"]));
+            }
+            set {
+                this["OctoberBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OctoberNoizeFilter {
+            get {
+                return ((bool)(this["OctoberNoizeFilter"]));
+            }
+            set {
+                this["OctoberNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OctoberAllowAngles {
+            get {
+                return ((bool)(this["OctoberAllowAngles"]));
+            }
+            set {
+                this["OctoberAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OctoberCameraResolution {
+            get {
+                return ((int)(this["OctoberCameraResolution"]));
+            }
+            set {
+                this["OctoberCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OctoberCaptureFromCamera {
+            get {
+                return ((bool)(this["OctoberCaptureFromCamera"]));
+            }
+            set {
+                this["OctoberCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OctoberNoizeFilt {
+            get {
+                return ((bool)(this["OctoberNoizeFilt"]));
+            }
+            set {
+                this["OctoberNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OctoberShowContours {
+            get {
+                return ((bool)(this["OctoberShowContours"]));
+            }
+            set {
+                this["OctoberShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public string OctoberTemplateFile {
+            get {
+                return ((string)(this["OctoberTemplateFile"]));
+            }
+            set {
+                this["OctoberTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OctoberShowAngle {
+            get {
+                return ((bool)(this["OctoberShowAngle"]));
+            }
+            set {
+                this["OctoberShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OctoberShowBinarized {
+            get {
+                return ((bool)(this["OctoberShowBinarized"]));
+            }
+            set {
+                this["OctoberShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OctoberCycleCapture {
+            get {
+                return ((bool)(this["OctoberCycleCapture"]));
+            }
+            set {
+                this["OctoberCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OctoberAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["OctoberAdaptiveThBlockSize"]));
+            }
+            set {
+                this["OctoberAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OctoberMaxACF {
+            get {
+                return ((decimal)(this["OctoberMaxACF"]));
+            }
+            set {
+                this["OctoberMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OctoberMinACF {
+            get {
+                return ((decimal)(this["OctoberMinACF"]));
+            }
+            set {
+                this["OctoberMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OctoberMinContourArea {
+            get {
+                return ((decimal)(this["OctoberMinContourArea"]));
+            }
+            set {
+                this["OctoberMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OctoberMinContourLength {
+            get {
+                return ((decimal)(this["OctoberMinContourLength"]));
+            }
+            set {
+                this["OctoberMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OctoberMinDefinition {
+            get {
+                return ((decimal)(this["OctoberMinDefinition"]));
+            }
+            set {
+                this["OctoberMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal OctoberMinICF {
+            get {
+                return ((decimal)(this["OctoberMinICF"]));
+            }
+            set {
+                this["OctoberMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string OctoberGetImagePath {
+            get {
+                return ((string)(this["OctoberGetImagePath"]));
+            }
+            set {
+                this["OctoberGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NovemberAutoContrast {
+            get {
+                return ((bool)(this["NovemberAutoContrast"]));
+            }
+            set {
+                this["NovemberAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NovemberBlur {
+            get {
+                return ((bool)(this["NovemberBlur"]));
+            }
+            set {
+                this["NovemberBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NovemberNoizeFilter {
+            get {
+                return ((bool)(this["NovemberNoizeFilter"]));
+            }
+            set {
+                this["NovemberNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NovemberAllowAngles {
+            get {
+                return ((bool)(this["NovemberAllowAngles"]));
+            }
+            set {
+                this["NovemberAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NovemberCameraResolution {
+            get {
+                return ((int)(this["NovemberCameraResolution"]));
+            }
+            set {
+                this["NovemberCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NovemberCaptureFromCamera {
+            get {
+                return ((bool)(this["NovemberCaptureFromCamera"]));
+            }
+            set {
+                this["NovemberCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NovemberNoizeFilt {
+            get {
+                return ((bool)(this["NovemberNoizeFilt"]));
+            }
+            set {
+                this["NovemberNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NovemberShowContours {
+            get {
+                return ((bool)(this["NovemberShowContours"]));
+            }
+            set {
+                this["NovemberShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NovemberTemplateFile {
+            get {
+                return ((string)(this["NovemberTemplateFile"]));
+            }
+            set {
+                this["NovemberTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NovemberShowAngle {
+            get {
+                return ((bool)(this["NovemberShowAngle"]));
+            }
+            set {
+                this["NovemberShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NovemberShowBinarized {
+            get {
+                return ((bool)(this["NovemberShowBinarized"]));
+            }
+            set {
+                this["NovemberShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool NovemberCycleCapture {
+            get {
+                return ((bool)(this["NovemberCycleCapture"]));
+            }
+            set {
+                this["NovemberCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal NovemberAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["NovemberAdaptiveThBlockSize"]));
+            }
+            set {
+                this["NovemberAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal NovemberMaxACF {
+            get {
+                return ((decimal)(this["NovemberMaxACF"]));
+            }
+            set {
+                this["NovemberMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal NovemberMinACF {
+            get {
+                return ((decimal)(this["NovemberMinACF"]));
+            }
+            set {
+                this["NovemberMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal NovemberMinContourArea {
+            get {
+                return ((decimal)(this["NovemberMinContourArea"]));
+            }
+            set {
+                this["NovemberMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal NovemberMinContourLength {
+            get {
+                return ((decimal)(this["NovemberMinContourLength"]));
+            }
+            set {
+                this["NovemberMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal NovemberMinDefinition {
+            get {
+                return ((decimal)(this["NovemberMinDefinition"]));
+            }
+            set {
+                this["NovemberMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal NovemberMinICF {
+            get {
+                return ((decimal)(this["NovemberMinICF"]));
+            }
+            set {
+                this["NovemberMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string NovemberGetImagePath {
+            get {
+                return ((string)(this["NovemberGetImagePath"]));
+            }
+            set {
+                this["NovemberGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DecemberAutoContrast {
+            get {
+                return ((bool)(this["DecemberAutoContrast"]));
+            }
+            set {
+                this["DecemberAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DecemberBlur {
+            get {
+                return ((bool)(this["DecemberBlur"]));
+            }
+            set {
+                this["DecemberBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DecemberNoizeFilter {
+            get {
+                return ((bool)(this["DecemberNoizeFilter"]));
+            }
+            set {
+                this["DecemberNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DecemberAllowAngles {
+            get {
+                return ((bool)(this["DecemberAllowAngles"]));
+            }
+            set {
+                this["DecemberAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int DecemberCameraResolution {
+            get {
+                return ((int)(this["DecemberCameraResolution"]));
+            }
+            set {
+                this["DecemberCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DecemberCaptureFromCamera {
+            get {
+                return ((bool)(this["DecemberCaptureFromCamera"]));
+            }
+            set {
+                this["DecemberCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DecemberNoizeFilt {
+            get {
+                return ((bool)(this["DecemberNoizeFilt"]));
+            }
+            set {
+                this["DecemberNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DecemberShowContours {
+            get {
+                return ((bool)(this["DecemberShowContours"]));
+            }
+            set {
+                this["DecemberShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DecemberTemplateFile {
+            get {
+                return ((string)(this["DecemberTemplateFile"]));
+            }
+            set {
+                this["DecemberTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DecemberShowAngle {
+            get {
+                return ((bool)(this["DecemberShowAngle"]));
+            }
+            set {
+                this["DecemberShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DecemberShowBinarized {
+            get {
+                return ((bool)(this["DecemberShowBinarized"]));
+            }
+            set {
+                this["DecemberShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DecemberCycleCapture {
+            get {
+                return ((bool)(this["DecemberCycleCapture"]));
+            }
+            set {
+                this["DecemberCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal DecemberAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["DecemberAdaptiveThBlockSize"]));
+            }
+            set {
+                this["DecemberAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal DecemberMaxACF {
+            get {
+                return ((decimal)(this["DecemberMaxACF"]));
+            }
+            set {
+                this["DecemberMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal DecemberMinACF {
+            get {
+                return ((decimal)(this["DecemberMinACF"]));
+            }
+            set {
+                this["DecemberMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal DecemberMinContourArea {
+            get {
+                return ((decimal)(this["DecemberMinContourArea"]));
+            }
+            set {
+                this["DecemberMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal DecemberMinContourLength {
+            get {
+                return ((decimal)(this["DecemberMinContourLength"]));
+            }
+            set {
+                this["DecemberMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal DecemberMinDefinition {
+            get {
+                return ((decimal)(this["DecemberMinDefinition"]));
+            }
+            set {
+                this["DecemberMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal DecemberMinICF {
+            get {
+                return ((decimal)(this["DecemberMinICF"]));
+            }
+            set {
+                this["DecemberMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string DecemberGetImagePath {
+            get {
+                return ((string)(this["DecemberGetImagePath"]));
+            }
+            set {
+                this["DecemberGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RearAutoContrast {
+            get {
+                return ((bool)(this["RearAutoContrast"]));
+            }
+            set {
+                this["RearAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RearBlur {
+            get {
+                return ((bool)(this["RearBlur"]));
+            }
+            set {
+                this["RearBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RearNoizeFilter {
+            get {
+                return ((bool)(this["RearNoizeFilter"]));
+            }
+            set {
+                this["RearNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RearAllowAngles {
+            get {
+                return ((bool)(this["RearAllowAngles"]));
+            }
+            set {
+                this["RearAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int RearCameraResolution {
+            get {
+                return ((int)(this["RearCameraResolution"]));
+            }
+            set {
+                this["RearCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RearCaptureFromCamera {
+            get {
+                return ((bool)(this["RearCaptureFromCamera"]));
+            }
+            set {
+                this["RearCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RearNoizeFilt {
+            get {
+                return ((bool)(this["RearNoizeFilt"]));
+            }
+            set {
+                this["RearNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RearShowContours {
+            get {
+                return ((bool)(this["RearShowContours"]));
+            }
+            set {
+                this["RearShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RearTemplateFile {
+            get {
+                return ((string)(this["RearTemplateFile"]));
+            }
+            set {
+                this["RearTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RearShowAngle {
+            get {
+                return ((bool)(this["RearShowAngle"]));
+            }
+            set {
+                this["RearShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RearShowBinarized {
+            get {
+                return ((bool)(this["RearShowBinarized"]));
+            }
+            set {
+                this["RearShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool RearCycleCapture {
+            get {
+                return ((bool)(this["RearCycleCapture"]));
+            }
+            set {
+                this["RearCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal RearAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["RearAdaptiveThBlockSize"]));
+            }
+            set {
+                this["RearAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal RearMaxACF {
+            get {
+                return ((decimal)(this["RearMaxACF"]));
+            }
+            set {
+                this["RearMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal RearMinACF {
+            get {
+                return ((decimal)(this["RearMinACF"]));
+            }
+            set {
+                this["RearMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal RearMinContourArea {
+            get {
+                return ((decimal)(this["RearMinContourArea"]));
+            }
+            set {
+                this["RearMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal RearMinContourLength {
+            get {
+                return ((decimal)(this["RearMinContourLength"]));
+            }
+            set {
+                this["RearMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal RearMinDefinition {
+            get {
+                return ((decimal)(this["RearMinDefinition"]));
+            }
+            set {
+                this["RearMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal RearMinICF {
+            get {
+                return ((decimal)(this["RearMinICF"]));
+            }
+            set {
+                this["RearMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string RearGetImagePath {
+            get {
+                return ((string)(this["RearGetImagePath"]));
+            }
+            set {
+                this["RearGetImagePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FrontAutoContrast {
+            get {
+                return ((bool)(this["FrontAutoContrast"]));
+            }
+            set {
+                this["FrontAutoContrast"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FrontBlur {
+            get {
+                return ((bool)(this["FrontBlur"]));
+            }
+            set {
+                this["FrontBlur"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FrontNoizeFilter {
+            get {
+                return ((bool)(this["FrontNoizeFilter"]));
+            }
+            set {
+                this["FrontNoizeFilter"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FrontAllowAngles {
+            get {
+                return ((bool)(this["FrontAllowAngles"]));
+            }
+            set {
+                this["FrontAllowAngles"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FrontCameraResolution {
+            get {
+                return ((int)(this["FrontCameraResolution"]));
+            }
+            set {
+                this["FrontCameraResolution"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FrontCaptureFromCamera {
+            get {
+                return ((bool)(this["FrontCaptureFromCamera"]));
+            }
+            set {
+                this["FrontCaptureFromCamera"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FrontNoizeFilt {
+            get {
+                return ((bool)(this["FrontNoizeFilt"]));
+            }
+            set {
+                this["FrontNoizeFilt"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FrontShowContours {
+            get {
+                return ((bool)(this["FrontShowContours"]));
+            }
+            set {
+                this["FrontShowContours"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FrontTemplateFile {
+            get {
+                return ((string)(this["FrontTemplateFile"]));
+            }
+            set {
+                this["FrontTemplateFile"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FrontShowAngle {
+            get {
+                return ((bool)(this["FrontShowAngle"]));
+            }
+            set {
+                this["FrontShowAngle"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FrontShowBinarized {
+            get {
+                return ((bool)(this["FrontShowBinarized"]));
+            }
+            set {
+                this["FrontShowBinarized"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool FrontCycleCapture {
+            get {
+                return ((bool)(this["FrontCycleCapture"]));
+            }
+            set {
+                this["FrontCycleCapture"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal FrontAdaptiveThBlockSize {
+            get {
+                return ((decimal)(this["FrontAdaptiveThBlockSize"]));
+            }
+            set {
+                this["FrontAdaptiveThBlockSize"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal FrontMaxACF {
+            get {
+                return ((decimal)(this["FrontMaxACF"]));
+            }
+            set {
+                this["FrontMaxACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal FrontMinACF {
+            get {
+                return ((decimal)(this["FrontMinACF"]));
+            }
+            set {
+                this["FrontMinACF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal FrontMinContourArea {
+            get {
+                return ((decimal)(this["FrontMinContourArea"]));
+            }
+            set {
+                this["FrontMinContourArea"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal FrontMinContourLength {
+            get {
+                return ((decimal)(this["FrontMinContourLength"]));
+            }
+            set {
+                this["FrontMinContourLength"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal FrontMinDefinition {
+            get {
+                return ((decimal)(this["FrontMinDefinition"]));
+            }
+            set {
+                this["FrontMinDefinition"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public decimal FrontMinICF {
+            get {
+                return ((decimal)(this["FrontMinICF"]));
+            }
+            set {
+                this["FrontMinICF"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string FrontGetImagePath {
+            get {
+                return ((string)(this["FrontGetImagePath"]));
+            }
+            set {
+                this["FrontGetImagePath"] = value;
+            }
+        }
     }
 }
