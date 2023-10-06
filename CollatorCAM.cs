@@ -53,7 +53,6 @@ namespace CollatorCAM
         int monthph;
         bool photoBlock;
         bool PhotoMonth;
-        private int imageIndex;
         private string[] files;
 
 
@@ -63,23 +62,34 @@ namespace CollatorCAM
         public Form_Listener()
         {
             this.InitializeComponent();
-            //create image preocessor
+            System.Windows.Forms.Application.Idle += new EventHandler(Application_Idle);
+            thread2 = new Thread(() => WriteMDBS("WRITE"));
+            
+            //create image processor
             processor = new ContourAnalysisNS.ImageProcessor();
             //load default templates
-            templateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
-            LoadTemplates(templateFile);
+            //templateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+            //LoadTemplates(templateFile);
+
             //start capture from cam
-            StartCapture();
+            //StartCapture();                     (RUN CAMERA)
             //apply settings
             //ApplySettings();
             //
-            System.Windows.Forms.Application.Idle += new EventHandler(Application_Idle);
-            thread2 = new Thread(() => WriteMDBS("WRITE"));
-            thread2.Start();
-            imageIndex = 0;
+            RunForm();
+
+
             this.Closing += new CancelEventHandler(this.Form_Listener_Close);
+
+            thread2.Start();
         }
 
+        private void RunForm()
+        {
+            month = 1;
+            button7.BackColor = System.Drawing.Color.DarkGray;
+            Front();
+        }
         /// 
         /// Write data to box, from modbus
         /// 
@@ -102,8 +112,6 @@ namespace CollatorCAM
                     else
                     {
                         label2.Text = "Current template file: " + templateFile;
-
-                        pictureBox2.Refresh();
                         ApplySettings();
                     }
                 }
@@ -117,17 +125,6 @@ namespace CollatorCAM
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
 
         private void LoadTemplates(string fileName)
         {
@@ -167,7 +164,6 @@ namespace CollatorCAM
                 MessageBox.Show(ex.Message);
             }
         }
-
         private void ApplyCamSettings()
         {
             try
@@ -222,9 +218,9 @@ namespace CollatorCAM
         private void ibMain_Paint(object sender, PaintEventArgs e)
         {
                 string TBtime = "";
-                string TBmonth = "NG Month";
-                string TByear = "NG Year";
-                string TBmaori = "NG Maori";
+                string TBmonth = "  NG Month";
+                string TByear = "    NG Year";
+                string TBmaori = "      NG Maori";
                 DateTime thisDay = DateTime.Now;
                 TBtime = thisDay.ToString("d") + " " + thisDay.ToString("T");
 
@@ -244,62 +240,62 @@ namespace CollatorCAM
                             e.Graphics.DrawLines(Pens.Red, contour.ToArray());
                 //
                 lock (processor.foundTemplates)
-                    foreach (FoundTemplateDesc found in processor.foundTemplates)
+                foreach (FoundTemplateDesc found in processor.foundTemplates)
+                {
+                    if (found.template.name.EndsWith(".png") || found.template.name.EndsWith(".jpg"))
                     {
-                        if (found.template.name.EndsWith(".png") || found.template.name.EndsWith(".jpg"))
-                        {
-                            DrawAugmentedReality(found, e.Graphics);
-                            continue;
-                        }
-
-                        Rectangle foundRect = found.sample.contour.SourceBoundingRect;
-                        Point p1 = new Point((foundRect.Left + foundRect.Right) / 2, foundRect.Top);
-                        string text = "";
-                        //FoundTemplateName = found.template.name;
-
-                        if (found.template.name != "2024")
-                            text = found.template.name;
-                        if (found.template.name == "January" || found.template.name == "February" || found.template.name == "March" || 
-                        found.template.name == "April" || found.template.name == "May" || found.template.name == "June" ||
-                        found.template.name == "July" || found.template.name == "August" || found.template.name == "September" ||
-                        found.template.name == "October" || found.template.name == "November" || found.template.name == "December" ||
-                        found.template.name == "Front" || found.template.name == "Rear")
-                            TBmonth = "OK " + found.template.name;
-                        if (found.template.name == "2024")
-                        {
-                            TByear = "OK " + found.template.name;
-                            text = found.template.name;
-                            Point point = new Point(foundRect.Right - 150, foundRect.Top + 100);
-
-                            Rectangle maori = new Rectangle(foundRect.Right + 10, foundRect.Top, foundRect.Width * 2, foundRect.Height);
-                            Point p2 = new Point((maori.Left + maori.Right) / 2, maori.Top);
-                            //ProcessImage.GrayFrame
-                            Bitmap bitmap = new Bitmap(foundRect.Width * 2, foundRect.Height);
-                            Bitmap gray = (processor.binarizedFrame).Bitmap;
-                            bitmap = gray.Clone(maori, gray.PixelFormat);
-                            var sourceContours = new Image<Gray, Byte>(bitmap).FindContours(Emgu.CV.CvEnum.CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_NONE, Emgu.CV.CvEnum.RETR_TYPE.CV_RETR_LIST);
-                            //cont = sourceContours;
-                            string num = point.ToString();
-                            e.Graphics.DrawString(num, font, new SolidBrush(Color.FromArgb(255, 0, 255, 0)), point);
-                            e.Graphics.DrawRectangle(borderPen, maori);
-                            if (sourceContours != null)
-                            {
-                                e.Graphics.DrawString("Maori", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
-                                e.Graphics.DrawString("Maori", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
-                                TBmaori = "OK Maori";
-                            }
-                            if (sourceContours == null)
-                            {
-                                e.Graphics.DrawString("Null", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
-                                e.Graphics.DrawString("Null", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
-                            }
-                        }
-                        if (showAngle)
-                            text += string.Format("\r\nangle={0:000}°\r\nscale={1:0.0}", 180 * found.angle / Math.PI, found.scale);
-                        e.Graphics.DrawRectangle(borderPen, foundRect);
-                        e.Graphics.DrawString(text, font, bgBrush, new PointF(p1.X + 1 - font.Height / 3, p1.Y + 1 - font.Height));
-                        e.Graphics.DrawString(text, font, foreBrush, new PointF(p1.X - font.Height / 3, p1.Y - font.Height));
+                        DrawAugmentedReality(found, e.Graphics);
+                        continue;
                     }
+
+                    Rectangle foundRect = found.sample.contour.SourceBoundingRect;
+                    Point p1 = new Point((foundRect.Left + foundRect.Right) / 2, foundRect.Top);
+                    string text = "";
+                    //FoundTemplateName = found.template.name;
+
+                    if (found.template.name != "2024")
+                        text = found.template.name;
+                    if (found.template.name == "January" || found.template.name == "February" || found.template.name == "March" ||
+                    found.template.name == "April" || found.template.name == "May" || found.template.name == "June" ||
+                    found.template.name == "July" || found.template.name == "August" || found.template.name == "September" ||
+                    found.template.name == "October" || found.template.name == "November" || found.template.name == "December" ||
+                    found.template.name == "Front" || found.template.name == "Rear")
+                        TBmonth = "  OK " + found.template.name;
+                    if (found.template.name == "2024")
+                    {
+                        TByear = "    OK " + found.template.name;
+                        text = found.template.name;
+                        Point point = new Point(foundRect.Right - 150, foundRect.Top + 100);
+
+                        Rectangle maori = new Rectangle(foundRect.Right + 10, foundRect.Top, foundRect.Width * 2, foundRect.Height);
+                        Point p2 = new Point((maori.Left + maori.Right) / 2, maori.Top);
+                        //ProcessImage.GrayFrame
+                        Bitmap bitmap = new Bitmap(foundRect.Width * 2, foundRect.Height);
+                        Bitmap gray = (processor.binarizedFrame).Bitmap;
+                        bitmap = gray.Clone(maori, gray.PixelFormat);
+                        var sourceContours = new Image<Gray, Byte>(bitmap).FindContours(Emgu.CV.CvEnum.CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_NONE, Emgu.CV.CvEnum.RETR_TYPE.CV_RETR_LIST);
+                        //cont = sourceContours;
+                        string num = point.ToString();
+                        e.Graphics.DrawString(num, font, new SolidBrush(Color.FromArgb(255, 0, 255, 0)), point);
+                        e.Graphics.DrawRectangle(borderPen, maori);
+                        if (sourceContours != null)
+                        {
+                            e.Graphics.DrawString("Maori", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
+                            e.Graphics.DrawString("Maori", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
+                            TBmaori = "      OK Maori";
+                        }
+                        if (sourceContours == null)
+                        {
+                            e.Graphics.DrawString("Null", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
+                            e.Graphics.DrawString("Null", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
+                        }
+                    }
+                    if (showAngle)
+                        text += string.Format("\r\nangle={0:000}°\r\nscale={1:0.0}", 180 * found.angle / Math.PI, found.scale);
+                    e.Graphics.DrawRectangle(borderPen, foundRect);
+                    e.Graphics.DrawString(text, font, bgBrush, new PointF(p1.X + 1 - font.Height / 3, p1.Y + 1 - font.Height));
+                    e.Graphics.DrawString(text, font, foreBrush, new PointF(p1.X - font.Height / 3, p1.Y - font.Height));
+                }
                 if ((PhotoMonth == true && ibMain.Image == frame) || (PhotoMonth == true && ibMain.Image == processor.binarizedFrame))
                 {
                     tbResult.Items.Add(TBtime);
@@ -375,7 +371,7 @@ namespace CollatorCAM
                     {
                         this.camWidth = camWidth;
                         this.camHeight = camHeight;
-                        ApplyCamSettings();
+                        //ApplyCamSettings();
                     }
                 }
             }
