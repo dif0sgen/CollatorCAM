@@ -16,6 +16,9 @@ using System.Threading;
 using System.Windows.Forms;
 using TCP_LISTENER_Delta;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
+using EasyModbus;
+using System.ComponentModel.Composition.Primitives;
+using Emgu.CV.CvEnum;
 
 namespace CollatorCAM
 {
@@ -51,8 +54,12 @@ namespace CollatorCAM
         int i;
         int month;
         int monthph;
+        int i_mdb;
         bool photoBlock;
         bool PhotoMonth;
+        bool check1 = false;
+        bool[] MDB_WRITE = new bool[15];
+        bool[] CONTROL_READ = new bool[1];
         private string[] files;
 
 
@@ -80,7 +87,6 @@ namespace CollatorCAM
 
 
             this.Closing += new CancelEventHandler(this.Form_Listener_Close);
-
             thread2.Start();
         }
 
@@ -106,6 +112,25 @@ namespace CollatorCAM
                     {
                         label2.Text = "Current template file: " + templateFile;
                         ApplySettings();
+                        if (modbus.Connected == true)
+                        {
+                            lblStat.Text = "Status: Connected";
+                            btnStart.Refresh();
+                            lblStat.Refresh();
+                                if (monthph == 0)
+                                    CONTROL_READ = modbus.ReadCoils(1025, 1);
+                                if (monthph == 0 && CONTROL_READ[0] == true)
+                                {
+                                    ScanCycle();
+                                }
+                        }
+
+                        else if (modbus.Connected == false)
+                        {
+                            lblStat.Text = "Status: Disconnected";
+                            btnStart.Refresh();
+                            lblStat.Refresh();
+                        }
 
                     }));
                     }
@@ -113,6 +138,15 @@ namespace CollatorCAM
                     {
                         label2.Text = "Current template file: " + templateFile;
                         ApplySettings();
+                        if (modbus.Connected == true)
+                        {
+                            if (monthph ==0)
+                                CONTROL_READ = modbus.ReadCoils(1025, 1);
+                            if (monthph == 0 && CONTROL_READ[0] == true)
+                            {
+                                ScanCycle();
+                            }
+                        }
                     }
                 }
                 catch (Exception ex) when (ex.Source == "mscorlib")
@@ -302,8 +336,13 @@ namespace CollatorCAM
                     tbResult.Items.Add(TBmonth);
                     tbResult.Items.Add(TByear);
                     tbResult.Items.Add(TBmaori);
+                if (TBmonth != "  NG Month" && TByear != "    NG Year" && TBmaori != "      NG Maori")
+                    MDB_WRITE[i_mdb] = true;
+                if (TBmonth == "  NG Month" || TByear == "    NG Year" || TBmaori == "      NG Maori")
+                    MDB_WRITE[i_mdb] = false;
                     PhotoMonth = false;
                     monthph++;
+                    i_mdb++;
                     ScanCycle();
                 }
 
@@ -418,12 +457,16 @@ namespace CollatorCAM
         monthph = 0;
         ScanCycle();
         }
+
         private void ScanCycle()
         {
+            modbus.WriteSingleCoil(1025, false);
+            modbus.WriteSingleCoil(1026, true);
             if (monthph == 0)
-            { 
+            {
+                i_mdb = 1;
                 photoBlock = true;
-                Intro(); 
+                Intro();
             }
             if (monthph == 1)
             {
@@ -497,6 +540,8 @@ namespace CollatorCAM
             }
             if (monthph == 15)
             {
+                MDB_WRITE[0] = true;
+                modbus.WriteMultipleCoils(2019, MDB_WRITE);
                 photoBlock = false;
                 monthph = 0;
             }
@@ -2009,6 +2054,43 @@ namespace CollatorCAM
             catch
             {
                 return;
+            }
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            modbus.IPAddress = Convert.ToString(txtIPAdress.Text);
+            modbus.Port = Convert.ToInt32(txtPort.Text);
+            if (modbus.Connected == false)
+            {
+                try
+                {
+
+                    modbus.Connect();
+                    check1 = true;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Connect Modbus" + ex.Message);
+                }
+                //if (modbus.Connected == true)
+                //lblStat.Text = "Status: Connected";
+
+                //this.lblStat.ForeColor = System.Drawing.Color.Green;
+            }
+            else if (modbus.Connected == true)
+            {
+                try
+                {
+                    check1 = false;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Disconnect Modbus: " + ex.Message);
+
+                }
             }
         }
     }

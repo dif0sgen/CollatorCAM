@@ -46,16 +46,75 @@ namespace CollatorCAM
             this.label22 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.tmUpdateState = new System.Windows.Forms.Timer(this.components);
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.ssMain = new System.Windows.Forms.StatusStrip();
-            this.lbFPS = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lbContoursCount = new System.Windows.Forms.ToolStripStatusLabel();
-            this.lbRecognized = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.tbResult = new System.Windows.Forms.ListBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ibMain = new Emgu.CV.UI.ImageBox();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.lblStat = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.pnSettings = new System.Windows.Forms.Panel();
+            this.cbShowAngle = new System.Windows.Forms.CheckBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.cbAutoContrast = new System.Windows.Forms.CheckBox();
+            this.btLoadImage = new System.Windows.Forms.Button();
+            this.cbCamResolution = new System.Windows.Forms.ComboBox();
+            this.cbCaptureFromCam = new System.Windows.Forms.CheckBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.cbBlur = new System.Windows.Forms.CheckBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.nudAdaptiveThBlockSize = new System.Windows.Forms.NumericUpDown();
+            this.cbAdaptiveNoiseFilter = new System.Windows.Forms.CheckBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbCycleCapture = new System.Windows.Forms.CheckBox();
+            this.btnPhoto = new System.Windows.Forms.Button();
+            this.btLoadFolder = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.label46 = new System.Windows.Forms.Label();
+            this.nudMinContourArea = new System.Windows.Forms.NumericUpDown();
+            this.nudMinContourLength = new System.Windows.Forms.NumericUpDown();
+            this.label39 = new System.Windows.Forms.Label();
+            this.cbNoiseFilter = new System.Windows.Forms.CheckBox();
+            this.nudMinDefinition = new System.Windows.Forms.NumericUpDown();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.nudMinICF = new System.Windows.Forms.NumericUpDown();
+            this.label35 = new System.Windows.Forms.Label();
+            this.cbAllowAngleMore45 = new System.Windows.Forms.CheckBox();
+            this.label34 = new System.Windows.Forms.Label();
+            this.nudMinACF = new System.Windows.Forms.NumericUpDown();
+            this.nudMaxACFdesc = new System.Windows.Forms.NumericUpDown();
+            this.cbShowContours = new System.Windows.Forms.CheckBox();
+            this.cbShowBinarized = new System.Windows.Forms.CheckBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.textBox83 = new System.Windows.Forms.TextBox();
+            this.textBox82 = new System.Windows.Forms.TextBox();
+            this.textBox81 = new System.Windows.Forms.TextBox();
+            this.textBox80 = new System.Windows.Forms.TextBox();
+            this.textBox79 = new System.Windows.Forms.TextBox();
+            this.textBox54 = new System.Windows.Forms.TextBox();
+            this.textBox53 = new System.Windows.Forms.TextBox();
+            this.textBox51 = new System.Windows.Forms.TextBox();
+            this.textBox50 = new System.Windows.Forms.TextBox();
+            this.textBox49 = new System.Windows.Forms.TextBox();
+            this.textBox48 = new System.Windows.Forms.TextBox();
+            this.textBox46 = new System.Windows.Forms.TextBox();
+            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.textBox41 = new System.Windows.Forms.TextBox();
+            this.button18 = new System.Windows.Forms.Button();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
+            this.button13 = new System.Windows.Forms.Button();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btNewTemplates = new System.Windows.Forms.ToolStripButton();
             this.btOpenTemplates = new System.Windows.Forms.ToolStripButton();
@@ -64,89 +123,39 @@ namespace CollatorCAM
             this.btCreateTemplate = new System.Windows.Forms.ToolStripButton();
             this.btAutoGenerate = new System.Windows.Forms.ToolStripButton();
             this.btTemplateEditor = new System.Windows.Forms.ToolStripButton();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.textBox42 = new System.Windows.Forms.TextBox();
-            this.textBox46 = new System.Windows.Forms.TextBox();
-            this.textBox48 = new System.Windows.Forms.TextBox();
-            this.textBox49 = new System.Windows.Forms.TextBox();
-            this.textBox50 = new System.Windows.Forms.TextBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
-            this.textBox53 = new System.Windows.Forms.TextBox();
-            this.textBox54 = new System.Windows.Forms.TextBox();
-            this.textBox79 = new System.Windows.Forms.TextBox();
-            this.textBox80 = new System.Windows.Forms.TextBox();
-            this.textBox81 = new System.Windows.Forms.TextBox();
-            this.textBox82 = new System.Windows.Forms.TextBox();
-            this.textBox83 = new System.Windows.Forms.TextBox();
-            this.pnSettings = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.cbShowBinarized = new System.Windows.Forms.CheckBox();
-            this.cbShowContours = new System.Windows.Forms.CheckBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.nudMaxACFdesc = new System.Windows.Forms.NumericUpDown();
-            this.nudMinACF = new System.Windows.Forms.NumericUpDown();
-            this.label34 = new System.Windows.Forms.Label();
-            this.cbAllowAngleMore45 = new System.Windows.Forms.CheckBox();
-            this.label35 = new System.Windows.Forms.Label();
-            this.nudMinICF = new System.Windows.Forms.NumericUpDown();
-            this.label38 = new System.Windows.Forms.Label();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.nudMinDefinition = new System.Windows.Forms.NumericUpDown();
-            this.cbNoiseFilter = new System.Windows.Forms.CheckBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.nudMinContourLength = new System.Windows.Forms.NumericUpDown();
-            this.nudMinContourArea = new System.Windows.Forms.NumericUpDown();
-            this.label46 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.btLoadFolder = new System.Windows.Forms.Button();
-            this.btnPhoto = new System.Windows.Forms.Button();
-            this.cbCycleCapture = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.cbAdaptiveNoiseFilter = new System.Windows.Forms.CheckBox();
-            this.nudAdaptiveThBlockSize = new System.Windows.Forms.NumericUpDown();
-            this.label26 = new System.Windows.Forms.Label();
-            this.cbBlur = new System.Windows.Forms.CheckBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.cbCaptureFromCam = new System.Windows.Forms.CheckBox();
-            this.cbCamResolution = new System.Windows.Forms.ComboBox();
-            this.btLoadImage = new System.Windows.Forms.Button();
-            this.cbAutoContrast = new System.Windows.Forms.CheckBox();
-            this.cbShowAngle = new System.Windows.Forms.CheckBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.ibMain = new Emgu.CV.UI.ImageBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbResult = new System.Windows.Forms.ListBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.ssMain = new System.Windows.Forms.StatusStrip();
+            this.lbFPS = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lbContoursCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lbRecognized = new System.Windows.Forms.ToolStripStatusLabel();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.txtIPAdress = new System.Windows.Forms.TextBox();
+            this.txtPort = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
-            this.tabPage5.SuspendLayout();
-            this.ssMain.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ibMain)).BeginInit();
-            this.toolStrip1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabControl1.SuspendLayout();
             this.pnSettings.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMaxACFdesc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinACF)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinICF)).BeginInit();
-            this.groupBox8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinDefinition)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinContourLength)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinContourArea)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).BeginInit();
-            this.tabControl1.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinContourArea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinContourLength)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinDefinition)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinICF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinACF)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxACFdesc)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ibMain)).BeginInit();
+            this.ssMain.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // directorySearcher1
@@ -223,88 +232,650 @@ namespace CollatorCAM
             this.tmUpdateState.Interval = 1000;
             this.tmUpdateState.Tick += new System.EventHandler(this.tmUpdateState_Tick);
             // 
-            // tabPage5
+            // tableLayoutPanel8
             // 
-            this.tabPage5.Controls.Add(this.ssMain);
-            this.tabPage5.Controls.Add(this.button3);
-            this.tabPage5.Controls.Add(this.tbResult);
-            this.tabPage5.Controls.Add(this.label3);
-            this.tabPage5.Controls.Add(this.label2);
-            this.tabPage5.Controls.Add(this.ibMain);
-            this.tabPage5.Controls.Add(this.toolStrip1);
-            this.tabPage5.Controls.Add(this.flowLayoutPanel2);
-            this.tabPage5.Controls.Add(this.pnSettings);
-            resources.ApplyResources(this.tabPage5, "tabPage5");
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
+            this.tableLayoutPanel8.BackColor = System.Drawing.Color.DimGray;
+            this.tableLayoutPanel8.Controls.Add(this.textBox1, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox1, 6, 0);
+            this.tableLayoutPanel8.Controls.Add(this.lblStat, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.txtIPAdress, 3, 0);
+            this.tableLayoutPanel8.Controls.Add(this.btnStart, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.txtPort, 2, 0);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             // 
-            // ssMain
+            // textBox1
             // 
-            this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lbFPS,
-            this.lbContoursCount,
-            this.lbRecognized});
-            resources.ApplyResources(this.ssMain, "ssMain");
-            this.ssMain.Name = "ssMain";
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.BackColor = System.Drawing.Color.DimGray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Name = "textBox1";
             // 
-            // lbFPS
+            // btnStart
             // 
-            resources.ApplyResources(this.lbFPS, "lbFPS");
-            this.lbFPS.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.lbFPS.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
-            this.lbFPS.Name = "lbFPS";
+            resources.ApplyResources(this.btnStart, "btnStart");
+            this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(103)))), ((int)(((byte)(210)))));
+            this.btnStart.FlatAppearance.BorderSize = 0;
+            this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(103)))), ((int)(((byte)(210)))));
+            this.btnStart.Name = "btnStart";
+            this.btnStart.UseVisualStyleBackColor = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // lbContoursCount
+            // lblStat
             // 
-            resources.ApplyResources(this.lbContoursCount, "lbContoursCount");
-            this.lbContoursCount.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.lbContoursCount.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
-            this.lbContoursCount.Name = "lbContoursCount";
+            resources.ApplyResources(this.lblStat, "lblStat");
+            this.lblStat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(103)))), ((int)(((byte)(210)))));
+            this.lblStat.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lblStat.ForeColor = System.Drawing.Color.White;
+            this.lblStat.Name = "lblStat";
             // 
-            // lbRecognized
+            // pictureBox1
             // 
-            resources.ApplyResources(this.lbRecognized, "lbRecognized");
-            this.lbRecognized.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
-            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
-            this.lbRecognized.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
-            this.lbRecognized.Name = "lbRecognized";
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
-            // button3
+            // tabControl1
             // 
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
+            this.tabControl1.Multiline = true;
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
             // 
-            // tbResult
+            // pnSettings
             // 
-            this.tbResult.FormattingEnabled = true;
-            resources.ApplyResources(this.tbResult, "tbResult");
-            this.tbResult.Name = "tbResult";
+            resources.ApplyResources(this.pnSettings, "pnSettings");
+            this.pnSettings.Controls.Add(this.btnSave);
+            this.pnSettings.Controls.Add(this.cbShowBinarized);
+            this.pnSettings.Controls.Add(this.cbShowContours);
+            this.pnSettings.Controls.Add(this.groupBox7);
+            this.pnSettings.Controls.Add(this.groupBox8);
+            this.pnSettings.Controls.Add(this.groupBox6);
+            this.pnSettings.Controls.Add(this.cbShowAngle);
+            this.pnSettings.Name = "pnSettings";
             // 
-            // label3
+            // cbShowAngle
             // 
-            resources.ApplyResources(this.label3, "label3");
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Name = "label3";
+            resources.ApplyResources(this.cbShowAngle, "cbShowAngle");
+            this.cbShowAngle.Name = "cbShowAngle";
+            this.cbShowAngle.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // groupBox6
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Controls.Add(this.btLoadFolder);
+            this.groupBox6.Controls.Add(this.btnPhoto);
+            this.groupBox6.Controls.Add(this.cbCycleCapture);
+            this.groupBox6.Controls.Add(this.comboBox1);
+            this.groupBox6.Controls.Add(this.cbAdaptiveNoiseFilter);
+            this.groupBox6.Controls.Add(this.nudAdaptiveThBlockSize);
+            this.groupBox6.Controls.Add(this.label26);
+            this.groupBox6.Controls.Add(this.cbBlur);
+            this.groupBox6.Controls.Add(this.label30);
+            this.groupBox6.Controls.Add(this.cbCaptureFromCam);
+            this.groupBox6.Controls.Add(this.cbCamResolution);
+            this.groupBox6.Controls.Add(this.btLoadImage);
+            this.groupBox6.Controls.Add(this.cbAutoContrast);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.TabStop = false;
             // 
-            // ibMain
+            // cbAutoContrast
             // 
-            resources.ApplyResources(this.ibMain, "ibMain");
-            this.ibMain.Name = "ibMain";
-            this.ibMain.TabStop = false;
-            this.ibMain.Paint += new System.Windows.Forms.PaintEventHandler(this.ibMain_Paint);
+            resources.ApplyResources(this.cbAutoContrast, "cbAutoContrast");
+            this.cbAutoContrast.Name = "cbAutoContrast";
+            this.cbAutoContrast.UseVisualStyleBackColor = true;
+            // 
+            // btLoadImage
+            // 
+            resources.ApplyResources(this.btLoadImage, "btLoadImage");
+            this.btLoadImage.Name = "btLoadImage";
+            this.btLoadImage.UseVisualStyleBackColor = true;
+            this.btLoadImage.Click += new System.EventHandler(this.btLoadImage_Click);
+            // 
+            // cbCamResolution
+            // 
+            this.cbCamResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCamResolution.FormattingEnabled = true;
+            this.cbCamResolution.Items.AddRange(new object[] {
+            resources.GetString("cbCamResolution.Items"),
+            resources.GetString("cbCamResolution.Items1"),
+            resources.GetString("cbCamResolution.Items2")});
+            resources.ApplyResources(this.cbCamResolution, "cbCamResolution");
+            this.cbCamResolution.Name = "cbCamResolution";
+            // 
+            // cbCaptureFromCam
+            // 
+            resources.ApplyResources(this.cbCaptureFromCam, "cbCaptureFromCam");
+            this.cbCaptureFromCam.Checked = true;
+            this.cbCaptureFromCam.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbCaptureFromCam.Name = "cbCaptureFromCam";
+            this.cbCaptureFromCam.UseVisualStyleBackColor = true;
+            // 
+            // label30
+            // 
+            resources.ApplyResources(this.label30, "label30");
+            this.label30.Name = "label30";
+            // 
+            // cbBlur
+            // 
+            resources.ApplyResources(this.cbBlur, "cbBlur");
+            this.cbBlur.Checked = true;
+            this.cbBlur.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbBlur.Name = "cbBlur";
+            this.cbBlur.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            resources.ApplyResources(this.label26, "label26");
+            this.label26.Name = "label26";
+            // 
+            // nudAdaptiveThBlockSize
+            // 
+            resources.ApplyResources(this.nudAdaptiveThBlockSize, "nudAdaptiveThBlockSize");
+            this.nudAdaptiveThBlockSize.Maximum = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            this.nudAdaptiveThBlockSize.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudAdaptiveThBlockSize.Name = "nudAdaptiveThBlockSize";
+            this.nudAdaptiveThBlockSize.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // cbAdaptiveNoiseFilter
+            // 
+            resources.ApplyResources(this.cbAdaptiveNoiseFilter, "cbAdaptiveNoiseFilter");
+            this.cbAdaptiveNoiseFilter.Checked = true;
+            this.cbAdaptiveNoiseFilter.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbAdaptiveNoiseFilter.Name = "cbAdaptiveNoiseFilter";
+            this.cbAdaptiveNoiseFilter.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
+            this.comboBox1.Name = "comboBox1";
+            // 
+            // cbCycleCapture
+            // 
+            resources.ApplyResources(this.cbCycleCapture, "cbCycleCapture");
+            this.cbCycleCapture.Checked = true;
+            this.cbCycleCapture.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbCycleCapture.Name = "cbCycleCapture";
+            this.cbCycleCapture.UseVisualStyleBackColor = true;
+            // 
+            // btnPhoto
+            // 
+            resources.ApplyResources(this.btnPhoto, "btnPhoto");
+            this.btnPhoto.Name = "btnPhoto";
+            this.btnPhoto.UseVisualStyleBackColor = true;
+            this.btnPhoto.Click += new System.EventHandler(this.btnPhoto_Click);
+            // 
+            // btLoadFolder
+            // 
+            resources.ApplyResources(this.btLoadFolder, "btLoadFolder");
+            this.btLoadFolder.Name = "btLoadFolder";
+            this.btLoadFolder.UseVisualStyleBackColor = true;
+            this.btLoadFolder.Click += new System.EventHandler(this.btLoadFolder_Click);
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.nudMinDefinition);
+            this.groupBox8.Controls.Add(this.cbNoiseFilter);
+            this.groupBox8.Controls.Add(this.label39);
+            this.groupBox8.Controls.Add(this.nudMinContourLength);
+            this.groupBox8.Controls.Add(this.nudMinContourArea);
+            this.groupBox8.Controls.Add(this.label46);
+            resources.ApplyResources(this.groupBox8, "groupBox8");
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.TabStop = false;
+            // 
+            // label46
+            // 
+            resources.ApplyResources(this.label46, "label46");
+            this.label46.Name = "label46";
+            // 
+            // nudMinContourArea
+            // 
+            resources.ApplyResources(this.nudMinContourArea, "nudMinContourArea");
+            this.nudMinContourArea.Maximum = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            this.nudMinContourArea.Name = "nudMinContourArea";
+            this.nudMinContourArea.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // nudMinContourLength
+            // 
+            resources.ApplyResources(this.nudMinContourLength, "nudMinContourLength");
+            this.nudMinContourLength.Maximum = new decimal(new int[] {
+            400,
+            0,
+            0,
+            0});
+            this.nudMinContourLength.Name = "nudMinContourLength";
+            this.nudMinContourLength.Value = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            // 
+            // label39
+            // 
+            resources.ApplyResources(this.label39, "label39");
+            this.label39.Name = "label39";
+            // 
+            // cbNoiseFilter
+            // 
+            resources.ApplyResources(this.cbNoiseFilter, "cbNoiseFilter");
+            this.cbNoiseFilter.Name = "cbNoiseFilter";
+            this.cbNoiseFilter.UseVisualStyleBackColor = true;
+            // 
+            // nudMinDefinition
+            // 
+            resources.ApplyResources(this.nudMinDefinition, "nudMinDefinition");
+            this.nudMinDefinition.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.nudMinDefinition.Name = "nudMinDefinition";
+            this.nudMinDefinition.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.nudMaxACFdesc);
+            this.groupBox7.Controls.Add(this.nudMinACF);
+            this.groupBox7.Controls.Add(this.label34);
+            this.groupBox7.Controls.Add(this.cbAllowAngleMore45);
+            this.groupBox7.Controls.Add(this.label35);
+            this.groupBox7.Controls.Add(this.nudMinICF);
+            this.groupBox7.Controls.Add(this.label38);
+            resources.ApplyResources(this.groupBox7, "groupBox7");
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.TabStop = false;
+            // 
+            // label38
+            // 
+            resources.ApplyResources(this.label38, "label38");
+            this.label38.Name = "label38";
+            // 
+            // nudMinICF
+            // 
+            this.nudMinICF.DecimalPlaces = 2;
+            this.nudMinICF.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            resources.ApplyResources(this.nudMinICF, "nudMinICF");
+            this.nudMinICF.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudMinICF.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            65536});
+            this.nudMinICF.Name = "nudMinICF";
+            this.nudMinICF.Value = new decimal(new int[] {
+            85,
+            0,
+            0,
+            131072});
+            // 
+            // label35
+            // 
+            resources.ApplyResources(this.label35, "label35");
+            this.label35.Name = "label35";
+            // 
+            // cbAllowAngleMore45
+            // 
+            resources.ApplyResources(this.cbAllowAngleMore45, "cbAllowAngleMore45");
+            this.cbAllowAngleMore45.Name = "cbAllowAngleMore45";
+            this.cbAllowAngleMore45.UseVisualStyleBackColor = true;
+            // 
+            // label34
+            // 
+            resources.ApplyResources(this.label34, "label34");
+            this.label34.Name = "label34";
+            // 
+            // nudMinACF
+            // 
+            this.nudMinACF.DecimalPlaces = 2;
+            this.nudMinACF.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            resources.ApplyResources(this.nudMinACF, "nudMinACF");
+            this.nudMinACF.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudMinACF.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            65536});
+            this.nudMinACF.Name = "nudMinACF";
+            this.nudMinACF.Value = new decimal(new int[] {
+            96,
+            0,
+            0,
+            131072});
+            // 
+            // nudMaxACFdesc
+            // 
+            resources.ApplyResources(this.nudMaxACFdesc, "nudMaxACFdesc");
+            this.nudMaxACFdesc.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.nudMaxACFdesc.Name = "nudMaxACFdesc";
+            this.nudMaxACFdesc.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // cbShowContours
+            // 
+            resources.ApplyResources(this.cbShowContours, "cbShowContours");
+            this.cbShowContours.Name = "cbShowContours";
+            this.cbShowContours.UseVisualStyleBackColor = true;
+            // 
+            // cbShowBinarized
+            // 
+            resources.ApplyResources(this.cbShowBinarized, "cbShowBinarized");
+            this.cbShowBinarized.Name = "cbShowBinarized";
+            this.cbShowBinarized.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            resources.ApplyResources(this.btnSave, "btnSave");
+            this.btnSave.Name = "btnSave";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // flowLayoutPanel2
+            // 
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.Controls.Add(this.button7);
+            this.flowLayoutPanel2.Controls.Add(this.button1);
+            this.flowLayoutPanel2.Controls.Add(this.button2);
+            this.flowLayoutPanel2.Controls.Add(this.button8);
+            this.flowLayoutPanel2.Controls.Add(this.button9);
+            this.flowLayoutPanel2.Controls.Add(this.button10);
+            this.flowLayoutPanel2.Controls.Add(this.button11);
+            this.flowLayoutPanel2.Controls.Add(this.button12);
+            this.flowLayoutPanel2.Controls.Add(this.button13);
+            this.flowLayoutPanel2.Controls.Add(this.button14);
+            this.flowLayoutPanel2.Controls.Add(this.button15);
+            this.flowLayoutPanel2.Controls.Add(this.button16);
+            this.flowLayoutPanel2.Controls.Add(this.button17);
+            this.flowLayoutPanel2.Controls.Add(this.button18);
+            this.flowLayoutPanel2.Controls.Add(this.textBox41);
+            this.flowLayoutPanel2.Controls.Add(this.textBox42);
+            this.flowLayoutPanel2.Controls.Add(this.textBox46);
+            this.flowLayoutPanel2.Controls.Add(this.textBox48);
+            this.flowLayoutPanel2.Controls.Add(this.textBox49);
+            this.flowLayoutPanel2.Controls.Add(this.textBox50);
+            this.flowLayoutPanel2.Controls.Add(this.textBox51);
+            this.flowLayoutPanel2.Controls.Add(this.textBox53);
+            this.flowLayoutPanel2.Controls.Add(this.textBox54);
+            this.flowLayoutPanel2.Controls.Add(this.textBox79);
+            this.flowLayoutPanel2.Controls.Add(this.textBox80);
+            this.flowLayoutPanel2.Controls.Add(this.textBox81);
+            this.flowLayoutPanel2.Controls.Add(this.textBox82);
+            this.flowLayoutPanel2.Controls.Add(this.textBox83);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            // 
+            // textBox83
+            // 
+            this.textBox83.BackColor = System.Drawing.Color.White;
+            this.textBox83.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox83, "textBox83");
+            this.textBox83.ForeColor = System.Drawing.Color.Black;
+            this.textBox83.Name = "textBox83";
+            this.textBox83.ReadOnly = true;
+            // 
+            // textBox82
+            // 
+            this.textBox82.BackColor = System.Drawing.Color.White;
+            this.textBox82.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox82, "textBox82");
+            this.textBox82.ForeColor = System.Drawing.Color.Black;
+            this.textBox82.Name = "textBox82";
+            this.textBox82.ReadOnly = true;
+            // 
+            // textBox81
+            // 
+            this.textBox81.BackColor = System.Drawing.Color.White;
+            this.textBox81.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox81, "textBox81");
+            this.textBox81.ForeColor = System.Drawing.Color.Black;
+            this.textBox81.Name = "textBox81";
+            this.textBox81.ReadOnly = true;
+            // 
+            // textBox80
+            // 
+            this.textBox80.BackColor = System.Drawing.Color.White;
+            this.textBox80.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox80, "textBox80");
+            this.textBox80.ForeColor = System.Drawing.Color.Black;
+            this.textBox80.Name = "textBox80";
+            this.textBox80.ReadOnly = true;
+            // 
+            // textBox79
+            // 
+            this.textBox79.BackColor = System.Drawing.Color.White;
+            this.textBox79.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox79, "textBox79");
+            this.textBox79.ForeColor = System.Drawing.Color.Black;
+            this.textBox79.Name = "textBox79";
+            this.textBox79.ReadOnly = true;
+            // 
+            // textBox54
+            // 
+            this.textBox54.BackColor = System.Drawing.Color.White;
+            this.textBox54.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox54, "textBox54");
+            this.textBox54.ForeColor = System.Drawing.Color.Black;
+            this.textBox54.Name = "textBox54";
+            this.textBox54.ReadOnly = true;
+            // 
+            // textBox53
+            // 
+            this.textBox53.BackColor = System.Drawing.Color.White;
+            this.textBox53.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox53, "textBox53");
+            this.textBox53.ForeColor = System.Drawing.Color.Black;
+            this.textBox53.Name = "textBox53";
+            this.textBox53.ReadOnly = true;
+            // 
+            // textBox51
+            // 
+            this.textBox51.BackColor = System.Drawing.Color.White;
+            this.textBox51.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox51, "textBox51");
+            this.textBox51.ForeColor = System.Drawing.Color.Black;
+            this.textBox51.Name = "textBox51";
+            this.textBox51.ReadOnly = true;
+            // 
+            // textBox50
+            // 
+            this.textBox50.BackColor = System.Drawing.Color.White;
+            this.textBox50.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox50, "textBox50");
+            this.textBox50.ForeColor = System.Drawing.Color.Black;
+            this.textBox50.Name = "textBox50";
+            this.textBox50.ReadOnly = true;
+            // 
+            // textBox49
+            // 
+            this.textBox49.BackColor = System.Drawing.Color.White;
+            this.textBox49.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox49, "textBox49");
+            this.textBox49.ForeColor = System.Drawing.Color.Black;
+            this.textBox49.Name = "textBox49";
+            this.textBox49.ReadOnly = true;
+            // 
+            // textBox48
+            // 
+            this.textBox48.BackColor = System.Drawing.Color.White;
+            this.textBox48.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox48, "textBox48");
+            this.textBox48.ForeColor = System.Drawing.Color.Black;
+            this.textBox48.Name = "textBox48";
+            this.textBox48.ReadOnly = true;
+            // 
+            // textBox46
+            // 
+            this.textBox46.BackColor = System.Drawing.Color.White;
+            this.textBox46.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox46, "textBox46");
+            this.textBox46.ForeColor = System.Drawing.Color.Black;
+            this.textBox46.Name = "textBox46";
+            this.textBox46.ReadOnly = true;
+            // 
+            // textBox42
+            // 
+            this.textBox42.BackColor = System.Drawing.Color.White;
+            this.textBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox42, "textBox42");
+            this.textBox42.ForeColor = System.Drawing.Color.Black;
+            this.textBox42.Name = "textBox42";
+            this.textBox42.ReadOnly = true;
+            // 
+            // textBox41
+            // 
+            this.textBox41.BackColor = System.Drawing.Color.White;
+            this.textBox41.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox41, "textBox41");
+            this.textBox41.ForeColor = System.Drawing.Color.Black;
+            this.textBox41.Name = "textBox41";
+            this.textBox41.ReadOnly = true;
+            // 
+            // button18
+            // 
+            resources.ApplyResources(this.button18, "button18");
+            this.button18.Name = "button18";
+            this.button18.UseVisualStyleBackColor = true;
+            this.button18.Click += new System.EventHandler(this.button18_Click);
+            // 
+            // button17
+            // 
+            resources.ApplyResources(this.button17, "button17");
+            this.button17.Name = "button17";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
+            // 
+            // button16
+            // 
+            resources.ApplyResources(this.button16, "button16");
+            this.button16.Name = "button16";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
+            // button15
+            // 
+            resources.ApplyResources(this.button15, "button15");
+            this.button15.Name = "button15";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
+            // button14
+            // 
+            resources.ApplyResources(this.button14, "button14");
+            this.button14.Name = "button14";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
+            // button13
+            // 
+            resources.ApplyResources(this.button13, "button13");
+            this.button13.Name = "button13";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
+            // button12
+            // 
+            resources.ApplyResources(this.button12, "button12");
+            this.button12.Name = "button12";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button11
+            // 
+            resources.ApplyResources(this.button11, "button11");
+            this.button11.Name = "button11";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // button10
+            // 
+            resources.ApplyResources(this.button10, "button10");
+            this.button10.Name = "button10";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button9
+            // 
+            resources.ApplyResources(this.button9, "button9");
+            this.button9.Name = "button9";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button8
+            // 
+            resources.ApplyResources(this.button8, "button8");
+            this.button8.Name = "button8";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button2
+            // 
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button7
+            // 
+            resources.ApplyResources(this.button7, "button7");
+            this.button7.Name = "button7";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // toolStrip1
             // 
@@ -367,606 +938,98 @@ namespace CollatorCAM
             this.btTemplateEditor.Name = "btTemplateEditor";
             this.btTemplateEditor.Click += new System.EventHandler(this.btTemplateEditor_Click);
             // 
-            // flowLayoutPanel2
+            // ibMain
             // 
-            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
-            this.flowLayoutPanel2.Controls.Add(this.button7);
-            this.flowLayoutPanel2.Controls.Add(this.button1);
-            this.flowLayoutPanel2.Controls.Add(this.button2);
-            this.flowLayoutPanel2.Controls.Add(this.button8);
-            this.flowLayoutPanel2.Controls.Add(this.button9);
-            this.flowLayoutPanel2.Controls.Add(this.button10);
-            this.flowLayoutPanel2.Controls.Add(this.button11);
-            this.flowLayoutPanel2.Controls.Add(this.button12);
-            this.flowLayoutPanel2.Controls.Add(this.button13);
-            this.flowLayoutPanel2.Controls.Add(this.button14);
-            this.flowLayoutPanel2.Controls.Add(this.button15);
-            this.flowLayoutPanel2.Controls.Add(this.button16);
-            this.flowLayoutPanel2.Controls.Add(this.button17);
-            this.flowLayoutPanel2.Controls.Add(this.button18);
-            this.flowLayoutPanel2.Controls.Add(this.textBox41);
-            this.flowLayoutPanel2.Controls.Add(this.textBox42);
-            this.flowLayoutPanel2.Controls.Add(this.textBox46);
-            this.flowLayoutPanel2.Controls.Add(this.textBox48);
-            this.flowLayoutPanel2.Controls.Add(this.textBox49);
-            this.flowLayoutPanel2.Controls.Add(this.textBox50);
-            this.flowLayoutPanel2.Controls.Add(this.textBox51);
-            this.flowLayoutPanel2.Controls.Add(this.textBox53);
-            this.flowLayoutPanel2.Controls.Add(this.textBox54);
-            this.flowLayoutPanel2.Controls.Add(this.textBox79);
-            this.flowLayoutPanel2.Controls.Add(this.textBox80);
-            this.flowLayoutPanel2.Controls.Add(this.textBox81);
-            this.flowLayoutPanel2.Controls.Add(this.textBox82);
-            this.flowLayoutPanel2.Controls.Add(this.textBox83);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            resources.ApplyResources(this.ibMain, "ibMain");
+            this.ibMain.Name = "ibMain";
+            this.ibMain.TabStop = false;
+            this.ibMain.Paint += new System.Windows.Forms.PaintEventHandler(this.ibMain_Paint);
             // 
-            // button7
+            // label2
             // 
-            resources.ApplyResources(this.button7, "button7");
-            this.button7.Name = "button7";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Name = "label2";
             // 
-            // button1
+            // label3
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Name = "label3";
             // 
-            // button2
+            // tbResult
             // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.tbResult.FormattingEnabled = true;
+            resources.ApplyResources(this.tbResult, "tbResult");
+            this.tbResult.Name = "tbResult";
             // 
-            // button8
+            // button3
             // 
-            resources.ApplyResources(this.button8, "button8");
-            this.button8.Name = "button8";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            resources.ApplyResources(this.button3, "button3");
+            this.button3.Name = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button9
+            // ssMain
             // 
-            resources.ApplyResources(this.button9, "button9");
-            this.button9.Name = "button9";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.ssMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.lbFPS,
+            this.lbContoursCount,
+            this.lbRecognized});
+            resources.ApplyResources(this.ssMain, "ssMain");
+            this.ssMain.Name = "ssMain";
             // 
-            // button10
+            // lbFPS
             // 
-            resources.ApplyResources(this.button10, "button10");
-            this.button10.Name = "button10";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            resources.ApplyResources(this.lbFPS, "lbFPS");
+            this.lbFPS.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.lbFPS.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+            this.lbFPS.Name = "lbFPS";
             // 
-            // button11
+            // lbContoursCount
             // 
-            resources.ApplyResources(this.button11, "button11");
-            this.button11.Name = "button11";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
+            resources.ApplyResources(this.lbContoursCount, "lbContoursCount");
+            this.lbContoursCount.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.lbContoursCount.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+            this.lbContoursCount.Name = "lbContoursCount";
             // 
-            // button12
+            // lbRecognized
             // 
-            resources.ApplyResources(this.button12, "button12");
-            this.button12.Name = "button12";
-            this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click);
+            resources.ApplyResources(this.lbRecognized, "lbRecognized");
+            this.lbRecognized.BorderSides = ((System.Windows.Forms.ToolStripStatusLabelBorderSides)((((System.Windows.Forms.ToolStripStatusLabelBorderSides.Left | System.Windows.Forms.ToolStripStatusLabelBorderSides.Top) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Right) 
+            | System.Windows.Forms.ToolStripStatusLabelBorderSides.Bottom)));
+            this.lbRecognized.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenOuter;
+            this.lbRecognized.Name = "lbRecognized";
             // 
-            // button13
+            // tabPage5
             // 
-            resources.ApplyResources(this.button13, "button13");
-            this.button13.Name = "button13";
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.tabPage5.Controls.Add(this.ssMain);
+            this.tabPage5.Controls.Add(this.button3);
+            this.tabPage5.Controls.Add(this.tbResult);
+            this.tabPage5.Controls.Add(this.label3);
+            this.tabPage5.Controls.Add(this.label2);
+            this.tabPage5.Controls.Add(this.ibMain);
+            this.tabPage5.Controls.Add(this.toolStrip1);
+            this.tabPage5.Controls.Add(this.flowLayoutPanel2);
+            this.tabPage5.Controls.Add(this.pnSettings);
+            resources.ApplyResources(this.tabPage5, "tabPage5");
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // txtIPAdress
             // 
-            resources.ApplyResources(this.button14, "button14");
-            this.button14.Name = "button14";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click);
+            resources.ApplyResources(this.txtIPAdress, "txtIPAdress");
+            this.txtIPAdress.Name = "txtIPAdress";
             // 
-            // button15
+            // txtPort
             // 
-            resources.ApplyResources(this.button15, "button15");
-            this.button15.Name = "button15";
-            this.button15.UseVisualStyleBackColor = true;
-            this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button16
-            // 
-            resources.ApplyResources(this.button16, "button16");
-            this.button16.Name = "button16";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
-            // 
-            // button17
-            // 
-            resources.ApplyResources(this.button17, "button17");
-            this.button17.Name = "button17";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click);
-            // 
-            // button18
-            // 
-            resources.ApplyResources(this.button18, "button18");
-            this.button18.Name = "button18";
-            this.button18.UseVisualStyleBackColor = true;
-            this.button18.Click += new System.EventHandler(this.button18_Click);
-            // 
-            // textBox41
-            // 
-            this.textBox41.BackColor = System.Drawing.Color.White;
-            this.textBox41.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox41, "textBox41");
-            this.textBox41.ForeColor = System.Drawing.Color.Black;
-            this.textBox41.Name = "textBox41";
-            this.textBox41.ReadOnly = true;
-            // 
-            // textBox42
-            // 
-            this.textBox42.BackColor = System.Drawing.Color.White;
-            this.textBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox42, "textBox42");
-            this.textBox42.ForeColor = System.Drawing.Color.Black;
-            this.textBox42.Name = "textBox42";
-            this.textBox42.ReadOnly = true;
-            // 
-            // textBox46
-            // 
-            this.textBox46.BackColor = System.Drawing.Color.White;
-            this.textBox46.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox46, "textBox46");
-            this.textBox46.ForeColor = System.Drawing.Color.Black;
-            this.textBox46.Name = "textBox46";
-            this.textBox46.ReadOnly = true;
-            // 
-            // textBox48
-            // 
-            this.textBox48.BackColor = System.Drawing.Color.White;
-            this.textBox48.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox48, "textBox48");
-            this.textBox48.ForeColor = System.Drawing.Color.Black;
-            this.textBox48.Name = "textBox48";
-            this.textBox48.ReadOnly = true;
-            // 
-            // textBox49
-            // 
-            this.textBox49.BackColor = System.Drawing.Color.White;
-            this.textBox49.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox49, "textBox49");
-            this.textBox49.ForeColor = System.Drawing.Color.Black;
-            this.textBox49.Name = "textBox49";
-            this.textBox49.ReadOnly = true;
-            // 
-            // textBox50
-            // 
-            this.textBox50.BackColor = System.Drawing.Color.White;
-            this.textBox50.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox50, "textBox50");
-            this.textBox50.ForeColor = System.Drawing.Color.Black;
-            this.textBox50.Name = "textBox50";
-            this.textBox50.ReadOnly = true;
-            // 
-            // textBox51
-            // 
-            this.textBox51.BackColor = System.Drawing.Color.White;
-            this.textBox51.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox51, "textBox51");
-            this.textBox51.ForeColor = System.Drawing.Color.Black;
-            this.textBox51.Name = "textBox51";
-            this.textBox51.ReadOnly = true;
-            // 
-            // textBox53
-            // 
-            this.textBox53.BackColor = System.Drawing.Color.White;
-            this.textBox53.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox53, "textBox53");
-            this.textBox53.ForeColor = System.Drawing.Color.Black;
-            this.textBox53.Name = "textBox53";
-            this.textBox53.ReadOnly = true;
-            // 
-            // textBox54
-            // 
-            this.textBox54.BackColor = System.Drawing.Color.White;
-            this.textBox54.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox54, "textBox54");
-            this.textBox54.ForeColor = System.Drawing.Color.Black;
-            this.textBox54.Name = "textBox54";
-            this.textBox54.ReadOnly = true;
-            // 
-            // textBox79
-            // 
-            this.textBox79.BackColor = System.Drawing.Color.White;
-            this.textBox79.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox79, "textBox79");
-            this.textBox79.ForeColor = System.Drawing.Color.Black;
-            this.textBox79.Name = "textBox79";
-            this.textBox79.ReadOnly = true;
-            // 
-            // textBox80
-            // 
-            this.textBox80.BackColor = System.Drawing.Color.White;
-            this.textBox80.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox80, "textBox80");
-            this.textBox80.ForeColor = System.Drawing.Color.Black;
-            this.textBox80.Name = "textBox80";
-            this.textBox80.ReadOnly = true;
-            // 
-            // textBox81
-            // 
-            this.textBox81.BackColor = System.Drawing.Color.White;
-            this.textBox81.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox81, "textBox81");
-            this.textBox81.ForeColor = System.Drawing.Color.Black;
-            this.textBox81.Name = "textBox81";
-            this.textBox81.ReadOnly = true;
-            // 
-            // textBox82
-            // 
-            this.textBox82.BackColor = System.Drawing.Color.White;
-            this.textBox82.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox82, "textBox82");
-            this.textBox82.ForeColor = System.Drawing.Color.Black;
-            this.textBox82.Name = "textBox82";
-            this.textBox82.ReadOnly = true;
-            // 
-            // textBox83
-            // 
-            this.textBox83.BackColor = System.Drawing.Color.White;
-            this.textBox83.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.textBox83, "textBox83");
-            this.textBox83.ForeColor = System.Drawing.Color.Black;
-            this.textBox83.Name = "textBox83";
-            this.textBox83.ReadOnly = true;
-            // 
-            // pnSettings
-            // 
-            resources.ApplyResources(this.pnSettings, "pnSettings");
-            this.pnSettings.Controls.Add(this.btnSave);
-            this.pnSettings.Controls.Add(this.cbShowBinarized);
-            this.pnSettings.Controls.Add(this.cbShowContours);
-            this.pnSettings.Controls.Add(this.groupBox7);
-            this.pnSettings.Controls.Add(this.groupBox8);
-            this.pnSettings.Controls.Add(this.groupBox6);
-            this.pnSettings.Controls.Add(this.cbShowAngle);
-            this.pnSettings.Name = "pnSettings";
-            // 
-            // btnSave
-            // 
-            resources.ApplyResources(this.btnSave, "btnSave");
-            this.btnSave.Name = "btnSave";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // cbShowBinarized
-            // 
-            resources.ApplyResources(this.cbShowBinarized, "cbShowBinarized");
-            this.cbShowBinarized.Name = "cbShowBinarized";
-            this.cbShowBinarized.UseVisualStyleBackColor = true;
-            // 
-            // cbShowContours
-            // 
-            resources.ApplyResources(this.cbShowContours, "cbShowContours");
-            this.cbShowContours.Name = "cbShowContours";
-            this.cbShowContours.UseVisualStyleBackColor = true;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.nudMaxACFdesc);
-            this.groupBox7.Controls.Add(this.nudMinACF);
-            this.groupBox7.Controls.Add(this.label34);
-            this.groupBox7.Controls.Add(this.cbAllowAngleMore45);
-            this.groupBox7.Controls.Add(this.label35);
-            this.groupBox7.Controls.Add(this.nudMinICF);
-            this.groupBox7.Controls.Add(this.label38);
-            resources.ApplyResources(this.groupBox7, "groupBox7");
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.TabStop = false;
-            // 
-            // nudMaxACFdesc
-            // 
-            resources.ApplyResources(this.nudMaxACFdesc, "nudMaxACFdesc");
-            this.nudMaxACFdesc.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.nudMaxACFdesc.Name = "nudMaxACFdesc";
-            this.nudMaxACFdesc.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            // 
-            // nudMinACF
-            // 
-            this.nudMinACF.DecimalPlaces = 2;
-            this.nudMinACF.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            resources.ApplyResources(this.nudMinACF, "nudMinACF");
-            this.nudMinACF.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudMinACF.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            65536});
-            this.nudMinACF.Name = "nudMinACF";
-            this.nudMinACF.Value = new decimal(new int[] {
-            96,
-            0,
-            0,
-            131072});
-            // 
-            // label34
-            // 
-            resources.ApplyResources(this.label34, "label34");
-            this.label34.Name = "label34";
-            // 
-            // cbAllowAngleMore45
-            // 
-            resources.ApplyResources(this.cbAllowAngleMore45, "cbAllowAngleMore45");
-            this.cbAllowAngleMore45.Name = "cbAllowAngleMore45";
-            this.cbAllowAngleMore45.UseVisualStyleBackColor = true;
-            // 
-            // label35
-            // 
-            resources.ApplyResources(this.label35, "label35");
-            this.label35.Name = "label35";
-            // 
-            // nudMinICF
-            // 
-            this.nudMinICF.DecimalPlaces = 2;
-            this.nudMinICF.Increment = new decimal(new int[] {
-            1,
-            0,
-            0,
-            131072});
-            resources.ApplyResources(this.nudMinICF, "nudMinICF");
-            this.nudMinICF.Maximum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudMinICF.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            65536});
-            this.nudMinICF.Name = "nudMinICF";
-            this.nudMinICF.Value = new decimal(new int[] {
-            85,
-            0,
-            0,
-            131072});
-            // 
-            // label38
-            // 
-            resources.ApplyResources(this.label38, "label38");
-            this.label38.Name = "label38";
-            // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.nudMinDefinition);
-            this.groupBox8.Controls.Add(this.cbNoiseFilter);
-            this.groupBox8.Controls.Add(this.label39);
-            this.groupBox8.Controls.Add(this.nudMinContourLength);
-            this.groupBox8.Controls.Add(this.nudMinContourArea);
-            this.groupBox8.Controls.Add(this.label46);
-            resources.ApplyResources(this.groupBox8, "groupBox8");
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.TabStop = false;
-            // 
-            // nudMinDefinition
-            // 
-            resources.ApplyResources(this.nudMinDefinition, "nudMinDefinition");
-            this.nudMinDefinition.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.nudMinDefinition.Name = "nudMinDefinition";
-            this.nudMinDefinition.Value = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            // 
-            // cbNoiseFilter
-            // 
-            resources.ApplyResources(this.cbNoiseFilter, "cbNoiseFilter");
-            this.cbNoiseFilter.Name = "cbNoiseFilter";
-            this.cbNoiseFilter.UseVisualStyleBackColor = true;
-            // 
-            // label39
-            // 
-            resources.ApplyResources(this.label39, "label39");
-            this.label39.Name = "label39";
-            // 
-            // nudMinContourLength
-            // 
-            resources.ApplyResources(this.nudMinContourLength, "nudMinContourLength");
-            this.nudMinContourLength.Maximum = new decimal(new int[] {
-            400,
-            0,
-            0,
-            0});
-            this.nudMinContourLength.Name = "nudMinContourLength";
-            this.nudMinContourLength.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            // 
-            // nudMinContourArea
-            // 
-            resources.ApplyResources(this.nudMinContourArea, "nudMinContourArea");
-            this.nudMinContourArea.Maximum = new decimal(new int[] {
-            400,
-            0,
-            0,
-            0});
-            this.nudMinContourArea.Name = "nudMinContourArea";
-            this.nudMinContourArea.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // label46
-            // 
-            resources.ApplyResources(this.label46, "label46");
-            this.label46.Name = "label46";
-            // 
-            // groupBox6
-            // 
-            resources.ApplyResources(this.groupBox6, "groupBox6");
-            this.groupBox6.Controls.Add(this.btLoadFolder);
-            this.groupBox6.Controls.Add(this.btnPhoto);
-            this.groupBox6.Controls.Add(this.cbCycleCapture);
-            this.groupBox6.Controls.Add(this.comboBox1);
-            this.groupBox6.Controls.Add(this.cbAdaptiveNoiseFilter);
-            this.groupBox6.Controls.Add(this.nudAdaptiveThBlockSize);
-            this.groupBox6.Controls.Add(this.label26);
-            this.groupBox6.Controls.Add(this.cbBlur);
-            this.groupBox6.Controls.Add(this.label30);
-            this.groupBox6.Controls.Add(this.cbCaptureFromCam);
-            this.groupBox6.Controls.Add(this.cbCamResolution);
-            this.groupBox6.Controls.Add(this.btLoadImage);
-            this.groupBox6.Controls.Add(this.cbAutoContrast);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.TabStop = false;
-            // 
-            // btLoadFolder
-            // 
-            resources.ApplyResources(this.btLoadFolder, "btLoadFolder");
-            this.btLoadFolder.Name = "btLoadFolder";
-            this.btLoadFolder.UseVisualStyleBackColor = true;
-            this.btLoadFolder.Click += new System.EventHandler(this.btLoadFolder_Click);
-            // 
-            // btnPhoto
-            // 
-            resources.ApplyResources(this.btnPhoto, "btnPhoto");
-            this.btnPhoto.Name = "btnPhoto";
-            this.btnPhoto.UseVisualStyleBackColor = true;
-            this.btnPhoto.Click += new System.EventHandler(this.btnPhoto_Click);
-            // 
-            // cbCycleCapture
-            // 
-            resources.ApplyResources(this.cbCycleCapture, "cbCycleCapture");
-            this.cbCycleCapture.Checked = true;
-            this.cbCycleCapture.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbCycleCapture.Name = "cbCycleCapture";
-            this.cbCycleCapture.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox1, "comboBox1");
-            this.comboBox1.Name = "comboBox1";
-            // 
-            // cbAdaptiveNoiseFilter
-            // 
-            resources.ApplyResources(this.cbAdaptiveNoiseFilter, "cbAdaptiveNoiseFilter");
-            this.cbAdaptiveNoiseFilter.Checked = true;
-            this.cbAdaptiveNoiseFilter.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbAdaptiveNoiseFilter.Name = "cbAdaptiveNoiseFilter";
-            this.cbAdaptiveNoiseFilter.UseVisualStyleBackColor = true;
-            // 
-            // nudAdaptiveThBlockSize
-            // 
-            resources.ApplyResources(this.nudAdaptiveThBlockSize, "nudAdaptiveThBlockSize");
-            this.nudAdaptiveThBlockSize.Maximum = new decimal(new int[] {
-            400,
-            0,
-            0,
-            0});
-            this.nudAdaptiveThBlockSize.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudAdaptiveThBlockSize.Name = "nudAdaptiveThBlockSize";
-            this.nudAdaptiveThBlockSize.Value = new decimal(new int[] {
-            4,
-            0,
-            0,
-            0});
-            // 
-            // label26
-            // 
-            resources.ApplyResources(this.label26, "label26");
-            this.label26.Name = "label26";
-            // 
-            // cbBlur
-            // 
-            resources.ApplyResources(this.cbBlur, "cbBlur");
-            this.cbBlur.Checked = true;
-            this.cbBlur.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbBlur.Name = "cbBlur";
-            this.cbBlur.UseVisualStyleBackColor = true;
-            // 
-            // label30
-            // 
-            resources.ApplyResources(this.label30, "label30");
-            this.label30.Name = "label30";
-            // 
-            // cbCaptureFromCam
-            // 
-            resources.ApplyResources(this.cbCaptureFromCam, "cbCaptureFromCam");
-            this.cbCaptureFromCam.Checked = true;
-            this.cbCaptureFromCam.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbCaptureFromCam.Name = "cbCaptureFromCam";
-            this.cbCaptureFromCam.UseVisualStyleBackColor = true;
-            // 
-            // cbCamResolution
-            // 
-            this.cbCamResolution.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCamResolution.FormattingEnabled = true;
-            this.cbCamResolution.Items.AddRange(new object[] {
-            resources.GetString("cbCamResolution.Items"),
-            resources.GetString("cbCamResolution.Items1"),
-            resources.GetString("cbCamResolution.Items2")});
-            resources.ApplyResources(this.cbCamResolution, "cbCamResolution");
-            this.cbCamResolution.Name = "cbCamResolution";
-            // 
-            // btLoadImage
-            // 
-            resources.ApplyResources(this.btLoadImage, "btLoadImage");
-            this.btLoadImage.Name = "btLoadImage";
-            this.btLoadImage.UseVisualStyleBackColor = true;
-            this.btLoadImage.Click += new System.EventHandler(this.btLoadImage_Click);
-            // 
-            // cbAutoContrast
-            // 
-            resources.ApplyResources(this.cbAutoContrast, "cbAutoContrast");
-            this.cbAutoContrast.Name = "cbAutoContrast";
-            this.cbAutoContrast.UseVisualStyleBackColor = true;
-            // 
-            // cbShowAngle
-            // 
-            resources.ApplyResources(this.cbShowAngle, "cbShowAngle");
-            this.cbShowAngle.Name = "cbShowAngle";
-            this.cbShowAngle.UseVisualStyleBackColor = true;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage5);
-            resources.ApplyResources(this.tabControl1, "tabControl1");
-            this.tabControl1.Multiline = true;
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
+            resources.ApplyResources(this.txtPort, "txtPort");
+            this.txtPort.Name = "txtPort";
             // 
             // Form_Listener
             // 
@@ -974,6 +1037,7 @@ namespace CollatorCAM
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             resources.ApplyResources(this, "$this");
+            this.Controls.Add(this.tableLayoutPanel8);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox2);
@@ -983,31 +1047,34 @@ namespace CollatorCAM
             this.Name = "Form_Listener";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage5.PerformLayout();
-            this.ssMain.ResumeLayout(false);
-            this.ssMain.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ibMain)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.pnSettings.ResumeLayout(false);
             this.pnSettings.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMaxACFdesc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinACF)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinICF)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinDefinition)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinContourLength)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudMinContourArea)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).EndInit();
-            this.tabControl1.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinContourArea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinContourLength)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinDefinition)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinICF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinACF)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxACFdesc)).EndInit();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ibMain)).EndInit();
+            this.ssMain.ResumeLayout(false);
+            this.ssMain.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1028,6 +1095,14 @@ namespace CollatorCAM
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TrackBar trackBar2;
+        private TableLayoutPanel tableLayoutPanel8;
+        private TextBox textBox1;
+        private Button btnStart;
+        private Label lblStat;
+        private PictureBox pictureBox1;
+        private TextBox txtIPAdress;
+        private TextBox txtPort;
+        private TabControl tabControl1;
         private TabPage tabPage5;
         private StatusStrip ssMain;
         private ToolStripStatusLabel lbFPS;
@@ -1109,7 +1184,6 @@ namespace CollatorCAM
         private Button btLoadImage;
         private CheckBox cbAutoContrast;
         private CheckBox cbShowAngle;
-        private TabControl tabControl1;
     }
 }
 
