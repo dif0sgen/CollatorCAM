@@ -33,7 +33,7 @@ namespace CollatorCAM
         //private BezierCurve bc = new BezierCurve();
 
         private Emgu.CV.Capture _capture;
-        Bitmap image;
+        Image<Bgr, Byte> image;
         Image<Bgr, Byte> frame;
         ImageProcessor processor;
         Dictionary<string, System.Drawing.Image> AugmentedRealityImages = new Dictionary<string, System.Drawing.Image>();
@@ -82,7 +82,6 @@ namespace CollatorCAM
             this.InitializeComponent();
             System.Windows.Forms.Application.Idle += new EventHandler(Application_Idle);
             thread2 = new Thread(() => WriteMDBS("WRITE"));
-            
             //create image processor
             processor = new ContourAnalysisNS.ImageProcessor();
             //load default templates
@@ -99,6 +98,7 @@ namespace CollatorCAM
 
             this.Closing += new CancelEventHandler(this.Form_Listener_Close);
             thread2.Start();
+            imageBox1.SetZoomScale(0.2, new Point(0));
         }
 
         private void RunForm()
@@ -253,7 +253,7 @@ namespace CollatorCAM
         private void tmUpdateState_Tick(object sender, EventArgs e)
         {
             lbFPS.Text = (frameCount - oldFrameCount) + " fps";
-            textBox2.Text = Convert.ToString(ibMain.ZoomScale);
+            textBox2.Text = Convert.ToString(imageBox1.ZoomScale);
             //label4.Text = Convert.ToString();
             oldFrameCount = frameCount;
             if (processor.contours != null)
@@ -1416,7 +1416,10 @@ namespace CollatorCAM
                     x = 90;
                 if (cbRotation.SelectedIndex == 3)
                     x = 180;
-                frame = img.Rotate(x, new Bgr(255,255,255), false);
+                imageBox1.Image = img.Rotate(x, new Bgr(255,255,255), false);
+                image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                if (frame == null)
+                    frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 ImagePath = "Current image file: " + GetImagePath;
                 ApplySettings();
             }
@@ -2155,29 +2158,30 @@ namespace CollatorCAM
         Pen newpx = new Pen(Brushes.Magenta);
         Graphics g;
 
-        private void ibMain_Click(object sender, MouseEventArgs g)
+
+        private void imageBox1_Click(object sender, MouseEventArgs g)
         {
-            if (ibMain.ZoomScale <= 1)
+            
+            if (imageBox1.ZoomScale <= 1)
             {
                 if (nRect == 0)
                 {
-                    gX = (g.X / ibMain.ZoomScale);
-                    gY = (g.Y / ibMain.ZoomScale);
+                    gX = (g.X / imageBox1.ZoomScale);
+                    gY = (g.Y / imageBox1.ZoomScale);
                     g2X = 1;
                     g2Y = 1;
                 }
                 if (nRect == 1)
                 {
-                    g2X = ((g.X / ibMain.ZoomScale) - gX);
-                    g2Y = ((g.Y / ibMain.ZoomScale) - gY);
+                    g2X = ((g.X / imageBox1.ZoomScale) - gX);
+                    g2Y = ((g.Y / imageBox1.ZoomScale) - gY);
                     nRect = -1;
-                    Bitmap pic = frame.ToBitmap();
-                    image = pic.Clone(new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y)), PixelFormat.Format16bppRgb555);
-                    imageBox1.Image = new Image<Bgr, byte>(image);
+                    Bitmap pic = image.ToBitmap();
+                    frame = new Image<Bgr, Byte>(pic.Clone(new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y)), PixelFormat.Format16bppRgb555));
+                    //imageBox1.Image = new Image<Bgr, byte>(image);
                 }
                 nRect++;
             }
         }
-
     }
 }

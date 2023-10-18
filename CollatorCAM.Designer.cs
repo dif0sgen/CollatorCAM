@@ -55,6 +55,7 @@ namespace CollatorCAM
             this.txtPort = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.imageBox1 = new Emgu.CV.UI.ImageBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.ssMain = new System.Windows.Forms.StatusStrip();
@@ -139,13 +140,13 @@ namespace CollatorCAM
             this.btLoadImage = new System.Windows.Forms.Button();
             this.cbAutoContrast = new System.Windows.Forms.CheckBox();
             this.cbShowAngle = new System.Windows.Forms.CheckBox();
-            this.imageBox1 = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.ssMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ibMain)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -161,7 +162,6 @@ namespace CollatorCAM
             ((System.ComponentModel.ISupportInitialize)(this.nudMinContourArea)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // directorySearcher1
@@ -318,6 +318,14 @@ namespace CollatorCAM
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
+            // imageBox1
+            // 
+            resources.ApplyResources(this.imageBox1, "imageBox1");
+            this.imageBox1.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.imageBox1.Name = "imageBox1";
+            this.imageBox1.TabStop = false;
+            this.imageBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.imageBox1_Click);
+            // 
             // textBox2
             // 
             resources.ApplyResources(this.textBox2, "textBox2");
@@ -396,7 +404,6 @@ namespace CollatorCAM
             this.ibMain.Name = "ibMain";
             this.ibMain.TabStop = false;
             this.ibMain.Paint += new System.Windows.Forms.PaintEventHandler(this.ibMain_Paint);
-            this.ibMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ibMain_Click);
             // 
             // toolStrip1
             // 
@@ -1072,12 +1079,6 @@ namespace CollatorCAM
             this.cbShowAngle.Name = "cbShowAngle";
             this.cbShowAngle.UseVisualStyleBackColor = true;
             // 
-            // imageBox1
-            // 
-            resources.ApplyResources(this.imageBox1, "imageBox1");
-            this.imageBox1.Name = "imageBox1";
-            this.imageBox1.TabStop = false;
-            // 
             // Form_Listener
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1100,6 +1101,7 @@ namespace CollatorCAM
             this.tabControl1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
             this.ssMain.ResumeLayout(false);
             this.ssMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ibMain)).EndInit();
@@ -1122,7 +1124,6 @@ namespace CollatorCAM
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
