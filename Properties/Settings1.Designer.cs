@@ -3693,5 +3693,173 @@ namespace CollatorCAM.Properties {
                 this["FrontGetImagePath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FrontRotation {
+            get {
+                return ((int)(this["FrontRotation"]));
+            }
+            set {
+                this["FrontRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int JanuaryRotation {
+            get {
+                return ((int)(this["JanuaryRotation"]));
+            }
+            set {
+                this["JanuaryRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FebruaryRotation {
+            get {
+                return ((int)(this["FebruaryRotation"]));
+            }
+            set {
+                this["FebruaryRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MarchRotation {
+            get {
+                return ((int)(this["MarchRotation"]));
+            }
+            set {
+                this["MarchRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AprilRotation {
+            get {
+                return ((int)(this["AprilRotation"]));
+            }
+            set {
+                this["AprilRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MayRotation {
+            get {
+                return ((int)(this["MayRotation"]));
+            }
+            set {
+                this["MayRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int JuneRotation {
+            get {
+                return ((int)(this["JuneRotation"]));
+            }
+            set {
+                this["JuneRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int JulyRotation {
+            get {
+                return ((int)(this["JulyRotation"]));
+            }
+            set {
+                this["JulyRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AugustRotation {
+            get {
+                return ((int)(this["AugustRotation"]));
+            }
+            set {
+                this["AugustRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SeptemberRotation {
+            get {
+                return ((int)(this["SeptemberRotation"]));
+            }
+            set {
+                this["SeptemberRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OctoberRotation {
+            get {
+                return ((int)(this["OctoberRotation"]));
+            }
+            set {
+                this["OctoberRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NovemberRotation {
+            get {
+                return ((int)(this["NovemberRotation"]));
+            }
+            set {
+                this["NovemberRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int DecemberRotation {
+            get {
+                return ((int)(this["DecemberRotation"]));
+            }
+            set {
+                this["DecemberRotation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int RearRotation {
+            get {
+                return ((int)(this["RearRotation"]));
+            }
+            set {
+                this["RearRotation"] = value;
+            }
+        }
     }
 }

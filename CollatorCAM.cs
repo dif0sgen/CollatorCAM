@@ -609,6 +609,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.FrontMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.FrontMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.FrontMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.FrontRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -667,6 +668,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.JanuaryMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.JanuaryMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.JanuaryMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.JanuaryRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -725,6 +727,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.FebruaryMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.FebruaryMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.FebruaryMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.FebruaryRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -783,6 +786,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.MarchMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.MarchMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.MarchMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.MarchRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -841,6 +845,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.AprilMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.AprilMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.AprilMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.AprilRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -899,6 +904,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.MayMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.MayMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.MayMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.MayRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -957,6 +963,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.JuneMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.JuneMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.JuneMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.JuneRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1015,6 +1022,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.JulyMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.JulyMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.JulyMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.JulyRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1073,6 +1081,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.AugustMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.AugustMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.AugustMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.AugustRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1131,6 +1140,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.SeptemberMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.SeptemberMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.SeptemberMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.SeptemberRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1189,6 +1199,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.OctoberMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.OctoberMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.OctoberMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.OctoberRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1247,6 +1258,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.NovemberMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.NovemberMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.NovemberMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.NovemberRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1305,6 +1317,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.DecemberMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.DecemberMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.DecemberMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.DecemberRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1363,6 +1376,7 @@ namespace CollatorCAM
             nudMinContourLength.Value = Properties.Settings.Default.RearMinContourLength;
             nudMinDefinition.Value = Properties.Settings.Default.RearMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.RearMinICF;
+            cbRotation.SelectedIndex = Properties.Settings.Default.RearRotation;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1375,9 +1389,20 @@ namespace CollatorCAM
         {
             if (GetImagePath != null)
             {
+                
                 files = Directory.GetFiles(GetImagePath);
                 i = files.Length;
-                frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                double x = 0;
+                if (cbRotation.SelectedIndex == 0)
+                x = 0;
+                if (cbRotation.SelectedIndex == 1)
+                    x = -90;
+                if (cbRotation.SelectedIndex == 2)
+                    x = 90;
+                if (cbRotation.SelectedIndex == 3)
+                    x = 180;
+                frame = img.Rotate(x, new Bgr(255,255,255), false);
                 ImagePath = "Current image file: " + GetImagePath;
                 ApplySettings();
             }
@@ -1450,6 +1475,7 @@ namespace CollatorCAM
                     Properties.Settings.Default.FrontMinDefinition = nudMinDefinition.Value;
                     Properties.Settings.Default.FrontMinICF = nudMinICF.Value;
                     Properties.Settings.Default.FrontGetImagePath = GetImagePath;
+                    Properties.Settings.Default.FrontRotation = cbRotation.SelectedIndex;
             }
             if (month == 2)
             {
@@ -1473,6 +1499,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.JanuaryMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.JanuaryMinICF = nudMinICF.Value;
                 Properties.Settings.Default.JanuaryGetImagePath = GetImagePath;
+                Properties.Settings.Default.JanuaryRotation = cbRotation.SelectedIndex;
             }
             if (month == 3)
             {
@@ -1496,6 +1523,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.FebruaryMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.FebruaryMinICF = nudMinICF.Value;
                 Properties.Settings.Default.FebruaryGetImagePath = GetImagePath;
+                Properties.Settings.Default.FebruaryRotation = cbRotation.SelectedIndex;
             }
             if (month == 4)
             {
@@ -1519,6 +1547,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.MarchMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.MarchMinICF = nudMinICF.Value;
                 Properties.Settings.Default.MarchGetImagePath = GetImagePath;
+                Properties.Settings.Default.MarchRotation = cbRotation.SelectedIndex;
             }
             if (month == 5)
             {
@@ -1542,6 +1571,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.AprilMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.AprilMinICF = nudMinICF.Value;
                 Properties.Settings.Default.AprilGetImagePath = GetImagePath;
+                Properties.Settings.Default.AprilRotation = cbRotation.SelectedIndex;
             }
             if (month == 6)
             {
@@ -1565,6 +1595,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.MayMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.MayMinICF = nudMinICF.Value;
                 Properties.Settings.Default.MayGetImagePath = GetImagePath;
+                Properties.Settings.Default.MayRotation = cbRotation.SelectedIndex;
             }
             if (month == 7)
             {
@@ -1588,6 +1619,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.JuneMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.JuneMinICF = nudMinICF.Value;
                 Properties.Settings.Default.JuneGetImagePath = GetImagePath;
+                Properties.Settings.Default.JuneRotation = cbRotation.SelectedIndex;
             }
             if (month == 8)
             {
@@ -1611,6 +1643,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.JulyMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.JulyMinICF = nudMinICF.Value;
                 Properties.Settings.Default.JulyGetImagePath = GetImagePath;
+                Properties.Settings.Default.JulyRotation = cbRotation.SelectedIndex;
             }
             if (month == 9)
             {
@@ -1634,6 +1667,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.AugustMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.AugustMinICF = nudMinICF.Value;
                 Properties.Settings.Default.AugustGetImagePath = GetImagePath;
+                Properties.Settings.Default.AugustRotation = cbRotation.SelectedIndex;
             }
             if (month == 10)
             {
@@ -1657,6 +1691,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.SeptemberMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.SeptemberMinICF = nudMinICF.Value;
                 Properties.Settings.Default.SeptemberGetImagePath = GetImagePath;
+                Properties.Settings.Default.SeptemberRotation = cbRotation.SelectedIndex;
             }
             if (month == 11)
             {
@@ -1680,6 +1715,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.OctoberMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.OctoberMinICF = nudMinICF.Value;
                 Properties.Settings.Default.OctoberGetImagePath = GetImagePath;
+                Properties.Settings.Default.OctoberRotation = cbRotation.SelectedIndex;
             }
             if (month == 12)
             {
@@ -1703,6 +1739,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.NovemberMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.NovemberMinICF = nudMinICF.Value;
                 Properties.Settings.Default.NovemberGetImagePath = GetImagePath;
+                Properties.Settings.Default.NovemberRotation = cbRotation.SelectedIndex;
             }
             if (month == 13)
             {
@@ -1726,6 +1763,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.DecemberMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.DecemberMinICF = nudMinICF.Value;
                 Properties.Settings.Default.DecemberGetImagePath = GetImagePath;
+                Properties.Settings.Default.DecemberRotation = cbRotation.SelectedIndex;
             }
             if (month == 14)
             {
@@ -1749,6 +1787,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.RearMinDefinition = nudMinDefinition.Value;
                 Properties.Settings.Default.RearMinICF = nudMinICF.Value;
                 Properties.Settings.Default.RearGetImagePath = GetImagePath;
+                Properties.Settings.Default.RearRotation = cbRotation.SelectedIndex;
             }
             Properties.Settings.Default.Save();
         }
@@ -2092,6 +2131,11 @@ namespace CollatorCAM
 
                 }
             }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            GetImage();
         }
     }
 }
