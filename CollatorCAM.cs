@@ -19,14 +19,21 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using EasyModbus;
 using System.ComponentModel.Composition.Primitives;
 using Emgu.CV.CvEnum;
+using Emgu.CV.UI;
+using ZedGraph;
+using static System.Net.Mime.MediaTypeNames;
+using System.Drawing.Imaging;
 
 namespace CollatorCAM
 {
 
     public partial class Form_Listener : Form
     {
+        private List<double> ptList = new List<double>();
+        //private BezierCurve bc = new BezierCurve();
 
         private Emgu.CV.Capture _capture;
+        Bitmap image;
         Image<Bgr, Byte> frame;
         ImageProcessor processor;
         Dictionary<string, System.Drawing.Image> AugmentedRealityImages = new Dictionary<string, System.Drawing.Image>();
@@ -61,7 +68,11 @@ namespace CollatorCAM
         bool[] MDB_WRITE = new bool[15];
         bool[] CONTROL_READ = new bool[1];
         private string[] files;
-
+        double gX;
+        double gY;
+        double g2X = 1;
+        double g2Y = 1;
+        int nRect = 0;
 
         /// 
         /// Init Form
@@ -242,6 +253,8 @@ namespace CollatorCAM
         private void tmUpdateState_Tick(object sender, EventArgs e)
         {
             lbFPS.Text = (frameCount - oldFrameCount) + " fps";
+            textBox2.Text = Convert.ToString(ibMain.ZoomScale);
+            //label4.Text = Convert.ToString();
             oldFrameCount = frameCount;
             if (processor.contours != null)
                 lbContoursCount.Text = "Contours: " + processor.contours.Count;
@@ -262,8 +275,8 @@ namespace CollatorCAM
 
                 Font font = new Font(Font.FontFamily, 24);//16
 
+                
                 e.Graphics.DrawString(lbFPS.Text, new Font(Font.FontFamily, 16), Brushes.Yellow, new PointF(1, 1));
-
                 Brush bgBrush = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
                 Brush foreBrush = new SolidBrush(Color.FromArgb(255, 255, 255, 255));
                 Pen borderPen = new Pen(Color.FromArgb(150, 0, 255, 0));
@@ -1393,6 +1406,7 @@ namespace CollatorCAM
                 files = Directory.GetFiles(GetImagePath);
                 i = files.Length;
                 Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
                 double x = 0;
                 if (cbRotation.SelectedIndex == 0)
                 x = 0;
@@ -2137,5 +2151,33 @@ namespace CollatorCAM
         {
             GetImage();
         }
+        Pen px = new Pen(Brushes.Red);
+        Pen newpx = new Pen(Brushes.Magenta);
+        Graphics g;
+
+        private void ibMain_Click(object sender, MouseEventArgs g)
+        {
+            if (ibMain.ZoomScale <= 1)
+            {
+                if (nRect == 0)
+                {
+                    gX = (g.X / ibMain.ZoomScale);
+                    gY = (g.Y / ibMain.ZoomScale);
+                    g2X = 1;
+                    g2Y = 1;
+                }
+                if (nRect == 1)
+                {
+                    g2X = ((g.X / ibMain.ZoomScale) - gX);
+                    g2Y = ((g.Y / ibMain.ZoomScale) - gY);
+                    nRect = -1;
+                    Bitmap pic = frame.ToBitmap();
+                    image = pic.Clone(new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y)), PixelFormat.Format16bppRgb555);
+                    imageBox1.Image = new Image<Bgr, byte>(image);
+                }
+                nRect++;
+            }
+        }
+
     }
 }

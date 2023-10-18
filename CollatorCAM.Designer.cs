@@ -55,6 +55,8 @@ namespace CollatorCAM
             this.txtPort = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.lbFPS = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbContoursCount = new System.Windows.Forms.ToolStripStatusLabel();
@@ -121,6 +123,8 @@ namespace CollatorCAM
             this.nudMinContourArea = new System.Windows.Forms.NumericUpDown();
             this.label46 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbRotation = new System.Windows.Forms.ComboBox();
             this.btLoadFolder = new System.Windows.Forms.Button();
             this.btnPhoto = new System.Windows.Forms.Button();
             this.cbCycleCapture = new System.Windows.Forms.CheckBox();
@@ -135,8 +139,7 @@ namespace CollatorCAM
             this.btLoadImage = new System.Windows.Forms.Button();
             this.cbAutoContrast = new System.Windows.Forms.CheckBox();
             this.cbShowAngle = new System.Windows.Forms.CheckBox();
-            this.cbRotation = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.imageBox1 = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
@@ -158,6 +161,7 @@ namespace CollatorCAM
             ((System.ComponentModel.ISupportInitialize)(this.nudMinContourArea)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // directorySearcher1
@@ -298,6 +302,9 @@ namespace CollatorCAM
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.imageBox1);
+            this.tabPage5.Controls.Add(this.textBox2);
+            this.tabPage5.Controls.Add(this.label4);
             this.tabPage5.Controls.Add(this.ssMain);
             this.tabPage5.Controls.Add(this.button3);
             this.tabPage5.Controls.Add(this.tbResult);
@@ -310,6 +317,17 @@ namespace CollatorCAM
             resources.ApplyResources(this.tabPage5, "tabPage5");
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Name = "label4";
             // 
             // ssMain
             // 
@@ -378,6 +396,7 @@ namespace CollatorCAM
             this.ibMain.Name = "ibMain";
             this.ibMain.TabStop = false;
             this.ibMain.Paint += new System.Windows.Forms.PaintEventHandler(this.ibMain_Paint);
+            this.ibMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ibMain_Click);
             // 
             // toolStrip1
             // 
@@ -923,6 +942,24 @@ namespace CollatorCAM
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // cbRotation
+            // 
+            this.cbRotation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbRotation.FormattingEnabled = true;
+            this.cbRotation.Items.AddRange(new object[] {
+            resources.GetString("cbRotation.Items"),
+            resources.GetString("cbRotation.Items1"),
+            resources.GetString("cbRotation.Items2"),
+            resources.GetString("cbRotation.Items3")});
+            resources.ApplyResources(this.cbRotation, "cbRotation");
+            this.cbRotation.Name = "cbRotation";
+            this.cbRotation.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
             // btLoadFolder
             // 
             resources.ApplyResources(this.btLoadFolder, "btLoadFolder");
@@ -1035,23 +1072,11 @@ namespace CollatorCAM
             this.cbShowAngle.Name = "cbShowAngle";
             this.cbShowAngle.UseVisualStyleBackColor = true;
             // 
-            // cbRotation
+            // imageBox1
             // 
-            this.cbRotation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRotation.FormattingEnabled = true;
-            this.cbRotation.Items.AddRange(new object[] {
-            resources.GetString("cbRotation.Items"),
-            resources.GetString("cbRotation.Items1"),
-            resources.GetString("cbRotation.Items2"),
-            resources.GetString("cbRotation.Items3")});
-            resources.ApplyResources(this.cbRotation, "cbRotation");
-            this.cbRotation.Name = "cbRotation";
-            this.cbRotation.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
+            resources.ApplyResources(this.imageBox1, "imageBox1");
+            this.imageBox1.Name = "imageBox1";
+            this.imageBox1.TabStop = false;
             // 
             // Form_Listener
             // 
@@ -1097,6 +1122,7 @@ namespace CollatorCAM
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1208,6 +1234,9 @@ namespace CollatorCAM
         private CheckBox cbShowAngle;
         private Label label1;
         private ComboBox cbRotation;
+        private Label label4;
+        private TextBox textBox2;
+        private Emgu.CV.UI.ImageBox imageBox1;
     }
 }
 
