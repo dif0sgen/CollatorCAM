@@ -73,7 +73,8 @@ namespace CollatorCAM
         double g2X = 1;
         double g2Y = 1;
         int nRect = 0;
-
+        Rectangle rect = new Rectangle();
+        bool ibFlag = false;
         /// 
         /// Init Form
         /// 
@@ -2154,10 +2155,6 @@ namespace CollatorCAM
         {
             GetImage();
         }
-        Pen px = new Pen(Brushes.Red);
-        Pen newpx = new Pen(Brushes.Magenta);
-        Graphics g;
-
 
         private void imageBox1_Click(object sender, MouseEventArgs g)
         {
@@ -2177,11 +2174,17 @@ namespace CollatorCAM
                     g2Y = ((g.Y / imageBox1.ZoomScale) - gY);
                     nRect = -1;
                     Bitmap pic = image.ToBitmap();
-                    frame = new Image<Bgr, Byte>(pic.Clone(new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y)), PixelFormat.Format16bppRgb555));
-                    //imageBox1.Image = new Image<Bgr, byte>(image);
+                    rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                    frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                    imageBox1.Refresh();
                 }
                 nRect++;
             }
+        }
+        private void imageBox1_Paint(object sender, PaintEventArgs e)
+        {
+                Pen px = new Pen(Brushes.Red);
+                e.Graphics.DrawRectangle(px, rect);
         }
     }
 }

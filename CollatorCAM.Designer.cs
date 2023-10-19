@@ -57,7 +57,6 @@ namespace CollatorCAM
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.imageBox1 = new Emgu.CV.UI.ImageBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.lbFPS = new System.Windows.Forms.ToolStripStatusLabel();
             this.lbContoursCount = new System.Windows.Forms.ToolStripStatusLabel();
@@ -304,7 +303,6 @@ namespace CollatorCAM
             // 
             this.tabPage5.Controls.Add(this.imageBox1);
             this.tabPage5.Controls.Add(this.textBox2);
-            this.tabPage5.Controls.Add(this.label4);
             this.tabPage5.Controls.Add(this.ssMain);
             this.tabPage5.Controls.Add(this.button3);
             this.tabPage5.Controls.Add(this.tbResult);
@@ -324,18 +322,13 @@ namespace CollatorCAM
             this.imageBox1.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
             this.imageBox1.Name = "imageBox1";
             this.imageBox1.TabStop = false;
+            this.imageBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.imageBox1_Paint);
             this.imageBox1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.imageBox1_Click);
             // 
             // textBox2
             // 
             resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.Name = "textBox2";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Name = "label4";
             // 
             // ssMain
             // 
@@ -1235,7 +1228,6 @@ namespace CollatorCAM
         private CheckBox cbShowAngle;
         private Label label1;
         private ComboBox cbRotation;
-        private Label label4;
         private TextBox textBox2;
         private Emgu.CV.UI.ImageBox imageBox1;
     }
