@@ -254,7 +254,6 @@ namespace CollatorCAM
         private void tmUpdateState_Tick(object sender, EventArgs e)
         {
             lbFPS.Text = (frameCount - oldFrameCount) + " fps";
-            textBox2.Text = Convert.ToString(imageBox1.ZoomScale);
             //label4.Text = Convert.ToString();
             oldFrameCount = frameCount;
             if (processor.contours != null)
@@ -269,6 +268,9 @@ namespace CollatorCAM
                 string TBmonth = "  NG Month";
                 string TByear = "    NG Year";
                 string TBmaori = "      NG Maori";
+                int year = 0;
+                string [] month = new string[5];
+                string[] march = { "M", "a", "r", "c", "h" };
                 DateTime thisDay = DateTime.Now;
                 TBtime = thisDay.ToString("d") + " " + thisDay.ToString("T");
 
@@ -303,15 +305,31 @@ namespace CollatorCAM
 
                     if (found.template.name != "2024")
                         text = found.template.name;
-                    if (found.template.name == "January" || found.template.name == "February" || found.template.name == "March" ||
-                    found.template.name == "April" || found.template.name == "May" || found.template.name == "June" ||
-                    found.template.name == "July" || found.template.name == "August" || found.template.name == "September" ||
-                    found.template.name == "October" || found.template.name == "November" || found.template.name == "December" ||
-                    found.template.name == "Front" || found.template.name == "Rear")
-                        TBmonth = "  OK " + found.template.name;
-                    if (found.template.name == "2024")
-                    {
-                        TByear = "    OK " + found.template.name;
+                    if (found.template.name == "2" || found.template.name == "0" || found.template.name == "4")
+                        year++;
+                    //if (found.template.name == "M" || found.template.name == "a" || found.template.name == "r" ||
+                    //    found.template.name == "c" || found.template.name == "h")
+                    if (found.template.name == "M")
+                        month[0] = "M";
+                    if (found.template.name == "a")
+                        month[1] = "a";
+                    if (found.template.name == "r")
+                        month[2] = "r";
+                    if (found.template.name == "c")
+                        month[3] = "c";
+                    if (found.template.name == "h")
+                        month[4] = "h";
+                    //TBmonth = "  OK March";
+                                        //    month++;
+                                        //if (found.template.name == "M" || found.template.name == "a" || found.template.name == "r" ||
+                                        //    found.template.name == "c" || found.template.name == "h")
+                                        //    month++;
+                    if (year == 4)
+                        TByear = "  OK 2024";
+                    //if (month == 5)
+                    //    TBmonth = "  OK March";
+                    if (found.template.name == "4")
+                    {   
                         text = found.template.name;
                         Point point = new Point(foundRect.Right - 150, foundRect.Top + 100);
 
@@ -346,6 +364,9 @@ namespace CollatorCAM
                 }
                 if ((PhotoMonth == true && ibMain.Image == frame) || (PhotoMonth == true && ibMain.Image == processor.binarizedFrame))
                 {
+                //if (month == march)
+                if (month[0] != null)
+                    TBmonth = month[0]+ month[1]+ month[2]+ month[3]+ month[4];
                     tbResult.Items.Add(TBtime);
                     tbResult.Items.Add(TBmonth);
                     tbResult.Items.Add(TByear);
@@ -441,8 +462,21 @@ namespace CollatorCAM
             if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
                 try
                 {
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(ofd.FileName));
-                    ImagePath = "Current image file: " + ofd.FileName;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 catch (Exception ex)
                 {
@@ -458,7 +492,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                     ImagePath = "Current image file: " + GetImagePath;
                 }
                 catch (Exception ex)
@@ -596,8 +644,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.FrontGetImagePath = GetImagePath;
             }
@@ -630,6 +691,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.FrontGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.FrontGX != 0 || Properties.Settings.Default.FrontGY != 0 ||
+                Properties.Settings.Default.FrontG2X != 0 || Properties.Settings.Default.FrontG2Y != 0)
+            {
+                gX = Properties.Settings.Default.FrontGX;
+                gY = Properties.Settings.Default.FrontGY;
+                g2X = Properties.Settings.Default.FrontG2X;
+                g2Y = Properties.Settings.Default.FrontG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
             private void January()
         {
@@ -655,8 +728,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.JanuaryGetImagePath = GetImagePath;
             }
@@ -689,6 +775,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.JanuaryGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.JanuaryGX != 0 || Properties.Settings.Default.JanuaryGY != 0 ||
+                Properties.Settings.Default.JanuaryG2X != 0 || Properties.Settings.Default.JanuaryG2Y != 0)
+            {
+                gX = Properties.Settings.Default.JanuaryGX;
+                gY = Properties.Settings.Default.JanuaryGY;
+                g2X = Properties.Settings.Default.JanuaryG2X;
+                g2Y = Properties.Settings.Default.JanuaryG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void February()
         {
@@ -714,8 +812,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.FebruaryGetImagePath = GetImagePath;
             }
@@ -748,6 +859,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.FebruaryGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.FebruaryGX != 0 || Properties.Settings.Default.FebruaryGY != 0 ||
+                Properties.Settings.Default.FebruaryG2X != 0 || Properties.Settings.Default.FebruaryG2Y != 0)
+            {
+                gX = Properties.Settings.Default.FebruaryGX;
+                gY = Properties.Settings.Default.FebruaryGY;
+                g2X = Properties.Settings.Default.FebruaryG2X;
+                g2Y = Properties.Settings.Default.FebruaryG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void March()
         {
@@ -773,8 +896,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.MarchGetImagePath = GetImagePath;
             }
@@ -807,6 +943,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.MarchGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.MarchGX != 0 || Properties.Settings.Default.MarchGY != 0 ||
+                Properties.Settings.Default.MarchG2X != 0 || Properties.Settings.Default.MarchG2Y != 0)
+            {
+                gX = Properties.Settings.Default.MarchGX;
+                gY = Properties.Settings.Default.MarchGY;
+                g2X = Properties.Settings.Default.MarchG2X;
+                g2Y = Properties.Settings.Default.MarchG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void April()
         {
@@ -832,8 +980,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.AprilGetImagePath = GetImagePath;
             }
@@ -866,6 +1027,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.AprilGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.AprilGX != 0 || Properties.Settings.Default.AprilGY != 0 ||
+                Properties.Settings.Default.AprilG2X != 0 || Properties.Settings.Default.AprilG2Y != 0)
+            {
+                gX = Properties.Settings.Default.AprilGX;
+                gY = Properties.Settings.Default.AprilGY;
+                g2X = Properties.Settings.Default.AprilG2X;
+                g2Y = Properties.Settings.Default.AprilG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void May()
         {
@@ -891,8 +1064,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.MayGetImagePath = GetImagePath;
             }
@@ -925,6 +1111,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.MayGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.MayGX != 0 || Properties.Settings.Default.MayGY != 0 ||
+                Properties.Settings.Default.MayG2X != 0 || Properties.Settings.Default.MayG2Y != 0)
+            {
+                gX = Properties.Settings.Default.MayGX;
+                gY = Properties.Settings.Default.MayGY;
+                g2X = Properties.Settings.Default.MayG2X;
+                g2Y = Properties.Settings.Default.MayG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void June()
         {
@@ -950,8 +1148,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.JuneGetImagePath = GetImagePath;
             }
@@ -984,6 +1195,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.JuneGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.JuneGX != 0 || Properties.Settings.Default.JuneGY != 0 ||
+    Properties.Settings.Default.JuneG2X != 0 || Properties.Settings.Default.JuneG2Y != 0)
+            {
+                gX = Properties.Settings.Default.JuneGX;
+                gY = Properties.Settings.Default.JuneGY;
+                g2X = Properties.Settings.Default.JuneG2X;
+                g2Y = Properties.Settings.Default.JuneG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void July()
         {
@@ -1009,8 +1232,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.JulyGetImagePath = GetImagePath;
             }
@@ -1043,6 +1279,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.JulyGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.JulyGX != 0 || Properties.Settings.Default.JulyGY != 0 ||
+                Properties.Settings.Default.JulyG2X != 0 || Properties.Settings.Default.JulyG2Y != 0)
+            {
+                gX = Properties.Settings.Default.JulyGX;
+                gY = Properties.Settings.Default.JulyGY;
+                g2X = Properties.Settings.Default.JulyG2X;
+                g2Y = Properties.Settings.Default.JulyG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void August()
         {
@@ -1068,8 +1316,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.AugustGetImagePath = GetImagePath;
             }
@@ -1102,6 +1363,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.AugustGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.AugustGX != 0 || Properties.Settings.Default.AugustGY != 0 ||
+                Properties.Settings.Default.AugustG2X != 0 || Properties.Settings.Default.AugustG2Y != 0)
+            {
+                gX = Properties.Settings.Default.AugustGX;
+                gY = Properties.Settings.Default.AugustGY;
+                g2X = Properties.Settings.Default.AugustG2X;
+                g2Y = Properties.Settings.Default.AugustG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void September()
         {
@@ -1127,8 +1400,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.SeptemberGetImagePath = GetImagePath;
             }
@@ -1161,6 +1447,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.SeptemberGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.SeptemberGX != 0 || Properties.Settings.Default.SeptemberGY != 0 ||
+                Properties.Settings.Default.SeptemberG2X != 0 || Properties.Settings.Default.SeptemberG2Y != 0)
+            {
+                gX = Properties.Settings.Default.SeptemberGX;
+                gY = Properties.Settings.Default.SeptemberGY;
+                g2X = Properties.Settings.Default.SeptemberG2X;
+                g2Y = Properties.Settings.Default.SeptemberG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void October()
         {
@@ -1186,8 +1484,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.OctoberGetImagePath = GetImagePath;
             }
@@ -1220,6 +1531,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.OctoberGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.OctoberGX != 0 || Properties.Settings.Default.OctoberGY != 0 ||
+    Properties.Settings.Default.OctoberG2X != 0 || Properties.Settings.Default.OctoberG2Y != 0)
+            {
+                gX = Properties.Settings.Default.OctoberGX;
+                gY = Properties.Settings.Default.OctoberGY;
+                g2X = Properties.Settings.Default.OctoberG2X;
+                g2Y = Properties.Settings.Default.OctoberG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void November()
         {
@@ -1245,8 +1568,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false); ;
                 }
                 Properties.Settings.Default.NovemberGetImagePath = GetImagePath;
             }
@@ -1279,6 +1615,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.NovemberGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.NovemberGX != 0 || Properties.Settings.Default.NovemberGY != 0 ||
+    Properties.Settings.Default.NovemberG2X != 0 || Properties.Settings.Default.NovemberG2Y != 0)
+            {
+                gX = Properties.Settings.Default.NovemberGX;
+                gY = Properties.Settings.Default.NovemberGY;
+                g2X = Properties.Settings.Default.NovemberG2X;
+                g2Y = Properties.Settings.Default.NovemberG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void December()
         {
@@ -1304,8 +1652,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.DecemberGetImagePath = GetImagePath;
             }
@@ -1338,6 +1699,18 @@ namespace CollatorCAM
                 GetImagePath = Properties.Settings.Default.DecemberGetImagePath;
                 GetImage();
             }
+            if (Properties.Settings.Default.DecemberGX != 0 || Properties.Settings.Default.DecemberGY != 0 ||
+                Properties.Settings.Default.DecemberG2X != 0 || Properties.Settings.Default.DecemberG2Y != 0)
+            {
+                gX = Properties.Settings.Default.DecemberGX;
+                gY = Properties.Settings.Default.DecemberGY;
+                g2X = Properties.Settings.Default.DecemberG2X;
+                g2Y = Properties.Settings.Default.DecemberG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
+            }
         }
         private void Rear()
         {
@@ -1363,8 +1736,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    frame = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    ImagePath = "Current image file: " + GetImagePath;
+                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    if (frame == null)
+                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.RearGetImagePath = GetImagePath;
             }
@@ -1396,6 +1782,18 @@ namespace CollatorCAM
             {
                 GetImagePath = Properties.Settings.Default.RearGetImagePath;
                 GetImage();
+            }
+            if (Properties.Settings.Default.RearGX != 0 || Properties.Settings.Default.RearGY != 0 ||
+                Properties.Settings.Default.RearG2X != 0 || Properties.Settings.Default.RearG2Y != 0)
+            {
+                gX = Properties.Settings.Default.RearGX;
+                gY = Properties.Settings.Default.RearGY;
+                g2X = Properties.Settings.Default.RearG2X;
+                g2Y = Properties.Settings.Default.RearG2Y;
+                Bitmap pic = image.ToBitmap();
+                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                imageBox1.Refresh();
             }
         }
 #endregion
@@ -1494,6 +1892,10 @@ namespace CollatorCAM
                     Properties.Settings.Default.FrontMinICF = nudMinICF.Value;
                     Properties.Settings.Default.FrontGetImagePath = GetImagePath;
                     Properties.Settings.Default.FrontRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.FrontGX = gX;
+                Properties.Settings.Default.FrontGY = gY;
+                Properties.Settings.Default.FrontG2X = g2X;
+                Properties.Settings.Default.FrontG2Y = g2Y;
             }
             if (month == 2)
             {
@@ -1518,6 +1920,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.JanuaryMinICF = nudMinICF.Value;
                 Properties.Settings.Default.JanuaryGetImagePath = GetImagePath;
                 Properties.Settings.Default.JanuaryRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.JanuaryGX = gX;
+                Properties.Settings.Default.JanuaryGY = gY;
+                Properties.Settings.Default.JanuaryG2X = g2X;
+                Properties.Settings.Default.JanuaryG2Y = g2Y;
             }
             if (month == 3)
             {
@@ -1542,6 +1948,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.FebruaryMinICF = nudMinICF.Value;
                 Properties.Settings.Default.FebruaryGetImagePath = GetImagePath;
                 Properties.Settings.Default.FebruaryRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.FebruaryGX = gX;
+                Properties.Settings.Default.FebruaryGY = gY;
+                Properties.Settings.Default.FebruaryG2X = g2X;
+                Properties.Settings.Default.FebruaryG2Y = g2Y;
             }
             if (month == 4)
             {
@@ -1566,6 +1976,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.MarchMinICF = nudMinICF.Value;
                 Properties.Settings.Default.MarchGetImagePath = GetImagePath;
                 Properties.Settings.Default.MarchRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.MarchGX = gX;
+                Properties.Settings.Default.MarchGY = gY;
+                Properties.Settings.Default.MarchG2X = g2X;
+                Properties.Settings.Default.MarchG2Y = g2Y;
             }
             if (month == 5)
             {
@@ -1590,6 +2004,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.AprilMinICF = nudMinICF.Value;
                 Properties.Settings.Default.AprilGetImagePath = GetImagePath;
                 Properties.Settings.Default.AprilRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.AprilGX = gX;
+                Properties.Settings.Default.AprilGY = gY;
+                Properties.Settings.Default.AprilG2X = g2X;
+                Properties.Settings.Default.AprilG2Y = g2Y;
             }
             if (month == 6)
             {
@@ -1614,6 +2032,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.MayMinICF = nudMinICF.Value;
                 Properties.Settings.Default.MayGetImagePath = GetImagePath;
                 Properties.Settings.Default.MayRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.MayGX = gX;
+                Properties.Settings.Default.MayGY = gY;
+                Properties.Settings.Default.MayG2X = g2X;
+                Properties.Settings.Default.MayG2Y = g2Y;
             }
             if (month == 7)
             {
@@ -1638,6 +2060,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.JuneMinICF = nudMinICF.Value;
                 Properties.Settings.Default.JuneGetImagePath = GetImagePath;
                 Properties.Settings.Default.JuneRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.JuneGX = gX;
+                Properties.Settings.Default.JuneGY = gY;
+                Properties.Settings.Default.JuneG2X = g2X;
+                Properties.Settings.Default.JuneG2Y = g2Y;
             }
             if (month == 8)
             {
@@ -1662,6 +2088,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.JulyMinICF = nudMinICF.Value;
                 Properties.Settings.Default.JulyGetImagePath = GetImagePath;
                 Properties.Settings.Default.JulyRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.JulyGX = gX;
+                Properties.Settings.Default.JulyGY = gY;
+                Properties.Settings.Default.JulyG2X = g2X;
+                Properties.Settings.Default.JulyG2Y = g2Y;
             }
             if (month == 9)
             {
@@ -1686,6 +2116,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.AugustMinICF = nudMinICF.Value;
                 Properties.Settings.Default.AugustGetImagePath = GetImagePath;
                 Properties.Settings.Default.AugustRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.AugustGX = gX;
+                Properties.Settings.Default.AugustGY = gY;
+                Properties.Settings.Default.AugustG2X = g2X;
+                Properties.Settings.Default.AugustG2Y = g2Y;
             }
             if (month == 10)
             {
@@ -1710,6 +2144,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.SeptemberMinICF = nudMinICF.Value;
                 Properties.Settings.Default.SeptemberGetImagePath = GetImagePath;
                 Properties.Settings.Default.SeptemberRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.SeptemberGX = gX;
+                Properties.Settings.Default.SeptemberGY = gY;
+                Properties.Settings.Default.SeptemberG2X = g2X;
+                Properties.Settings.Default.SeptemberG2Y = g2Y;
             }
             if (month == 11)
             {
@@ -1734,6 +2172,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.OctoberMinICF = nudMinICF.Value;
                 Properties.Settings.Default.OctoberGetImagePath = GetImagePath;
                 Properties.Settings.Default.OctoberRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.OctoberGX = gX;
+                Properties.Settings.Default.OctoberGY = gY;
+                Properties.Settings.Default.OctoberG2X = g2X;
+                Properties.Settings.Default.OctoberG2Y = g2Y;
             }
             if (month == 12)
             {
@@ -1758,6 +2200,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.NovemberMinICF = nudMinICF.Value;
                 Properties.Settings.Default.NovemberGetImagePath = GetImagePath;
                 Properties.Settings.Default.NovemberRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.NovemberGX = gX;
+                Properties.Settings.Default.NovemberGY = gY;
+                Properties.Settings.Default.NovemberG2X = g2X;
+                Properties.Settings.Default.NovemberG2Y = g2Y;
             }
             if (month == 13)
             {
@@ -1782,6 +2228,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.DecemberMinICF = nudMinICF.Value;
                 Properties.Settings.Default.DecemberGetImagePath = GetImagePath;
                 Properties.Settings.Default.DecemberRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.DecemberGX = gX;
+                Properties.Settings.Default.DecemberGY = gY;
+                Properties.Settings.Default.DecemberG2X = g2X;
+                Properties.Settings.Default.DecemberG2Y = g2Y;
             }
             if (month == 14)
             {
@@ -1806,6 +2256,10 @@ namespace CollatorCAM
                 Properties.Settings.Default.RearMinICF = nudMinICF.Value;
                 Properties.Settings.Default.RearGetImagePath = GetImagePath;
                 Properties.Settings.Default.RearRotation = cbRotation.SelectedIndex;
+                Properties.Settings.Default.RearGX = gX;
+                Properties.Settings.Default.RearGY = gY;
+                Properties.Settings.Default.RearG2X = g2X;
+                Properties.Settings.Default.RearG2Y = g2Y;
             }
             Properties.Settings.Default.Save();
         }
@@ -1827,6 +2281,7 @@ namespace CollatorCAM
             button16.BackColor = System.Drawing.Color.Transparent;
             button17.BackColor = System.Drawing.Color.Transparent;
             button18.BackColor = System.Drawing.Color.Transparent;
+
 
             Front();
         }

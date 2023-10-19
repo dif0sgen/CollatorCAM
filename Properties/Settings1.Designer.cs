@@ -3861,5 +3861,677 @@ namespace CollatorCAM.Properties {
                 this["RearRotation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JanuaryGX {
+            get {
+                return ((double)(this["JanuaryGX"]));
+            }
+            set {
+                this["JanuaryGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JanuaryGY {
+            get {
+                return ((double)(this["JanuaryGY"]));
+            }
+            set {
+                this["JanuaryGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JanuaryG2X {
+            get {
+                return ((double)(this["JanuaryG2X"]));
+            }
+            set {
+                this["JanuaryG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JanuaryG2Y {
+            get {
+                return ((double)(this["JanuaryG2Y"]));
+            }
+            set {
+                this["JanuaryG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FebruaryGX {
+            get {
+                return ((double)(this["FebruaryGX"]));
+            }
+            set {
+                this["FebruaryGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FebruaryGY {
+            get {
+                return ((double)(this["FebruaryGY"]));
+            }
+            set {
+                this["FebruaryGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FebruaryG2X {
+            get {
+                return ((double)(this["FebruaryG2X"]));
+            }
+            set {
+                this["FebruaryG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FebruaryG2Y {
+            get {
+                return ((double)(this["FebruaryG2Y"]));
+            }
+            set {
+                this["FebruaryG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FrontGX {
+            get {
+                return ((double)(this["FrontGX"]));
+            }
+            set {
+                this["FrontGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FrontGY {
+            get {
+                return ((double)(this["FrontGY"]));
+            }
+            set {
+                this["FrontGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FrontG2X {
+            get {
+                return ((double)(this["FrontG2X"]));
+            }
+            set {
+                this["FrontG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double FrontG2Y {
+            get {
+                return ((double)(this["FrontG2Y"]));
+            }
+            set {
+                this["FrontG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double MarchGX {
+            get {
+                return ((double)(this["MarchGX"]));
+            }
+            set {
+                this["MarchGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double MarchGY {
+            get {
+                return ((double)(this["MarchGY"]));
+            }
+            set {
+                this["MarchGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double MarchG2X {
+            get {
+                return ((double)(this["MarchG2X"]));
+            }
+            set {
+                this["MarchG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double MarchG2Y {
+            get {
+                return ((double)(this["MarchG2Y"]));
+            }
+            set {
+                this["MarchG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double AprilGX {
+            get {
+                return ((double)(this["AprilGX"]));
+            }
+            set {
+                this["AprilGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double AprilGY {
+            get {
+                return ((double)(this["AprilGY"]));
+            }
+            set {
+                this["AprilGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double AprilG2X {
+            get {
+                return ((double)(this["AprilG2X"]));
+            }
+            set {
+                this["AprilG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double AprilG2Y {
+            get {
+                return ((double)(this["AprilG2Y"]));
+            }
+            set {
+                this["AprilG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double MayGX {
+            get {
+                return ((double)(this["MayGX"]));
+            }
+            set {
+                this["MayGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double MayGY {
+            get {
+                return ((double)(this["MayGY"]));
+            }
+            set {
+                this["MayGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double MayG2X {
+            get {
+                return ((double)(this["MayG2X"]));
+            }
+            set {
+                this["MayG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double MayG2Y {
+            get {
+                return ((double)(this["MayG2Y"]));
+            }
+            set {
+                this["MayG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JuneGX {
+            get {
+                return ((double)(this["JuneGX"]));
+            }
+            set {
+                this["JuneGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JuneGY {
+            get {
+                return ((double)(this["JuneGY"]));
+            }
+            set {
+                this["JuneGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JuneG2X {
+            get {
+                return ((double)(this["JuneG2X"]));
+            }
+            set {
+                this["JuneG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JuneG2Y {
+            get {
+                return ((double)(this["JuneG2Y"]));
+            }
+            set {
+                this["JuneG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JulyGX {
+            get {
+                return ((double)(this["JulyGX"]));
+            }
+            set {
+                this["JulyGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JulyGY {
+            get {
+                return ((double)(this["JulyGY"]));
+            }
+            set {
+                this["JulyGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JulyG2X {
+            get {
+                return ((double)(this["JulyG2X"]));
+            }
+            set {
+                this["JulyG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double JulyG2Y {
+            get {
+                return ((double)(this["JulyG2Y"]));
+            }
+            set {
+                this["JulyG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double AugustGX {
+            get {
+                return ((double)(this["AugustGX"]));
+            }
+            set {
+                this["AugustGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double AugustGY {
+            get {
+                return ((double)(this["AugustGY"]));
+            }
+            set {
+                this["AugustGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double AugustG2X {
+            get {
+                return ((double)(this["AugustG2X"]));
+            }
+            set {
+                this["AugustG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double AugustG2Y {
+            get {
+                return ((double)(this["AugustG2Y"]));
+            }
+            set {
+                this["AugustG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SeptemberGX {
+            get {
+                return ((double)(this["SeptemberGX"]));
+            }
+            set {
+                this["SeptemberGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SeptemberGY {
+            get {
+                return ((double)(this["SeptemberGY"]));
+            }
+            set {
+                this["SeptemberGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SeptemberG2Y {
+            get {
+                return ((double)(this["SeptemberG2Y"]));
+            }
+            set {
+                this["SeptemberG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double SeptemberG2X {
+            get {
+                return ((double)(this["SeptemberG2X"]));
+            }
+            set {
+                this["SeptemberG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double OctoberGX {
+            get {
+                return ((double)(this["OctoberGX"]));
+            }
+            set {
+                this["OctoberGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double OctoberGY {
+            get {
+                return ((double)(this["OctoberGY"]));
+            }
+            set {
+                this["OctoberGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double OctoberG2X {
+            get {
+                return ((double)(this["OctoberG2X"]));
+            }
+            set {
+                this["OctoberG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double OctoberG2Y {
+            get {
+                return ((double)(this["OctoberG2Y"]));
+            }
+            set {
+                this["OctoberG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double NovemberGX {
+            get {
+                return ((double)(this["NovemberGX"]));
+            }
+            set {
+                this["NovemberGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double NovemberGY {
+            get {
+                return ((double)(this["NovemberGY"]));
+            }
+            set {
+                this["NovemberGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double NovemberG2X {
+            get {
+                return ((double)(this["NovemberG2X"]));
+            }
+            set {
+                this["NovemberG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double NovemberG2Y {
+            get {
+                return ((double)(this["NovemberG2Y"]));
+            }
+            set {
+                this["NovemberG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double DecemberGX {
+            get {
+                return ((double)(this["DecemberGX"]));
+            }
+            set {
+                this["DecemberGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double DecemberGY {
+            get {
+                return ((double)(this["DecemberGY"]));
+            }
+            set {
+                this["DecemberGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double DecemberG2X {
+            get {
+                return ((double)(this["DecemberG2X"]));
+            }
+            set {
+                this["DecemberG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double DecemberG2Y {
+            get {
+                return ((double)(this["DecemberG2Y"]));
+            }
+            set {
+                this["DecemberG2Y"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearGX {
+            get {
+                return ((double)(this["RearGX"]));
+            }
+            set {
+                this["RearGX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearGY {
+            get {
+                return ((double)(this["RearGY"]));
+            }
+            set {
+                this["RearGY"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearG2X {
+            get {
+                return ((double)(this["RearG2X"]));
+            }
+            set {
+                this["RearG2X"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public double RearG2Y {
+            get {
+                return ((double)(this["RearG2Y"]));
+            }
+            set {
+                this["RearG2Y"] = value;
+            }
+        }
     }
 }
