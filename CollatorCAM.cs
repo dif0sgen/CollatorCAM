@@ -23,6 +23,8 @@ using Emgu.CV.UI;
 using ZedGraph;
 using static System.Net.Mime.MediaTypeNames;
 using System.Drawing.Imaging;
+using System.Linq;
+using System.Collections;
 
 namespace CollatorCAM
 {
@@ -265,13 +267,27 @@ namespace CollatorCAM
         private void ibMain_Paint(object sender, PaintEventArgs e)
         {
                 string TBtime = "";
-                string TBmonth = "  NG Month";
+                string TBmonth = "NG Month";
                 string TByear = "    NG Year";
                 string TBmaori = "      NG Maori";
                 int year = 0;
-                string [] month = new string[5];
-                string[] march = { "M", "a", "r", "c", "h" };
-                DateTime thisDay = DateTime.Now;
+            int letters = 0;
+
+            string[] smonth = new string[8];
+            string[] january = { "J", "a", "n", "u", "a", "r", "y", "" };
+            string[] february = { "F", "e", "b", "r", "u", "a", "r", "y" };
+            string[] march = { "M", "a", "r", "c", "h" };
+            string[] april = { "A", "p", "r", "i", "l" };
+            string[] may = { "M", "a", "y"};
+            string[] june = { "J", "u", "n", "e"};
+            string[] july = { "J", "u", "l", "y"};
+            string[] august = { "A", "u", "g", "u", "s", "t" };
+            string[] september = { "S", "e", "p", "t", "e", "m", "b", "e", "r" };
+            string[] october = { "O", "c", "t", "o", "b", "e", "r" };
+            string[] november = { "N", "o", "v", "e", "m", "b", "e", "r" };
+            string[] december = { "D", "e", "c", "e", "m", "b", "e", "r" };
+
+            DateTime thisDay = DateTime.Now;
                 TBtime = thisDay.ToString("d") + " " + thisDay.ToString("T");
 
                 if (frame == null) return; //not when prog run only
@@ -307,27 +323,192 @@ namespace CollatorCAM
                         text = found.template.name;
                     if (found.template.name == "2" || found.template.name == "0" || found.template.name == "4")
                         year++;
-                    //if (found.template.name == "M" || found.template.name == "a" || found.template.name == "r" ||
-                    //    found.template.name == "c" || found.template.name == "h")
-                    if (found.template.name == "M")
-                        month[0] = "M";
-                    if (found.template.name == "a")
-                        month[1] = "a";
-                    if (found.template.name == "r")
-                        month[2] = "r";
-                    if (found.template.name == "c")
-                        month[3] = "c";
-                    if (found.template.name == "h")
-                        month[4] = "h";
-                    //TBmonth = "  OK March";
-                                        //    month++;
-                                        //if (found.template.name == "M" || found.template.name == "a" || found.template.name == "r" ||
-                                        //    found.template.name == "c" || found.template.name == "h")
-                                        //    month++;
+                    if (monthph == 2)
+                    {
+                        if (found.template.name == "J")
+                            smonth[0] = "J";
+                        if (found.template.name == "a")
+                            smonth[1] = "a";
+                        if (found.template.name == "n")
+                            smonth[2] = "n";
+                        if (found.template.name == "u")
+                            smonth[3] = "u";
+                        if (found.template.name == "a")
+                            smonth[4] = "a";
+                        if (found.template.name == "r")
+                            smonth[5] = "r";
+                        if (found.template.name == "y")
+                            smonth[6] = "y";
+                    }
+                    if (monthph == 3)
+                    {
+                        if (found.template.name == "F")
+                            smonth[0] = "F";
+                        if (found.template.name == "e")
+                            smonth[1] = "e";
+                        if (found.template.name == "b")
+                            smonth[2] = "b";
+                        if (found.template.name == "r")
+                            smonth[3] = "r";
+                        if (found.template.name == "u")
+                            smonth[4] = "u";
+                        if (found.template.name == "a")
+                            smonth[5] = "a";
+                        if (found.template.name == "r")
+                            smonth[6] = "r";
+                        if (found.template.name == "y")
+                            smonth[7] = "y";
+                    }
+                    if (monthph == 4)
+                    {
+                        if (found.template.name == "M")
+                            smonth[0] = "M";
+                        if (found.template.name == "a")
+                            smonth[1] = "a";
+                        if (found.template.name == "r")
+                            smonth[2] = "r";
+                        if (found.template.name == "c")
+                            smonth[3] = "c";
+                        if (found.template.name == "h")
+                            smonth[4] = "h";
+                    }
+                    if (monthph == 5)
+                    {
+                        if (found.template.name == "A")
+                            smonth[0] = "A";
+                        if (found.template.name == "p")
+                            smonth[1] = "p";
+                        if (found.template.name == "r")
+                            smonth[2] = "r";
+                        if (found.template.name == "i")
+                            smonth[3] = "i";
+                        if (found.template.name == "l")
+                            smonth[4] = "l";
+                    }
+                    if (monthph == 6)
+                    {
+                        if (found.template.name == "M")
+                            smonth[0] = "M";
+                        if (found.template.name == "a")
+                            smonth[1] = "a";
+                        if (found.template.name == "y")
+                            smonth[2] = "y";
+                    }
+                    if (monthph == 7)
+                    {
+                        if (found.template.name == "J")
+                            smonth[0] = "J";
+                        if (found.template.name == "u")
+                            smonth[1] = "u";
+                        if (found.template.name == "n")
+                            smonth[2] = "n";
+                        if (found.template.name == "e")
+                            smonth[3] = "e";
+                    }
+                    if (monthph == 8)
+                    {
+                        if (found.template.name == "J")
+                            smonth[0] = "J";
+                        if (found.template.name == "u")
+                            smonth[1] = "u";
+                        if (found.template.name == "l")
+                            smonth[2] = "l";
+                        if (found.template.name == "y")
+                            smonth[3] = "y";
+                    }
+                    if (monthph == 9)
+                    {
+                        if (found.template.name == "A")
+                            smonth[0] = "A";
+                        if (found.template.name == "u")
+                            smonth[1] = "u";
+                        if (found.template.name == "g")
+                            smonth[2] = "g";
+                        if (found.template.name == "u")
+                            smonth[3] = "u";
+                        if (found.template.name == "s")
+                            smonth[4] = "s";
+                        if (found.template.name == "t")
+                            smonth[5] = "t";
+                    }
+                    if (monthph == 10)
+                    {
+                        if (found.template.name == "S")
+                            smonth[0] = "S";
+                        if (found.template.name == "e")
+                            smonth[1] = "e";
+                        if (found.template.name == "p")
+                            smonth[2] = "p";
+                        if (found.template.name == "t")
+                            smonth[3] = "t";
+                        if (found.template.name == "e")
+                            smonth[4] = "e";
+                        if (found.template.name == "m")
+                            smonth[5] = "m";
+                        if (found.template.name == "b")
+                            smonth[6] = "b";
+                        if (found.template.name == "e")
+                            smonth[7] = "e";
+                        if (found.template.name == "r")
+                            smonth[7] = "r";
+                    }
+                    if (monthph == 11)
+                    {
+                        if (found.template.name == "O")
+                            smonth[0] = "O";
+                        if (found.template.name == "c")
+                            smonth[1] = "c";
+                        if (found.template.name == "t")
+                            smonth[2] = "t";
+                        if (found.template.name == "o")
+                            smonth[3] = "o";
+                        if (found.template.name == "b")
+                            smonth[4] = "b";
+                        if (found.template.name == "e")
+                            smonth[5] = "e";
+                        if (found.template.name == "r")
+                            smonth[6] = "r";
+                    }
+                    if (monthph == 12)
+                    {
+                        if (found.template.name == "N")
+                            smonth[0] = "N";
+                        if (found.template.name == "o")
+                            smonth[1] = "o";
+                        if (found.template.name == "v")
+                            smonth[2] = "v";
+                        if (found.template.name == "e")
+                            smonth[3] = "e";
+                        if (found.template.name == "m")
+                            smonth[4] = "m";
+                        if (found.template.name == "b")
+                            smonth[5] = "b";
+                        if (found.template.name == "e")
+                            smonth[6] = "e";
+                        if (found.template.name == "r")
+                            smonth[7] = "r";
+                    }
+                    if (monthph == 13)
+                    {
+                        if (found.template.name == "D")
+                            smonth[0] = "D";
+                        if (found.template.name == "e")
+                            smonth[1] = "e";
+                        if (found.template.name == "c")
+                            smonth[2] = "c";
+                        if (found.template.name == "e")
+                            smonth[3] = "e";
+                        if (found.template.name == "m")
+                            smonth[4] = "m";
+                        if (found.template.name == "b")
+                            smonth[5] = "b";
+                        if (found.template.name == "e")
+                            smonth[6] = "e";
+                        if (found.template.name == "r")
+                            smonth[7] = "r";
+                    }
                     if (year == 4)
                         TByear = "  OK 2024";
-                    //if (month == 5)
-                    //    TBmonth = "  OK March";
                     if (found.template.name == "4")
                     {   
                         text = found.template.name;
@@ -364,10 +545,62 @@ namespace CollatorCAM
                 }
                 if ((PhotoMonth == true && ibMain.Image == frame) || (PhotoMonth == true && ibMain.Image == processor.binarizedFrame))
                 {
-                //if (month == march)
-                if (month[0] != null)
-                    TBmonth = month[0]+ month[1]+ month[2]+ month[3]+ month[4];
-                    tbResult.Items.Add(TBtime);
+                if (smonth[0] == "J" && smonth[1] == "a" && smonth[2] == "n" && smonth[3] == "u" && smonth[4] == "a" &&
+                    smonth[5] == "r" && smonth[6] == "y" )
+                {
+                    TBmonth = "OK January";
+                }
+                if (smonth[0] == "F" && smonth[1] == "e" && smonth[2] == "b" && smonth[3] == "r" && smonth[4] == "u" &&
+                    smonth[5] == "a" && smonth[6] == "r" && smonth[7] == "y")
+                {
+                    TBmonth = "OK February";
+                }
+                if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "r" && smonth[3] == "c" && smonth[4] == "h")
+                {
+                    TBmonth = "OK March";
+                }
+                if (smonth[0] == "A" && smonth[1] == "p" && smonth[2] == "r" && smonth[3] == "i" && smonth[4] == "l")
+                {
+                    TBmonth = "OK April";
+                }
+                if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "y")
+                {
+                    TBmonth = "OK May";
+                }
+                if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "n" && smonth[3] == "e")
+                {
+                    TBmonth = "OK June";
+                }
+                if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "l" && smonth[3] == "y")
+                {
+                    TBmonth = "OK July";
+                }
+                if (smonth[0] == "A" && smonth[1] == "u" && smonth[2] == "g" && smonth[3] == "u" && smonth[4] == "s" &&
+                    smonth[5] == "t")
+                {
+                    TBmonth = "OK August";
+                }
+                if (smonth[0] == "S" && smonth[1] == "e" && smonth[2] == "p" && smonth[3] == "t" && smonth[4] == "e" &&
+                    smonth[5] == "m" && smonth[6] == "b" && smonth[7] == "e" & smonth[7] == "r")
+                {
+                    TBmonth = "OK September";
+                }
+                if (smonth[0] == "O" && smonth[1] == "c" && smonth[2] == "t" && smonth[3] == "o" && smonth[4] == "b" &&
+                    smonth[5] == "e" && smonth[6] == "r")
+                {
+                    TBmonth = "OK October";
+                }
+                if (smonth[0] == "N" && smonth[1] == "o" && smonth[2] == "v" && smonth[3] == "e" && smonth[4] == "m" &&
+                    smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r")
+                {
+                    TBmonth = "OK November";
+                }
+                if (smonth[0] == "D" && smonth[1] == "e" && smonth[2] == "c" && smonth[3] == "e" && smonth[4] == "m" &&
+                    smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r")
+                {
+                    TBmonth = "OK December";
+                }
+                tbResult.Items.Add(TBtime);
                     tbResult.Items.Add(TBmonth);
                     tbResult.Items.Add(TByear);
                     tbResult.Items.Add(TBmaori);
