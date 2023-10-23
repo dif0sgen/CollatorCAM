@@ -4533,5 +4533,173 @@ namespace CollatorCAM.Properties {
                 this["RearG2Y"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int JanuaryCam {
+            get {
+                return ((int)(this["JanuaryCam"]));
+            }
+            set {
+                this["JanuaryCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FebruaryCam {
+            get {
+                return ((int)(this["FebruaryCam"]));
+            }
+            set {
+                this["FebruaryCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MarchCam {
+            get {
+                return ((int)(this["MarchCam"]));
+            }
+            set {
+                this["MarchCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AprilCam {
+            get {
+                return ((int)(this["AprilCam"]));
+            }
+            set {
+                this["AprilCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int MayCam {
+            get {
+                return ((int)(this["MayCam"]));
+            }
+            set {
+                this["MayCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int JuneCam {
+            get {
+                return ((int)(this["JuneCam"]));
+            }
+            set {
+                this["JuneCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int JulyCam {
+            get {
+                return ((int)(this["JulyCam"]));
+            }
+            set {
+                this["JulyCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int AugustCam {
+            get {
+                return ((int)(this["AugustCam"]));
+            }
+            set {
+                this["AugustCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int SeptemberCam {
+            get {
+                return ((int)(this["SeptemberCam"]));
+            }
+            set {
+                this["SeptemberCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int OctoberCam {
+            get {
+                return ((int)(this["OctoberCam"]));
+            }
+            set {
+                this["OctoberCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int NovemberCam {
+            get {
+                return ((int)(this["NovemberCam"]));
+            }
+            set {
+                this["NovemberCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int DecemberCam {
+            get {
+                return ((int)(this["DecemberCam"]));
+            }
+            set {
+                this["DecemberCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int FrontCam {
+            get {
+                return ((int)(this["FrontCam"]));
+            }
+            set {
+                this["FrontCam"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int RearCam {
+            get {
+                return ((int)(this["RearCam"]));
+            }
+            set {
+                this["RearCam"] = value;
+            }
+        }
     }
 }

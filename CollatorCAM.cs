@@ -25,6 +25,8 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Collections;
+using DirectShowLib;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CollatorCAM
 {
@@ -61,6 +63,7 @@ namespace CollatorCAM
         string GetImagePath;
         
         int i;
+        int CamIndex;
         int month;
         int monthph;
         int i_mdb;
@@ -89,12 +92,9 @@ namespace CollatorCAM
             processor = new ContourAnalysisNS.ImageProcessor();
             //load default templates
             //templateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
-            //LoadTemplates(templateFile);
 
-            //start capture from cam
-            //StartCapture();                     (RUN CAMERA)
-            //apply settings
-            //ApplySettings();
+
+
             //
             RunForm();
 
@@ -106,6 +106,13 @@ namespace CollatorCAM
 
         private void RunForm()
         {
+            var devices = new List<DsDevice>(DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice));
+            var cameraNames = new List<string>();
+            foreach (var device in devices)
+            {
+                cameraNames.Add(device.Name);
+                comboBox1.Items.Add(device.Name);
+            }
             month = 1;
             button7.BackColor = System.Drawing.Color.DarkGray;
             Front();
@@ -204,7 +211,7 @@ namespace CollatorCAM
         {
             try
             {
-                _capture = new Emgu.CV.Capture();
+                _capture = new Emgu.CV.Capture(0);// comboBox1.SelectedIndex);
                 ApplyCamSettings();
             }
             catch (NullReferenceException ex)
@@ -239,9 +246,9 @@ namespace CollatorCAM
                     frame = _capture.QueryFrame();
                 //frame = _capture.QueryFrame();
                 frameCount++;
-                //
+
                 processor.ProcessImage(frame);
-                //
+
                 if (cbShowBinarized.Checked)
                     ibMain.Image = processor.binarizedFrame;
                 else
@@ -918,6 +925,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.FrontMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.FrontMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.FrontRotation;
+            //comboBox1.SelectedIndex =  Properties.Settings.Default.FrontCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1002,6 +1010,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.JanuaryMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.JanuaryMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.JanuaryRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.JanuaryCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1086,6 +1095,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.FebruaryMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.FebruaryMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.FebruaryRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.FebruaryCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1170,6 +1180,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.MarchMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.MarchMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.MarchRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.MarchCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1254,6 +1265,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.AprilMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.AprilMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.AprilRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.AprilCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1338,6 +1350,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.MayMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.MayMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.MayRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.MayCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1422,6 +1435,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.JuneMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.JuneMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.JuneRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.JuneCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1506,6 +1520,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.JulyMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.JulyMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.JulyRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.JulyCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1590,6 +1605,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.AugustMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.AugustMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.AugustRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.AugustCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1674,6 +1690,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.SeptemberMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.SeptemberMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.SeptemberRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.SeptemberCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1758,6 +1775,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.OctoberMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.OctoberMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.OctoberRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.OctoberCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1842,6 +1860,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.NovemberMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.NovemberMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.NovemberRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.NovemberCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -1926,6 +1945,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.DecemberMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.DecemberMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.DecemberRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.DecemberCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -2010,6 +2030,7 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.RearMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.RearMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.RearRotation;
+            comboBox1.SelectedIndex = Properties.Settings.Default.RearCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
@@ -2129,6 +2150,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.FrontGY = gY;
                 Properties.Settings.Default.FrontG2X = g2X;
                 Properties.Settings.Default.FrontG2Y = g2Y;
+                Properties.Settings.Default.FrontCam = comboBox1.SelectedIndex;
             }
             if (month == 2)
             {
@@ -2157,6 +2179,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.JanuaryGY = gY;
                 Properties.Settings.Default.JanuaryG2X = g2X;
                 Properties.Settings.Default.JanuaryG2Y = g2Y;
+                Properties.Settings.Default.JanuaryCam = comboBox1.SelectedIndex;
             }
             if (month == 3)
             {
@@ -2185,6 +2208,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.FebruaryGY = gY;
                 Properties.Settings.Default.FebruaryG2X = g2X;
                 Properties.Settings.Default.FebruaryG2Y = g2Y;
+                Properties.Settings.Default.FebruaryCam = comboBox1.SelectedIndex;
             }
             if (month == 4)
             {
@@ -2213,6 +2237,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.MarchGY = gY;
                 Properties.Settings.Default.MarchG2X = g2X;
                 Properties.Settings.Default.MarchG2Y = g2Y;
+                Properties.Settings.Default.MarchCam = comboBox1.SelectedIndex;
             }
             if (month == 5)
             {
@@ -2241,6 +2266,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.AprilGY = gY;
                 Properties.Settings.Default.AprilG2X = g2X;
                 Properties.Settings.Default.AprilG2Y = g2Y;
+                Properties.Settings.Default.AprilCam = comboBox1.SelectedIndex;
             }
             if (month == 6)
             {
@@ -2269,6 +2295,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.MayGY = gY;
                 Properties.Settings.Default.MayG2X = g2X;
                 Properties.Settings.Default.MayG2Y = g2Y;
+                Properties.Settings.Default.MayCam = comboBox1.SelectedIndex;
             }
             if (month == 7)
             {
@@ -2297,6 +2324,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.JuneGY = gY;
                 Properties.Settings.Default.JuneG2X = g2X;
                 Properties.Settings.Default.JuneG2Y = g2Y;
+                Properties.Settings.Default.JuneCam = comboBox1.SelectedIndex;
             }
             if (month == 8)
             {
@@ -2325,6 +2353,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.JulyGY = gY;
                 Properties.Settings.Default.JulyG2X = g2X;
                 Properties.Settings.Default.JulyG2Y = g2Y;
+                Properties.Settings.Default.JulyCam = comboBox1.SelectedIndex;
             }
             if (month == 9)
             {
@@ -2353,6 +2382,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.AugustGY = gY;
                 Properties.Settings.Default.AugustG2X = g2X;
                 Properties.Settings.Default.AugustG2Y = g2Y;
+                Properties.Settings.Default.AugustCam = comboBox1.SelectedIndex;
             }
             if (month == 10)
             {
@@ -2381,6 +2411,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.SeptemberGY = gY;
                 Properties.Settings.Default.SeptemberG2X = g2X;
                 Properties.Settings.Default.SeptemberG2Y = g2Y;
+                Properties.Settings.Default.SeptemberCam = comboBox1.SelectedIndex;
             }
             if (month == 11)
             {
@@ -2409,6 +2440,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.OctoberGY = gY;
                 Properties.Settings.Default.OctoberG2X = g2X;
                 Properties.Settings.Default.OctoberG2Y = g2Y;
+                Properties.Settings.Default.OctoberCam = comboBox1.SelectedIndex;
             }
             if (month == 12)
             {
@@ -2437,6 +2469,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.NovemberGY = gY;
                 Properties.Settings.Default.NovemberG2X = g2X;
                 Properties.Settings.Default.NovemberG2Y = g2Y;
+                Properties.Settings.Default.NovemberCam = comboBox1.SelectedIndex;
             }
             if (month == 13)
             {
@@ -2465,6 +2498,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.DecemberGY = gY;
                 Properties.Settings.Default.DecemberG2X = g2X;
                 Properties.Settings.Default.DecemberG2Y = g2Y;
+                Properties.Settings.Default.DecemberCam = comboBox1.SelectedIndex;
             }
             if (month == 14)
             {
@@ -2493,6 +2527,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.RearGY = gY;
                 Properties.Settings.Default.RearG2X = g2X;
                 Properties.Settings.Default.RearG2Y = g2Y;
+                Properties.Settings.Default.RearCam = comboBox1.SelectedIndex;
             }
             Properties.Settings.Default.Save();
         }
@@ -2873,6 +2908,30 @@ namespace CollatorCAM
         {
                 Pen px = new Pen(Brushes.Red);
                 e.Graphics.DrawRectangle(px, rect);
+        }
+
+        private void cbCaptureFromCam_CheckedChanged(object sender, EventArgs e)
+        {
+            //comboBox1.Items.Clear();
+            //var devices = new List<DsDevice>(DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice));
+            //var cameraNames = new List<string>();
+            //foreach (var device in devices)
+            //{
+            //    cameraNames.Add(device.Name);
+            //    comboBox1.Items.Add(device.Name);
+            //}
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //LoadTemplates(            //start capture from cam
+            StartCapture();                    // (RUN CAMERA)
+            //apply settings
+            ApplySettings();
+            DateTime thisDay = DateTime.Now;
+            string time = thisDay.ToString("dd.MM.yyyy.HH.mm.ss.FFF");
+            _capture.QueryFrame().Save(GetImagePath + "/" + time + ".jpg");
+            //_capture.Dispose();
         }
     }
 }

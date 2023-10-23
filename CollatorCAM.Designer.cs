@@ -55,6 +55,7 @@ namespace CollatorCAM
             this.txtPort = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
             this.imageBox1 = new Emgu.CV.UI.ImageBox();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.lbFPS = new System.Windows.Forms.ToolStripStatusLabel();
@@ -300,6 +301,7 @@ namespace CollatorCAM
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.button4);
             this.tabPage5.Controls.Add(this.imageBox1);
             this.tabPage5.Controls.Add(this.ssMain);
             this.tabPage5.Controls.Add(this.button3);
@@ -313,6 +315,13 @@ namespace CollatorCAM
             resources.ApplyResources(this.tabPage5, "tabPage5");
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            resources.ApplyResources(this.button4, "button4");
+            this.button4.Name = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // imageBox1
             // 
@@ -1034,6 +1043,7 @@ namespace CollatorCAM
             this.cbCaptureFromCam.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbCaptureFromCam.Name = "cbCaptureFromCam";
             this.cbCaptureFromCam.UseVisualStyleBackColor = true;
+            this.cbCaptureFromCam.CheckedChanged += new System.EventHandler(this.cbCaptureFromCam_CheckedChanged);
             // 
             // cbCamResolution
             // 
@@ -1222,6 +1232,7 @@ namespace CollatorCAM
         private Label label1;
         private ComboBox cbRotation;
         private Emgu.CV.UI.ImageBox imageBox1;
+        private Button button4;
     }
 }
 

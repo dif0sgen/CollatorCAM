@@ -11,17 +11,17 @@ namespace CollatorCAM
         [STAThread]
         static void Main()
         {
-            try
-            {
+            //try
+            //{
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new Form_Listener());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
 
-            }
+            //}
 
 
         }
