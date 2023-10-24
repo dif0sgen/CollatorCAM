@@ -127,7 +127,6 @@ namespace CollatorCAM
             this.cbRotation = new System.Windows.Forms.ComboBox();
             this.btLoadFolder = new System.Windows.Forms.Button();
             this.btnPhoto = new System.Windows.Forms.Button();
-            this.cbCycleCapture = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cbAdaptiveNoiseFilter = new System.Windows.Forms.CheckBox();
             this.nudAdaptiveThBlockSize = new System.Windows.Forms.NumericUpDown();
@@ -139,6 +138,7 @@ namespace CollatorCAM
             this.btLoadImage = new System.Windows.Forms.Button();
             this.cbAutoContrast = new System.Windows.Forms.CheckBox();
             this.cbShowAngle = new System.Windows.Forms.CheckBox();
+            this.imageBox2 = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
@@ -161,6 +161,7 @@ namespace CollatorCAM
             ((System.ComponentModel.ISupportInitialize)(this.nudMinContourArea)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // directorySearcher1
@@ -301,6 +302,7 @@ namespace CollatorCAM
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.imageBox2);
             this.tabPage5.Controls.Add(this.button4);
             this.tabPage5.Controls.Add(this.imageBox1);
             this.tabPage5.Controls.Add(this.ssMain);
@@ -930,7 +932,6 @@ namespace CollatorCAM
             this.groupBox6.Controls.Add(this.cbRotation);
             this.groupBox6.Controls.Add(this.btLoadFolder);
             this.groupBox6.Controls.Add(this.btnPhoto);
-            this.groupBox6.Controls.Add(this.cbCycleCapture);
             this.groupBox6.Controls.Add(this.comboBox1);
             this.groupBox6.Controls.Add(this.cbAdaptiveNoiseFilter);
             this.groupBox6.Controls.Add(this.nudAdaptiveThBlockSize);
@@ -976,19 +977,12 @@ namespace CollatorCAM
             this.btnPhoto.UseVisualStyleBackColor = true;
             this.btnPhoto.Click += new System.EventHandler(this.btnPhoto_Click);
             // 
-            // cbCycleCapture
-            // 
-            resources.ApplyResources(this.cbCycleCapture, "cbCycleCapture");
-            this.cbCycleCapture.Checked = true;
-            this.cbCycleCapture.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbCycleCapture.Name = "cbCycleCapture";
-            this.cbCycleCapture.UseVisualStyleBackColor = true;
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.Name = "comboBox1";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // cbAdaptiveNoiseFilter
             // 
@@ -1055,6 +1049,7 @@ namespace CollatorCAM
             resources.GetString("cbCamResolution.Items2")});
             resources.ApplyResources(this.cbCamResolution, "cbCamResolution");
             this.cbCamResolution.Name = "cbCamResolution";
+            this.cbCamResolution.SelectedIndexChanged += new System.EventHandler(this.cbCamResolution_SelectedIndexChanged);
             // 
             // btLoadImage
             // 
@@ -1074,6 +1069,13 @@ namespace CollatorCAM
             resources.ApplyResources(this.cbShowAngle, "cbShowAngle");
             this.cbShowAngle.Name = "cbShowAngle";
             this.cbShowAngle.UseVisualStyleBackColor = true;
+            // 
+            // imageBox2
+            // 
+            resources.ApplyResources(this.imageBox2, "imageBox2");
+            this.imageBox2.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.imageBox2.Name = "imageBox2";
+            this.imageBox2.TabStop = false;
             // 
             // Form_Listener
             // 
@@ -1120,6 +1122,7 @@ namespace CollatorCAM
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1217,7 +1220,6 @@ namespace CollatorCAM
         private GroupBox groupBox6;
         private Button btLoadFolder;
         private Button btnPhoto;
-        private CheckBox cbCycleCapture;
         private ComboBox comboBox1;
         private CheckBox cbAdaptiveNoiseFilter;
         private NumericUpDown nudAdaptiveThBlockSize;
@@ -1233,6 +1235,7 @@ namespace CollatorCAM
         private ComboBox cbRotation;
         private Emgu.CV.UI.ImageBox imageBox1;
         private Button button4;
+        private Emgu.CV.UI.ImageBox imageBox2;
     }
 }
 

@@ -4701,5 +4701,17 @@ namespace CollatorCAM.Properties {
                 this["RearCam"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CaptureFromCamera {
+            get {
+                return ((string)(this["CaptureFromCamera"]));
+            }
+            set {
+                this["CaptureFromCamera"] = value;
+            }
+        }
     }
 }

@@ -16,7 +16,6 @@ using System.Threading;
 using System.Windows.Forms;
 using TCP_LISTENER_Delta;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
-using EasyModbus;
 using System.ComponentModel.Composition.Primitives;
 using Emgu.CV.CvEnum;
 using Emgu.CV.UI;
@@ -27,6 +26,7 @@ using System.Linq;
 using System.Collections;
 using DirectShowLib;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text.RegularExpressions;
 
 namespace CollatorCAM
 {
@@ -37,8 +37,24 @@ namespace CollatorCAM
         //private BezierCurve bc = new BezierCurve();
 
         private Emgu.CV.Capture _capture;
+        private Emgu.CV.Capture _capture1;
+        private Emgu.CV.Capture _capture2;
+        private Emgu.CV.Capture _capture3;
+        private Emgu.CV.Capture _capture4;
+        private Emgu.CV.Capture _capture5;
+        private Emgu.CV.Capture _capture6;
+        private Emgu.CV.Capture _capture7;
+        private Emgu.CV.Capture _capture8;
+        private Emgu.CV.Capture _capture9;
+        private Emgu.CV.Capture _capture10;
+        private Emgu.CV.Capture _capture11;
+        private Emgu.CV.Capture _capture12;
+        private Emgu.CV.Capture _capture13;
+        private Emgu.CV.Capture _capture14;
         Image<Bgr, Byte> image;
         Image<Bgr, Byte> frame;
+        Image<Bgr, Byte> img;
+        Image<Bgr, Byte> imgg;
         ImageProcessor processor;
         Dictionary<string, System.Drawing.Image> AugmentedRealityImages = new Dictionary<string, System.Drawing.Image>();
 
@@ -93,7 +109,8 @@ namespace CollatorCAM
             //load default templates
             //templateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
 
-
+            StartCapture();
+            ApplyCamSettings();
 
             //
             RunForm();
@@ -101,16 +118,13 @@ namespace CollatorCAM
 
             this.Closing += new CancelEventHandler(this.Form_Listener_Close);
             thread2.Start();
-            imageBox1.SetZoomScale(0.2, new Point(0));
         }
 
         private void RunForm()
         {
             var devices = new List<DsDevice>(DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice));
-            var cameraNames = new List<string>();
             foreach (var device in devices)
             {
-                cameraNames.Add(device.Name);
                 comboBox1.Items.Add(device.Name);
             }
             month = 1;
@@ -211,7 +225,20 @@ namespace CollatorCAM
         {
             try
             {
-                _capture = new Emgu.CV.Capture(0);// comboBox1.SelectedIndex);
+                _capture1 = new Emgu.CV.Capture(0);// comboBox1.SelectedIndex);
+                _capture2 = new Emgu.CV.Capture(1);
+                _capture3 = new Emgu.CV.Capture(2);// comboBox1.SelectedIndex);
+                _capture4 = new Emgu.CV.Capture(3);
+                _capture5 = new Emgu.CV.Capture(4);// comboBox1.SelectedIndex);
+                _capture6 = new Emgu.CV.Capture(5);
+                _capture7 = new Emgu.CV.Capture(6);// comboBox1.SelectedIndex);
+                _capture8 = new Emgu.CV.Capture(7);
+                _capture9 = new Emgu.CV.Capture(8);// comboBox1.SelectedIndex);
+                _capture10 = new Emgu.CV.Capture(9);
+                _capture11 = new Emgu.CV.Capture(10);// comboBox1.SelectedIndex);
+                _capture12 = new Emgu.CV.Capture(11);
+                _capture13 = new Emgu.CV.Capture(12);// comboBox1.SelectedIndex);
+                _capture14 = new Emgu.CV.Capture(13);
                 ApplyCamSettings();
             }
             catch (NullReferenceException ex)
@@ -223,8 +250,77 @@ namespace CollatorCAM
         {
             try
             {
-                _capture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
-                _capture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                if (comboBox1.SelectedIndex == 0)
+                {
+                    _capture1.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture1.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if(comboBox1.SelectedIndex == 1)
+                {
+                    _capture2.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture2.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 2)
+                {
+                    _capture3.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture3.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 3)
+                {
+                    _capture4.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture4.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 4)
+                {
+                    _capture5.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture5.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 5)
+                {
+                    _capture6.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture6.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 6)
+                {
+                    _capture7.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture7.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 7)
+                {
+                    _capture8.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture8.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 8)
+                {
+                    _capture9.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture9.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 9)
+                {
+                    _capture10.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture10.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 10)
+                {
+                    _capture11.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture11.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 11)
+                {
+                    _capture12.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture12.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 12)
+                {
+                    _capture13.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture13.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+                if (comboBox1.SelectedIndex == 13)
+                {
+                    _capture14.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, camWidth);
+                    _capture14.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
+                }
+
                 cbCamResolution.Text = camWidth + "x" + camHeight;
             }
             catch (NullReferenceException ex)
@@ -242,13 +338,67 @@ namespace CollatorCAM
         {
             try
             {
-                if (captureFromCam)
-                    frame = _capture.QueryFrame();
-                //frame = _capture.QueryFrame();
-                frameCount++;
+                if (cbCaptureFromCam.Checked)
+                {
+                    if (comboBox1.SelectedIndex == 0)
+                        img = _capture1.QueryFrame();
+                    if (comboBox1.SelectedIndex == 1)
+                        img = _capture2.QueryFrame();
+                    if (comboBox1.SelectedIndex == 2)
+                        img = _capture3.QueryFrame();
+                    if (comboBox1.SelectedIndex == 3)
+                        img = _capture4.QueryFrame();
+                    if (comboBox1.SelectedIndex == 4)
+                        img = _capture5.QueryFrame();
+                    if (comboBox1.SelectedIndex == 5)
+                        img = _capture6.QueryFrame();
+                    if (comboBox1.SelectedIndex == 6)
+                        img = _capture7.QueryFrame();
+                    if (comboBox1.SelectedIndex == 7)
+                        img = _capture8.QueryFrame();
+                    if (comboBox1.SelectedIndex == 8)
+                        img = _capture9.QueryFrame();
+                    if (comboBox1.SelectedIndex == 9)
+                        img = _capture10.QueryFrame();
+                    if (comboBox1.SelectedIndex == 10)
+                        img = _capture11.QueryFrame();
+                    if (comboBox1.SelectedIndex == 11)
+                        img = _capture12.QueryFrame();
+                    if (comboBox1.SelectedIndex == 12)
+                        img = _capture13.QueryFrame();
+                    if (comboBox1.SelectedIndex == 13)
+                        img = _capture14.QueryFrame();
+                }
+                if (!cbCaptureFromCam.Checked)
+                {
+                    img = imgg;
+                }
+                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    double x = 0;
+                    if (cbRotation.SelectedIndex == 0)
+                        x = 0;
+                    if (cbRotation.SelectedIndex == 1)
+                        x = -90;
+                    if (cbRotation.SelectedIndex == 2)
+                        x = 90;
+                    if (cbRotation.SelectedIndex == 3)
+                        x = 180;
+                    //imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                
+                    //if (frame == null)
+                    //frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imageBox1.Image = image;
+                    imageBox1.SetZoomScale(0.3, new Point(0));
+                    Bitmap pic = image.ToBitmap();
+                    rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                    frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
 
-                processor.ProcessImage(frame);
+                    //frame = _capture.QueryFrame();
+                    frameCount++;
 
+                    processor.ProcessImage(frame);
+                
                 if (cbShowBinarized.Checked)
                     ibMain.Image = processor.binarizedFrame;
                 else
@@ -273,35 +423,24 @@ namespace CollatorCAM
 
         private void ibMain_Paint(object sender, PaintEventArgs e)
         {
+            if (frame != null)
+            {
                 string TBtime = "";
                 string TBmonth = "NG Month";
                 string TByear = "    NG Year";
                 string TBmaori = "      NG Maori";
                 int year = 0;
-            int letters = 0;
 
-            string[] smonth = new string[8];
-            string[] january = { "J", "a", "n", "u", "a", "r", "y", "" };
-            string[] february = { "F", "e", "b", "r", "u", "a", "r", "y" };
-            string[] march = { "M", "a", "r", "c", "h" };
-            string[] april = { "A", "p", "r", "i", "l" };
-            string[] may = { "M", "a", "y"};
-            string[] june = { "J", "u", "n", "e"};
-            string[] july = { "J", "u", "l", "y"};
-            string[] august = { "A", "u", "g", "u", "s", "t" };
-            string[] september = { "S", "e", "p", "t", "e", "m", "b", "e", "r" };
-            string[] october = { "O", "c", "t", "o", "b", "e", "r" };
-            string[] november = { "N", "o", "v", "e", "m", "b", "e", "r" };
-            string[] december = { "D", "e", "c", "e", "m", "b", "e", "r" };
+                string[] smonth = new string[8];
 
-            DateTime thisDay = DateTime.Now;
+                DateTime thisDay = DateTime.Now;
                 TBtime = thisDay.ToString("d") + " " + thisDay.ToString("T");
 
-                if (frame == null) return; //not when prog run only
+                
 
                 Font font = new Font(Font.FontFamily, 24);//16
 
-                
+
                 e.Graphics.DrawString(lbFPS.Text, new Font(Font.FontFamily, 16), Brushes.Yellow, new PointF(1, 1));
                 Brush bgBrush = new SolidBrush(Color.FromArgb(255, 0, 0, 0));
                 Brush foreBrush = new SolidBrush(Color.FromArgb(255, 255, 255, 255));
@@ -313,313 +452,316 @@ namespace CollatorCAM
                             e.Graphics.DrawLines(Pens.Red, contour.ToArray());
                 //
                 lock (processor.foundTemplates)
-                foreach (FoundTemplateDesc found in processor.foundTemplates)
-                {
-                    if (found.template.name.EndsWith(".png") || found.template.name.EndsWith(".jpg"))
+                    foreach (FoundTemplateDesc found in processor.foundTemplates)
                     {
-                        DrawAugmentedReality(found, e.Graphics);
-                        continue;
-                    }
-
-                    Rectangle foundRect = found.sample.contour.SourceBoundingRect;
-                    Point p1 = new Point((foundRect.Left + foundRect.Right) / 2, foundRect.Top);
-                    string text = "";
-                    //FoundTemplateName = found.template.name;
-
-                    if (found.template.name != "2024")
-                        text = found.template.name;
-                    if (found.template.name == "2" || found.template.name == "0" || found.template.name == "4")
-                        year++;
-                    if (monthph == 2)
-                    {
-                        if (found.template.name == "J")
-                            smonth[0] = "J";
-                        if (found.template.name == "a")
-                            smonth[1] = "a";
-                        if (found.template.name == "n")
-                            smonth[2] = "n";
-                        if (found.template.name == "u")
-                            smonth[3] = "u";
-                        if (found.template.name == "a")
-                            smonth[4] = "a";
-                        if (found.template.name == "r")
-                            smonth[5] = "r";
-                        if (found.template.name == "y")
-                            smonth[6] = "y";
-                    }
-                    if (monthph == 3)
-                    {
-                        if (found.template.name == "F")
-                            smonth[0] = "F";
-                        if (found.template.name == "e")
-                            smonth[1] = "e";
-                        if (found.template.name == "b")
-                            smonth[2] = "b";
-                        if (found.template.name == "r")
-                            smonth[3] = "r";
-                        if (found.template.name == "u")
-                            smonth[4] = "u";
-                        if (found.template.name == "a")
-                            smonth[5] = "a";
-                        if (found.template.name == "r")
-                            smonth[6] = "r";
-                        if (found.template.name == "y")
-                            smonth[7] = "y";
-                    }
-                    if (monthph == 4)
-                    {
-                        if (found.template.name == "M")
-                            smonth[0] = "M";
-                        if (found.template.name == "a")
-                            smonth[1] = "a";
-                        if (found.template.name == "r")
-                            smonth[2] = "r";
-                        if (found.template.name == "c")
-                            smonth[3] = "c";
-                        if (found.template.name == "h")
-                            smonth[4] = "h";
-                    }
-                    if (monthph == 5)
-                    {
-                        if (found.template.name == "A")
-                            smonth[0] = "A";
-                        if (found.template.name == "p")
-                            smonth[1] = "p";
-                        if (found.template.name == "r")
-                            smonth[2] = "r";
-                        if (found.template.name == "i")
-                            smonth[3] = "i";
-                        if (found.template.name == "l")
-                            smonth[4] = "l";
-                    }
-                    if (monthph == 6)
-                    {
-                        if (found.template.name == "M")
-                            smonth[0] = "M";
-                        if (found.template.name == "a")
-                            smonth[1] = "a";
-                        if (found.template.name == "y")
-                            smonth[2] = "y";
-                    }
-                    if (monthph == 7)
-                    {
-                        if (found.template.name == "J")
-                            smonth[0] = "J";
-                        if (found.template.name == "u")
-                            smonth[1] = "u";
-                        if (found.template.name == "n")
-                            smonth[2] = "n";
-                        if (found.template.name == "e")
-                            smonth[3] = "e";
-                    }
-                    if (monthph == 8)
-                    {
-                        if (found.template.name == "J")
-                            smonth[0] = "J";
-                        if (found.template.name == "u")
-                            smonth[1] = "u";
-                        if (found.template.name == "l")
-                            smonth[2] = "l";
-                        if (found.template.name == "y")
-                            smonth[3] = "y";
-                    }
-                    if (monthph == 9)
-                    {
-                        if (found.template.name == "A")
-                            smonth[0] = "A";
-                        if (found.template.name == "u")
-                            smonth[1] = "u";
-                        if (found.template.name == "g")
-                            smonth[2] = "g";
-                        if (found.template.name == "u")
-                            smonth[3] = "u";
-                        if (found.template.name == "s")
-                            smonth[4] = "s";
-                        if (found.template.name == "t")
-                            smonth[5] = "t";
-                    }
-                    if (monthph == 10)
-                    {
-                        if (found.template.name == "S")
-                            smonth[0] = "S";
-                        if (found.template.name == "e")
-                            smonth[1] = "e";
-                        if (found.template.name == "p")
-                            smonth[2] = "p";
-                        if (found.template.name == "t")
-                            smonth[3] = "t";
-                        if (found.template.name == "e")
-                            smonth[4] = "e";
-                        if (found.template.name == "m")
-                            smonth[5] = "m";
-                        if (found.template.name == "b")
-                            smonth[6] = "b";
-                        if (found.template.name == "e")
-                            smonth[7] = "e";
-                        if (found.template.name == "r")
-                            smonth[7] = "r";
-                    }
-                    if (monthph == 11)
-                    {
-                        if (found.template.name == "O")
-                            smonth[0] = "O";
-                        if (found.template.name == "c")
-                            smonth[1] = "c";
-                        if (found.template.name == "t")
-                            smonth[2] = "t";
-                        if (found.template.name == "o")
-                            smonth[3] = "o";
-                        if (found.template.name == "b")
-                            smonth[4] = "b";
-                        if (found.template.name == "e")
-                            smonth[5] = "e";
-                        if (found.template.name == "r")
-                            smonth[6] = "r";
-                    }
-                    if (monthph == 12)
-                    {
-                        if (found.template.name == "N")
-                            smonth[0] = "N";
-                        if (found.template.name == "o")
-                            smonth[1] = "o";
-                        if (found.template.name == "v")
-                            smonth[2] = "v";
-                        if (found.template.name == "e")
-                            smonth[3] = "e";
-                        if (found.template.name == "m")
-                            smonth[4] = "m";
-                        if (found.template.name == "b")
-                            smonth[5] = "b";
-                        if (found.template.name == "e")
-                            smonth[6] = "e";
-                        if (found.template.name == "r")
-                            smonth[7] = "r";
-                    }
-                    if (monthph == 13)
-                    {
-                        if (found.template.name == "D")
-                            smonth[0] = "D";
-                        if (found.template.name == "e")
-                            smonth[1] = "e";
-                        if (found.template.name == "c")
-                            smonth[2] = "c";
-                        if (found.template.name == "e")
-                            smonth[3] = "e";
-                        if (found.template.name == "m")
-                            smonth[4] = "m";
-                        if (found.template.name == "b")
-                            smonth[5] = "b";
-                        if (found.template.name == "e")
-                            smonth[6] = "e";
-                        if (found.template.name == "r")
-                            smonth[7] = "r";
-                    }
-                    if (year == 4)
-                        TByear = "  OK 2024";
-                    if (found.template.name == "4")
-                    {   
-                        text = found.template.name;
-                        Point point = new Point(foundRect.Right - 150, foundRect.Top + 100);
-
-                        Rectangle maori = new Rectangle(foundRect.Right + 10, foundRect.Top, foundRect.Width * 2, foundRect.Height);
-                        Point p2 = new Point((maori.Left + maori.Right) / 2, maori.Top);
-                        //ProcessImage.GrayFrame
-                        Bitmap bitmap = new Bitmap(foundRect.Width * 2, foundRect.Height);
-                        Bitmap gray = (processor.binarizedFrame).Bitmap;
-                        bitmap = gray.Clone(maori, gray.PixelFormat);
-                        var sourceContours = new Image<Gray, Byte>(bitmap).FindContours(Emgu.CV.CvEnum.CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_NONE, Emgu.CV.CvEnum.RETR_TYPE.CV_RETR_LIST);
-                        //cont = sourceContours;
-                        string num = point.ToString();
-                        e.Graphics.DrawString(num, font, new SolidBrush(Color.FromArgb(255, 0, 255, 0)), point);
-                        e.Graphics.DrawRectangle(borderPen, maori);
-                        if (sourceContours != null)
+                        if (found.template.name.EndsWith(".png") || found.template.name.EndsWith(".jpg"))
                         {
-                            e.Graphics.DrawString("Maori", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
-                            e.Graphics.DrawString("Maori", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
-                            TBmaori = "      OK Maori";
+                            DrawAugmentedReality(found, e.Graphics);
+                            continue;
                         }
-                        if (sourceContours == null)
+
+                        Rectangle foundRect = found.sample.contour.SourceBoundingRect;
+                        Point p1 = new Point((foundRect.Left + foundRect.Right) / 2, foundRect.Top);
+                        string text = "";
+                        //FoundTemplateName = found.template.name;
+
+                        if (found.template.name != "2024")
+                            text = found.template.name;
+                        if (found.template.name == "2" || found.template.name == "0" || found.template.name == "4")
+                            year++;
+                        if (monthph == 2)
                         {
-                            e.Graphics.DrawString("Null", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
-                            e.Graphics.DrawString("Null", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
+                            if (found.template.name == "J")
+                                smonth[0] = "J";
+                            if (found.template.name == "a")
+                                smonth[1] = "a";
+                            if (found.template.name == "n")
+                                smonth[2] = "n";
+                            if (found.template.name == "u")
+                                smonth[3] = "u";
+                            if (found.template.name == "a")
+                                smonth[4] = "a";
+                            if (found.template.name == "r")
+                                smonth[5] = "r";
+                            if (found.template.name == "y")
+                                smonth[6] = "y";
                         }
+                        if (monthph == 3)
+                        {
+                            if (found.template.name == "F")
+                                smonth[0] = "F";
+                            if (found.template.name == "e")
+                                smonth[1] = "e";
+                            if (found.template.name == "b")
+                                smonth[2] = "b";
+                            if (found.template.name == "r")
+                                smonth[3] = "r";
+                            if (found.template.name == "u")
+                                smonth[4] = "u";
+                            if (found.template.name == "a")
+                                smonth[5] = "a";
+                            if (found.template.name == "r")
+                                smonth[6] = "r";
+                            if (found.template.name == "y")
+                                smonth[7] = "y";
+                        }
+                        if (monthph == 4)
+                        {
+                            if (found.template.name == "M")
+                                smonth[0] = "M";
+                            if (found.template.name == "a")
+                                smonth[1] = "a";
+                            if (found.template.name == "r")
+                                smonth[2] = "r";
+                            if (found.template.name == "c")
+                                smonth[3] = "c";
+                            if (found.template.name == "h")
+                                smonth[4] = "h";
+                        }
+                        if (monthph == 5)
+                        {
+                            if (found.template.name == "A")
+                                smonth[0] = "A";
+                            if (found.template.name == "p")
+                                smonth[1] = "p";
+                            if (found.template.name == "r")
+                                smonth[2] = "r";
+                            if (found.template.name == "i")
+                                smonth[3] = "i";
+                            if (found.template.name == "l")
+                                smonth[4] = "l";
+                        }
+                        if (monthph == 6)
+                        {
+                            if (found.template.name == "M")
+                                smonth[0] = "M";
+                            if (found.template.name == "a")
+                                smonth[1] = "a";
+                            if (found.template.name == "y")
+                                smonth[2] = "y";
+                        }
+                        if (monthph == 7)
+                        {
+                            if (found.template.name == "J")
+                                smonth[0] = "J";
+                            if (found.template.name == "u")
+                                smonth[1] = "u";
+                            if (found.template.name == "n")
+                                smonth[2] = "n";
+                            if (found.template.name == "e")
+                                smonth[3] = "e";
+                        }
+                        if (monthph == 8)
+                        {
+                            if (found.template.name == "J")
+                                smonth[0] = "J";
+                            if (found.template.name == "u")
+                                smonth[1] = "u";
+                            if (found.template.name == "l")
+                                smonth[2] = "l";
+                            if (found.template.name == "y")
+                                smonth[3] = "y";
+                        }
+                        if (monthph == 9)
+                        {
+                            if (found.template.name == "A")
+                                smonth[0] = "A";
+                            if (found.template.name == "u")
+                                smonth[1] = "u";
+                            if (found.template.name == "g")
+                                smonth[2] = "g";
+                            if (found.template.name == "u")
+                                smonth[3] = "u";
+                            if (found.template.name == "s")
+                                smonth[4] = "s";
+                            if (found.template.name == "t")
+                                smonth[5] = "t";
+                        }
+                        if (monthph == 10)
+                        {
+                            if (found.template.name == "S")
+                                smonth[0] = "S";
+                            if (found.template.name == "e")
+                                smonth[1] = "e";
+                            if (found.template.name == "p")
+                                smonth[2] = "p";
+                            if (found.template.name == "t")
+                                smonth[3] = "t";
+                            if (found.template.name == "e")
+                                smonth[4] = "e";
+                            if (found.template.name == "m")
+                                smonth[5] = "m";
+                            if (found.template.name == "b")
+                                smonth[6] = "b";
+                            if (found.template.name == "e")
+                                smonth[7] = "e";
+                            if (found.template.name == "r")
+                                smonth[7] = "r";
+                        }
+                        if (monthph == 11)
+                        {
+                            if (found.template.name == "O")
+                                smonth[0] = "O";
+                            if (found.template.name == "c")
+                                smonth[1] = "c";
+                            if (found.template.name == "t")
+                                smonth[2] = "t";
+                            if (found.template.name == "o")
+                                smonth[3] = "o";
+                            if (found.template.name == "b")
+                                smonth[4] = "b";
+                            if (found.template.name == "e")
+                                smonth[5] = "e";
+                            if (found.template.name == "r")
+                                smonth[6] = "r";
+                        }
+                        if (monthph == 12)
+                        {
+                            if (found.template.name == "N")
+                                smonth[0] = "N";
+                            if (found.template.name == "o")
+                                smonth[1] = "o";
+                            if (found.template.name == "v")
+                                smonth[2] = "v";
+                            if (found.template.name == "e")
+                                smonth[3] = "e";
+                            if (found.template.name == "m")
+                                smonth[4] = "m";
+                            if (found.template.name == "b")
+                                smonth[5] = "b";
+                            if (found.template.name == "e")
+                                smonth[6] = "e";
+                            if (found.template.name == "r")
+                                smonth[7] = "r";
+                        }
+                        if (monthph == 13)
+                        {
+                            if (found.template.name == "D")
+                                smonth[0] = "D";
+                            if (found.template.name == "e")
+                                smonth[1] = "e";
+                            if (found.template.name == "c")
+                                smonth[2] = "c";
+                            if (found.template.name == "e")
+                                smonth[3] = "e";
+                            if (found.template.name == "m")
+                                smonth[4] = "m";
+                            if (found.template.name == "b")
+                                smonth[5] = "b";
+                            if (found.template.name == "e")
+                                smonth[6] = "e";
+                            if (found.template.name == "r")
+                                smonth[7] = "r";
+                        }
+                        if (year == 4)
+                            TByear = "  OK 2024";
+                        if (found.template.name == "4")
+                        {
+                            text = found.template.name;
+                            Point point = new Point(foundRect.Right - 150, foundRect.Top + 100);
+
+                            Rectangle maori = new Rectangle(foundRect.Right + 10, foundRect.Top, foundRect.Width * 2, foundRect.Height);
+                            Point p2 = new Point((maori.Left + maori.Right) / 2, maori.Top);
+                            //ProcessImage.GrayFrame
+                            Bitmap bitmap = new Bitmap(foundRect.Width * 2, foundRect.Height);
+                            Bitmap gray = (processor.binarizedFrame).Bitmap;
+                            bitmap = gray.Clone(maori, gray.PixelFormat);
+                            var sourceContours = new Image<Gray, Byte>(bitmap).FindContours(Emgu.CV.CvEnum.CHAIN_APPROX_METHOD.CV_CHAIN_APPROX_NONE, Emgu.CV.CvEnum.RETR_TYPE.CV_RETR_LIST);
+                            //cont = sourceContours;
+                            string num = point.ToString();
+                            e.Graphics.DrawString(num, font, new SolidBrush(Color.FromArgb(255, 0, 255, 0)), point);
+                            e.Graphics.DrawRectangle(borderPen, maori);
+                            if (sourceContours != null)
+                            {
+                                e.Graphics.DrawString("Maori", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
+                                e.Graphics.DrawString("Maori", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
+                                TBmaori = "      OK Maori";
+                            }
+                            if (sourceContours == null)
+                            {
+                                e.Graphics.DrawString("Null", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
+                                e.Graphics.DrawString("Null", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
+                            }
+                        }
+                        if (showAngle)
+                            text += string.Format("\r\nangle={0:000}°\r\nscale={1:0.0}", 180 * found.angle / Math.PI, found.scale);
+                        e.Graphics.DrawRectangle(borderPen, foundRect);
+                        e.Graphics.DrawString(text, font, bgBrush, new PointF(p1.X + 1 - font.Height / 3, p1.Y + 1 - font.Height));
+                        e.Graphics.DrawString(text, font, foreBrush, new PointF(p1.X - font.Height / 3, p1.Y - font.Height));
                     }
-                    if (showAngle)
-                        text += string.Format("\r\nangle={0:000}°\r\nscale={1:0.0}", 180 * found.angle / Math.PI, found.scale);
-                    e.Graphics.DrawRectangle(borderPen, foundRect);
-                    e.Graphics.DrawString(text, font, bgBrush, new PointF(p1.X + 1 - font.Height / 3, p1.Y + 1 - font.Height));
-                    e.Graphics.DrawString(text, font, foreBrush, new PointF(p1.X - font.Height / 3, p1.Y - font.Height));
-                }
                 if ((PhotoMonth == true && ibMain.Image == frame) || (PhotoMonth == true && ibMain.Image == processor.binarizedFrame))
                 {
-                if (smonth[0] == "J" && smonth[1] == "a" && smonth[2] == "n" && smonth[3] == "u" && smonth[4] == "a" &&
-                    smonth[5] == "r" && smonth[6] == "y" )
-                {
-                    TBmonth = "OK January";
-                }
-                if (smonth[0] == "F" && smonth[1] == "e" && smonth[2] == "b" && smonth[3] == "r" && smonth[4] == "u" &&
-                    smonth[5] == "a" && smonth[6] == "r" && smonth[7] == "y")
-                {
-                    TBmonth = "OK February";
-                }
-                if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "r" && smonth[3] == "c" && smonth[4] == "h")
-                {
-                    TBmonth = "OK March";
-                }
-                if (smonth[0] == "A" && smonth[1] == "p" && smonth[2] == "r" && smonth[3] == "i" && smonth[4] == "l")
-                {
-                    TBmonth = "OK April";
-                }
-                if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "y")
-                {
-                    TBmonth = "OK May";
-                }
-                if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "n" && smonth[3] == "e")
-                {
-                    TBmonth = "OK June";
-                }
-                if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "l" && smonth[3] == "y")
-                {
-                    TBmonth = "OK July";
-                }
-                if (smonth[0] == "A" && smonth[1] == "u" && smonth[2] == "g" && smonth[3] == "u" && smonth[4] == "s" &&
-                    smonth[5] == "t")
-                {
-                    TBmonth = "OK August";
-                }
-                if (smonth[0] == "S" && smonth[1] == "e" && smonth[2] == "p" && smonth[3] == "t" && smonth[4] == "e" &&
-                    smonth[5] == "m" && smonth[6] == "b" && smonth[7] == "e" & smonth[7] == "r")
-                {
-                    TBmonth = "OK September";
-                }
-                if (smonth[0] == "O" && smonth[1] == "c" && smonth[2] == "t" && smonth[3] == "o" && smonth[4] == "b" &&
-                    smonth[5] == "e" && smonth[6] == "r")
-                {
-                    TBmonth = "OK October";
-                }
-                if (smonth[0] == "N" && smonth[1] == "o" && smonth[2] == "v" && smonth[3] == "e" && smonth[4] == "m" &&
-                    smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r")
-                {
-                    TBmonth = "OK November";
-                }
-                if (smonth[0] == "D" && smonth[1] == "e" && smonth[2] == "c" && smonth[3] == "e" && smonth[4] == "m" &&
-                    smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r")
-                {
-                    TBmonth = "OK December";
-                }
-                tbResult.Items.Add(TBtime);
+                    if (smonth[0] == "J" && smonth[1] == "a" && smonth[2] == "n" && smonth[3] == "u" && smonth[4] == "a" &&
+                        smonth[5] == "r" && smonth[6] == "y")
+                    {
+                        TBmonth = "OK January";
+                    }
+                    if (smonth[0] == "F" && smonth[1] == "e" && smonth[2] == "b" && smonth[3] == "r" && smonth[4] == "u" &&
+                        smonth[5] == "a" && smonth[6] == "r" && smonth[7] == "y")
+                    {
+                        TBmonth = "OK February";
+                    }
+                    if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "r" && smonth[3] == "c" && smonth[4] == "h")
+                    {
+                        TBmonth = "OK March";
+                    }
+                    if (smonth[0] == "A" && smonth[1] == "p" && smonth[2] == "r" && smonth[3] == "i" && smonth[4] == "l")
+                    {
+                        TBmonth = "OK April";
+                    }
+                    if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "y")
+                    {
+                        TBmonth = "OK May";
+                    }
+                    if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "n" && smonth[3] == "e")
+                    {
+                        TBmonth = "OK June";
+                    }
+                    if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "l" && smonth[3] == "y")
+                    {
+                        TBmonth = "OK July";
+                    }
+                    if (smonth[0] == "A" && smonth[1] == "u" && smonth[2] == "g" && smonth[3] == "u" && smonth[4] == "s" &&
+                        smonth[5] == "t")
+                    {
+                        TBmonth = "OK August";
+                    }
+                    if (smonth[0] == "S" && smonth[1] == "e" && smonth[2] == "p" && smonth[3] == "t" && smonth[4] == "e" &&
+                        smonth[5] == "m" && smonth[6] == "b" && smonth[7] == "e" & smonth[7] == "r")
+                    {
+                        TBmonth = "OK September";
+                    }
+                    if (smonth[0] == "O" && smonth[1] == "c" && smonth[2] == "t" && smonth[3] == "o" && smonth[4] == "b" &&
+                        smonth[5] == "e" && smonth[6] == "r")
+                    {
+                        TBmonth = "OK October";
+                    }
+                    if (smonth[0] == "N" && smonth[1] == "o" && smonth[2] == "v" && smonth[3] == "e" && smonth[4] == "m" &&
+                        smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r")
+                    {
+                        TBmonth = "OK November";
+                    }
+                    if (smonth[0] == "D" && smonth[1] == "e" && smonth[2] == "c" && smonth[3] == "e" && smonth[4] == "m" &&
+                        smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r")
+                    {
+                        TBmonth = "OK December";
+                    }
+                    tbResult.Items.Add(TBtime);
                     tbResult.Items.Add(TBmonth);
                     tbResult.Items.Add(TByear);
                     tbResult.Items.Add(TBmaori);
-                if (TBmonth != "  NG Month" && TByear != "    NG Year" && TBmaori != "      NG Maori")
-                    MDB_WRITE[i_mdb] = true;
-                if (TBmonth == "  NG Month" || TByear == "    NG Year" || TBmaori == "      NG Maori")
-                    MDB_WRITE[i_mdb] = false;
+                    if (TBmonth != "  NG Month" && TByear != "    NG Year" && TBmaori != "      NG Maori")
+                        MDB_WRITE[i_mdb] = true;
+                    if (TBmonth == "  NG Month" || TByear == "    NG Year" || TBmaori == "      NG Maori")
+                        MDB_WRITE[i_mdb] = false;
                     PhotoMonth = false;
                     monthph++;
                     i_mdb++;
                     ScanCycle();
                 }
+            }
+            if (frame == null) 
+                return; //not when prog run only
 
         }
 
@@ -876,7 +1018,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.FrontMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.FrontMinICF == 0)
                 Properties.Settings.Default.FrontMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.FrontGetImagePath == "")
+            if (Properties.Settings.Default.FrontGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -884,21 +1026,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
                     //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //double x = 0;
+                    //if (cbRotation.SelectedIndex == 0)
+                    //    x = 0;
+                    //if (cbRotation.SelectedIndex == 1)
+                    //    x = -90;
+                    //if (cbRotation.SelectedIndex == 2)
+                    //    x = 90;
+                    //if (cbRotation.SelectedIndex == 3)
+                    //    x = 180;
+                    //imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //if (frame == null)
+                    //    frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.FrontGetImagePath = GetImagePath;
             }
@@ -910,13 +1052,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.FrontNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.FrontAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.FrontCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.FrontCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.FrontNoizeFilt;
             templateFile = Properties.Settings.Default.FrontTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.FrontShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.FrontShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.FrontShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.FrontCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.FrontAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.FrontMaxACF;
             nudMinACF.Value = Properties.Settings.Default.FrontMinACF;
@@ -925,24 +1066,24 @@ namespace CollatorCAM
             nudMinDefinition.Value = Properties.Settings.Default.FrontMinDefinition;
             nudMinICF.Value = Properties.Settings.Default.FrontMinICF;
             cbRotation.SelectedIndex = Properties.Settings.Default.FrontRotation;
-            //comboBox1.SelectedIndex =  Properties.Settings.Default.FrontCam;
+            comboBox1.SelectedIndex =  Properties.Settings.Default.FrontCam;
             LoadTemplates(templateFile);
             if (cbCaptureFromCam.Checked == false)
             {
                 GetImagePath = Properties.Settings.Default.FrontGetImagePath;
                 GetImage();
             }
-            if (Properties.Settings.Default.FrontGX != 0 || Properties.Settings.Default.FrontGY != 0 ||
-                Properties.Settings.Default.FrontG2X != 0 || Properties.Settings.Default.FrontG2Y != 0)
+            if ((Properties.Settings.Default.FrontGX != 0 || Properties.Settings.Default.FrontGY != 0 ||
+                Properties.Settings.Default.FrontG2X != 0 || Properties.Settings.Default.FrontG2Y != 0) && cbCaptureFromCam.Checked)
             {
                 gX = Properties.Settings.Default.FrontGX;
                 gY = Properties.Settings.Default.FrontGY;
                 g2X = Properties.Settings.Default.FrontG2X;
                 g2Y = Properties.Settings.Default.FrontG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
             private void January()
@@ -961,7 +1102,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.JanuaryMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.JanuaryMinICF == 0)
                 Properties.Settings.Default.JanuaryMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.JanuaryGetImagePath == "")
+            if (Properties.Settings.Default.JanuaryGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -969,21 +1110,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.JanuaryGetImagePath = GetImagePath;
             }
@@ -1001,7 +1142,6 @@ namespace CollatorCAM
             cbShowAngle.Checked = Properties.Settings.Default.JanuaryShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.JanuaryShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.JanuaryShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.JanuaryCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.JanuaryAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.JanuaryMaxACF;
             nudMinACF.Value = Properties.Settings.Default.JanuaryMinACF;
@@ -1024,10 +1164,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.JanuaryGY;
                 g2X = Properties.Settings.Default.JanuaryG2X;
                 g2Y = Properties.Settings.Default.JanuaryG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void February()
@@ -1046,7 +1186,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.FebruaryMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.FebruaryMinICF == 0)
                 Properties.Settings.Default.FebruaryMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.FebruaryGetImagePath == "")
+            if (Properties.Settings.Default.FebruaryGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1054,21 +1194,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.FebruaryGetImagePath = GetImagePath;
             }
@@ -1080,13 +1220,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.FebruaryNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.FebruaryAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.FebruaryCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.FebruaryCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.FebruaryNoizeFilt;
             templateFile = Properties.Settings.Default.FebruaryTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.FebruaryShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.FebruaryShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.FebruaryShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.FebruaryCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.FebruaryAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.FebruaryMaxACF;
             nudMinACF.Value = Properties.Settings.Default.FebruaryMinACF;
@@ -1109,10 +1248,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.FebruaryGY;
                 g2X = Properties.Settings.Default.FebruaryG2X;
                 g2Y = Properties.Settings.Default.FebruaryG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void March()
@@ -1131,7 +1270,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.MarchMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.MarchMinICF == 0)
                 Properties.Settings.Default.MarchMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.MarchGetImagePath == "")
+            if (Properties.Settings.Default.MarchGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1139,21 +1278,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.MarchGetImagePath = GetImagePath;
             }
@@ -1165,13 +1304,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.MarchNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.MarchAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.MarchCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.MarchCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.MarchNoizeFilt;
             templateFile = Properties.Settings.Default.MarchTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.MarchShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.MarchShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.MarchShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.MarchCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.MarchAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.MarchMaxACF;
             nudMinACF.Value = Properties.Settings.Default.MarchMinACF;
@@ -1194,10 +1332,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.MarchGY;
                 g2X = Properties.Settings.Default.MarchG2X;
                 g2Y = Properties.Settings.Default.MarchG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void April()
@@ -1216,7 +1354,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.AprilMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.AprilMinICF == 0)
                 Properties.Settings.Default.AprilMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.AprilGetImagePath == "")
+            if (Properties.Settings.Default.AprilGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1224,21 +1362,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.AprilGetImagePath = GetImagePath;
             }
@@ -1250,13 +1388,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.AprilNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.AprilAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.AprilCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.AprilCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.AprilNoizeFilt;
             templateFile = Properties.Settings.Default.AprilTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.AprilShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.AprilShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.AprilShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.AprilCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.AprilAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.AprilMaxACF;
             nudMinACF.Value = Properties.Settings.Default.AprilMinACF;
@@ -1279,10 +1416,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.AprilGY;
                 g2X = Properties.Settings.Default.AprilG2X;
                 g2Y = Properties.Settings.Default.AprilG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void May()
@@ -1301,7 +1438,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.MayMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.MayMinICF == 0)
                 Properties.Settings.Default.MayMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.MayGetImagePath == "")
+            if (Properties.Settings.Default.MayGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1309,21 +1446,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.MayGetImagePath = GetImagePath;
             }
@@ -1335,13 +1472,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.MayNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.MayAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.MayCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.MayCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.MayNoizeFilt;
             templateFile = Properties.Settings.Default.MayTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.MayShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.MayShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.MayShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.MayCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.MayAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.MayMaxACF;
             nudMinACF.Value = Properties.Settings.Default.MayMinACF;
@@ -1364,10 +1500,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.MayGY;
                 g2X = Properties.Settings.Default.MayG2X;
                 g2Y = Properties.Settings.Default.MayG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void June()
@@ -1386,7 +1522,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.JuneMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.JuneMinICF == 0)
                 Properties.Settings.Default.JuneMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.JuneGetImagePath == "")
+            if (Properties.Settings.Default.JuneGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1394,21 +1530,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.JuneGetImagePath = GetImagePath;
             }
@@ -1420,13 +1556,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.JuneNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.JuneAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.JuneCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.JuneCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.JuneNoizeFilt;
             templateFile = Properties.Settings.Default.JuneTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.JuneShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.JuneShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.JuneShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.JuneCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.JuneAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.JuneMaxACF;
             nudMinACF.Value = Properties.Settings.Default.JuneMinACF;
@@ -1449,10 +1584,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.JuneGY;
                 g2X = Properties.Settings.Default.JuneG2X;
                 g2Y = Properties.Settings.Default.JuneG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void July()
@@ -1471,7 +1606,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.JulyMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.JulyMinICF == 0)
                 Properties.Settings.Default.JulyMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.JulyGetImagePath == "")
+            if (Properties.Settings.Default.JulyGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1479,21 +1614,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.JulyGetImagePath = GetImagePath;
             }
@@ -1505,13 +1640,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.JulyNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.JulyAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.JulyCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.JulyCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.JulyNoizeFilt;
             templateFile = Properties.Settings.Default.JulyTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.JulyShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.JulyShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.JulyShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.JulyCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.JulyAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.JulyMaxACF;
             nudMinACF.Value = Properties.Settings.Default.JulyMinACF;
@@ -1534,10 +1668,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.JulyGY;
                 g2X = Properties.Settings.Default.JulyG2X;
                 g2Y = Properties.Settings.Default.JulyG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void August()
@@ -1556,7 +1690,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.AugustMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.AugustMinICF == 0)
                 Properties.Settings.Default.AugustMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.AugustGetImagePath == "")
+            if (Properties.Settings.Default.AugustGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1564,21 +1698,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.AugustGetImagePath = GetImagePath;
             }
@@ -1590,13 +1724,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.AugustNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.AugustAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.AugustCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.AugustCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.AugustNoizeFilt;
             templateFile = Properties.Settings.Default.AugustTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.AugustShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.AugustShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.AugustShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.AugustCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.AugustAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.AugustMaxACF;
             nudMinACF.Value = Properties.Settings.Default.AugustMinACF;
@@ -1619,10 +1752,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.AugustGY;
                 g2X = Properties.Settings.Default.AugustG2X;
                 g2Y = Properties.Settings.Default.AugustG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void September()
@@ -1641,7 +1774,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.SeptemberMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.SeptemberMinICF == 0)
                 Properties.Settings.Default.SeptemberMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.SeptemberGetImagePath == "")
+            if (Properties.Settings.Default.SeptemberGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1649,21 +1782,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.SeptemberGetImagePath = GetImagePath;
             }
@@ -1675,13 +1808,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.SeptemberNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.SeptemberAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.SeptemberCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.SeptemberCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.SeptemberNoizeFilt;
             templateFile = Properties.Settings.Default.SeptemberTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.SeptemberShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.SeptemberShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.SeptemberShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.SeptemberCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.SeptemberAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.SeptemberMaxACF;
             nudMinACF.Value = Properties.Settings.Default.SeptemberMinACF;
@@ -1704,10 +1836,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.SeptemberGY;
                 g2X = Properties.Settings.Default.SeptemberG2X;
                 g2Y = Properties.Settings.Default.SeptemberG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void October()
@@ -1726,7 +1858,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.OctoberMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.OctoberMinICF == 0)
                 Properties.Settings.Default.OctoberMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.OctoberGetImagePath == "")
+            if (Properties.Settings.Default.OctoberGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1734,21 +1866,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.OctoberGetImagePath = GetImagePath;
             }
@@ -1760,13 +1892,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.OctoberNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.OctoberAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.OctoberCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.OctoberCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.OctoberNoizeFilt;
             templateFile = Properties.Settings.Default.OctoberTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.OctoberShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.OctoberShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.OctoberShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.OctoberCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.OctoberAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.OctoberMaxACF;
             nudMinACF.Value = Properties.Settings.Default.OctoberMinACF;
@@ -1789,10 +1920,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.OctoberGY;
                 g2X = Properties.Settings.Default.OctoberG2X;
                 g2Y = Properties.Settings.Default.OctoberG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void November()
@@ -1811,7 +1942,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.NovemberMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.NovemberMinICF == 0)
                 Properties.Settings.Default.NovemberMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.NovemberGetImagePath == "")
+            if (Properties.Settings.Default.NovemberGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1819,21 +1950,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false); ;
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false); ;
                 }
                 Properties.Settings.Default.NovemberGetImagePath = GetImagePath;
             }
@@ -1845,13 +1976,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.NovemberNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.NovemberAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.NovemberCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.NovemberCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.NovemberNoizeFilt;
             templateFile = Properties.Settings.Default.NovemberTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.NovemberShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.NovemberShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.NovemberShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.NovemberCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.NovemberAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.NovemberMaxACF;
             nudMinACF.Value = Properties.Settings.Default.NovemberMinACF;
@@ -1874,10 +2004,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.NovemberGY;
                 g2X = Properties.Settings.Default.NovemberG2X;
                 g2Y = Properties.Settings.Default.NovemberG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void December()
@@ -1896,7 +2026,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.DecemberMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.DecemberMinICF == 0)
                 Properties.Settings.Default.DecemberMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.DecemberGetImagePath == "")
+            if (Properties.Settings.Default.DecemberGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1904,21 +2034,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    //        //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //        double x = 0;
+                    //        if (cbRotation.SelectedIndex == 0)
+                    //            x = 0;
+                    //        if (cbRotation.SelectedIndex == 1)
+                    //            x = -90;
+                    //        if (cbRotation.SelectedIndex == 2)
+                    //            x = 90;
+                    //        if (cbRotation.SelectedIndex == 3)
+                    //            x = 180;
+                    //        imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //        if (frame == null)
+                    //            frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.DecemberGetImagePath = GetImagePath;
             }
@@ -1930,13 +2060,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.DecemberNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.DecemberAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.DecemberCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.DecemberCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.DecemberNoizeFilt;
             templateFile = Properties.Settings.Default.DecemberTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.DecemberShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.DecemberShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.DecemberShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.DecemberCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.DecemberAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.DecemberMaxACF;
             nudMinACF.Value = Properties.Settings.Default.DecemberMinACF;
@@ -1959,10 +2088,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.DecemberGY;
                 g2X = Properties.Settings.Default.DecemberG2X;
                 g2Y = Properties.Settings.Default.DecemberG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
         private void Rear()
@@ -1981,7 +2110,7 @@ namespace CollatorCAM
                 Properties.Settings.Default.RearMinACF = new decimal(new int[] { 2, 0, 0, 65536 });
             if (Properties.Settings.Default.RearMinICF == 0)
                 Properties.Settings.Default.RearMinICF = new decimal(new int[] { 2, 0, 0, 65536 });
-            if (Properties.Settings.Default.RearGetImagePath == "")
+            if (Properties.Settings.Default.RearGetImagePath == "" && cbCaptureFromCam.Checked)
             {
                 FolderBrowserDialog ofd = new FolderBrowserDialog();
                 if (ofd.ShowDialog(this) == System.Windows.Forms.DialogResult.OK)
@@ -1989,21 +2118,21 @@ namespace CollatorCAM
                     GetImagePath = ofd.SelectedPath;
                     files = Directory.GetFiles(GetImagePath);
                     i = files.Length;
-                    Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                    //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                    double x = 0;
-                    if (cbRotation.SelectedIndex == 0)
-                        x = 0;
-                    if (cbRotation.SelectedIndex == 1)
-                        x = -90;
-                    if (cbRotation.SelectedIndex == 2)
-                        x = 90;
-                    if (cbRotation.SelectedIndex == 3)
-                        x = 180;
-                    imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                    if (frame == null)
-                        frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                    ////e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                    //double x = 0;
+                    //if (cbRotation.SelectedIndex == 0)
+                    //    x = 0;
+                    //if (cbRotation.SelectedIndex == 1)
+                    //    x = -90;
+                    //if (cbRotation.SelectedIndex == 2)
+                    //    x = 90;
+                    //if (cbRotation.SelectedIndex == 3)
+                    //    x = 180;
+                    //imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                    //if (frame == null)
+                    //    frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                 }
                 Properties.Settings.Default.RearGetImagePath = GetImagePath;
             }
@@ -2015,13 +2144,12 @@ namespace CollatorCAM
             cbAdaptiveNoiseFilter.Checked = Properties.Settings.Default.RearNoizeFilter;
             cbAllowAngleMore45.Checked = Properties.Settings.Default.RearAllowAngles;
             cbCamResolution.SelectedIndex = Properties.Settings.Default.RearCameraResolution;
-            cbCaptureFromCam.Checked = Properties.Settings.Default.RearCaptureFromCamera;
+            cbCaptureFromCam.Checked = Properties.Settings.Default.JanuaryCaptureFromCamera;
             cbNoiseFilter.Checked = Properties.Settings.Default.RearNoizeFilt;
             templateFile = Properties.Settings.Default.RearTemplateFile;
             cbShowAngle.Checked = Properties.Settings.Default.RearShowAngle;
             cbShowBinarized.Checked = Properties.Settings.Default.RearShowBinarized;
             cbShowContours.Checked = Properties.Settings.Default.RearShowContours;
-            cbCycleCapture.Checked = Properties.Settings.Default.RearCycleCapture;
             nudAdaptiveThBlockSize.Value = Properties.Settings.Default.RearAdaptiveThBlockSize;
             nudMaxACFdesc.Value = Properties.Settings.Default.RearMaxACF;
             nudMinACF.Value = Properties.Settings.Default.RearMinACF;
@@ -2044,10 +2172,10 @@ namespace CollatorCAM
                 gY = Properties.Settings.Default.RearGY;
                 g2X = Properties.Settings.Default.RearG2X;
                 g2Y = Properties.Settings.Default.RearG2Y;
-                Bitmap pic = image.ToBitmap();
-                rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                imageBox1.Refresh();
+                //Bitmap pic = image.ToBitmap();
+                //rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                //frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
+                //imageBox1.Refresh();
             }
         }
 #endregion
@@ -2055,24 +2183,24 @@ namespace CollatorCAM
         {
             if (GetImagePath != null)
             {
-                
                 files = Directory.GetFiles(GetImagePath);
                 i = files.Length;
-                Image<Bgr, byte> img = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
-                //e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
-                double x = 0;
-                if (cbRotation.SelectedIndex == 0)
-                x = 0;
-                if (cbRotation.SelectedIndex == 1)
-                    x = -90;
-                if (cbRotation.SelectedIndex == 2)
-                    x = 90;
-                if (cbRotation.SelectedIndex == 3)
-                    x = 180;
-                imageBox1.Image = img.Rotate(x, new Bgr(255,255,255), false);
-                image = img.Rotate(x, new Bgr(255, 255, 255), false);
-                if (frame == null)
-                    frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+                imgg = new Image<Bgr, byte>((Bitmap)Bitmap.FromFile(files[i - 1]));
+                ////e.Graphics.DrawRectangle(px, new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), 100, 100));
+                //double x = 0;
+                //if (cbRotation.SelectedIndex == 0)
+                //    x = 0;
+                //if (cbRotation.SelectedIndex == 1)
+                //    x = -90;
+                //if (cbRotation.SelectedIndex == 2)
+                //    x = 90;
+                //if (cbRotation.SelectedIndex == 3)
+                //    x = 180;
+                //imageBox1.Image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                //image = img.Rotate(x, new Bgr(255, 255, 255), false);
+                //if (frame == null)
+                //    frame = img.Rotate(x, new Bgr(255, 255, 255), false);
+              if (cbCaptureFromCam.Checked)
                 ImagePath = "Current image file: " + GetImagePath;
                 ApplySettings();
             }
@@ -2130,13 +2258,12 @@ namespace CollatorCAM
                     Properties.Settings.Default.FrontNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                     Properties.Settings.Default.FrontAllowAngles = cbAllowAngleMore45.Checked;
                     Properties.Settings.Default.FrontCameraResolution = cbCamResolution.SelectedIndex;
-                    Properties.Settings.Default.FrontCaptureFromCamera = cbCaptureFromCam.Checked;
+                    Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                     Properties.Settings.Default.FrontNoizeFilt = cbNoiseFilter.Checked;
                     Properties.Settings.Default.FrontShowContours = cbShowContours.Checked;
                     Properties.Settings.Default.FrontTemplateFile = templateFile;
                     Properties.Settings.Default.FrontShowAngle = cbShowAngle.Checked;
                     Properties.Settings.Default.FrontShowBinarized = cbShowBinarized.Checked;
-                    Properties.Settings.Default.FrontCycleCapture = cbCycleCapture.Checked;
                     Properties.Settings.Default.FrontAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                     Properties.Settings.Default.FrontMaxACF = nudMaxACFdesc.Value;
                     Properties.Settings.Default.FrontMinACF = nudMinACF.Value;
@@ -2165,7 +2292,6 @@ namespace CollatorCAM
                 Properties.Settings.Default.JanuaryTemplateFile = templateFile;
                 Properties.Settings.Default.JanuaryShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.JanuaryShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.JanuaryCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.JanuaryAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.JanuaryMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.JanuaryMinACF = nudMinACF.Value;
@@ -2188,13 +2314,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.FebruaryNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.FebruaryAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.FebruaryCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.FebruaryCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.FebruaryNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.FebruaryShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.FebruaryTemplateFile = templateFile;
                 Properties.Settings.Default.FebruaryShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.FebruaryShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.FebruaryCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.FebruaryAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.FebruaryMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.FebruaryMinACF = nudMinACF.Value;
@@ -2217,13 +2342,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.MarchNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.MarchAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.MarchCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.MarchCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.MarchNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.MarchShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.MarchTemplateFile = templateFile;
                 Properties.Settings.Default.MarchShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.MarchShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.MarchCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.MarchAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.MarchMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.MarchMinACF = nudMinACF.Value;
@@ -2246,13 +2370,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.AprilNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.AprilAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.AprilCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.AprilCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.AprilNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.AprilShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.AprilTemplateFile = templateFile;
                 Properties.Settings.Default.AprilShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.AprilShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.AprilCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.AprilAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.AprilMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.AprilMinACF = nudMinACF.Value;
@@ -2275,13 +2398,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.MayNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.MayAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.MayCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.MayCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.MayNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.MayShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.MayTemplateFile = templateFile;
                 Properties.Settings.Default.MayShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.MayShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.MayCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.MayAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.MayMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.MayMinACF = nudMinACF.Value;
@@ -2304,13 +2426,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.JuneNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.JuneAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.JuneCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.JuneCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.JuneNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.JuneShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.JuneTemplateFile = templateFile;
                 Properties.Settings.Default.JuneShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.JuneShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.JuneCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.JuneAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.JuneMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.JuneMinACF = nudMinACF.Value;
@@ -2333,13 +2454,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.JulyNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.JulyAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.JulyCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.JulyCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.JulyNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.JulyShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.JulyTemplateFile = templateFile;
                 Properties.Settings.Default.JulyShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.JulyShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.JulyCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.JulyAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.JulyMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.JulyMinACF = nudMinACF.Value;
@@ -2362,13 +2482,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.AugustNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.AugustAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.AugustCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.AugustCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.AugustNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.AugustShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.AugustTemplateFile = templateFile;
                 Properties.Settings.Default.AugustShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.AugustShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.AugustCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.AugustAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.AugustMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.AugustMinACF = nudMinACF.Value;
@@ -2391,13 +2510,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.SeptemberNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.SeptemberAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.SeptemberCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.SeptemberCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.SeptemberNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.SeptemberShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.SeptemberTemplateFile = templateFile;
                 Properties.Settings.Default.SeptemberShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.SeptemberShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.SeptemberCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.SeptemberAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.SeptemberMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.SeptemberMinACF = nudMinACF.Value;
@@ -2420,13 +2538,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.OctoberNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.OctoberAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.OctoberCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.OctoberCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.OctoberNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.OctoberShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.OctoberTemplateFile = templateFile;
                 Properties.Settings.Default.OctoberShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.OctoberShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.OctoberCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.OctoberAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.OctoberMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.OctoberMinACF = nudMinACF.Value;
@@ -2449,13 +2566,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.NovemberNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.NovemberAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.NovemberCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.NovemberCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.NovemberNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.NovemberShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.NovemberTemplateFile = templateFile;
                 Properties.Settings.Default.NovemberShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.NovemberShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.NovemberCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.NovemberAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.NovemberMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.NovemberMinACF = nudMinACF.Value;
@@ -2478,13 +2594,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.DecemberNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.DecemberAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.DecemberCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.DecemberCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.DecemberNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.DecemberShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.DecemberTemplateFile = templateFile;
                 Properties.Settings.Default.DecemberShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.DecemberShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.DecemberCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.DecemberAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.DecemberMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.DecemberMinACF = nudMinACF.Value;
@@ -2507,13 +2622,12 @@ namespace CollatorCAM
                 Properties.Settings.Default.RearNoizeFilter = cbAdaptiveNoiseFilter.Checked;
                 Properties.Settings.Default.RearAllowAngles = cbAllowAngleMore45.Checked;
                 Properties.Settings.Default.RearCameraResolution = cbCamResolution.SelectedIndex;
-                Properties.Settings.Default.RearCaptureFromCamera = cbCaptureFromCam.Checked;
+                Properties.Settings.Default.JanuaryCaptureFromCamera = cbCaptureFromCam.Checked;
                 Properties.Settings.Default.RearNoizeFilt = cbNoiseFilter.Checked;
                 Properties.Settings.Default.RearShowContours = cbShowContours.Checked;
                 Properties.Settings.Default.RearTemplateFile = templateFile;
                 Properties.Settings.Default.RearShowAngle = cbShowAngle.Checked;
                 Properties.Settings.Default.RearShowBinarized = cbShowBinarized.Checked;
-                Properties.Settings.Default.RearCycleCapture = cbCycleCapture.Checked;
                 Properties.Settings.Default.RearAdaptiveThBlockSize = nudAdaptiveThBlockSize.Value;
                 Properties.Settings.Default.RearMaxACF = nudMaxACFdesc.Value;
                 Properties.Settings.Default.RearMinACF = nudMinACF.Value;
@@ -2848,7 +2962,7 @@ namespace CollatorCAM
 
                     modbus.Connect();
                     check1 = true;
-
+                    btnPhoto.Enabled = modbus.Connected;
                 }
                 catch (Exception ex)
                 {
@@ -2864,6 +2978,8 @@ namespace CollatorCAM
                 try
                 {
                     check1 = false;
+                    modbus.Disconnect();
+                    btnPhoto.Enabled = modbus.Connected;
 
                 }
                 catch (Exception ex)
@@ -2896,42 +3012,79 @@ namespace CollatorCAM
                     g2X = ((g.X / imageBox1.ZoomScale) - gX);
                     g2Y = ((g.Y / imageBox1.ZoomScale) - gY);
                     nRect = -1;
-                    Bitmap pic = image.ToBitmap();
-                    rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
-                    frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
-                    imageBox1.Refresh();
                 }
                 nRect++;
             }
         }
         private void imageBox1_Paint(object sender, PaintEventArgs e)
         {
-                Pen px = new Pen(Brushes.Red);
+            Pen px = new Pen(Brushes.Red);
                 e.Graphics.DrawRectangle(px, rect);
         }
 
         private void cbCaptureFromCam_CheckedChanged(object sender, EventArgs e)
         {
-            //comboBox1.Items.Clear();
-            //var devices = new List<DsDevice>(DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice));
-            //var cameraNames = new List<string>();
-            //foreach (var device in devices)
-            //{
-            //    cameraNames.Add(device.Name);
-            //    comboBox1.Items.Add(device.Name);
-            //}
-        }
+            if (cbCaptureFromCam.Checked)
+            {
+                comboBox1.Items.Clear();
+                var devices = new List<DsDevice>(DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice));
+                foreach (var device in devices)
+                {
+                    ;
+                    comboBox1.Items.Add(device.Name);
+                }
+                StartCapture();
+            }
 
+            if (!cbCaptureFromCam.Checked)
+            {
+                _capture1.Dispose();
+                _capture2.Dispose();
+                _capture3.Dispose();
+                _capture4.Dispose();
+                _capture5.Dispose();
+                _capture6.Dispose();
+                _capture7.Dispose();
+                _capture8.Dispose();
+                _capture9.Dispose();
+                _capture10.Dispose();
+                _capture11.Dispose();
+                _capture12.Dispose();
+                _capture13.Dispose();
+                _capture14.Dispose();
+                GetImage();
+            }
+        }
         private void button4_Click(object sender, EventArgs e)
         {
-            //LoadTemplates(            //start capture from cam
-            StartCapture();                    // (RUN CAMERA)
-            //apply settings
-            ApplySettings();
-            DateTime thisDay = DateTime.Now;
-            string time = thisDay.ToString("dd.MM.yyyy.HH.mm.ss.FFF");
-            _capture.QueryFrame().Save(GetImagePath + "/" + time + ".jpg");
-            //_capture.Dispose();
+           // CapturesPictures();
+        }
+        private void CapturesPictures()
+        {
+               //_capture = new Emgu.CV.Capture();// comboBox1.SelectedIndex);
+                //ApplyCamSettings();
+                ////LoadTemplates(            //start capture from cam
+                //StartCapture();                    // (RUN CAMERA)
+                ////apply settings
+                //ApplySettings();
+                //DateTime thisDay = DateTime.Now;
+            
+                //string time = thisDay.ToString("dd.MM.yyyy.HH.mm.ss.FFF");
+                //_capture.QueryFrame().Save(GetImagePath + "/" + time + ".jpg");
+                //_capture.Dispose();
+
+        }
+
+        private void cbCamResolution_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyCamSettings();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //_capture = new Emgu.CV.Capture(comboBox1.SelectedIndex);// comboBox1.SelectedIndex);
+            //ApplyCamSettings();
+            
         }
     }
 }
