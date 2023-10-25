@@ -451,9 +451,9 @@ namespace CollatorCAM
             if (frame != null)
             {
                 string TBtime = "";
-                string TBmonth = "NG Month";
+                string TBmonth = "      NG Month";
                 string TByear = "    NG Year";
-                string TBmaori = "      NG Maori";
+                string TBmaori = "NG Maori";
                 int year = 0;
 
                 string[] smonth = new string[8];
@@ -700,7 +700,7 @@ namespace CollatorCAM
                             {
                                 e.Graphics.DrawString("Maori", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
                                 e.Graphics.DrawString("Maori", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
-                                TBmaori = "      OK Maori";
+                                TBmaori = "OK Maori";
                             }
                             if (sourceContours == null)
                             {
@@ -719,65 +719,66 @@ namespace CollatorCAM
                     if (smonth[0] == "J" && smonth[1] == "a" && smonth[2] == "n" && smonth[3] == "u" && smonth[4] == "a" &&
                         smonth[5] == "r" && smonth[6] == "y")
                     {
-                        TBmonth = "OK January";
-                    }
+                        TBmonth = "      OK January";
+                    } 
                     if (smonth[0] == "F" && smonth[1] == "e" && smonth[2] == "b" && smonth[3] == "r" && smonth[4] == "u" &&
                         smonth[5] == "a" && smonth[6] == "r" && smonth[7] == "y")
                     {
-                        TBmonth = "OK February";
+                        TBmonth = "      OK February";
                     }
                     if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "r" && smonth[3] == "c" && smonth[4] == "h")
                     {
-                        TBmonth = "OK March";
+                        TBmonth = "      OK March";
                     }
                     if (smonth[0] == "A" && smonth[1] == "p" && smonth[2] == "r" && smonth[3] == "i" && smonth[4] == "l")
                     {
-                        TBmonth = "OK April";
+                        TBmonth = "      OK April";
                     }
                     if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "y")
                     {
-                        TBmonth = "OK May";
+                        TBmonth = "      OK May";
                     }
                     if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "n" && smonth[3] == "e")
                     {
-                        TBmonth = "OK June";
+                        TBmonth = "      OK June";
                     }
                     if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "l" && smonth[3] == "y")
                     {
-                        TBmonth = "OK July";
+                        TBmonth = "      OK July";
                     }
                     if (smonth[0] == "A" && smonth[1] == "u" && smonth[2] == "g" && smonth[3] == "u" && smonth[4] == "s" &&
                         smonth[5] == "t")
                     {
-                        TBmonth = "OK August";
+                        TBmonth = "      OK August";
                     }
                     if (smonth[0] == "S" && smonth[1] == "e" && smonth[2] == "p" && smonth[3] == "t" && smonth[4] == "e" &&
                         smonth[5] == "m" && smonth[6] == "b" && smonth[7] == "e" & smonth[7] == "r")
                     {
-                        TBmonth = "OK September";
+                        TBmonth = "      OK September";
                     }
                     if (smonth[0] == "O" && smonth[1] == "c" && smonth[2] == "t" && smonth[3] == "o" && smonth[4] == "b" &&
                         smonth[5] == "e" && smonth[6] == "r")
                     {
-                        TBmonth = "OK October";
+                        TBmonth = "      OK October";
                     }
                     if (smonth[0] == "N" && smonth[1] == "o" && smonth[2] == "v" && smonth[3] == "e" && smonth[4] == "m" &&
                         smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r")
                     {
-                        TBmonth = "OK November";
+                        TBmonth = "      OK November";
                     }
                     if (smonth[0] == "D" && smonth[1] == "e" && smonth[2] == "c" && smonth[3] == "e" && smonth[4] == "m" &&
                         smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r")
                     {
-                        TBmonth = "OK December";
+                        TBmonth = "      OK December";
                     }
-                    tbResult.Items.Add(TBtime);
-                    tbResult.Items.Add(TBmonth);
-                    tbResult.Items.Add(TByear);
-                    tbResult.Items.Add(TBmaori);
-                    if (TBmonth != "  NG Month" && TByear != "    NG Year" && TBmaori != "      NG Maori")
+                    tbResult.Items.Insert(0, "");
+                    tbResult.Items.Insert(0, TBmonth);
+                    tbResult.Items.Insert(0, TByear);
+                    tbResult.Items.Insert(0, TBmaori);
+                    tbResult.Items.Insert(0, TBtime);
+                    if (TBmonth != "      NG Month" && TByear != "    NG Year" && TBmaori != "NG Maori")
                         MDB_WRITE[i_mdb] = true;
-                    if (TBmonth == "  NG Month" || TByear == "    NG Year" || TBmaori == "      NG Maori")
+                    if (TBmonth == "      NG Month" || TByear == "    NG Year" || TBmaori == "NG Maori")
                         MDB_WRITE[i_mdb] = false;
                     PhotoMonth = false;
                     monthph++;
@@ -935,7 +936,10 @@ namespace CollatorCAM
             {
                 i_mdb = 1;
                 photoBlock = true;
-                Intro();
+                GetImagePath = Properties.Settings.Default.JanuaryGetImagePath;
+                GetImage();
+                monthph++;
+                ScanCycle();
             }
             if (monthph == 1)
             {
@@ -1009,6 +1013,10 @@ namespace CollatorCAM
             }
             if (monthph == 15)
             {
+                Intro();
+            }
+            if (monthph == 16)
+            {
                 MDB_WRITE[0] = true;
                 modbus.WriteMultipleCoils(2019, MDB_WRITE);
                 photoBlock = false;
@@ -1018,13 +1026,10 @@ namespace CollatorCAM
 
         private void Intro()
         {
-            tbResult.Items.Add(" ");
-            tbResult.Items.Add("                      SCAN           ");
-            tbResult.Items.Add(" ");
-            GetImagePath = Properties.Settings.Default.JanuaryGetImagePath;
-            GetImage();
-            monthph++;
-            ScanCycle();
+            tbResult.Items.Insert(0," ");
+            tbResult.Items.Insert(0, "                      SCAN           ");
+            tbResult.Items.Insert(0, " ");
+
         }
         #region Month 
         private void Front()
