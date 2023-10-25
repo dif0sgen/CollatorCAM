@@ -46,6 +46,7 @@ namespace CollatorCAM
             this.label22 = new System.Windows.Forms.Label();
             this.trackBar2 = new System.Windows.Forms.TrackBar();
             this.tmUpdateState = new System.Windows.Forms.Timer(this.components);
+            this.tmUpdateInterface = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -55,7 +56,7 @@ namespace CollatorCAM
             this.txtPort = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.button4 = new System.Windows.Forms.Button();
+            this.imageBox2 = new Emgu.CV.UI.ImageBox();
             this.imageBox1 = new Emgu.CV.UI.ImageBox();
             this.ssMain = new System.Windows.Forms.StatusStrip();
             this.lbFPS = new System.Windows.Forms.ToolStripStatusLabel();
@@ -138,13 +139,13 @@ namespace CollatorCAM
             this.btLoadImage = new System.Windows.Forms.Button();
             this.cbAutoContrast = new System.Windows.Forms.CheckBox();
             this.cbShowAngle = new System.Windows.Forms.CheckBox();
-            this.imageBox2 = new Emgu.CV.UI.ImageBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
             this.ssMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ibMain)).BeginInit();
@@ -161,7 +162,6 @@ namespace CollatorCAM
             ((System.ComponentModel.ISupportInitialize)(this.nudMinContourArea)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // directorySearcher1
@@ -238,6 +238,12 @@ namespace CollatorCAM
             this.tmUpdateState.Interval = 1000;
             this.tmUpdateState.Tick += new System.EventHandler(this.tmUpdateState_Tick);
             // 
+            // tmUpdateInterface
+            // 
+            this.tmUpdateInterface.Enabled = true;
+            this.tmUpdateInterface.Interval = 200;
+            //this.tmUpdateInterface.Tick += new System.EventHandler(this.InterfaceUpdate);
+            // 
             // tableLayoutPanel8
             // 
             resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
@@ -303,7 +309,6 @@ namespace CollatorCAM
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.imageBox2);
-            this.tabPage5.Controls.Add(this.button4);
             this.tabPage5.Controls.Add(this.imageBox1);
             this.tabPage5.Controls.Add(this.ssMain);
             this.tabPage5.Controls.Add(this.button3);
@@ -318,12 +323,12 @@ namespace CollatorCAM
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // imageBox2
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            resources.ApplyResources(this.imageBox2, "imageBox2");
+            this.imageBox2.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
+            this.imageBox2.Name = "imageBox2";
+            this.imageBox2.TabStop = false;
             // 
             // imageBox1
             // 
@@ -982,7 +987,6 @@ namespace CollatorCAM
             this.comboBox1.FormattingEnabled = true;
             resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // cbAdaptiveNoiseFilter
             // 
@@ -1070,13 +1074,6 @@ namespace CollatorCAM
             this.cbShowAngle.Name = "cbShowAngle";
             this.cbShowAngle.UseVisualStyleBackColor = true;
             // 
-            // imageBox2
-            // 
-            resources.ApplyResources(this.imageBox2, "imageBox2");
-            this.imageBox2.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-            this.imageBox2.Name = "imageBox2";
-            this.imageBox2.TabStop = false;
-            // 
             // Form_Listener
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1099,6 +1096,7 @@ namespace CollatorCAM
             this.tabControl1.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
             this.ssMain.ResumeLayout(false);
             this.ssMain.PerformLayout();
@@ -1122,7 +1120,6 @@ namespace CollatorCAM
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imageBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1131,6 +1128,7 @@ namespace CollatorCAM
         #endregion
 
         private System.Windows.Forms.Timer tmUpdateState;
+        private System.Windows.Forms.Timer tmUpdateInterface;
         private System.Windows.Forms.Timer timer2;
         private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private System.Windows.Forms.Label label5;
@@ -1234,7 +1232,6 @@ namespace CollatorCAM
         private Label label1;
         private ComboBox cbRotation;
         private Emgu.CV.UI.ImageBox imageBox1;
-        private Button button4;
         private Emgu.CV.UI.ImageBox imageBox2;
     }
 }

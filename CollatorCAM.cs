@@ -103,6 +103,7 @@ namespace CollatorCAM
         {
             this.InitializeComponent();
             System.Windows.Forms.Application.Idle += new EventHandler(Application_Idle);
+            //System.Windows.Forms.Application.Idle += new EventHandler(InterfaceUpdate);
             thread2 = new Thread(() => WriteMDBS("WRITE"));
             //create image processor
             processor = new ContourAnalysisNS.ImageProcessor();
@@ -131,6 +132,30 @@ namespace CollatorCAM
             button7.BackColor = System.Drawing.Color.DarkGray;
             Front();
         }
+        //private void InterfaceUpdate(object sender, EventArgs e)
+        //{
+        //    label2.Text = "Current template file: " + templateFile;
+        //    ApplySettings();
+        //    if (modbus.Connected == true)
+        //    {
+        //        lblStat.Text = "Status: Connected";
+        //        btnStart.Refresh();
+        //        lblStat.Refresh();
+        //        if (monthph == 0)
+        //            CONTROL_READ = modbus.ReadCoils(1025, 1);
+        //        if (monthph == 0 && CONTROL_READ[0] == true)
+        //        {
+        //            ScanCycle();
+        //        }
+        //    }
+
+        //    else if (modbus.Connected == false)
+        //    {
+        //        lblStat.Text = "Status: Disconnected";
+        //        btnStart.Refresh();
+        //        lblStat.Refresh();
+        //    }
+        //}
         /// 
         /// Write data to box, from modbus
         /// 
@@ -152,12 +177,12 @@ namespace CollatorCAM
                             lblStat.Text = "Status: Connected";
                             btnStart.Refresh();
                             lblStat.Refresh();
-                                if (monthph == 0)
-                                    CONTROL_READ = modbus.ReadCoils(1025, 1);
-                                if (monthph == 0 && CONTROL_READ[0] == true)
-                                {
-                                    ScanCycle();
-                                }
+                            if (monthph == 0)
+                                CONTROL_READ = modbus.ReadCoils(1025, 1);
+                            if (monthph == 0 && CONTROL_READ[0] == true)
+                            {
+                                ScanCycle();
+                            }
                         }
 
                         else if (modbus.Connected == false)
@@ -175,7 +200,7 @@ namespace CollatorCAM
                         ApplySettings();
                         if (modbus.Connected == true)
                         {
-                            if (monthph ==0)
+                            if (monthph == 0)
                                 CONTROL_READ = modbus.ReadCoils(1025, 1);
                             if (monthph == 0 && CONTROL_READ[0] == true)
                             {
@@ -3055,36 +3080,10 @@ namespace CollatorCAM
                 GetImage();
             }
         }
-        private void button4_Click(object sender, EventArgs e)
-        {
-           // CapturesPictures();
-        }
-        private void CapturesPictures()
-        {
-               //_capture = new Emgu.CV.Capture();// comboBox1.SelectedIndex);
-                //ApplyCamSettings();
-                ////LoadTemplates(            //start capture from cam
-                //StartCapture();                    // (RUN CAMERA)
-                ////apply settings
-                //ApplySettings();
-                //DateTime thisDay = DateTime.Now;
-            
-                //string time = thisDay.ToString("dd.MM.yyyy.HH.mm.ss.FFF");
-                //_capture.QueryFrame().Save(GetImagePath + "/" + time + ".jpg");
-                //_capture.Dispose();
-
-        }
 
         private void cbCamResolution_SelectedIndexChanged(object sender, EventArgs e)
         {
             ApplyCamSettings();
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //_capture = new Emgu.CV.Capture(comboBox1.SelectedIndex);// comboBox1.SelectedIndex);
-            //ApplyCamSettings();
-            
         }
     }
 }
