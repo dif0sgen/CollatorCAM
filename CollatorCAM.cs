@@ -119,6 +119,13 @@ namespace CollatorCAM
 
             this.Closing += new CancelEventHandler(this.Form_Listener_Close);
             thread2.Start();
+
+            ///
+            /// GET SAVED VALUES
+            ///
+
+            txtPort.Text = Properties.Settings.Default.Port;
+            txtIPAdress.Text = Properties.Settings.Default.IP;
         }
 
         private void RunForm()
@@ -174,6 +181,7 @@ namespace CollatorCAM
                         ApplySettings();
                         if (modbus.Connected == true)
                         {
+                            this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_10;
                             lblStat.Text = "Status: Connected";
                             btnStart.Refresh();
                             lblStat.Refresh();
@@ -187,6 +195,7 @@ namespace CollatorCAM
 
                         else if (modbus.Connected == false)
                         {
+                            this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_10;
                             lblStat.Text = "Status: Disconnected";
                             btnStart.Refresh();
                             lblStat.Refresh();
@@ -200,6 +209,7 @@ namespace CollatorCAM
                         ApplySettings();
                         if (modbus.Connected == true)
                         {
+                            this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_10;
                             if (monthph == 0)
                                 CONTROL_READ = modbus.ReadCoils(1025, 1);
                             if (monthph == 0 && CONTROL_READ[0] == true)
@@ -207,11 +217,20 @@ namespace CollatorCAM
                                 ScanCycle();
                             }
                         }
+
+                        else if (modbus.Connected == false)
+                        {
+                            this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_9;
+                            lblStat.Text = "Status: Disconnected";
+                            btnStart.Refresh();
+                            lblStat.Refresh();
+                        }
                     }
                 }
                 catch (Exception ex) when (ex.Source == "mscorlib")
                 {
-                    return;
+                    MessageBox.Show("mscorlib" + ex.Message);
+                    //return;
                 }
                 catch (Exception ex)
                 {
@@ -3089,6 +3108,18 @@ namespace CollatorCAM
         private void cbCamResolution_SelectedIndexChanged(object sender, EventArgs e)
         {
             ApplyCamSettings();
+        }
+
+        private void txtPort_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Port = txtPort.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void txtIPAdress_TextChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.IP = txtIPAdress.Text;
+            Properties.Settings.Default.Save();
         }
     }
 }

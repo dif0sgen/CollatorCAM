@@ -48,12 +48,11 @@ namespace CollatorCAM
             this.tmUpdateState = new System.Windows.Forms.Timer(this.components);
             this.tmUpdateInterface = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblStat = new System.Windows.Forms.Label();
             this.txtIPAdress = new System.Windows.Forms.TextBox();
             this.btnStart = new System.Windows.Forms.Button();
             this.txtPort = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.imageBox2 = new Emgu.CV.UI.ImageBox();
@@ -139,6 +138,10 @@ namespace CollatorCAM
             this.btLoadImage = new System.Windows.Forms.Button();
             this.cbAutoContrast = new System.Windows.Forms.CheckBox();
             this.cbShowAngle = new System.Windows.Forms.CheckBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
@@ -162,6 +165,8 @@ namespace CollatorCAM
             ((System.ComponentModel.ISupportInitialize)(this.nudMinContourArea)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // directorySearcher1
@@ -242,33 +247,17 @@ namespace CollatorCAM
             // 
             this.tmUpdateInterface.Enabled = true;
             this.tmUpdateInterface.Interval = 200;
-            //this.tmUpdateInterface.Tick += new System.EventHandler(this.InterfaceUpdate);
             // 
             // tableLayoutPanel8
             // 
             resources.ApplyResources(this.tableLayoutPanel8, "tableLayoutPanel8");
             this.tableLayoutPanel8.BackColor = System.Drawing.Color.DimGray;
-            this.tableLayoutPanel8.Controls.Add(this.textBox1, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.pictureBox1, 6, 0);
-            this.tableLayoutPanel8.Controls.Add(this.lblStat, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.txtIPAdress, 3, 0);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel2, 4, 0);
             this.tableLayoutPanel8.Controls.Add(this.btnStart, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.txtPort, 2, 0);
+            this.tableLayoutPanel8.Controls.Add(this.pictureBox1, 6, 0);
+            this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel1, 3, 0);
+            this.tableLayoutPanel8.Controls.Add(this.lblStat, 2, 0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            // 
-            // textBox1
-            // 
-            resources.ApplyResources(this.textBox1, "textBox1");
-            this.textBox1.BackColor = System.Drawing.Color.DimGray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Name = "textBox1";
-            // 
-            // pictureBox1
-            // 
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
             // 
             // lblStat
             // 
@@ -282,6 +271,7 @@ namespace CollatorCAM
             // 
             resources.ApplyResources(this.txtIPAdress, "txtIPAdress");
             this.txtIPAdress.Name = "txtIPAdress";
+            this.txtIPAdress.TextChanged += new System.EventHandler(this.txtIPAdress_TextChanged);
             // 
             // btnStart
             // 
@@ -289,6 +279,7 @@ namespace CollatorCAM
             this.btnStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(103)))), ((int)(((byte)(210)))));
             this.btnStart.FlatAppearance.BorderSize = 0;
             this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(11)))), ((int)(((byte)(103)))), ((int)(((byte)(210)))));
+            this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_9;
             this.btnStart.Name = "btnStart";
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -297,6 +288,13 @@ namespace CollatorCAM
             // 
             resources.ApplyResources(this.txtPort, "txtPort");
             this.txtPort.Name = "txtPort";
+            this.txtPort.TextChanged += new System.EventHandler(this.txtPort_TextChanged);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // tabControl1
             // 
@@ -1074,6 +1072,32 @@ namespace CollatorCAM
             this.cbShowAngle.Name = "cbShowAngle";
             this.cbShowAngle.UseVisualStyleBackColor = true;
             // 
+            // tableLayoutPanel1
+            // 
+            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
+            this.tableLayoutPanel1.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtPort, 0, 1);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            // 
+            // tableLayoutPanel2
+            // 
+            resources.ApplyResources(this.tableLayoutPanel2, "tableLayoutPanel2");
+            this.tableLayoutPanel2.Controls.Add(this.label6, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txtIPAdress, 0, 1);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Name = "label4";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Name = "label6";
+            // 
             // Form_Listener
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -1120,6 +1144,10 @@ namespace CollatorCAM
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudAdaptiveThBlockSize)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1142,7 +1170,6 @@ namespace CollatorCAM
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TrackBar trackBar2;
         private TableLayoutPanel tableLayoutPanel8;
-        private TextBox textBox1;
         private Button btnStart;
         private Label lblStat;
         private PictureBox pictureBox1;
@@ -1233,6 +1260,10 @@ namespace CollatorCAM
         private ComboBox cbRotation;
         private Emgu.CV.UI.ImageBox imageBox1;
         private Emgu.CV.UI.ImageBox imageBox2;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label label6;
+        private TableLayoutPanel tableLayoutPanel1;
+        private Label label4;
     }
 }
 
