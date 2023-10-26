@@ -1,9 +1,8 @@
-﻿using ContourAnalysisDemo;
-using ContourAnalysisNS;
-using EasyModbus;
-using Emgu.CV;
-using Emgu.CV.Structure;
-//using Emgu.CV.OCR;
+﻿using ContourAnalysisDemo;       //myLibrary
+using ContourAnalysisNS;         //myLibrary
+using EasyModbus;                //modbus
+using Emgu.CV;                   //Emgu.CV
+using Emgu.CV.Structure;         //Emgu.CV
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,17 +13,16 @@ using System.Runtime.InteropServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading;
 using System.Windows.Forms;
-using TCP_LISTENER_Delta;
+using TCP_LISTENER_Delta;         //myLibrary
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 using System.ComponentModel.Composition.Primitives;
-using Emgu.CV.CvEnum;
-using Emgu.CV.UI;
-using ZedGraph;
+using Emgu.CV.CvEnum;             //Emgy.CV
+using Emgu.CV.UI;                 //Emgy.CV
 using static System.Net.Mime.MediaTypeNames;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Collections;
-using DirectShowLib;
+using DirectShowLib;              //update capera devices
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Text.RegularExpressions;
 
@@ -33,9 +31,6 @@ namespace CollatorCAM
 
     public partial class Form_Listener : Form
     {
-        private List<double> ptList = new List<double>();
-        //private BezierCurve bc = new BezierCurve();
-
         private Emgu.CV.Capture _capture;
         private Emgu.CV.Capture _capture1;
         private Emgu.CV.Capture _capture2;
@@ -73,11 +68,11 @@ namespace CollatorCAM
         // Set up the controls and events to be used and update the device list.
 
         public delegate void InvokeDelegate();
-        private Thread thread2;
+        //private Thread thread2;
 
         string ImagePath = "Please select image";
         string GetImagePath;
-        
+
         int i;
         int CamIndex;
         int month;
@@ -85,7 +80,6 @@ namespace CollatorCAM
         int i_mdb;
         bool photoBlock;
         bool PhotoMonth;
-        bool check1 = false;
         bool[] MDB_WRITE = new bool[15];
         bool[] CONTROL_READ = new bool[1];
         private string[] files;
@@ -95,7 +89,7 @@ namespace CollatorCAM
         double g2Y = 1;
         int nRect = 0;
         Rectangle rect = new Rectangle();
-        bool ibFlag = false;
+
         /// 
         /// Init Form
         /// 
@@ -103,8 +97,8 @@ namespace CollatorCAM
         {
             this.InitializeComponent();
             System.Windows.Forms.Application.Idle += new EventHandler(Application_Idle);
-            //System.Windows.Forms.Application.Idle += new EventHandler(InterfaceUpdate);
-            thread2 = new Thread(() => WriteMDBS("WRITE"));
+            System.Windows.Forms.Application.Idle += new EventHandler(InterfaceUpdate);
+            //thread2 = new Thread(() => WriteMDBS("WRITE"));
             //create image processor
             processor = new ContourAnalysisNS.ImageProcessor();
             //load default templates
@@ -116,9 +110,8 @@ namespace CollatorCAM
             //
             RunForm();
 
-
             this.Closing += new CancelEventHandler(this.Form_Listener_Close);
-            thread2.Start();
+            //thread2.Start();
 
             ///
             /// GET SAVED VALUES
@@ -127,7 +120,9 @@ namespace CollatorCAM
             txtPort.Text = Properties.Settings.Default.Port;
             txtIPAdress.Text = Properties.Settings.Default.IP;
         }
-
+        /// 
+        /// Update camera devices, set Front when run form 
+        /// 
         private void RunForm()
         {
             var devices = new List<DsDevice>(DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice));
@@ -139,106 +134,46 @@ namespace CollatorCAM
             button7.BackColor = System.Drawing.Color.DarkGray;
             Front();
         }
-        //private void InterfaceUpdate(object sender, EventArgs e)
-        //{
-        //    label2.Text = "Current template file: " + templateFile;
-        //    ApplySettings();
-        //    if (modbus.Connected == true)
-        //    {
-        //        lblStat.Text = "Status: Connected";
-        //        btnStart.Refresh();
-        //        lblStat.Refresh();
-        //        if (monthph == 0)
-        //            CONTROL_READ = modbus.ReadCoils(1025, 1);
-        //        if (monthph == 0 && CONTROL_READ[0] == true)
-        //        {
-        //            ScanCycle();
-        //        }
-        //    }
-
-        //    else if (modbus.Connected == false)
-        //    {
-        //        lblStat.Text = "Status: Disconnected";
-        //        btnStart.Refresh();
-        //        lblStat.Refresh();
-        //    }
-        //}
         /// 
-        /// Write data to box, from modbus
+        /// Update interface and read photo signal from PLC evry time
         /// 
-        void WriteMDBS(string name)
+        private void InterfaceUpdate(object sender, EventArgs e)
         {
-            while (true)
+            try
             {
-                try
+                label2.Text = "Current template file: " + templateFile;
+                ApplySettings();
+                if (modbus.Connected == true)
                 {
-
-                    if (InvokeRequired)
+                    this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_10;
+                    lblStat.Text = "Status: Connected";
+                    btnStart.Refresh();
+                    lblStat.Refresh();
+                    if (monthph == 0)
+                        CONTROL_READ = modbus.ReadCoils(1025, 1);
+                    if (monthph == 0 && CONTROL_READ[0] == true)
                     {
-                        Invoke(new Action(() =>
-                    {
-                        label2.Text = "Current template file: " + templateFile;
-                        ApplySettings();
-                        if (modbus.Connected == true)
-                        {
-                            this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_10;
-                            lblStat.Text = "Status: Connected";
-                            btnStart.Refresh();
-                            lblStat.Refresh();
-                            if (monthph == 0)
-                                CONTROL_READ = modbus.ReadCoils(1025, 1);
-                            if (monthph == 0 && CONTROL_READ[0] == true)
-                            {
-                                ScanCycle();
-                            }
-                        }
-
-                        else if (modbus.Connected == false)
-                        {
-                            this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_10;
-                            lblStat.Text = "Status: Disconnected";
-                            btnStart.Refresh();
-                            lblStat.Refresh();
-                        }
-
-                    }));
-                    }
-                    else
-                    {
-                        label2.Text = "Current template file: " + templateFile;
-                        ApplySettings();
-                        if (modbus.Connected == true)
-                        {
-                            this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_10;
-                            if (monthph == 0)
-                                CONTROL_READ = modbus.ReadCoils(1025, 1);
-                            if (monthph == 0 && CONTROL_READ[0] == true)
-                            {
-                                ScanCycle();
-                            }
-                        }
-
-                        else if (modbus.Connected == false)
-                        {
-                            this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_9;
-                            lblStat.Text = "Status: Disconnected";
-                            btnStart.Refresh();
-                            lblStat.Refresh();
-                        }
+                        ScanCycle();
                     }
                 }
-                catch (Exception ex) when (ex.Source == "mscorlib")
+
+                else if (modbus.Connected == false)
                 {
-                    MessageBox.Show("mscorlib" + ex.Message);
-                    //return;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Write trackbar from memory: " + ex.Message);
+                    this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_9;
+                    lblStat.Text = "Status: Disconnected";
+                    btnStart.Refresh();
+                    lblStat.Refresh();
                 }
             }
-        }
+            catch (Exception ex)
+            {
+                MessageBox.Show("UpdateInterface: " + ex.Message);
+            }
 
+        }
+        /// 
+        /// Load templates
+        /// 
         private void LoadTemplates(string fileName)
         {
             try
@@ -251,7 +186,9 @@ namespace CollatorCAM
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// 
+        /// Save templates
+        /// 
         private void SaveTemplates(string fileName)
         {
             try
@@ -264,24 +201,26 @@ namespace CollatorCAM
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// 
+        /// Start maximum captures, but work 1
+        /// 
         private void StartCapture()
         {
             try
             {
-                _capture1 = new Emgu.CV.Capture(0);// comboBox1.SelectedIndex);
+                _capture1 = new Emgu.CV.Capture(0);
                 _capture2 = new Emgu.CV.Capture(1);
-                _capture3 = new Emgu.CV.Capture(2);// comboBox1.SelectedIndex);
+                _capture3 = new Emgu.CV.Capture(2);
                 _capture4 = new Emgu.CV.Capture(3);
-                _capture5 = new Emgu.CV.Capture(4);// comboBox1.SelectedIndex);
+                _capture5 = new Emgu.CV.Capture(4);
                 _capture6 = new Emgu.CV.Capture(5);
-                _capture7 = new Emgu.CV.Capture(6);// comboBox1.SelectedIndex);
+                _capture7 = new Emgu.CV.Capture(6);
                 _capture8 = new Emgu.CV.Capture(7);
-                _capture9 = new Emgu.CV.Capture(8);// comboBox1.SelectedIndex);
+                _capture9 = new Emgu.CV.Capture(8);
                 _capture10 = new Emgu.CV.Capture(9);
-                _capture11 = new Emgu.CV.Capture(10);// comboBox1.SelectedIndex);
+                _capture11 = new Emgu.CV.Capture(10);
                 _capture12 = new Emgu.CV.Capture(11);
-                _capture13 = new Emgu.CV.Capture(12);// comboBox1.SelectedIndex);
+                _capture13 = new Emgu.CV.Capture(12);
                 _capture14 = new Emgu.CV.Capture(13);
                 ApplyCamSettings();
             }
@@ -290,6 +229,9 @@ namespace CollatorCAM
                 MessageBox.Show(ex.Message);
             }
         }
+        /// 
+        /// Apply settings for selected camera
+        /// 
         private void ApplyCamSettings()
         {
             try
@@ -372,12 +314,16 @@ namespace CollatorCAM
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// 
+        /// Run process frame
+        /// 
         void Application_Idle(object sender, EventArgs e)
         {
             ProcessFrame();
         }
-
+        /// 
+        /// image = capture from selected camera, rotarion image. ibMain = clear or binarized
+        /// 
         private void ProcessFrame()
         {
             try
@@ -453,7 +399,9 @@ namespace CollatorCAM
                 Console.WriteLine(ex.Message);
             }
         }
-
+        /// 
+        /// Update evry 1s FPS. Timer in CollatorCAM.designer
+        /// 
         private void tmUpdateState_Tick(object sender, EventArgs e)
         {
             lbFPS.Text = (frameCount - oldFrameCount) + " fps";
@@ -464,7 +412,9 @@ namespace CollatorCAM
             if (processor.foundTemplates != null)
                 lbRecognized.Text = "Recognized contours: " + processor.foundTemplates.Count;
         }
-
+        /// 
+        /// Draw ibMAin (FPS, Contours, Templates) Find month, year, maori
+        /// 
         private void ibMain_Paint(object sender, PaintEventArgs e)
         {
             if (frame != null)
@@ -809,7 +759,9 @@ namespace CollatorCAM
                 return; //not when prog run only
 
         }
-
+        /// 
+        ///
+        /// 
         private void DrawAugmentedReality(FoundTemplateDesc found, Graphics gr)
         {
             string fileName = Path.GetDirectoryName(templateFile) + "\\" + found.template.name;
@@ -827,12 +779,16 @@ namespace CollatorCAM
             gr.DrawImage(img, new Point(-img.Width / 2, -img.Height / 2));
             gr.Restore(state);
         }
-
+        /// 
+        /// Apply settings when cbContrast
+        /// 
         private void cbAutoContrast_CheckedChanged(object sender, EventArgs e)
         {
             ApplySettings();
         }
-
+        /// 
+        /// Settings to ImageProcessor
+        /// 
         private void ApplySettings()
         {
             try
@@ -881,7 +837,9 @@ namespace CollatorCAM
                 MessageBox.Show(ex.Message);
             }
         }
-
+        /// 
+        /// Select image and rotate
+        /// 
         private void btLoadImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -910,6 +868,9 @@ namespace CollatorCAM
                     MessageBox.Show(ex.Message);
                 }
         }
+        /// 
+        /// Select folder for same month and rotate
+        /// 
         private void btLoadFolder_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog ofd = new FolderBrowserDialog();
@@ -941,12 +902,17 @@ namespace CollatorCAM
                     MessageBox.Show(ex.Message);
                 }
         }
+        /// 
+        /// Start scan cycle when push btn
+        /// 
         private void btnPhoto_Click(object sender, EventArgs e)
         {
         monthph = 0;
         ScanCycle();
         }
-
+        /// 
+        /// Send to controller, and change evry months for scan
+        /// 
         private void ScanCycle()
         {
             modbus.WriteSingleCoil(1025, false);
@@ -1042,7 +1008,9 @@ namespace CollatorCAM
                 monthph = 0;
             }
         }
-
+        /// 
+        /// write "SCAN" to ScanList
+        /// 
         private void Intro()
         {
             tbResult.Items.Insert(0," ");
@@ -1050,6 +1018,9 @@ namespace CollatorCAM
             tbResult.Items.Insert(0, " ");
 
         }
+        /// 
+        /// Download evry month settings and set panameters when null
+        /// 
         #region Month 
         private void Front()
         {
@@ -1627,7 +1598,7 @@ namespace CollatorCAM
                 GetImage();
             }
             if (Properties.Settings.Default.JuneGX != 0 || Properties.Settings.Default.JuneGY != 0 ||
-    Properties.Settings.Default.JuneG2X != 0 || Properties.Settings.Default.JuneG2Y != 0)
+                Properties.Settings.Default.JuneG2X != 0 || Properties.Settings.Default.JuneG2Y != 0)
             {
                 gX = Properties.Settings.Default.JuneGX;
                 gY = Properties.Settings.Default.JuneGY;
@@ -1963,7 +1934,7 @@ namespace CollatorCAM
                 GetImage();
             }
             if (Properties.Settings.Default.OctoberGX != 0 || Properties.Settings.Default.OctoberGY != 0 ||
-    Properties.Settings.Default.OctoberG2X != 0 || Properties.Settings.Default.OctoberG2Y != 0)
+                Properties.Settings.Default.OctoberG2X != 0 || Properties.Settings.Default.OctoberG2Y != 0)
             {
                 gX = Properties.Settings.Default.OctoberGX;
                 gY = Properties.Settings.Default.OctoberGY;
@@ -2047,7 +2018,7 @@ namespace CollatorCAM
                 GetImage();
             }
             if (Properties.Settings.Default.NovemberGX != 0 || Properties.Settings.Default.NovemberGY != 0 ||
-    Properties.Settings.Default.NovemberG2X != 0 || Properties.Settings.Default.NovemberG2Y != 0)
+                Properties.Settings.Default.NovemberG2X != 0 || Properties.Settings.Default.NovemberG2Y != 0)
             {
                 gX = Properties.Settings.Default.NovemberGX;
                 gY = Properties.Settings.Default.NovemberGY;
@@ -2227,7 +2198,10 @@ namespace CollatorCAM
                 //imageBox1.Refresh();
             }
         }
-#endregion
+        #endregion
+        /// 
+        /// Get new image = last image in folder
+        /// 
         private void GetImage()
         {
             if (GetImagePath != null)
@@ -2254,18 +2228,25 @@ namespace CollatorCAM
                 ApplySettings();
             }
         }
+        /// 
+        /// Add new templates
+        /// 
         private void btCreateTemplate_Click(object sender, EventArgs e)
         {
             if (frame != null)
                 new ShowContoursForm(processor.templates, processor.samples, frame).ShowDialog();
         }
-
+        /// 
+        /// Create new templates
+        /// 
         private void btNewTemplates_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Do you want to create new template database?", "Create new template database", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 processor.templates.Clear();
         }
-
+        /// 
+        /// Open templates from folder
+        /// 
         private void btOpenTemplates_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -2276,7 +2257,9 @@ namespace CollatorCAM
                 LoadTemplates(templateFile);
             }
         }
-
+        /// 
+        /// Save templates in folder
+        /// 
         private void btSaveTemplates_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
@@ -2287,16 +2270,23 @@ namespace CollatorCAM
                 SaveTemplates(templateFile);
             }
         }
-
+        /// 
+        /// Edit templates
+        /// 
         private void btTemplateEditor_Click(object sender, EventArgs e)
         {
             new TemplateEditor(processor.templates).Show();
         }
-
+        /// 
+        /// Auto generate templates
+        /// 
         private void btAutoGenerate_Click(object sender, EventArgs e)
         {
             new AutoGenerateForm(processor).ShowDialog();
         }
+        /// 
+        /// Save all month settings when SAVEbtn
+        /// 
         #region Save Month
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -2694,7 +2684,14 @@ namespace CollatorCAM
             }
             Properties.Settings.Default.Save();
         }
-#endregion
+        #endregion
+        /// 
+        /// Events for months btns
+        /// 
+        # region months btns events
+        /// 
+        /// Events for FRONT btn
+        /// 
         private void button7_Click(object sender, EventArgs e)
         {
             month = 1;
@@ -2716,6 +2713,9 @@ namespace CollatorCAM
 
             Front();
         }
+        /// 
+        /// Events for JANUARY btn
+        /// 
         private void button1_Click_1(object sender, EventArgs e)
         {
             month = 2;
@@ -2736,7 +2736,9 @@ namespace CollatorCAM
 
             January();
         }
-
+        /// 
+        /// Events for FEBRUARY btn
+        /// 
         private void button2_Click_1(object sender, EventArgs e)
         {
             month = 3;
@@ -2757,6 +2759,9 @@ namespace CollatorCAM
 
             February();
         }
+        /// 
+        /// Events for MARCH btn
+        /// 
         private void button8_Click(object sender, EventArgs e)
         {
             month = 4;
@@ -2777,6 +2782,9 @@ namespace CollatorCAM
 
             March();
         }
+        /// 
+        /// Events for APRIL btn
+        /// 
         private void button9_Click(object sender, EventArgs e)
         {
             month = 5;
@@ -2797,6 +2805,9 @@ namespace CollatorCAM
 
             April();
         }
+        /// 
+        /// Events for MAY btn
+        /// 
         private void button10_Click(object sender, EventArgs e)
         {
             month = 6;
@@ -2817,6 +2828,9 @@ namespace CollatorCAM
 
             May();
         }
+        /// 
+        /// Events for JUNE btn
+        /// 
         private void button11_Click(object sender, EventArgs e)
         {
             month = 7;
@@ -2837,7 +2851,9 @@ namespace CollatorCAM
 
             June();
         }
-
+        /// 
+        /// Events for JULY btn
+        /// 
         private void button12_Click(object sender, EventArgs e)
         {
             month = 8;
@@ -2858,7 +2874,9 @@ namespace CollatorCAM
 
             July();
         }
-
+        /// 
+        /// Events for AUGUST btn
+        /// 
         private void button13_Click(object sender, EventArgs e)
         {
             month = 9;
@@ -2879,7 +2897,9 @@ namespace CollatorCAM
 
             August();
         }
-
+        /// 
+        /// Events for SEPTEMBER btn
+        /// 
         private void button14_Click(object sender, EventArgs e)
         {
             month = 10;
@@ -2900,6 +2920,9 @@ namespace CollatorCAM
 
             September();
         }
+        /// 
+        /// Events for OCTOBER btn
+        /// 
         private void button15_Click(object sender, EventArgs e)
         {
             month = 11;
@@ -2920,7 +2943,9 @@ namespace CollatorCAM
 
             October();
         }
-
+        /// 
+        /// Events for NOVEMBER btn
+        /// 
         private void button16_Click(object sender, EventArgs e)
         {
             month = 12;
@@ -2941,7 +2966,9 @@ namespace CollatorCAM
 
             November();
         }
-
+        /// 
+        /// Events for DECEMBER btn
+        /// 
         private void button17_Click(object sender, EventArgs e)
         {
             month = 13;
@@ -2962,7 +2989,9 @@ namespace CollatorCAM
 
             December();
         }
-
+        /// 
+        /// Events for REAR btn
+        /// 
         private void button18_Click(object sender, EventArgs e)
         {
             month = 14;
@@ -2983,23 +3012,23 @@ namespace CollatorCAM
 
             Rear();
         }
-
+#endregion
+        /// 
+        /// Clear scan list
+        /// 
         private void button3_Click(object sender, EventArgs e)
         {
             tbResult.Items.Clear();
         }
+        /// 
+        /// Events when form close
+        /// 
         private void Form_Listener_Close(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            try
-            {
-                thread2.Abort();
-            }
-            catch
-            {
-                return;
-            }
         }
-
+        /// 
+        /// Modbus connect button
+        /// 
         private void btnStart_Click(object sender, EventArgs e)
         {
             modbus.IPAddress = Convert.ToString(txtIPAdress.Text);
@@ -3038,12 +3067,16 @@ namespace CollatorCAM
                 }
             }
         }
-
+        /// 
+        /// Get new image when select rotation
+        /// 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             GetImage();
         }
-
+        /// 
+        /// Set size and position rectangle on imageBox1
+        /// 
         private void imageBox1_Click(object sender, MouseEventArgs g)
         {
             
@@ -3065,12 +3098,17 @@ namespace CollatorCAM
                 nRect++;
             }
         }
+        /// 
+        /// Draw rectangle on imageBox1 
+        /// 
         private void imageBox1_Paint(object sender, PaintEventArgs e)
         {
             Pen px = new Pen(Brushes.Red);
                 e.Graphics.DrawRectangle(px, rect);
         }
-
+        /// 
+        /// Update device list and start capture, or Dispose all cameras when cbCaptureCam 
+        /// 
         private void cbCaptureFromCam_CheckedChanged(object sender, EventArgs e)
         {
             if (cbCaptureFromCam.Checked)
@@ -3079,7 +3117,6 @@ namespace CollatorCAM
                 var devices = new List<DsDevice>(DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice));
                 foreach (var device in devices)
                 {
-                    ;
                     comboBox1.Items.Add(device.Name);
                 }
                 StartCapture();
@@ -3104,18 +3141,24 @@ namespace CollatorCAM
                 GetImage();
             }
         }
-
+        /// 
+        /// Update camera settings when cbCam
+        /// 
         private void cbCamResolution_SelectedIndexChanged(object sender, EventArgs e)
         {
             ApplyCamSettings();
         }
-
+        /// 
+        /// Save Port num
+        /// 
         private void txtPort_TextChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.Port = txtPort.Text;
             Properties.Settings.Default.Save();
         }
-
+        /// 
+        /// Save IP Address
+        /// 
         private void txtIPAdress_TextChanged(object sender, EventArgs e)
         {
             Properties.Settings.Default.IP = txtIPAdress.Text;
