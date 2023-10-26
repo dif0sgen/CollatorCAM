@@ -62,10 +62,6 @@ namespace CollatorCAM
         string templateFile;
 
         ModbusClient modbus = new ModbusClient();
-        System.Timers.Timer aTimer = new System.Timers.Timer();
-        System.Timers.Timer bTimer = new System.Timers.Timer();
-
-        // Set up the controls and events to be used and update the device list.
 
         public delegate void InvokeDelegate();
         //private Thread thread2;
@@ -80,6 +76,7 @@ namespace CollatorCAM
         int i_mdb;
         bool photoBlock;
         bool PhotoMonth;
+        bool check1 = false;
         bool[] MDB_WRITE = new bool[15];
         bool[] CONTROL_READ = new bool[1];
         private string[] files;
@@ -99,25 +96,17 @@ namespace CollatorCAM
             System.Windows.Forms.Application.Idle += new EventHandler(Application_Idle);
             System.Windows.Forms.Application.Idle += new EventHandler(InterfaceUpdate);
             //thread2 = new Thread(() => WriteMDBS("WRITE"));
-            //create image processor
-            processor = new ContourAnalysisNS.ImageProcessor();
-            //load default templates
-            //templateFile = AppDomain.CurrentDomain.BaseDirectory + "\\Tahoma.bin";
+            
+            processor = new ContourAnalysisNS.ImageProcessor(); //create image processor
 
             StartCapture();
             ApplyCamSettings();
-
-            //
             RunForm();
 
             this.Closing += new CancelEventHandler(this.Form_Listener_Close);
             //thread2.Start();
 
-            ///
-            /// GET SAVED VALUES
-            ///
-
-            txtPort.Text = Properties.Settings.Default.Port;
+            txtPort.Text = Properties.Settings.Default.Port;     // GET SAVED VALUES
             txtIPAdress.Text = Properties.Settings.Default.IP;
         }
         /// 
