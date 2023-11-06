@@ -25,6 +25,7 @@ using System.Collections;
 using DirectShowLib;              //update capera devices
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Text.RegularExpressions;
+using ZedGraph;
 
 namespace CollatorCAM
 {
