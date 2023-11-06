@@ -59,7 +59,6 @@ namespace CollatorCAM
 			this.lblStat = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
-			this.imageBox2 = new Emgu.CV.UI.ImageBox();
 			this.imageBox1 = new Emgu.CV.UI.ImageBox();
 			this.ssMain = new System.Windows.Forms.StatusStrip();
 			this.lbFPS = new System.Windows.Forms.ToolStripStatusLabel();
@@ -142,6 +141,10 @@ namespace CollatorCAM
 			this.btLoadImage = new System.Windows.Forms.Button();
 			this.cbAutoContrast = new System.Windows.Forms.CheckBox();
 			this.cbShowAngle = new System.Windows.Forms.CheckBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label9 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
 			this.tableLayoutPanel8.SuspendLayout();
@@ -150,7 +153,6 @@ namespace CollatorCAM
 			this.tableLayoutPanel1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage5.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.imageBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.imageBox1)).BeginInit();
 			this.ssMain.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.ibMain)).BeginInit();
@@ -332,7 +334,9 @@ namespace CollatorCAM
 			// 
 			// tabPage5
 			// 
-			this.tabPage5.Controls.Add(this.imageBox2);
+			this.tabPage5.Controls.Add(this.label9);
+			this.tabPage5.Controls.Add(this.label8);
+			this.tabPage5.Controls.Add(this.label7);
 			this.tabPage5.Controls.Add(this.imageBox1);
 			this.tabPage5.Controls.Add(this.ssMain);
 			this.tabPage5.Controls.Add(this.button3);
@@ -346,13 +350,6 @@ namespace CollatorCAM
 			resources.ApplyResources(this.tabPage5, "tabPage5");
 			this.tabPage5.Name = "tabPage5";
 			this.tabPage5.UseVisualStyleBackColor = true;
-			// 
-			// imageBox2
-			// 
-			resources.ApplyResources(this.imageBox2, "imageBox2");
-			this.imageBox2.FunctionalMode = Emgu.CV.UI.ImageBox.FunctionalModeOption.Minimum;
-			this.imageBox2.Name = "imageBox2";
-			this.imageBox2.TabStop = false;
 			// 
 			// imageBox1
 			// 
@@ -495,33 +492,33 @@ namespace CollatorCAM
 			// flowLayoutPanel2
 			// 
 			resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
-			this.flowLayoutPanel2.Controls.Add(this.button7);
-			this.flowLayoutPanel2.Controls.Add(this.button1);
-			this.flowLayoutPanel2.Controls.Add(this.button2);
-			this.flowLayoutPanel2.Controls.Add(this.button8);
-			this.flowLayoutPanel2.Controls.Add(this.button9);
-			this.flowLayoutPanel2.Controls.Add(this.button10);
 			this.flowLayoutPanel2.Controls.Add(this.button11);
 			this.flowLayoutPanel2.Controls.Add(this.button12);
+			this.flowLayoutPanel2.Controls.Add(this.button10);
 			this.flowLayoutPanel2.Controls.Add(this.button13);
+			this.flowLayoutPanel2.Controls.Add(this.button9);
 			this.flowLayoutPanel2.Controls.Add(this.button14);
+			this.flowLayoutPanel2.Controls.Add(this.button8);
 			this.flowLayoutPanel2.Controls.Add(this.button15);
+			this.flowLayoutPanel2.Controls.Add(this.button2);
 			this.flowLayoutPanel2.Controls.Add(this.button16);
+			this.flowLayoutPanel2.Controls.Add(this.button1);
 			this.flowLayoutPanel2.Controls.Add(this.button17);
+			this.flowLayoutPanel2.Controls.Add(this.button7);
 			this.flowLayoutPanel2.Controls.Add(this.button18);
-			this.flowLayoutPanel2.Controls.Add(this.textBox41);
-			this.flowLayoutPanel2.Controls.Add(this.textBox42);
-			this.flowLayoutPanel2.Controls.Add(this.textBox46);
-			this.flowLayoutPanel2.Controls.Add(this.textBox48);
-			this.flowLayoutPanel2.Controls.Add(this.textBox49);
-			this.flowLayoutPanel2.Controls.Add(this.textBox50);
 			this.flowLayoutPanel2.Controls.Add(this.textBox51);
 			this.flowLayoutPanel2.Controls.Add(this.textBox53);
+			this.flowLayoutPanel2.Controls.Add(this.textBox50);
 			this.flowLayoutPanel2.Controls.Add(this.textBox54);
+			this.flowLayoutPanel2.Controls.Add(this.textBox49);
 			this.flowLayoutPanel2.Controls.Add(this.textBox79);
+			this.flowLayoutPanel2.Controls.Add(this.textBox48);
 			this.flowLayoutPanel2.Controls.Add(this.textBox80);
+			this.flowLayoutPanel2.Controls.Add(this.textBox46);
 			this.flowLayoutPanel2.Controls.Add(this.textBox81);
+			this.flowLayoutPanel2.Controls.Add(this.textBox42);
 			this.flowLayoutPanel2.Controls.Add(this.textBox82);
+			this.flowLayoutPanel2.Controls.Add(this.textBox41);
 			this.flowLayoutPanel2.Controls.Add(this.textBox83);
 			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
 			// 
@@ -957,6 +954,7 @@ namespace CollatorCAM
 			// groupBox6
 			// 
 			resources.ApplyResources(this.groupBox6, "groupBox6");
+			this.groupBox6.Controls.Add(this.checkBox1);
 			this.groupBox6.Controls.Add(this.label1);
 			this.groupBox6.Controls.Add(this.cbRotation);
 			this.groupBox6.Controls.Add(this.btLoadFolder);
@@ -1074,7 +1072,9 @@ namespace CollatorCAM
 			this.cbCamResolution.Items.AddRange(new object[] {
             resources.GetString("cbCamResolution.Items"),
             resources.GetString("cbCamResolution.Items1"),
-            resources.GetString("cbCamResolution.Items2")});
+            resources.GetString("cbCamResolution.Items2"),
+            resources.GetString("cbCamResolution.Items3"),
+            resources.GetString("cbCamResolution.Items4")});
 			resources.ApplyResources(this.cbCamResolution, "cbCamResolution");
 			this.cbCamResolution.Name = "cbCamResolution";
 			this.cbCamResolution.SelectedIndexChanged += new System.EventHandler(this.cbCamResolution_SelectedIndexChanged);
@@ -1097,6 +1097,35 @@ namespace CollatorCAM
 			resources.ApplyResources(this.cbShowAngle, "cbShowAngle");
 			this.cbShowAngle.Name = "cbShowAngle";
 			this.cbShowAngle.UseVisualStyleBackColor = true;
+			// 
+			// checkBox1
+			// 
+			resources.ApplyResources(this.checkBox1, "checkBox1");
+			this.checkBox1.Checked = true;
+			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
+			// label7
+			// 
+			this.label7.BackColor = System.Drawing.Color.Red;
+			resources.ApplyResources(this.label7, "label7");
+			this.label7.ForeColor = System.Drawing.Color.White;
+			this.label7.Name = "label7";
+			// 
+			// label8
+			// 
+			this.label8.BackColor = System.Drawing.Color.Red;
+			resources.ApplyResources(this.label8, "label8");
+			this.label8.ForeColor = System.Drawing.Color.White;
+			this.label8.Name = "label8";
+			// 
+			// label9
+			// 
+			this.label9.BackColor = System.Drawing.Color.Red;
+			resources.ApplyResources(this.label9, "label9");
+			this.label9.ForeColor = System.Drawing.Color.White;
+			this.label9.Name = "label9";
 			// 
 			// Form_Listener
 			// 
@@ -1124,7 +1153,6 @@ namespace CollatorCAM
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage5.ResumeLayout(false);
 			this.tabPage5.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.imageBox2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.imageBox1)).EndInit();
 			this.ssMain.ResumeLayout(false);
 			this.ssMain.PerformLayout();
@@ -1259,11 +1287,14 @@ namespace CollatorCAM
         private Label label1;
         private ComboBox cbRotation;
         private Emgu.CV.UI.ImageBox imageBox1;
-        private Emgu.CV.UI.ImageBox imageBox2;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label6;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label4;
-    }
+		private CheckBox checkBox1;
+		private Label label7;
+		private Label label9;
+		private Label label8;
+	}
 }
 

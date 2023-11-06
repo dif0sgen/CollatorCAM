@@ -120,9 +120,9 @@ namespace CollatorCAM
             {
                 comboBox1.Items.Add(device.Name);
             }
-            month = 1;
-            button7.BackColor = System.Drawing.Color.DarkGray;
-            Front();
+            month = 7;
+            button11.BackColor = System.Drawing.Color.DarkGray;
+            June();
         }
         /// 
         /// Update interface and read photo signal from PLC evry time
@@ -372,6 +372,7 @@ namespace CollatorCAM
                     imageBox1.SetZoomScale(0.3, new Point(0));
                     Bitmap pic = image.ToBitmap();
                     rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
+                if (checkBox1.Checked)
                     frame = new Image<Bgr, Byte>(pic.Clone(rect, PixelFormat.Format16bppRgb555));
 
                     //frame = _capture.QueryFrame();
@@ -436,6 +437,16 @@ namespace CollatorCAM
                             e.Graphics.DrawLines(Pens.Red, contour.ToArray());
                 //
                 lock (processor.foundTemplates)
+                    if (processor.foundTemplates.Count == 0)
+                    {
+
+						label9.BackColor = Color.Red;
+						label9.Text = "NG Maori";
+
+						label8.BackColor = Color.Red;
+						label8.Text = "NG Year";
+					}
+
                     foreach (FoundTemplateDesc found in processor.foundTemplates)
                     {
                         if (found.template.name.EndsWith(".png") || found.template.name.EndsWith(".jpg"))
@@ -453,7 +464,7 @@ namespace CollatorCAM
                             text = found.template.name;
                         if (found.template.name == "2" || found.template.name == "0" || found.template.name == "4")
                             year++;
-                        if (monthph == 2)
+                        if (monthph == 11 || month == 2)
                         {
                             if (found.template.name == "J")
                                 smonth[0] = "J";
@@ -470,7 +481,7 @@ namespace CollatorCAM
                             if (found.template.name == "y")
                                 smonth[6] = "y";
                         }
-                        if (monthph == 3)
+                        if (monthph == 9 || month == 3)
                         {
                             if (found.template.name == "F")
                                 smonth[0] = "F";
@@ -489,7 +500,7 @@ namespace CollatorCAM
                             if (found.template.name == "y")
                                 smonth[7] = "y";
                         }
-                        if (monthph == 4)
+                        if (monthph == 7 || month == 4)
                         {
                             if (found.template.name == "M")
                                 smonth[0] = "M";
@@ -502,7 +513,7 @@ namespace CollatorCAM
                             if (found.template.name == "h")
                                 smonth[4] = "h";
                         }
-                        if (monthph == 5)
+                        if (monthph == 5 || month == 5)
                         {
                             if (found.template.name == "A")
                                 smonth[0] = "A";
@@ -515,7 +526,7 @@ namespace CollatorCAM
                             if (found.template.name == "l")
                                 smonth[4] = "l";
                         }
-                        if (monthph == 6)
+                        if (monthph == 3 || month == 6)
                         {
                             if (found.template.name == "M")
                                 smonth[0] = "M";
@@ -524,7 +535,7 @@ namespace CollatorCAM
                             if (found.template.name == "y")
                                 smonth[2] = "y";
                         }
-                        if (monthph == 7)
+                        if (monthph == 1 || month == 7)
                         {
                             if (found.template.name == "J")
                                 smonth[0] = "J";
@@ -535,7 +546,7 @@ namespace CollatorCAM
                             if (found.template.name == "e")
                                 smonth[3] = "e";
                         }
-                        if (monthph == 8)
+                        if (monthph == 2 || month == 8)
                         {
                             if (found.template.name == "J")
                                 smonth[0] = "J";
@@ -546,7 +557,7 @@ namespace CollatorCAM
                             if (found.template.name == "y")
                                 smonth[3] = "y";
                         }
-                        if (monthph == 9)
+                        if (monthph == 4 || month == 9)
                         {
                             if (found.template.name == "A")
                                 smonth[0] = "A";
@@ -561,7 +572,7 @@ namespace CollatorCAM
                             if (found.template.name == "t")
                                 smonth[5] = "t";
                         }
-                        if (monthph == 10)
+                        if (monthph == 6 || month == 10)
                         {
                             if (found.template.name == "S")
                                 smonth[0] = "S";
@@ -582,7 +593,7 @@ namespace CollatorCAM
                             if (found.template.name == "r")
                                 smonth[7] = "r";
                         }
-                        if (monthph == 11)
+                        if (monthph == 8 || month == 11)
                         {
                             if (found.template.name == "O")
                                 smonth[0] = "O";
@@ -599,7 +610,7 @@ namespace CollatorCAM
                             if (found.template.name == "r")
                                 smonth[6] = "r";
                         }
-                        if (monthph == 12)
+                        if (monthph == 10 || month == 12)
                         {
                             if (found.template.name == "N")
                                 smonth[0] = "N";
@@ -618,7 +629,7 @@ namespace CollatorCAM
                             if (found.template.name == "r")
                                 smonth[7] = "r";
                         }
-                        if (monthph == 13)
+                        if (monthph == 12 || month == 13)
                         {
                             if (found.template.name == "D")
                                 smonth[0] = "D";
@@ -638,8 +649,18 @@ namespace CollatorCAM
                                 smonth[7] = "r";
                         }
                         if (year == 4)
-                            TByear = "  OK 2024";
-                        if (found.template.name == "4")
+                        {
+							TByear = "  OK 2024";
+							label8.BackColor = Color.Green;
+							label8.Text = "OK Year";
+						}
+
+						if (year != 4)
+                        {
+							label8.BackColor = Color.Red;
+							label8.Text = "NG Year";
+						}
+						if (found.template.name == "4")
                         {
                             text = found.template.name;
                             Point point = new Point(foundRect.Right - 150, foundRect.Top + 100);
@@ -660,77 +681,236 @@ namespace CollatorCAM
                                 e.Graphics.DrawString("Maori", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
                                 e.Graphics.DrawString("Maori", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
                                 TBmaori = "OK Maori";
-                            }
-                            if (sourceContours == null)
-                            {
-                                e.Graphics.DrawString("Null", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
-                                e.Graphics.DrawString("Null", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
-                            }
+							}
+                        if (sourceContours == null)
+                        {
+                            e.Graphics.DrawString("Null", font, bgBrush, new PointF(p2.X + 1 - font.Height / 3, p2.Y + 1 - font.Height));
+                            e.Graphics.DrawString("Null", font, foreBrush, new PointF(p2.X - font.Height / 3, p2.Y - font.Height));
+                            TBmaori = "NG Maori";
                         }
-                        if (showAngle)
+
+					    }
+
+						if (showAngle)
                             text += string.Format("\r\nangle={0:000}°\r\nscale={1:0.0}", 180 * found.angle / Math.PI, found.scale);
                         e.Graphics.DrawRectangle(borderPen, foundRect);
                         e.Graphics.DrawString(text, font, bgBrush, new PointF(p1.X + 1 - font.Height / 3, p1.Y + 1 - font.Height));
                         e.Graphics.DrawString(text, font, foreBrush, new PointF(p1.X - font.Height / 3, p1.Y - font.Height));
                     }
-                if ((PhotoMonth == true && ibMain.Image == frame) || (PhotoMonth == true && ibMain.Image == processor.binarizedFrame))
+                    if (TBmaori == "OK Maori")
                 {
-                    if (smonth[0] == "J" && smonth[1] == "a" && smonth[2] == "n" && smonth[3] == "u" && smonth[4] == "a" &&
-                        smonth[5] == "r" && smonth[6] == "y")
+					label9.BackColor = Color.Green;
+					label9.Text = "OK Maori";
+				}
+				if (TBmaori != "OK Maori")
+				{
+					label9.BackColor = Color.Red;
+					label9.Text = "NG Maori";
+				}
+
+				if (smonth[0] == "J" && smonth[1] == "a" && smonth[2] == "n" && smonth[3] == "u" && smonth[4] == "a" &&
+                        smonth[5] == "r" && smonth[6] == "y" && monthph == 11)
                     {
                         TBmonth = "      OK January";
-                    } 
-                    if (smonth[0] == "F" && smonth[1] == "e" && smonth[2] == "b" && smonth[3] == "r" && smonth[4] == "u" &&
-                        smonth[5] == "a" && smonth[6] == "r" && smonth[7] == "y")
+				    }
+				    if (smonth[0] == "J" && smonth[1] == "a" && smonth[2] == "n" && smonth[3] == "u" && smonth[4] == "a" &&
+                        smonth[5] == "r" && smonth[6] == "y" && month == 2)
+				    {
+					    label7.BackColor = Color.Green;
+					    label7.Text = "OK January";
+				    }
+				    if ((smonth[0] != "J" || smonth[1] != "a" || smonth[2] != "n" || smonth[3] != "u" || smonth[4] != "a" ||
+                        smonth[5] != "r" || smonth[6] != "y") && month == 2)
+				    {
+					    label7.BackColor = Color.Red;
+					    label7.Text = "NG January";
+				    }
+
+				if (smonth[0] == "F" && smonth[1] == "e" && smonth[2] == "b" && smonth[3] == "r" && smonth[4] == "u" &&
+                        smonth[5] == "a" && smonth[6] == "r" && smonth[7] == "y" && monthph == 9)
                     {
                         TBmonth = "      OK February";
                     }
-                    if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "r" && smonth[3] == "c" && smonth[4] == "h")
+				if (smonth[0] == "F" && smonth[1] == "e" && smonth[2] == "b" && smonth[3] == "r" && smonth[4] == "u" &&
+		            smonth[5] == "a" && smonth[6] == "r" && smonth[7] == "y" && month == 3)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK February";
+				}
+				if ((smonth[0] != "F" || smonth[1] != "e" || smonth[2] != "b" || smonth[3] != "r" || smonth[4] != "u" ||
+		            smonth[5] != "a" || smonth[6] != "r" || smonth[7] != "y") && month == 3)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG February";
+				}
+
+				if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "r" && smonth[3] == "c" && smonth[4] == "h" && monthph == 7)
                     {
                         TBmonth = "      OK March";
                     }
-                    if (smonth[0] == "A" && smonth[1] == "p" && smonth[2] == "r" && smonth[3] == "i" && smonth[4] == "l")
+				if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "r" && smonth[3] == "c" && smonth[4] == "h" && month == 4)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK March";
+				}
+				if ((smonth[0] != "M" || smonth[1] != "a" && smonth[2] != "r" || smonth[3] != "c" || smonth[4] != "h") && month == 4)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG March";
+				}
+
+				if (smonth[0] == "A" && smonth[1] == "p" && smonth[2] == "r" && smonth[3] == "i" && smonth[4] == "l" && monthph == 5)
                     {
                         TBmonth = "      OK April";
                     }
-                    if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "y")
+				if (smonth[0] == "A" && smonth[1] == "p" && smonth[2] == "r" && smonth[3] == "i" && smonth[4] == "l" && month == 5)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK April";
+				}
+				if ((smonth[0] != "A" || smonth[1] != "p" || smonth[2] != "r" || smonth[3] != "i" || smonth[4] != "l") && month == 5)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG April";
+				}
+
+				if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "y" && monthph == 3)
                     {
                         TBmonth = "      OK May";
                     }
-                    if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "n" && smonth[3] == "e")
+				if (smonth[0] == "M" && smonth[1] == "a" && smonth[2] == "y" && month == 6)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK May";
+				}
+				if ((smonth[0] != "M" || smonth[1] != "a" || smonth[2] != "y") && month == 6)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG May";
+				}
+
+				if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "n" && smonth[3] == "e" && monthph == 1)
                     {
                         TBmonth = "      OK June";
                     }
-                    if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "l" && smonth[3] == "y")
+				if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "n" && smonth[3] == "e" && month == 7)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK June";
+				}
+				if ((smonth[0] != "J" || smonth[1] != "u" || smonth[2] != "n" || smonth[3] != "e") && month == 7)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG June";
+				}
+
+				if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "l" && smonth[3] == "y" && monthph == 2)
                     {
                         TBmonth = "      OK July";
                     }
-                    if (smonth[0] == "A" && smonth[1] == "u" && smonth[2] == "g" && smonth[3] == "u" && smonth[4] == "s" &&
-                        smonth[5] == "t")
+				if (smonth[0] == "J" && smonth[1] == "u" && smonth[2] == "l" && smonth[3] == "y" && month == 8)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK July";
+				}
+				if ((smonth[0] != "J" || smonth[1] != "u" || smonth[2] != "l" || smonth[3] != "y") && month == 8)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG July";
+				}
+
+				if (smonth[0] == "A" && smonth[1] == "u" && smonth[2] == "g" && smonth[3] == "u" && smonth[4] == "s" &&
+                        smonth[5] == "t" && monthph == 4)
                     {
                         TBmonth = "      OK August";
                     }
-                    if (smonth[0] == "S" && smonth[1] == "e" && smonth[2] == "p" && smonth[3] == "t" && smonth[4] == "e" &&
-                        smonth[5] == "m" && smonth[6] == "b" && smonth[7] == "e" & smonth[7] == "r")
+				if (smonth[0] == "A" && smonth[1] == "u" && smonth[2] == "g" && smonth[3] == "u" && smonth[4] == "s" &&
+		            smonth[5] == "t" && month == 9)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK August";
+				}
+				if ((smonth[0] != "A" || smonth[1] != "u" || smonth[2] != "g" || smonth[3] != "u" || smonth[4] != "s" ||
+	            	smonth[5] != "t") && month == 9)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG August";
+				}
+
+				if (smonth[0] == "S" && smonth[1] == "e" && smonth[2] == "p" && smonth[3] == "t" && smonth[4] == "e" &&
+                        smonth[5] == "m" && smonth[6] == "b" && smonth[7] == "e" & smonth[7] == "r" && monthph == 6)
                     {
                         TBmonth = "      OK September";
                     }
-                    if (smonth[0] == "O" && smonth[1] == "c" && smonth[2] == "t" && smonth[3] == "o" && smonth[4] == "b" &&
-                        smonth[5] == "e" && smonth[6] == "r")
+				if (smonth[0] == "S" && smonth[1] == "e" && smonth[2] == "p" && smonth[3] == "t" && smonth[4] == "e" &&
+		            smonth[5] == "m" && smonth[6] == "b" && smonth[7] == "e" & smonth[7] == "r" && month == 10)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK Septebmer";
+				}
+				if ((smonth[0] != "S" || smonth[1] != "e" || smonth[2] != "p" || smonth[3] != "t" || smonth[4] != "e" ||
+		            smonth[5] != "m" || smonth[6] != "b" || smonth[7] != "e" || smonth[7] != "r") && month == 10)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG September";
+				}
+
+				if (smonth[0] == "O" && smonth[1] == "c" && smonth[2] == "t" && smonth[3] == "o" && smonth[4] == "b" &&
+                        smonth[5] == "e" && smonth[6] == "r" && monthph == 8)
                     {
                         TBmonth = "      OK October";
                     }
-                    if (smonth[0] == "N" && smonth[1] == "o" && smonth[2] == "v" && smonth[3] == "e" && smonth[4] == "m" &&
-                        smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r")
+				if (smonth[0] == "O" && smonth[1] == "c" && smonth[2] == "t" && smonth[3] == "o" && smonth[4] == "b" &&
+		            smonth[5] == "e" && smonth[6] == "r" && month == 11)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK October";
+				}
+				if ((smonth[0] != "O" || smonth[1] != "c" || smonth[2] != "t" || smonth[3] != "o" || smonth[4] != "b" ||
+		            smonth[5] != "e" || smonth[6] != "r") && month == 11)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG October";
+				}
+
+				if (smonth[0] == "N" && smonth[1] == "o" && smonth[2] == "v" && smonth[3] == "e" && smonth[4] == "m" &&
+                        smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r" && monthph == 10)
                     {
                         TBmonth = "      OK November";
                     }
-                    if (smonth[0] == "D" && smonth[1] == "e" && smonth[2] == "c" && smonth[3] == "e" && smonth[4] == "m" &&
-                        smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r")
+				if (smonth[0] == "N" && smonth[1] == "o" && smonth[2] == "v" && smonth[3] == "e" && smonth[4] == "m" &&
+		            smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r" && month == 12)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK November";
+				}
+				if ((smonth[0] != "N" || smonth[1] != "o" || smonth[2] != "v" || smonth[3] != "e" || smonth[4] != "m" ||
+		            smonth[5] != "b" || smonth[6] != "e" || smonth[7] != "r") && month == 12)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG November";
+				}
+
+				if (smonth[0] == "D" && smonth[1] == "e" && smonth[2] == "c" && smonth[3] == "e" && smonth[4] == "m" &&
+                        smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r" && monthph == 12)
                     {
                         TBmonth = "      OK December";
                     }
-                    tbResult.Items.Insert(0, "");
+				if (smonth[0] == "D" && smonth[1] == "e" && smonth[2] == "c" && smonth[3] == "e" && smonth[4] == "m" &&
+		            smonth[5] == "b" && smonth[6] == "e" && smonth[7] == "r" && month == 13)
+				{
+					label7.BackColor = Color.Green;
+					label7.Text = "OK December";
+				}
+				if ((smonth[0] != "D" || smonth[1] != "e" || smonth[2] != "c" || smonth[3] != "e" || smonth[4] != "m" ||
+		            smonth[5] != "b" || smonth[6] != "e" || smonth[7] != "r") && month == 13)
+				{
+					label7.BackColor = Color.Red;
+					label7.Text = "NG December";
+				}
+				if ((PhotoMonth == true && ibMain.Image == frame) || (PhotoMonth == true && ibMain.Image == processor.binarizedFrame))
+				{
+					tbResult.Items.Insert(0, "");
                     tbResult.Items.Insert(0, TBmonth);
                     tbResult.Items.Insert(0, TByear);
                     tbResult.Items.Insert(0, TBmaori);
@@ -918,22 +1098,22 @@ namespace CollatorCAM
             }
             if (monthph == 1)
             {
-                Front();
+                June();
                 PhotoMonth = true;
             }
             if (monthph == 2)
             {
-                January();
+                July();
                 PhotoMonth = true;
             }
             if (monthph == 3)
             {
-                February();
+                May();
                 PhotoMonth = true;
             }
             if (monthph == 4)
             {
-                March();
+                August();
                 PhotoMonth = true;
             }
             if (monthph == 5)
@@ -943,42 +1123,42 @@ namespace CollatorCAM
             }
             if (monthph == 6)
             {  
-                May();
+                September();
                 PhotoMonth = true;
             }
             if (monthph == 7)
             {
-                June();
+                March();
                 PhotoMonth = true;
             }
             if (monthph == 8)
             {
-                July();
+                October();
                 PhotoMonth = true;
             }
             if (monthph == 9)
             {
-                August();
+                February();
                 PhotoMonth = true;
             }
             if (monthph == 10)
             {
-                September();
+                November();
                 PhotoMonth = true;
             }
             if (monthph == 11)
             {
-                October();
+                January();
                 PhotoMonth = true;
             }
             if (monthph == 12)
             {
-                November();
+                December();
                 PhotoMonth = true;
             }
             if (monthph == 13)
             {
-                December();
+                Front();
                 PhotoMonth = true;
             }
             if (monthph == 14)
