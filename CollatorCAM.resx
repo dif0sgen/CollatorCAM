@@ -550,7 +550,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="txtIPAdress.Size" type="System.Drawing.Size, System.Drawing">
-    <value>147, 24</value>
+    <value>152, 24</value>
   </data>
   <data name="txtIPAdress.TabIndex" type="System.Int32, mscorlib">
     <value>161</value>
@@ -571,13 +571,13 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1266, 3</value>
+    <value>1307, 3</value>
   </data>
   <data name="tableLayoutPanel2.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutPanel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 51</value>
+    <value>160, 51</value>
   </data>
   <data name="tableLayoutPanel2.TabIndex" type="System.Int32, mscorlib">
     <value>163</value>
@@ -625,7 +625,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="btnStart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>177, 49</value>
+    <value>184, 49</value>
   </data>
   <data name="btnStart.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -769,7 +769,7 @@
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1437, 3</value>
+    <value>1483, 3</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>153, 51</value>
@@ -862,13 +862,13 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1105, 3</value>
+    <value>1141, 3</value>
   </data>
   <data name="tableLayoutPanel1.RowCount" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 51</value>
+    <value>160, 51</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>162</value>
@@ -901,7 +901,7 @@
     <value>NoControl</value>
   </data>
   <data name="lblStat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>300, 0</value>
+    <value>307, 0</value>
   </data>
   <data name="lblStat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
@@ -937,7 +937,7 @@
     <value>1</value>
   </data>
   <data name="tableLayoutPanel8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1607, 57</value>
+    <value>1655, 57</value>
   </data>
   <data name="tableLayoutPanel8.TabIndex" type="System.Int32, mscorlib">
     <value>163</value>

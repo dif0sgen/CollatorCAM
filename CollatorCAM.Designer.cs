@@ -59,6 +59,9 @@ namespace CollatorCAM
 			this.lblStat = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
+			this.label9 = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
+			this.label7 = new System.Windows.Forms.Label();
 			this.imageBox1 = new Emgu.CV.UI.ImageBox();
 			this.ssMain = new System.Windows.Forms.StatusStrip();
 			this.lbFPS = new System.Windows.Forms.ToolStripStatusLabel();
@@ -78,33 +81,33 @@ namespace CollatorCAM
 			this.btAutoGenerate = new System.Windows.Forms.ToolStripButton();
 			this.btTemplateEditor = new System.Windows.Forms.ToolStripButton();
 			this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-			this.button7 = new System.Windows.Forms.Button();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
-			this.button8 = new System.Windows.Forms.Button();
-			this.button9 = new System.Windows.Forms.Button();
-			this.button10 = new System.Windows.Forms.Button();
 			this.button11 = new System.Windows.Forms.Button();
 			this.button12 = new System.Windows.Forms.Button();
+			this.button10 = new System.Windows.Forms.Button();
 			this.button13 = new System.Windows.Forms.Button();
+			this.button9 = new System.Windows.Forms.Button();
 			this.button14 = new System.Windows.Forms.Button();
+			this.button8 = new System.Windows.Forms.Button();
 			this.button15 = new System.Windows.Forms.Button();
+			this.button2 = new System.Windows.Forms.Button();
 			this.button16 = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.button17 = new System.Windows.Forms.Button();
+			this.button7 = new System.Windows.Forms.Button();
 			this.button18 = new System.Windows.Forms.Button();
-			this.textBox41 = new System.Windows.Forms.TextBox();
-			this.textBox42 = new System.Windows.Forms.TextBox();
-			this.textBox46 = new System.Windows.Forms.TextBox();
-			this.textBox48 = new System.Windows.Forms.TextBox();
-			this.textBox49 = new System.Windows.Forms.TextBox();
-			this.textBox50 = new System.Windows.Forms.TextBox();
 			this.textBox51 = new System.Windows.Forms.TextBox();
 			this.textBox53 = new System.Windows.Forms.TextBox();
+			this.textBox50 = new System.Windows.Forms.TextBox();
 			this.textBox54 = new System.Windows.Forms.TextBox();
+			this.textBox49 = new System.Windows.Forms.TextBox();
 			this.textBox79 = new System.Windows.Forms.TextBox();
+			this.textBox48 = new System.Windows.Forms.TextBox();
 			this.textBox80 = new System.Windows.Forms.TextBox();
+			this.textBox46 = new System.Windows.Forms.TextBox();
 			this.textBox81 = new System.Windows.Forms.TextBox();
+			this.textBox42 = new System.Windows.Forms.TextBox();
 			this.textBox82 = new System.Windows.Forms.TextBox();
+			this.textBox41 = new System.Windows.Forms.TextBox();
 			this.textBox83 = new System.Windows.Forms.TextBox();
 			this.pnSettings = new System.Windows.Forms.Panel();
 			this.btnSave = new System.Windows.Forms.Button();
@@ -126,6 +129,7 @@ namespace CollatorCAM
 			this.nudMinContourArea = new System.Windows.Forms.NumericUpDown();
 			this.label46 = new System.Windows.Forms.Label();
 			this.groupBox6 = new System.Windows.Forms.GroupBox();
+			this.checkBox1 = new System.Windows.Forms.CheckBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.cbRotation = new System.Windows.Forms.ComboBox();
 			this.btLoadFolder = new System.Windows.Forms.Button();
@@ -141,10 +145,6 @@ namespace CollatorCAM
 			this.btLoadImage = new System.Windows.Forms.Button();
 			this.cbAutoContrast = new System.Windows.Forms.CheckBox();
 			this.cbShowAngle = new System.Windows.Forms.CheckBox();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label9 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
 			this.tableLayoutPanel8.SuspendLayout();
@@ -351,6 +351,27 @@ namespace CollatorCAM
 			this.tabPage5.Name = "tabPage5";
 			this.tabPage5.UseVisualStyleBackColor = true;
 			// 
+			// label9
+			// 
+			this.label9.BackColor = System.Drawing.Color.Red;
+			resources.ApplyResources(this.label9, "label9");
+			this.label9.ForeColor = System.Drawing.Color.White;
+			this.label9.Name = "label9";
+			// 
+			// label8
+			// 
+			this.label8.BackColor = System.Drawing.Color.Red;
+			resources.ApplyResources(this.label8, "label8");
+			this.label8.ForeColor = System.Drawing.Color.White;
+			this.label8.Name = "label8";
+			// 
+			// label7
+			// 
+			this.label7.BackColor = System.Drawing.Color.Red;
+			resources.ApplyResources(this.label7, "label7");
+			this.label7.ForeColor = System.Drawing.Color.White;
+			this.label7.Name = "label7";
+			// 
 			// imageBox1
 			// 
 			resources.ApplyResources(this.imageBox1, "imageBox1");
@@ -522,48 +543,6 @@ namespace CollatorCAM
 			this.flowLayoutPanel2.Controls.Add(this.textBox83);
 			this.flowLayoutPanel2.Name = "flowLayoutPanel2";
 			// 
-			// button7
-			// 
-			resources.ApplyResources(this.button7, "button7");
-			this.button7.Name = "button7";
-			this.button7.UseVisualStyleBackColor = true;
-			this.button7.Click += new System.EventHandler(this.button7_Click);
-			// 
-			// button1
-			// 
-			resources.ApplyResources(this.button1, "button1");
-			this.button1.Name = "button1";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click_1);
-			// 
-			// button2
-			// 
-			resources.ApplyResources(this.button2, "button2");
-			this.button2.Name = "button2";
-			this.button2.UseVisualStyleBackColor = true;
-			this.button2.Click += new System.EventHandler(this.button2_Click_1);
-			// 
-			// button8
-			// 
-			resources.ApplyResources(this.button8, "button8");
-			this.button8.Name = "button8";
-			this.button8.UseVisualStyleBackColor = true;
-			this.button8.Click += new System.EventHandler(this.button8_Click);
-			// 
-			// button9
-			// 
-			resources.ApplyResources(this.button9, "button9");
-			this.button9.Name = "button9";
-			this.button9.UseVisualStyleBackColor = true;
-			this.button9.Click += new System.EventHandler(this.button9_Click);
-			// 
-			// button10
-			// 
-			resources.ApplyResources(this.button10, "button10");
-			this.button10.Name = "button10";
-			this.button10.UseVisualStyleBackColor = true;
-			this.button10.Click += new System.EventHandler(this.button10_Click);
-			// 
 			// button11
 			// 
 			resources.ApplyResources(this.button11, "button11");
@@ -578,12 +557,26 @@ namespace CollatorCAM
 			this.button12.UseVisualStyleBackColor = true;
 			this.button12.Click += new System.EventHandler(this.button12_Click);
 			// 
+			// button10
+			// 
+			resources.ApplyResources(this.button10, "button10");
+			this.button10.Name = "button10";
+			this.button10.UseVisualStyleBackColor = true;
+			this.button10.Click += new System.EventHandler(this.button10_Click);
+			// 
 			// button13
 			// 
 			resources.ApplyResources(this.button13, "button13");
 			this.button13.Name = "button13";
 			this.button13.UseVisualStyleBackColor = true;
 			this.button13.Click += new System.EventHandler(this.button13_Click);
+			// 
+			// button9
+			// 
+			resources.ApplyResources(this.button9, "button9");
+			this.button9.Name = "button9";
+			this.button9.UseVisualStyleBackColor = true;
+			this.button9.Click += new System.EventHandler(this.button9_Click);
 			// 
 			// button14
 			// 
@@ -592,12 +585,26 @@ namespace CollatorCAM
 			this.button14.UseVisualStyleBackColor = true;
 			this.button14.Click += new System.EventHandler(this.button14_Click);
 			// 
+			// button8
+			// 
+			resources.ApplyResources(this.button8, "button8");
+			this.button8.Name = "button8";
+			this.button8.UseVisualStyleBackColor = true;
+			this.button8.Click += new System.EventHandler(this.button8_Click);
+			// 
 			// button15
 			// 
 			resources.ApplyResources(this.button15, "button15");
 			this.button15.Name = "button15";
 			this.button15.UseVisualStyleBackColor = true;
 			this.button15.Click += new System.EventHandler(this.button15_Click);
+			// 
+			// button2
+			// 
+			resources.ApplyResources(this.button2, "button2");
+			this.button2.Name = "button2";
+			this.button2.UseVisualStyleBackColor = true;
+			this.button2.Click += new System.EventHandler(this.button2_Click_1);
 			// 
 			// button16
 			// 
@@ -606,6 +613,13 @@ namespace CollatorCAM
 			this.button16.UseVisualStyleBackColor = true;
 			this.button16.Click += new System.EventHandler(this.button16_Click);
 			// 
+			// button1
+			// 
+			resources.ApplyResources(this.button1, "button1");
+			this.button1.Name = "button1";
+			this.button1.UseVisualStyleBackColor = true;
+			this.button1.Click += new System.EventHandler(this.button1_Click_1);
+			// 
 			// button17
 			// 
 			resources.ApplyResources(this.button17, "button17");
@@ -613,66 +627,19 @@ namespace CollatorCAM
 			this.button17.UseVisualStyleBackColor = true;
 			this.button17.Click += new System.EventHandler(this.button17_Click);
 			// 
+			// button7
+			// 
+			resources.ApplyResources(this.button7, "button7");
+			this.button7.Name = "button7";
+			this.button7.UseVisualStyleBackColor = true;
+			this.button7.Click += new System.EventHandler(this.button7_Click);
+			// 
 			// button18
 			// 
 			resources.ApplyResources(this.button18, "button18");
 			this.button18.Name = "button18";
 			this.button18.UseVisualStyleBackColor = true;
 			this.button18.Click += new System.EventHandler(this.button18_Click);
-			// 
-			// textBox41
-			// 
-			this.textBox41.BackColor = System.Drawing.Color.White;
-			this.textBox41.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			resources.ApplyResources(this.textBox41, "textBox41");
-			this.textBox41.ForeColor = System.Drawing.Color.Black;
-			this.textBox41.Name = "textBox41";
-			this.textBox41.ReadOnly = true;
-			// 
-			// textBox42
-			// 
-			this.textBox42.BackColor = System.Drawing.Color.White;
-			this.textBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			resources.ApplyResources(this.textBox42, "textBox42");
-			this.textBox42.ForeColor = System.Drawing.Color.Black;
-			this.textBox42.Name = "textBox42";
-			this.textBox42.ReadOnly = true;
-			// 
-			// textBox46
-			// 
-			this.textBox46.BackColor = System.Drawing.Color.White;
-			this.textBox46.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			resources.ApplyResources(this.textBox46, "textBox46");
-			this.textBox46.ForeColor = System.Drawing.Color.Black;
-			this.textBox46.Name = "textBox46";
-			this.textBox46.ReadOnly = true;
-			// 
-			// textBox48
-			// 
-			this.textBox48.BackColor = System.Drawing.Color.White;
-			this.textBox48.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			resources.ApplyResources(this.textBox48, "textBox48");
-			this.textBox48.ForeColor = System.Drawing.Color.Black;
-			this.textBox48.Name = "textBox48";
-			this.textBox48.ReadOnly = true;
-			// 
-			// textBox49
-			// 
-			this.textBox49.BackColor = System.Drawing.Color.White;
-			this.textBox49.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			resources.ApplyResources(this.textBox49, "textBox49");
-			this.textBox49.ForeColor = System.Drawing.Color.Black;
-			this.textBox49.Name = "textBox49";
-			this.textBox49.ReadOnly = true;
-			// 
-			// textBox50
-			// 
-			this.textBox50.BackColor = System.Drawing.Color.White;
-			this.textBox50.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			resources.ApplyResources(this.textBox50, "textBox50");
-			this.textBox50.ForeColor = System.Drawing.Color.Black;
-			this.textBox50.Name = "textBox50";
-			this.textBox50.ReadOnly = true;
 			// 
 			// textBox51
 			// 
@@ -692,6 +659,15 @@ namespace CollatorCAM
 			this.textBox53.Name = "textBox53";
 			this.textBox53.ReadOnly = true;
 			// 
+			// textBox50
+			// 
+			this.textBox50.BackColor = System.Drawing.Color.White;
+			this.textBox50.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			resources.ApplyResources(this.textBox50, "textBox50");
+			this.textBox50.ForeColor = System.Drawing.Color.Black;
+			this.textBox50.Name = "textBox50";
+			this.textBox50.ReadOnly = true;
+			// 
 			// textBox54
 			// 
 			this.textBox54.BackColor = System.Drawing.Color.White;
@@ -700,6 +676,15 @@ namespace CollatorCAM
 			this.textBox54.ForeColor = System.Drawing.Color.Black;
 			this.textBox54.Name = "textBox54";
 			this.textBox54.ReadOnly = true;
+			// 
+			// textBox49
+			// 
+			this.textBox49.BackColor = System.Drawing.Color.White;
+			this.textBox49.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			resources.ApplyResources(this.textBox49, "textBox49");
+			this.textBox49.ForeColor = System.Drawing.Color.Black;
+			this.textBox49.Name = "textBox49";
+			this.textBox49.ReadOnly = true;
 			// 
 			// textBox79
 			// 
@@ -710,6 +695,15 @@ namespace CollatorCAM
 			this.textBox79.Name = "textBox79";
 			this.textBox79.ReadOnly = true;
 			// 
+			// textBox48
+			// 
+			this.textBox48.BackColor = System.Drawing.Color.White;
+			this.textBox48.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			resources.ApplyResources(this.textBox48, "textBox48");
+			this.textBox48.ForeColor = System.Drawing.Color.Black;
+			this.textBox48.Name = "textBox48";
+			this.textBox48.ReadOnly = true;
+			// 
 			// textBox80
 			// 
 			this.textBox80.BackColor = System.Drawing.Color.White;
@@ -718,6 +712,15 @@ namespace CollatorCAM
 			this.textBox80.ForeColor = System.Drawing.Color.Black;
 			this.textBox80.Name = "textBox80";
 			this.textBox80.ReadOnly = true;
+			// 
+			// textBox46
+			// 
+			this.textBox46.BackColor = System.Drawing.Color.White;
+			this.textBox46.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			resources.ApplyResources(this.textBox46, "textBox46");
+			this.textBox46.ForeColor = System.Drawing.Color.Black;
+			this.textBox46.Name = "textBox46";
+			this.textBox46.ReadOnly = true;
 			// 
 			// textBox81
 			// 
@@ -728,6 +731,15 @@ namespace CollatorCAM
 			this.textBox81.Name = "textBox81";
 			this.textBox81.ReadOnly = true;
 			// 
+			// textBox42
+			// 
+			this.textBox42.BackColor = System.Drawing.Color.White;
+			this.textBox42.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			resources.ApplyResources(this.textBox42, "textBox42");
+			this.textBox42.ForeColor = System.Drawing.Color.Black;
+			this.textBox42.Name = "textBox42";
+			this.textBox42.ReadOnly = true;
+			// 
 			// textBox82
 			// 
 			this.textBox82.BackColor = System.Drawing.Color.White;
@@ -736,6 +748,15 @@ namespace CollatorCAM
 			this.textBox82.ForeColor = System.Drawing.Color.Black;
 			this.textBox82.Name = "textBox82";
 			this.textBox82.ReadOnly = true;
+			// 
+			// textBox41
+			// 
+			this.textBox41.BackColor = System.Drawing.Color.White;
+			this.textBox41.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			resources.ApplyResources(this.textBox41, "textBox41");
+			this.textBox41.ForeColor = System.Drawing.Color.Black;
+			this.textBox41.Name = "textBox41";
+			this.textBox41.ReadOnly = true;
 			// 
 			// textBox83
 			// 
@@ -972,6 +993,14 @@ namespace CollatorCAM
 			this.groupBox6.Name = "groupBox6";
 			this.groupBox6.TabStop = false;
 			// 
+			// checkBox1
+			// 
+			resources.ApplyResources(this.checkBox1, "checkBox1");
+			this.checkBox1.Checked = true;
+			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkBox1.Name = "checkBox1";
+			this.checkBox1.UseVisualStyleBackColor = true;
+			// 
 			// label1
 			// 
 			resources.ApplyResources(this.label1, "label1");
@@ -1097,35 +1126,6 @@ namespace CollatorCAM
 			resources.ApplyResources(this.cbShowAngle, "cbShowAngle");
 			this.cbShowAngle.Name = "cbShowAngle";
 			this.cbShowAngle.UseVisualStyleBackColor = true;
-			// 
-			// checkBox1
-			// 
-			resources.ApplyResources(this.checkBox1, "checkBox1");
-			this.checkBox1.Checked = true;
-			this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.UseVisualStyleBackColor = true;
-			// 
-			// label7
-			// 
-			this.label7.BackColor = System.Drawing.Color.Red;
-			resources.ApplyResources(this.label7, "label7");
-			this.label7.ForeColor = System.Drawing.Color.White;
-			this.label7.Name = "label7";
-			// 
-			// label8
-			// 
-			this.label8.BackColor = System.Drawing.Color.Red;
-			resources.ApplyResources(this.label8, "label8");
-			this.label8.ForeColor = System.Drawing.Color.White;
-			this.label8.Name = "label8";
-			// 
-			// label9
-			// 
-			this.label9.BackColor = System.Drawing.Color.Red;
-			resources.ApplyResources(this.label9, "label9");
-			this.label9.ForeColor = System.Drawing.Color.White;
-			this.label9.Name = "label9";
 			// 
 			// Form_Listener
 			// 

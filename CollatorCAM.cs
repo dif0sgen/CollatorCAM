@@ -116,9 +116,11 @@ namespace CollatorCAM
         private void RunForm()
         {
             var devices = new List<DsDevice>(DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice));
+            int i = 0;
             foreach (var device in devices)
             {
-                comboBox1.Items.Add(device.Name);
+                i++;
+                comboBox1.Items.Add(i + ". " + device.Name);
             }
             month = 7;
             button11.BackColor = System.Drawing.Color.DarkGray;
@@ -3284,12 +3286,14 @@ namespace CollatorCAM
             if (cbCaptureFromCam.Checked)
             {
                 comboBox1.Items.Clear();
-                var devices = new List<DsDevice>(DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice));
-                foreach (var device in devices)
-                {
-                    comboBox1.Items.Add(device.Name);
-                }
-                StartCapture();
+				var devices = new List<DsDevice>(DsDevice.GetDevicesOfCat(FilterCategory.VideoInputDevice));
+				int i = 0;
+				foreach (var device in devices)
+				{
+					i++;
+					comboBox1.Items.Add(i + ". " + device.Name);
+				}
+				StartCapture();
             }
 
             if (!cbCaptureFromCam.Checked)
