@@ -32,7 +32,6 @@ namespace CollatorCAM
 
     public partial class Form_Listener : Form
     {
-        private Emgu.CV.Capture _capture;
         private Emgu.CV.Capture _capture1;
         private Emgu.CV.Capture _capture2;
         private Emgu.CV.Capture _capture3;
@@ -3296,7 +3295,8 @@ namespace CollatorCAM
 				StartCapture();
             }
 
-            if (!cbCaptureFromCam.Checked)
+            if (!cbCaptureFromCam.Checked && _capture1 != null && _capture2 != null && _capture3 != null && _capture4 != null && _capture5 != null && _capture6 != null &&
+                _capture7 != null && _capture8 != null && _capture9 != null && _capture10 != null && _capture11 != null && _capture12 != null && _capture13 != null && _capture14 != null )
             {
                 _capture1.Dispose();
                 _capture2.Dispose();
