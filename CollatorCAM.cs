@@ -69,6 +69,7 @@ namespace CollatorCAM
         string ImagePath = "Please select image";
         string GetImagePath;
 
+        double Zoom;
         int i;
         int CamIndex;
         int month;
@@ -98,6 +99,7 @@ namespace CollatorCAM
             //thread2 = new Thread(() => WriteMDBS("WRITE"));
             
             processor = new ContourAnalysisNS.ImageProcessor(); //create image processor
+
 
             StartCapture();
             ApplyCamSettings();
@@ -134,6 +136,16 @@ namespace CollatorCAM
             {
                 label2.Text = "Current template file: " + templateFile;
                 ApplySettings();
+                if (cbCamResolution.SelectedIndex == 0)
+                    Zoom = 0.15;
+                if (cbCamResolution.SelectedIndex == 1)
+                    Zoom = 0.25;
+                if (cbCamResolution.SelectedIndex == 2)
+                    Zoom = 0.35;
+                if (cbCamResolution.SelectedIndex == 3)
+                    Zoom = 0.45;
+                if (cbCamResolution.SelectedIndex == 4)
+                    Zoom = 0.55;
                 if (modbus.Connected == true)
                 {
                     this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_10;
@@ -298,7 +310,7 @@ namespace CollatorCAM
                     _capture14.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, camHeight);
                 }
 
-                cbCamResolution.Text = camWidth + "x" + camHeight;
+              //  cbCamResolution.Text = camWidth + "x" + camHeight;
             }
             catch (NullReferenceException ex)
             {
@@ -370,7 +382,7 @@ namespace CollatorCAM
                     //if (frame == null)
                     //frame = img.Rotate(x, new Bgr(255, 255, 255), false);
                     imageBox1.Image = image;
-                    imageBox1.SetZoomScale(0.3, new Point(0));
+                    imageBox1.SetZoomScale(Zoom, new Point(0));
                     Bitmap pic = image.ToBitmap();
                     rect = new Rectangle(Convert.ToInt16(gX), Convert.ToInt16(gY), Convert.ToInt16(g2X), Convert.ToInt16(g2Y));
                 if (checkBox1.Checked)
@@ -999,7 +1011,7 @@ namespace CollatorCAM
                     {
                         this.camWidth = camWidth;
                         this.camHeight = camHeight;
-                        //ApplyCamSettings();
+                        ApplyCamSettings();
                     }
                 }
             }
