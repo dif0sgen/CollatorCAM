@@ -137,15 +137,15 @@ namespace CollatorCAM
                 label2.Text = "Current template file: " + templateFile;
                 ApplySettings();
                 if (cbCamResolution.SelectedIndex == 0)
-                    Zoom = 0.15;
+                    Zoom = 0.3;
                 if (cbCamResolution.SelectedIndex == 1)
-                    Zoom = 0.25;
+                    Zoom = 0.4;
                 if (cbCamResolution.SelectedIndex == 2)
-                    Zoom = 0.35;
+                    Zoom = 0.5;
                 if (cbCamResolution.SelectedIndex == 3)
-                    Zoom = 0.45;
+                    Zoom = 0.6;
                 if (cbCamResolution.SelectedIndex == 4)
-                    Zoom = 0.55;
+                    Zoom = 0.7;
                 if (modbus.Connected == true)
                 {
                     this.btnStart.Image = global::CollatorCAM.Properties.Resources.Group_10;
